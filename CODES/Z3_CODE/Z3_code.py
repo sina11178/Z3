@@ -70,7 +70,7 @@ def adding_matrixes_in_list(array, length):  #  Used in all terms
 
     return matrix
 
-def term_one(gamma, length, Jay, PHI):
+def term_one(length, Jay, PHI):
 
     list = []
     for k in range(length): # Initializes list to idententity operators
