@@ -41,7 +41,7 @@ I = [
 
 np_SIG = np.matrix(sigma)
 np_CLK = np.matrix(clock)
-np_I = np.matric(I)
+np_I = np.matrix(I)
 
 '''
 
@@ -148,3 +148,20 @@ def autocorrelator(time, size, hamiltonian):  # ONLY FOR SIG1_X
     autocorr_SIG = prefactor * np.trace(product_SIG)
 
     return autocorr_SIG
+
+def list_inputs(init_time, fin_time, interval):
+    list = []
+    num_of_runs = int((fin_time-init_time)/interval)
+    for i in range(num_of_runs + 1):
+        list.append(init_time + i*interval)
+
+
+    return list
+
+def output_list(input_list, size, hamiltonian):# TOOK OUT .REAL
+    out_list = [0] * len(input_list)
+    for i in range(len(input_list)):
+        out_list[i] = autocorrelator(input_list[i], size, hamiltonian).real  #  Stores respective outputs in list
+        #out_list[i] = autocorrelator(input_list[i], size, hamiltonian) --> DOES NOT FORCE REAL...
+    return np.array(out_list)
+
