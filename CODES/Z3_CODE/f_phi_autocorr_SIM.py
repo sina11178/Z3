@@ -13,7 +13,7 @@ import datetime
 
 
 # Array Params --> (f, phi)
-def f_phi_autocorrelator_SIMULATION(init_time, fin_time, interval, size, array_params, gamma): # COMPARES SYSTEMS W DIFFERENT PARAMS AT SAME SIZE
+def f_phi_autocorrelator_SIMULATION_EXCEL(init_time, fin_time, interval, size, array_params, gamma): # COMPARES SYSTEMS W DIFFERENT PARAMS AT SAME SIZE
     in_list = list_inputs(init_time, fin_time, interval)
     #out_list = [0] * len(in_list)
     return_list = [in_list]
@@ -40,7 +40,29 @@ def f_phi_autocorrelator_SIMULATION(init_time, fin_time, interval, size, array_p
     #  Name EXCEL based on date
     now = datetime.datetime.now()
     excel_name = "./CODES/Z3_CODE/DATA/f_phi_autocorr_comparison_" + now.strftime("%Y-%m-%d") + ".xlsx"
-    df.to_excel("./CODES/Z3_CODE/DATA/f_phi_autocorr_comparison.xsls") 
+    df.to_excel(excel_name) 
 
     print('SUCCESS')
 
+
+def f_phi_autocorrelator_SIMULATION_NPY(init_time, fin_time, interval, size, array_params, gamma): # COMPARES SYSTEMS W DIFFERENT PARAMS AT SAME SIZE
+    in_list = list_inputs(init_time, fin_time, interval)
+    #out_list = [0] * len(in_list)
+    return_list = [in_list]
+    hamiltonians = []
+    for j in range(len(array_params)):
+        H_1 = term_one(size, Jay=1, PHI=array_params[1]) + term_two(F=array_params[0], length=size)
+        H_dag = np.conjugate(H_1.T)
+        H = H_1 + (gamma * H_dag)
+        hamiltonians.append(H)
+
+    for k in range(len(hamiltonians)):
+        return_list.append(np.ndarray.tolist(output_list(in_list, size, hamiltonians[k])))  # LIST W/ OUTPUTS OF DIFF PARAMS
+
+
+    #  Name EXCEL based on date
+    now = datetime.datetime.now()
+    npy_name = "./CODES/Z3_CODE/DATA/f_phi_autocorr_comparison_" + now.strftime("%Y-%m-%d") + "_NPY.npy"
+    np.save(np.array(return_list), npy_name)  #  NOTE: First row of array is input; the rest are outputs
+
+    print('SUCCESS')
