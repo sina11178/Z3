@@ -19,7 +19,7 @@ def f_phi_autocorrelator_SIMULATION_EXCEL(init_time, fin_time, interval, size, a
     return_list = [in_list]
     hamiltonians = []
     for j in range(len(array_params)):
-        H_1 = term_one(size, Jay=1, PHI=array_params[1]) + term_two(F=array_params[0], length=size)
+        H_1 = term_one(size, Jay=1, PHI=array_params[j][1]) + term_two(F=array_params[j][0], length=size)
         H_dag = np.conjugate(H_1.T)
         H = H_1 + (gamma * H_dag)
         hamiltonians.append(H)
@@ -51,7 +51,7 @@ def f_phi_autocorrelator_SIMULATION_NPY(init_time, fin_time, interval, size, arr
     return_list = [in_list]
     hamiltonians = []
     for j in range(len(array_params)):
-        H_1 = term_one(size, Jay=1, PHI=array_params[1]) + term_two(F=array_params[0], length=size)
+        H_1 = term_one(size, Jay=1, PHI=array_params[j][1]) + term_two(F=array_params[j][0], length=size)
         H_dag = np.conjugate(H_1.T)
         H = H_1 + (gamma * H_dag)
         hamiltonians.append(H)
@@ -59,10 +59,22 @@ def f_phi_autocorrelator_SIMULATION_NPY(init_time, fin_time, interval, size, arr
     for k in range(len(hamiltonians)):
         return_list.append(np.ndarray.tolist(output_list(in_list, size, hamiltonians[k])))  # LIST W/ OUTPUTS OF DIFF PARAMS
 
-
+    
     #  Name EXCEL based on date
     now = datetime.datetime.now()
     npy_name = "./CODES/Z3_CODE/DATA/f_phi_autocorr_comparison_" + now.strftime("%Y-%m-%d") + "_NPY.npy"
-    np.save(np.array(return_list), npy_name)  #  NOTE: First row of array is input; the rest are outputs
+    np.save(npy_name, np.array(return_list))  #  NOTE: First row of array is input; the rest are outputs
 
     print('SUCCESS')
+
+    #  FOR GRAPHING
+    for i in range(len(hamiltonians)):
+        title = str(array_params[i][0]) + ", " + str(array_params[i][1]) + ", " + "(f, PHI)"
+        plt.subplot(1, int(len(hamiltonians)), i+1)
+        plt.plot(in_list, return_list[i+1])
+        plt.title(title)
+        plt.legend("L = " + str(size))
+        plt.xscale('log')
+
+    plt.tight_layout()
+    plt.show()

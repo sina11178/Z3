@@ -137,15 +137,16 @@ def autocorrelator(time, size, hamiltonian):  # ONLY FOR SIG1_X
         list.append(np_I)
 
 
-    list[0] = np_CLK # first site association with sig_x set
+    list[0] = np_SIG # first site association with sig_x set
     time_evol_op = time_evol_op_at_time_t(hamiltonian, time)  # Finds time evol operator at time t
     non_time_evold_op_sig = tensor_product(list, size) #  SIGX_1(0)
     time_evolved_sig = (np.conjugate(time_evol_op.T)) @ non_time_evold_op_sig @ (time_evol_op)  #  SIGX_1(time)
 
     # print(time_evol_op.getH() * time_evol_op)
     prefactor = 1/(3**size)
-    product_SIG = time_evolved_sig @ non_time_evold_op_sig
+    product_SIG = np.conjugate(time_evolved_sig.T) @ non_time_evold_op_sig
     autocorr_SIG = prefactor * np.trace(product_SIG)
+    #print(autocorr_SIG)
 
     return autocorr_SIG
 
@@ -163,5 +164,6 @@ def output_list(input_list, size, hamiltonian):# TOOK OUT .REAL
     for i in range(len(input_list)):
         out_list[i] = autocorrelator(input_list[i], size, hamiltonian).real  #  Stores respective outputs in list
         #out_list[i] = autocorrelator(input_list[i], size, hamiltonian) --> DOES NOT FORCE REAL...
+    #print(out_list)
     return np.array(out_list)
 
