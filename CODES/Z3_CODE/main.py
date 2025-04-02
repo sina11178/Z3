@@ -5,6 +5,7 @@ WE WILL CALL TO RUN RESPECTIVE SIMULATION HERE
 '''
 
 from f_phi_autocorr_SIM import f_phi_autocorrelator_SIMULATION_EXCEL, f_phi_autocorrelator_SIMULATION_NPY
+from size_comparison_autocorr_SIM import size_autocorrelator_SIMULATION_EXCEL, size_autocorrelator_SIMULATION_NPY
 import numpy as np
 import cmath as cm
 import matplotlib.pyplot as plt

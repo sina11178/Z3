@@ -32,7 +32,7 @@ def f_phi_autocorrelator_SIMULATION_EXCEL(init_time, fin_time, interval, size, a
     for k in range(len(array_params)):
         input_params = array_params[k]
         input_name = ','.join(str(x) for x in input_params)
-        name = "OUTPUT(f, phi): (" + input_name + ")"
+        name = "OUTPUT(f, phi): (" + str(input_name) + ")"
         column_names.append(name)
 
     df.columns = column_names
@@ -73,7 +73,7 @@ def f_phi_autocorrelator_SIMULATION_NPY(init_time, fin_time, interval, size, arr
         plt.subplot(1, int(len(hamiltonians)), i+1)
         plt.plot(np.log(in_list), return_list[i+1])
         plt.title(title)
-        plt.legend("L = " + str(size))
+        plt.legend("L = " + str(array_params[i][0])) + ", " + str(array_params[i][1])
         #plt.xscale('log')
 
     plt.tight_layout()
