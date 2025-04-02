@@ -146,7 +146,7 @@ def autocorrelator(time, size, hamiltonian):  # ONLY FOR SIG1_X
     prefactor = 1/(3**size)
     product_SIG = np.conjugate(time_evolved_sig.T) @ non_time_evold_op_sig
     autocorr_SIG = prefactor * np.trace(product_SIG)
-    #print(autocorr_SIG)
+    print(autocorr_SIG)
 
     return autocorr_SIG
 

@@ -71,10 +71,10 @@ def f_phi_autocorrelator_SIMULATION_NPY(init_time, fin_time, interval, size, arr
     for i in range(len(hamiltonians)):
         title = str(array_params[i][0]) + ", " + str(array_params[i][1]) + ", " + "(f, PHI)"
         plt.subplot(1, int(len(hamiltonians)), i+1)
-        plt.plot(in_list, return_list[i+1])
+        plt.plot(np.log(in_list), return_list[i+1])
         plt.title(title)
         plt.legend("L = " + str(size))
-        plt.xscale('log')
+        #plt.xscale('log')
 
     plt.tight_layout()
     plt.show()

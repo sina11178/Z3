@@ -11,6 +11,6 @@ import matplotlib.pyplot as plt
 import pandas as pd
 
 
-array_parameters = [[.2, (cm.pi)/6]]
+array_parameters = [[.1, 1.3*(cm.pi)/6]]
 
-f_phi_autocorrelator_SIMULATION_NPY(0.05, 100, .2, 4, array_parameters, 1)
+f_phi_autocorrelator_SIMULATION_NPY(0.05, 100000, 10, 4, array_parameters, 1)
