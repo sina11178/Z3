@@ -71,9 +71,9 @@ def size_autocorrelator_SIMULATION_NPY(init_time, fin_time, interval, size_array
     for i in range(len(hamiltonians)):
         title = str(params[0]) + ", " + str(params[1]) + "  " + "(f, PHI)"
         plt.subplot(1, int(len(hamiltonians)), i+1)
-        plt.plot(np.log(in_list), return_list[i+1])
+        plt.plot(np.log(in_list), return_list[i+1], label= "L = " + str(size_array[i]))
         plt.title(title)
-        plt.legend("L = " + str(size_array[i]))
+        plt.legend()
         #plt.xscale('log')
 
     plt.tight_layout()

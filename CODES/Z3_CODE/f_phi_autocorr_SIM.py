@@ -62,19 +62,21 @@ def f_phi_autocorrelator_SIMULATION_NPY(init_time, fin_time, interval, size, arr
     
     #  Name EXCEL based on date
     now = datetime.datetime.now()
-    npy_name = "./CODES/Z3_CODE/DATA/f_phi_autocorr_comparison_" + now.strftime("%Y-%m-%d") + "_NPY.npy"
+    npy_name = "f_phi_autocorr_comparison_" + now.strftime("%Y-%m-%d") + "_NPY.npy"  # SAVE IN SCRATCH
     np.save(npy_name, np.array(return_list))  #  NOTE: First row of array is input; the rest are outputs
 
     print('SUCCESS')
 
     #  FOR GRAPHING
     for i in range(len(hamiltonians)):
-        title = str(array_params[i][0]) + ", " + str(array_params[i][1]) + ", " + "(f, PHI)"
-        plt.subplot(1, int(len(hamiltonians)), i+1)
-        plt.plot(np.log(in_list), return_list[i+1])
+        title = "L= " + str(size)
+        #plt.subplot(1, int(len(hamiltonians)), i+1)
+        plt.plot(np.log(in_list), return_list[i+1], label=str(array_params[i][0]) + ", " + str(array_params[i][1])+ "  " + "(f, PHI)")
         plt.title(title)
-        plt.legend("L = " + str(array_params[i][0])) + ", " + str(array_params[i][1])
+        plt.legend()
         #plt.xscale('log')
 
     plt.tight_layout()
-    plt.show()
+    plt.savefig("vary_params.png", dpi=300, bbox_inches='tight')
+    #plt.show()
+    #plt.close()

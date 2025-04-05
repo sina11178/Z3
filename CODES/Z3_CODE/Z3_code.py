@@ -138,6 +138,7 @@ def autocorrelator(time, size, hamiltonian):  # ONLY FOR SIG1_X
 
 
     list[0] = np_SIG # first site association with sig_x set
+    #list[size-1] = np_SIG
     time_evol_op = time_evol_op_at_time_t(hamiltonian, time)  # Finds time evol operator at time t
     non_time_evold_op_sig = tensor_product(list, size) #  SIGX_1(0)
     time_evolved_sig = (np.conjugate(time_evol_op.T)) @ non_time_evold_op_sig @ (time_evol_op)  #  SIGX_1(time)

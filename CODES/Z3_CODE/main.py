@@ -13,5 +13,9 @@ import pandas as pd
 
 
 array_parameters = [[.1, 1.3*(cm.pi)/6]]
+L = 4
+array=[.1, 1.3*(cm.pi)/6]
+L_array = [4]
 
-f_phi_autocorrelator_SIMULATION_NPY(0.05, 100000, 10, 4, array_parameters, 1)
+#size_autocorrelator_SIMULATION_NPY(0.05, 100000, 10, L_array, array, 1)
+f_phi_autocorrelator_SIMULATION_NPY(1, 100000, 10, L, array_parameters, 1)
