@@ -12,7 +12,9 @@ import matplotlib.pyplot as plt
 import pandas as pd
 
 
-array_parameters = [[.1, 1.3*(cm.pi)/6]]
+array_parameters = [[.1, 0], [.1, (cm.pi)/6], [.1, (cm.pi)/3],
+                    [.2, 0], [.2, (cm.pi)/6], [.2, (cm.pi)/3],
+                    [.3, 0], [.3, (cm.pi)/6], [.3, (cm.pi)/3]]
 L = 4
 array=[.1, 1.3*(cm.pi)/6]
 L_array = [4]
