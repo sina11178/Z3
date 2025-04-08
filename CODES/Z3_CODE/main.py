@@ -13,9 +13,9 @@ import pandas as pd
 import sys
 
 
-array_parameters = [[.1, 0], [.1, (cm.pi)/6], [.1, (cm.pi)/3],
-                    [.2, 0], [.2, (cm.pi)/6], [.2, (cm.pi)/3],
-                    [.3, 0], [.3, (cm.pi)/6], [.3, (cm.pi)/3]]
+array_parameters = [[.1, (.7*cm.pi)/6], [.1, (.8*cm.pi)/6], [.1, (.9*cm.pi)/6],
+                    [.1, (cm.pi)/6], [.1, (1.1*cm.pi)/6],
+                    [.1, (1.2*cm.pi)/6], [.1, (1.3*cm.pi)/6]]
 L = 4
 array=[.1, 1.3*(cm.pi)/6]
 L_array = [4, 5, 6, 7, 8]
