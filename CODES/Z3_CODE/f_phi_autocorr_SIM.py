@@ -16,7 +16,7 @@ import datetime
 def f_phi_autocorrelator_SIMULATION_EXCEL(init_time, fin_time, interval, size, array_params, gamma): # COMPARES SYSTEMS W DIFFERENT PARAMS AT SAME SIZE
     in_list = list_inputs(init_time, fin_time, interval)
     #out_list = [0] * len(in_list)
-    return_list = [in_list]
+    return_list = [np.ndarray.tolist(in_list[1])]
     hamiltonians = []
     for j in range(len(array_params)):
         H_1 = term_one(size, Jay=1, PHI=array_params[j][1]) + term_two(F=array_params[j][0], length=size)
@@ -25,7 +25,7 @@ def f_phi_autocorrelator_SIMULATION_EXCEL(init_time, fin_time, interval, size, a
         hamiltonians.append(H)
 
     for k in range(len(hamiltonians)):
-        return_list.append(np.ndarray.tolist(output_list(in_list, size, hamiltonians[k])))  # LIST W/ OUTPUTS OF DIFF PARAMS
+        return_list.append(np.ndarray.tolist(output_list(np.ndarray.tolist(in_list[1]), size, hamiltonians[k])))  # LIST W/ OUTPUTS OF DIFF PARAMS
 
     df = pd.DataFrame(return_list).T  #  TRANSPOSES ROWS TO MAKE COLUMNS WHICH CORRESPOND TO INPUTS AND OUTPUTS
     column_names = ['INPUT']
@@ -46,9 +46,10 @@ def f_phi_autocorrelator_SIMULATION_EXCEL(init_time, fin_time, interval, size, a
 
 
 def f_phi_autocorrelator_SIMULATION_NPY(init_time, fin_time, interval, size, array_params, gamma): # COMPARES SYSTEMS W DIFFERENT PARAMS AT SAME SIZE
-    in_list = list_inputs(init_time, fin_time, interval)
+    in_list = list_inputs(init_time, fin_time, interval)  # GIVES LIST OF NUMPY ARRAYS
     #out_list = [0] * len(in_list)
-    return_list = [in_list]
+    in_list_exp = np.ndarray.tolist(in_list[1])
+    return_list = [in_list_exp]
     hamiltonians = []
     for j in range(len(array_params)):
         H_1 = term_one(size, Jay=1, PHI=array_params[j][1]) + term_two(F=array_params[j][0], length=size)
@@ -57,7 +58,7 @@ def f_phi_autocorrelator_SIMULATION_NPY(init_time, fin_time, interval, size, arr
         hamiltonians.append(H)
 
     for k in range(len(hamiltonians)):
-        return_list.append(np.ndarray.tolist(output_list(in_list, size, hamiltonians[k])))  # LIST W/ OUTPUTS OF DIFF PARAMS
+        return_list.append(np.ndarray.tolist(output_list(in_list_exp, size, hamiltonians[k])))  # LIST W/ OUTPUTS OF DIFF PARAMS
 
     
     #  Name EXCEL based on date
@@ -68,11 +69,13 @@ def f_phi_autocorrelator_SIMULATION_NPY(init_time, fin_time, interval, size, arr
     print('SUCCESS')
 
     #  FOR GRAPHING
-    for i in range(len(hamiltonians)):
+    for i in range(len(hamiltonians)):  # GIVES GRAPH WITH LOG TIME VALUES
         title = "L= " + str(size)
         #plt.subplot(1, int(len(hamiltonians)), i+1)
-        plt.plot(np.log(in_list), return_list[i+1], label=str(array_params[i][0]) + ", " + str(array_params[i][1])+ "  " + "(f, PHI)")
+        plt.plot(in_list[0], return_list[i+1], label=str(array_params[i][0]) + ", " + str(array_params[i][1])+ "  " + "(f, PHI)")
         plt.title(title)
+        plt.xlabel("Time: ln(t)")
+        plt.ylabel("Autocorr.")
         plt.legend()
         #plt.xscale('log')
 

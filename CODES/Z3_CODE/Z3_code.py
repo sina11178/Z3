@@ -152,13 +152,13 @@ def autocorrelator(time, size, hamiltonian):  # ONLY FOR SIG1_X
     return autocorr_SIG
 
 def list_inputs(init_time, fin_time, interval):
-    list = []
-    num_of_runs = int((fin_time-init_time)/interval)
-    for i in range(num_of_runs + 1):
-        list.append(init_time + i*interval)
+    list_non_exp = np.arange(init_time, fin_time, interval)
+    list_exp = np.exp(list_non_exp)
+    #num_of_runs = int((fin_time-init_time)/interval)
+    #for i in range(num_of_runs + 1):
+    #    list.append(init_time + i*interval)
 
-
-    return list
+    return [list_non_exp, list_exp] # SECOND INDEX HAS LIST OF ACTUAL TIMES; FIRST HAS LOG TIMES
 
 def output_list(input_list, size, hamiltonian):# TOOK OUT .REAL
     out_list = [0] * len(input_list)
