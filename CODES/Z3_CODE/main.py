@@ -25,4 +25,4 @@ L_array = [4, 5, 6, 7, 8]
 
 # FOR RUNNING ON CLUSTER
 
-size_autocorrelator_SIMULATION_NPY(0.005, 100000, 10, L_array, array_parameters[int(sys.argv[1])], 1)
+size_autocorrelator_SIMULATION_NPY(0, 30, .5, L_array, array_parameters[int(sys.argv[1])], 1)
