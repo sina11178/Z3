@@ -1,0 +1,45 @@
+#!/usr/bin/bash
+# Template for ".qsub" files that will be run as batch files by slurm
+
+RUN_NAME=run1_L4
+PROJECT_NAME=*project*
+SCRATCH=$HOME/scratch
+WORK=$HOME/work
+SCRATCH_DIR=$SCRATCH/$RUN_NAME/b###
+LOCAL_DIR=$HOME/$PROJECT_NAME/build
+
+mkdir -p $SCRATCH_DIR
+
+EXEC=main.py
+HELPER1="one.py"
+HELPER2="two.py"
+
+cd $LOCAL_DIR/$RUN_NAME
+cp $EXEC $SCRATCH_DIR/  # CAN ADD MORE
+if [ ! -z "$HELPER1" ] # Check that HELPER isn't empty
+then
+    cp $HELPER1 $SCRATCH_DIR/
+fi
+
+if [! -z "HELPER2" ]
+then
+    cp $HELPER2 $SCRATCH_DIR/
+fi
+
+cd $SCRATCH_DIR/
+
+{ time python ./$EXEC *LLL*; } > temp.out 2> error.err
+
+if [ "$(pwd)" == $SCRATCH_DIR ]; then
+    echo "Removing files"
+    rm $EXEC
+    if [ ! -z "$HELPER1" ] # Check that HELPER isn't empty
+    then
+	rm $HELPER1
+    fi
+
+    if [ ! -z "$HELPER2" ]
+    then
+	rm $HELPER2
+    fi
+fi
