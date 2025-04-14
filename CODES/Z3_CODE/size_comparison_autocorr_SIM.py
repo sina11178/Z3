@@ -70,9 +70,9 @@ def size_autocorrelator_SIMULATION_NPY(init_time, fin_time, interval, size_array
     print('SUCCESS')
 
     #  FOR GRAPHING
+    title = str(params[0]) + ", " + str(params[1]) + "  " + "(f, PHI)"
     for i in range(len(hamiltonians)):
-        title = str(params[0]) + ", " + str(params[1]) + "  " + "(f, PHI)"
-        plt.subplot(1, int(len(hamiltonians)), i+1)
+        #plt.subplot(1, int(len(hamiltonians)), i+1)
         plt.plot(in_list[0], return_list[i+1], label= "L = " + str(size_array[i]))
         plt.title(title)
         plt.xlabel("Time: ln(t)")
