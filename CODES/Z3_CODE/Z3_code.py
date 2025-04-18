@@ -123,33 +123,60 @@ RUNNING SIMULATIONS
 
 #  AUTOCORRELATOR
 
-def time_evol_op_at_time_t(hamiltonian, time):
-    A, U = np.linalg.eigh(hamiltonian)  # A is vector of eigenvalues; U is matrix of eigenvectors
-    U_T = np.conjugate(U.T)  # Conjugate transpose of U
-    #A_matrix = exp_diag_matrix(A, time)
-    A_matrix = np.diag(np.exp(A* time*(-1.j)))
-    evol_to_t = U @ A_matrix @ U_T
-    return evol_to_t
+def time_evol_op_at_time_t(hamiltonian, time, gamma):
+    if gamma == 1:
+        A, U = np.linalg.eigh(hamiltonian)  # A is vector of eigenvalues; U is matrix of eigenvectors
+        U_T = np.conjugate(U.T)  # Conjugate transpose of U
+        #A_matrix = exp_diag_matrix(A, time)
+        A_matrix = np.diag(np.exp(A* time*(-1.j)))
+        evol_to_t = U @ A_matrix @ U_T
+        return evol_to_t
+    else:
+        A, U = np.linalg.eig(hamiltonian)  # A is vector of eigenvalues; U is matrix of eigenvectors
+        U_inv = np.linalg.inv(U)  # Conjugate transpose of U
+        #A_matrix = exp_diag_matrix(A, time)
+        A_matrix = np.diag(np.exp((A - (1.j)*np.imag(A).max())* time*(-1.j)))
+        evol_to_t = U @ A_matrix @ U_inv
+        return evol_to_t
 
-def autocorrelator(time, size, hamiltonian):  # ONLY FOR SIG1_X
+def autocorrelator(time, size, hamiltonian, gamma):  # ONLY FOR SIG1_X
     list = []
     for a in range(size):
         list.append(np_I)
-
-
     list[0] = np_SIG # first site association with sig_x set
     #list[size-1] = np_SIG
-    time_evol_op = time_evol_op_at_time_t(hamiltonian, time)  # Finds time evol operator at time t
-    non_time_evold_op_sig = tensor_product(list, size) #  SIGX_1(0)
-    time_evolved_sig = (np.conjugate(time_evol_op.T)) @ non_time_evold_op_sig @ (time_evol_op)  #  SIGX_1(time)
-
+    
     # print(time_evol_op.getH() * time_evol_op)
-    prefactor = 1/(3**size)
-    product_SIG = np.conjugate(time_evolved_sig.T) @ non_time_evold_op_sig
-    autocorr_SIG = prefactor * np.trace(product_SIG)
-    print(autocorr_SIG)
+    if gamma == 1:
+        time_evol_op = time_evol_op_at_time_t(hamiltonian, time, gamma)  # Finds time evol operator at time t
+        non_time_evold_op_sig = tensor_product(list, size) #  SIGX_1(0)
+        time_evol_op_dag = (np.conjugate(time_evol_op.T))
+        time_evolved_sig = time_evol_op_dag @ non_time_evold_op_sig @ (time_evol_op)  #  SIGX_1(time)
+        #print(time_evolved_sig)
+        prefactor = 1/(3**size)
+        product_SIG = np.conjugate(time_evolved_sig.T) @ non_time_evold_op_sig
+        autocorr_SIG = prefactor * np.trace(product_SIG)
+        print(autocorr_SIG)
 
-    return autocorr_SIG
+        return autocorr_SIG
+    else:
+        time_evol_op = time_evol_op_at_time_t(hamiltonian, time, gamma)  # Finds time evol operator at time t
+        #norm = np.linalg.norm(time_evol_op)
+        #norm_time_evol_op = (1/norm)*time_evol_op
+        non_time_evold_op_sig = tensor_product(list, size) #  SIGX_1(0)
+        #norm_time_evol_op_dag = (np.conjugate(norm_time_evol_op.T))
+        #time_evolved_sig = norm_time_evol_op_dag @ non_time_evold_op_sig @ (norm_time_evol_op)  #  SIGX_1(time)
+        time_evol_op_dag = (np.conjugate(time_evol_op.T))
+        time_evolved_sig = time_evol_op_dag @ non_time_evold_op_sig @ (time_evol_op)
+        #print(time_evolved_sig)
+        prefactor = 1/(np.trace(time_evol_op_dag @ time_evol_op))
+        product_SIG = np.conjugate(time_evolved_sig.T) @ non_time_evold_op_sig
+        #product_SIG = (time_evolved_sig) @ non_time_evold_op_sig
+
+        autocorr_SIG = prefactor * np.trace(product_SIG)
+        print(autocorr_SIG)
+
+        return autocorr_SIG    
 
 def list_inputs(init_time, fin_time, interval):
     list_non_exp = np.arange(init_time, fin_time, interval)
@@ -160,11 +187,128 @@ def list_inputs(init_time, fin_time, interval):
 
     return [list_non_exp, list_exp] # SECOND INDEX HAS LIST OF ACTUAL TIMES; FIRST HAS LOG TIMES
 
-def output_list(input_list, size, hamiltonian):# TOOK OUT .REAL
+def output_list(input_list, size, hamiltonian, gamma):# TOOK OUT .REAL
     out_list = [0] * len(input_list)
     for i in range(len(input_list)):
-        out_list[i] = autocorrelator(input_list[i], size, hamiltonian).real  #  Stores respective outputs in list
+        out_list[i] = autocorrelator(input_list[i], size, hamiltonian, gamma).real  #  Stores respective outputs in list
         #out_list[i] = autocorrelator(input_list[i], size, hamiltonian) --> DOES NOT FORCE REAL...
     #print(out_list)
     return np.array(out_list)
 
+
+'''
+
+RECURSION METHOD FOR HERMITIAN HAMILTONIAN
+
+'''
+
+
+def matrix_2_vector(matrix):
+    matrix_transpose_1 = matrix.T
+    matrix_transpose = matrix_transpose_1.tolist()
+    vector = matrix_transpose[0]
+    for i in range(1, len(matrix_transpose)):
+        vector = vector + matrix_transpose[i]
+    vector_return = np.array(vector)
+    #print(vector_return)
+    return (vector_return)
+
+def Liovillan(Hamiltonian, size): #  Liovillan only applied to a matrix converted to vector
+    I = np.eye(2**size)
+    S_1 = np.kron(I, Hamiltonian)
+    S_2 = np.kron((Hamiltonian.T), I)
+    #S_1 = np.kron(Hamiltonian, I)
+    #S_2 = np.kron(I, Hamiltonian)
+    #print(S_1)
+
+    return (S_1+(-1*S_2))
+
+def A_vectors(liovillan, b_array, O_basis_array, n_index):  # Used for A_2 and on
+    #first_term = L @ O_basis_array[n_index]
+    first_term = liovillan @ O_basis_array[n_index]
+    second_term = (b_array[n_index - 1]) * O_basis_array[(n_index - 1)]
+
+    return (first_term +(-1*second_term))
+
+
+def norm (L_1, L_2, size):  # L_1 is ket, L_2 is the bra
+    ket = L_1
+    bra = np.conjugate(L_2)
+
+    norm_squared = np.dot(bra, ket)
+    norm = cm.sqrt((1/(2**size))*norm_squared)
+
+    #return np.linalg.norm(norm)
+    return norm.real
+
+def recursion_method(n, H, size):
+    list = []
+    for i in range(size):
+        list.append(np_I)
+    list[0] = np_SIG
+
+    strong_mode = tensor_product(list, size)
+    L = (Liovillan(H, size)).tolist()
+    b = []  # ORDER: 1, 2, ...
+    O_0 = ((strong_mode.T).flatten()).tolist() # Returns as list w/ vector inside of it;  ORDER: 0, 1, 2, ..., n
+
+    #print(O_1)
+    krylov_basis = [np.array(O_0[0])]  # YOU CAN ALSO JUST NORMALIZE THIS AND LEAVE OUT THE PREFACTOR IN THE NORM FUNCTION
+    A_basis = []  # ORDER: 1, 2, ...
+    for i in range(0, n):
+        if (i == 0):  # BASE CASE
+            A_1 = np.array(L) @ krylov_basis[0]
+            #A_1 = krylov_basis[0] @ np.array(L)
+            A_basis.append(A_1)
+            b_1 = norm(A_1, A_1, size)
+            b.append(b_1)
+            #print(type(A_1))
+            O_1 = (1/(b_1))*A_1
+            krylov_basis.append(O_1)
+
+        else:
+            A_basis.append(A_vectors(L, b, krylov_basis, i))
+            b.append(norm(A_vectors(L, b, krylov_basis, i), A_vectors(L, b, krylov_basis, i), size))
+            krylov_basis.append((1/b[i])*A_basis[i])
+
+    print(np.array(b))
+    return np.array(b)
+
+
+'''
+
+GRAHM SCHMIDT - FOR NON HERMITIAN HAMILTONIANS
+
+'''
+
+
+
+def grahm_schmidt(n, H, size):
+    L = np.array((Liovillan(H, size)).tolist())
+    list = []
+    for i in range(size):
+        list.append(np_I)
+    list[0] = np_SIG
+    strong_mode = tensor_product(list, size)
+    O_0 = ((strong_mode.T).flatten()).tolist()
+    gs_basis_non_ortho = [np.array(O_0[0])]
+
+    # CREATION OF VECTORS I WANT TO ORTHOGONALIZE
+    U = []  # Creation of list that will hold orthogonal vectors
+    for j in range(1, n):
+        gs_basis_non_ortho.append(L @ gs_basis_non_ortho[j-1])
+
+    for i in range(len(gs_basis_non_ortho)):
+        v = gs_basis_non_ortho[i]
+        for k in range(i):
+            proj = ((np.dot(np.conjugate(v), U[k]))/(np.dot(np.conjugate(U[k]), U[k]))) * U[k]
+            v -= proj
+        U.append(v / np.linalg.norm(v))
+
+    # COLLECT B VALUES
+    b = []  # B VALUES
+    for p in range(0, len(U) - 1):
+        k = L @ U[p+1]
+        b.append(U[p] @ k)
+
+    return np.array(b)

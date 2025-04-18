@@ -25,7 +25,7 @@ def f_phi_autocorrelator_SIMULATION_EXCEL(init_time, fin_time, interval, size, a
         hamiltonians.append(H)
 
     for k in range(len(hamiltonians)):
-        return_list.append(np.ndarray.tolist(output_list(np.ndarray.tolist(in_list[1]), size, hamiltonians[k])))  # LIST W/ OUTPUTS OF DIFF PARAMS
+        return_list.append(np.ndarray.tolist(output_list(np.ndarray.tolist(in_list[1]), size, hamiltonians[k], gamma)))  # LIST W/ OUTPUTS OF DIFF PARAMS
 
     df = pd.DataFrame(return_list).T  #  TRANSPOSES ROWS TO MAKE COLUMNS WHICH CORRESPOND TO INPUTS AND OUTPUTS
     column_names = ['INPUT']
@@ -58,7 +58,7 @@ def f_phi_autocorrelator_SIMULATION_NPY(init_time, fin_time, interval, size, arr
         hamiltonians.append(H)
 
     for k in range(len(hamiltonians)):
-        return_list.append(np.ndarray.tolist(output_list(in_list_exp, size, hamiltonians[k])))  # LIST W/ OUTPUTS OF DIFF PARAMS
+        return_list.append(np.ndarray.tolist(output_list(in_list_exp, size, hamiltonians[k], gamma)))  # LIST W/ OUTPUTS OF DIFF PARAMS
 
     
     #  Name EXCEL based on date
@@ -70,7 +70,7 @@ def f_phi_autocorrelator_SIMULATION_NPY(init_time, fin_time, interval, size, arr
 
     #  FOR GRAPHING
     for i in range(len(hamiltonians)):  # GIVES GRAPH WITH LOG TIME VALUES
-        title = "L= " + str(size)
+        title = "L= " + str(size) + "; gam = " + str(gamma)
         #plt.subplot(1, int(len(hamiltonians)), i+1)
         plt.plot(in_list[0], return_list[i+1], label=str(array_params[i][0]) + ", " + str(array_params[i][1])+ "  " + "(f, PHI)")
         plt.title(title)
