@@ -214,7 +214,7 @@ def matrix_2_vector(matrix):
     return (vector_return)
 
 def Liovillan(Hamiltonian, size): #  Liovillan only applied to a matrix converted to vector
-    I = np.eye(2**size)
+    I = np.eye(3**size)
     S_1 = np.kron(I, Hamiltonian)
     S_2 = np.kron((Hamiltonian.T), I)
     #S_1 = np.kron(Hamiltonian, I)
@@ -236,8 +236,8 @@ def norm (L_1, L_2, size):  # L_1 is ket, L_2 is the bra
     bra = np.conjugate(L_2)
 
     norm_squared = np.dot(bra, ket)
-    norm = cm.sqrt((1/(2**size))*norm_squared)
-
+    norm = cm.sqrt((1/(3**size))*norm_squared)
+    print(norm)
     #return np.linalg.norm(norm)
     return norm.real
 
@@ -267,12 +267,13 @@ def recursion_method(n, H, size):
             krylov_basis.append(O_1)
 
         else:
-            A_basis.append(A_vectors(L, b, krylov_basis, i))
-            b.append(norm(A_vectors(L, b, krylov_basis, i), A_vectors(L, b, krylov_basis, i), size))
+            k = A_vectors(L, b, krylov_basis, i)
+            A_basis.append(k)
+            b.append(norm(k, k, size))
             krylov_basis.append((1/b[i])*A_basis[i])
 
-    print(np.array(b))
-    return np.array(b)
+    #print(b)
+    return b
 
 
 '''
@@ -309,6 +310,6 @@ def grahm_schmidt(n, H, size):
     b = []  # B VALUES
     for p in range(0, len(U) - 1):
         k = L @ U[p+1]
-        b.append(U[p] @ k)
-
-    return np.array(b)
+        b.append(np.conjugate(U[p]) @ k)
+    print(b)
+    return b

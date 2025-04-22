@@ -1,0 +1,10 @@
+run_210807_fPhi_PhaseDiag:
+For L=18: if l == 18 and G<0.3 and vnum%4==0 and Ee<0:
+
+
+
+***write me***
+
+Codebase: 
+Cluster: ls5
+gittag: 

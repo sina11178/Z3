@@ -1,0 +1,96 @@
+Starting job run_210807_fPhi_PhaseDiag
+ l==8 and f in [0.2, 0.4,0.6, 1.1] and and 2.0<phi<4.0
+WARNING (08/08/21 00:17:47): LAUNCHER_WORKDIR variable not set. Using current directory.
+Launcher: Setup complete.
+
+------------- SUMMARY ---------------
+   Number of hosts:    1
+   Working directory:  /home1/05689/saeedrk/Projects/z3_weak_edge_mode/build/run_210807_fPhi_PhaseDiag
+   Processes per host: 21
+   Total processes:    21
+   Total jobs:         21
+   Scheduling method:  interleaved
+
+-------------------------------------
+Launcher: Starting parallel tasks...
+using /tmp/launcher.3397751.hostlist.1aZYjnwk to get hosts
+starting job on c210-010
+Warning: Permanently added 'c210-010' (ECDSA) to the list of known hosts.
+Launcher: Task 19 running job 20 on c210-010.frontera.tacc.utexas.edu (bash run_210807_fPhi_PhaseDiag_4893.qsub)
+Launcher: Task 16 running job 17 on c210-010.frontera.tacc.utexas.edu (bash run_210807_fPhi_PhaseDiag_4848.qsub)
+Launcher: Task 13 running job 14 on c210-010.frontera.tacc.utexas.edu (bash run_210807_fPhi_PhaseDiag_4803.qsub)
+Launcher: Task 3 running job 4 on c210-010.frontera.tacc.utexas.edu (bash run_210807_fPhi_PhaseDiag_4653.qsub)
+Launcher: Task 12 running job 13 on c210-010.frontera.tacc.utexas.edu (bash run_210807_fPhi_PhaseDiag_4788.qsub)
+Launcher: Task 4 running job 5 on c210-010.frontera.tacc.utexas.edu (bash run_210807_fPhi_PhaseDiag_4668.qsub)
+Launcher: Task 9 running job 10 on c210-010.frontera.tacc.utexas.edu (bash run_210807_fPhi_PhaseDiag_4743.qsub)
+Launcher: Task 14 running job 15 on c210-010.frontera.tacc.utexas.edu (bash run_210807_fPhi_PhaseDiag_4818.qsub)
+Launcher: Task 15 running job 16 on c210-010.frontera.tacc.utexas.edu (bash run_210807_fPhi_PhaseDiag_4833.qsub)
+Launcher: Task 17 running job 18 on c210-010.frontera.tacc.utexas.edu (bash run_210807_fPhi_PhaseDiag_4863.qsub)
+Launcher: Task 0 running job 1 on c210-010.frontera.tacc.utexas.edu (bash run_210807_fPhi_PhaseDiag_4608.qsub)
+Launcher: Task 2 running job 3 on c210-010.frontera.tacc.utexas.edu (bash run_210807_fPhi_PhaseDiag_4638.qsub)
+Launcher: Task 10 running job 11 on c210-010.frontera.tacc.utexas.edu (bash run_210807_fPhi_PhaseDiag_4758.qsub)
+Launcher: Task 18 running job 19 on c210-010.frontera.tacc.utexas.edu (bash run_210807_fPhi_PhaseDiag_4878.qsub)
+Launcher: Task 6 running job 7 on c210-010.frontera.tacc.utexas.edu (bash run_210807_fPhi_PhaseDiag_4698.qsub)
+Launcher: Task 20 running job 21 on c210-010.frontera.tacc.utexas.edu (bash run_210807_fPhi_PhaseDiag_4908.qsub)
+Launcher: Task 11 running job 12 on c210-010.frontera.tacc.utexas.edu (bash run_210807_fPhi_PhaseDiag_4773.qsub)
+Launcher: Task 1 running job 2 on c210-010.frontera.tacc.utexas.edu (bash run_210807_fPhi_PhaseDiag_4623.qsub)
+Launcher: Task 8 running job 9 on c210-010.frontera.tacc.utexas.edu (bash run_210807_fPhi_PhaseDiag_4728.qsub)
+Removing files
+Launcher: Job 17 completed in 273 seconds.
+Launcher: Task 16 done. Exiting.
+Removing files
+Launcher: Job 14 completed in 274 seconds.
+Launcher: Task 13 done. Exiting.
+Removing files
+Launcher: Job 20 completed in 276 seconds.
+Launcher: Task 19 done. Exiting.
+Removing files
+Launcher: Job 13 completed in 272 seconds.
+Launcher: Task 12 done. Exiting.
+Removing files
+Removing files
+Launcher: Job 5 completed in 275 seconds.
+Launcher: Job 16 completed in 272 seconds.
+Launcher: Task 4 done. Exiting.
+Launcher: Task 15 done. Exiting.
+Removing files
+Launcher: Job 10 completed in 274 seconds.
+Launcher: Task 9 done. Exiting.
+Removing files
+Launcher: Job 3 completed in 271 seconds.
+Launcher: Task 2 done. Exiting.
+Removing files
+Launcher: Job 18 completed in 275 seconds.
+Launcher: Task 17 done. Exiting.
+Removing files
+Launcher: Job 19 completed in 273 seconds.
+Launcher: Task 18 done. Exiting.
+Removing files
+Launcher: Job 12 completed in 272 seconds.
+Launcher: Task 11 done. Exiting.
+Removing files
+Launcher: Job 15 completed in 279 seconds.
+Launcher: Task 14 done. Exiting.
+Removing files
+Launcher: Job 1 completed in 276 seconds.
+Launcher: Task 0 done. Exiting.
+Removing files
+Launcher: Job 4 completed in 286 seconds.
+Launcher: Task 3 done. Exiting.
+Removing files
+Launcher: Job 2 completed in 274 seconds.
+Launcher: Task 1 done. Exiting.
+Removing files
+Launcher: Job 9 completed in 273 seconds.
+Launcher: Task 8 done. Exiting.
+Removing files
+Launcher: Job 11 completed in 278 seconds.
+Launcher: Task 10 done. Exiting.
+Removing files
+Launcher: Job 7 completed in 277 seconds.
+Launcher: Task 6 done. Exiting.
+Removing files
+Launcher: Job 21 completed in 279 seconds.
+Launcher: Task 20 done. Exiting.
+Launcher: Done. Job exited without errors
+Job run_210807_fPhi_PhaseDiag complete

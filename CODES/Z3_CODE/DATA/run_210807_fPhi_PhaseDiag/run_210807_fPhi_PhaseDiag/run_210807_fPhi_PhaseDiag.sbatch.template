@@ -1,0 +1,38 @@
+#!/bin/bash
+# Job name:
+#SBATCH --job-name=run_210807_fPhi_PhaseDiag
+#
+# Partition:
+#SBATCH --partition=*partition*
+#
+# Account:
+#SBATCH -A *charge* # which account to charge the SUs to
+#
+# Processors:
+#SBATCH --ntasks=*nnn*
+#SBATCH --nodes=*NNN*
+#SBATCH --cpus-per-task=*ccc*
+#
+# Wall clock limit:
+#SBATCH --time=*ttt*
+#
+# Email at end:
+#SBATCH --mail-user=*myemail*
+#SBATCH --mail-type=END
+#
+# Specify output files:
+#SBATCH -o run_210807_fPhi_PhaseDiag.o%j
+#------------------------------------------------------
+
+echo "Starting job run_210807_fPhi_PhaseDiag"
+echo "*JobDetails*"
+module load launcher
+
+export LAUNCHER_PLUGIN_DIR=$LAUNCHER_DIR/plugins
+export LAUNCHER_RMI=SLURM
+export LAUNCHER_JOB_FILE=run_210807_fPhi_PhaseDiag.task
+export LAUNCHER_SCHED=interleaved
+
+$LAUNCHER_DIR/paramrun
+
+echo "Job run_210807_fPhi_PhaseDiag complete"

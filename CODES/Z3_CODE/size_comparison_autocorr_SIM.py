@@ -64,7 +64,7 @@ def size_autocorrelator_SIMULATION_NPY(init_time, fin_time, interval, size_array
     
     #  Name EXCEL based on date
     now = datetime.datetime.now()
-    npy_name = "size_autocorr_comparison_" + now.strftime("%Y-%m-%d") + "_NPY.npy"
+    npy_name = "size_autocorr_comparison_gamma_" + str(gamma) + "_NPY.npy"
     np.save(npy_name, np.array(return_list))  #  NOTE: First row of array is input; the rest are outputs
 
     print('SUCCESS')
