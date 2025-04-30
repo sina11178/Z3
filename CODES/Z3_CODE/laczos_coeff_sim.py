@@ -10,7 +10,7 @@ from Z3_code import term_one, term_two, recursion_method, grahm_schmidt
 
 def LACZOS_COEF_vary_gam_SIM(n, size, gamma, params):
     in_list = []
-    #in_list_2 = []
+    in_list_2 = []
     
     H_1 = term_one(size, Jay=1, PHI=params[1]) + term_two(F=params[0], length=size)
     H_dag = np.conjugate(H_1.T)

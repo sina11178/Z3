@@ -22,7 +22,7 @@ array=[.1, (cm.pi)/3]
 gamma_array = [0, .2, .4, .6, .8, 1, 1.2, 1.4]
 L_array = [5, 6, 7, 8]
 
-size_autocorrelator_SIMULATION_NPY(0, 30, .5, L_array[int(sys.argv[1] % 4)], array, gamma_array[int(sys.argv[1]/4)])
+#size_autocorrelator_SIMULATION_NPY(0, 30, .5, L_array[int(int(sys.argv[1]) % 4)], array, gamma_array[int(int(sys.argv[1])/4)])
 
 
 #f_phi_autocorrelator_SIMULATION_NPY(0, 30, .5, L, [[.1, 0]], -1.5)
@@ -31,4 +31,4 @@ size_autocorrelator_SIMULATION_NPY(0, 30, .5, L_array[int(sys.argv[1] % 4)], arr
 
 #size_autocorrelator_SIMULATION_NPY(0, 30, .5, L_array, array_parameters[int(sys.argv[1])], 1)
 
-#LACZOS_COEF_vary_gam_SIM(10, L, 0, [.1, 0])
+LACZOS_COEF_vary_gam_SIM(50, L, 1, [.1, 0])

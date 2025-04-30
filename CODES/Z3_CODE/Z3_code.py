@@ -246,6 +246,7 @@ def recursion_method(n, H, size):
     for i in range(size):
         list.append(np_I)
     list[0] = np_SIG
+    m = np.sqrt((1/(3**size)))
 
     strong_mode = tensor_product(list, size)
     L = (Liovillan(H, size)).tolist()
@@ -260,7 +261,8 @@ def recursion_method(n, H, size):
             A_1 = np.array(L) @ krylov_basis[0]
             #A_1 = krylov_basis[0] @ np.array(L)
             A_basis.append(A_1)
-            b_1 = norm(A_1, A_1, size)
+            #b_1 = norm(A_1, A_1, size)
+            b_1 = m * np.linalg.norm(A_1)
             b.append(b_1)
             #print(type(A_1))
             O_1 = (1/(b_1))*A_1
@@ -269,7 +271,8 @@ def recursion_method(n, H, size):
         else:
             k = A_vectors(L, b, krylov_basis, i)
             A_basis.append(k)
-            b.append(norm(k, k, size))
+            #b.append(norm(k, k, size))
+            b.append(m * np.linalg.norm(k))
             krylov_basis.append((1/b[i])*A_basis[i])
 
     #print(b)
