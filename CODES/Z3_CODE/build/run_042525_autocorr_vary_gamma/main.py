@@ -22,7 +22,7 @@ array=[.1, 0]
 gamma_array = [0, .2, .4, .6, .8, .9, 1, 1.2]
 L_array = [4, 5, 6, 7]
 
-size_autocorrelator_SIMULATION_NPY(0, 30, 1, [L_array[int(int(sys.argv[1]) % 4)]], array, gamma_array[int(int(sys.argv[1])/4)])
+size_autocorrelator_SIMULATION_NPY(0, 30, .5, [L_array[int(int(sys.argv[1]) % 4)]], array, gamma_array[int(int(sys.argv[1])/4)])
 
 
 #f_phi_autocorrelator_SIMULATION_NPY(0, 30, .5, L, [[.1, 0]], -1.5)

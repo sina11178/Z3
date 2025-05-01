@@ -9,9 +9,8 @@ size_list = [4, 5, 6, 7]
 data_list = []
 data_list_2 = []
 only_hermitian_L8 = []
-time_list = np.arange(0, 30, 1)
+time_list = np.arange(0, 30, .5)
 time_list_exp = np.exp(time_list)
-
 
 
 for i in np.arange(32):
@@ -32,13 +31,14 @@ for k in range(len(gamma_list)):
     plt.savefig("parameter_gamma_"+str(gamma_list[k])+"_graph.png")
 
 
+
 # FOR CREATING EXCEL
 
 data_list_2.append(time_list_exp.tolist())
 
 for i in np.arange(32):
      if os.path.isfile('./b'+str(i)+'/size_autocorr_comparison_gamma_' + str(gamma_list[int(i/4)]) + '_NPY.npy') == True:
-            
+
         p = np.load('./b'+str(i)+'/size_autocorr_comparison_gamma_' + str(gamma_list[int(i/4)]) + '_NPY.npy')
         data_list_2.append(p[1, :])
 
