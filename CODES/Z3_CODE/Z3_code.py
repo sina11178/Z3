@@ -276,7 +276,15 @@ def recursion_method(n, H, size):
             krylov_basis.append((1/b[i])*A_basis[i])
 
     #print(b)
-    return b
+
+
+    matrix_final = np.eye(len(krylov_basis))
+    for j in range(len(krylov_basis)):
+        k = L @ krylov_basis[j]
+        for i in range(len(krylov_basis)):
+            matrix_final[i, j] = np.conjugate(krylov_basis[i]) @ k
+    return matrix_final
+    #return b
 
 
 '''
@@ -310,9 +318,17 @@ def grahm_schmidt(n, H, size):
         U.append(v / np.linalg.norm(v))
 
     # COLLECT B VALUES
-    b = []  # B VALUES
-    for p in range(0, len(U) - 1):
-        k = L @ U[p+1]
-        b.append(np.conjugate(U[p]) @ k)
-    print(b)
-    return b
+    matrix_final = np.eye(len(U))
+    for j in range(len(U)):
+        k = L @ U[j]
+        for i in range(len(U)):
+            matrix_final[i, j] = np.conjugate(U[i]) @ k
+
+    return matrix_final
+
+    # b = []  # B VALUES
+    # for p in range(0, len(U) - 1):
+    #     k = L @ U[p+1]
+    #     b.append(np.conjugate(U[p]) @ k)
+    # print(b)
+    # return b
