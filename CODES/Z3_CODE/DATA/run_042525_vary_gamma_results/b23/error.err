@@ -1,4 +1,6 @@
+/scratch/juno/sxr190099/run_042525_autocorr_vary_gamma/b23/size_comparison_autocorr_SIM.py:65: RuntimeWarning: divide by zero encountered in log
+  in_list = [np.log(k), k]
 
-real	772m18.913s
-user	10635m0.572s
-sys	8m34.643s
+real	526m51.755s
+user	7127m53.642s
+sys	1m40.621s
