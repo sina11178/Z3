@@ -59,19 +59,21 @@ def LACZOS_COEF_vary_gam_SIM(n, size, gamma, params):
         # b_values = recursion_method(n, H, size)
         A, U = np.linalg.eigh(matrix_final)
         in_list = np.arange(1, n+2, 1)
-        #EIG_STATE = U[:, np.argmin(A)]
+        EIG_STATE = U[:, np.argmin(np.abs(A))]
+        #print(np.min(A))
     else:
         A, U = np.linalg.eig(matrix_final)
         in_list = np.arange(1, n+1, 1)
-        #EIG_STATE = U[:, np.argmin(A)]
-
+        EIG_STATE = U[:, np.argmin(np.abs(A))]
+        #print(np.min(np.abs(A)))
 
     plt.subplot()
-    plt.plot(in_list, A, marker = ".", linestyle = '-', color = 'r', label = 'gamm = ' + str(gamma))
-    title = str(params[0]) + ", " + str(params[1]) + "  " + "(f, PHI)" + " gam = " + str(gamma) + " Eigenvalue graph (L = " + str(size) + ")"
+    plt.plot(in_list, EIG_STATE, marker = ".", linestyle = '-', color = 'r', label = 'gamm = ' + str(gamma))
+    title = str(params[0]) + ", " + str(params[1]) + "  " + "(f, PHI)" + " gam = " + str(gamma) + " Eigenvector graph (L = " + str(size) + ")"
     plt.suptitle(title)
     plt.xlabel("n")
-    plt.ylabel("Eigenvalues")
+    plt.ylabel("Eigenvector Components")
+    #plt.ylim(0, 0.2)
     plt.legend()
     plt.tight_layout()
     plt.savefig("eigenval_graphs_krylov_matrix.png", dpi=300, bbox_inches='tight')
