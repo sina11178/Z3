@@ -3,14 +3,26 @@ import numpy as np
 import os
 import pandas as pd
 
+def time_sequence(myn, mys, mym):
+    sequ=[]
+    i=0
+    for x in range(myn):
+        if x < mys:
+            i = (i + x)
+        if x >= mys:
+            i = (i + x)*mym
+        sequ.append(int(i))
+    return sequ
+
+
 array_param=[.1, 0]
 gamma_list = [0, .2, .4, .6, .8, .9, 1, 1.2]
 size_list = [4, 5, 6, 7]
 data_list = []
 data_list_2 = []
 only_hermitian_L8 = []
-time_list = np.arange(0, 30, .5)
-time_list_exp = np.exp(time_list)
+time_list_exp = np.array(time_sequence(42, 15, 2.6))
+time_list = np.log(time_list_exp)
 
 
 for i in np.arange(32):
