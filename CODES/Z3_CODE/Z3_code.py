@@ -277,8 +277,8 @@ def recursion_method(n, H, size):
 
     #print(b)
 
-
-    matrix_final = np.eye(len(krylov_basis))
+    l = len(krylov_basis)
+    matrix_final = np.zeros((l,l), dtype=complex)
     for j in range(len(krylov_basis)):
         k = L @ krylov_basis[j]
         for i in range(len(krylov_basis)):
@@ -318,7 +318,8 @@ def grahm_schmidt(n, H, size):
         U.append(v / np.linalg.norm(v))
 
     # COLLECT B VALUES
-    matrix_final = np.eye(len(U))
+    l = len(U)
+    matrix_final = np.zeros((l,l), dtype=complex)
     for j in range(len(U)):
         k = L @ U[j]
         for i in range(len(U)):

@@ -37,7 +37,7 @@ for k in range(len(gamma_list)):
     fig, ax = plt.subplots()
     plt.suptitle("Paramater (f=.1, phi=0): gamma = " + str(gamma_list[k]))
     for j in range(4):
-        plt.plot(time_list, data_list[len(size_list)*k + j], label= "L = " + str(size_list[j]))
+        plt.plot(time_list, np.abs(data_list[len(size_list)*k + j]), label= "L = " + str(size_list[j]))
         
     plt.legend()
     plt.savefig("parameter_gamma_"+str(gamma_list[k])+"_graph.png")
@@ -55,8 +55,8 @@ for i in np.arange(32):
         data_list_2.append(p[1, :])
 
 
-for j in range(1, 32):
-    data_list_2[j] = data_list_2[j].tolist()
+for j in range(1, 33):
+    data_list_2[j] = np.abs(data_list_2[j]).tolist()
 data_list_2 = np.array(data_list_2)
 df = pd.DataFrame(data_list_2).T
 df.to_excel('autocorr_data.xlsx', index=False, header=False)
