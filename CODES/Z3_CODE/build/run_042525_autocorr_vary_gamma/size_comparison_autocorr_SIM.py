@@ -45,24 +45,22 @@ def size_autocorrelator_SIMULATION_EXCEL(init_time, fin_time, interval, size_arr
 
     print('SUCCESS')
 
-
 def time_sequence(myn, mys, mym):
-    sequ=[]
-    i=0
-    for x in range(myn):
-        if x < mys:
-            i = (i + x)
-        if x >= mys:
-            i = (i + x)*mym
-        sequ.append(int(i))
-    return sequ
+        sequ=[]
+        i=0
+        for x in range(myn):
+            if x < mys:
+                i = (i + x)
+            if x >= mys:
+                i = (i + x)*mym
+            sequ.append(int(i))
+        return sequ
 
 
 def size_autocorrelator_SIMULATION_NPY(init_time, fin_time, interval, size_array, params, gamma): # COMPARES SYSTEMS W DIFFERENT PARAMS AT SAME SIZE
-   # in_list = list_inputs(init_time, fin_time, interval)
+    p = np.array(time_sequence(42, 25, 2.6))
+    in_list = [np.log(p), p]
     #out_list = [0] * len(in_list)
-    k = np.array(time_sequence(42, 15, 2.6))
-    in_list = [np.log(k), k]
     in_list_exp = np.ndarray.tolist(in_list[1])
     return_list = [in_list_exp]
     hamiltonians = []
@@ -73,7 +71,7 @@ def size_autocorrelator_SIMULATION_NPY(init_time, fin_time, interval, size_array
         hamiltonians.append(H)
 
     for k in range(len(hamiltonians)):
-        return_list.append(np.ndarray.tolist(output_list(in_list_exp, size_array[k], hamiltonians[k], gamma)))  # LIST W/ OUTPUTS OF DIFF PARAMS
+        return_list.append(np.ndarray.tolist(np.abs(output_list(in_list_exp, size_array[k], hamiltonians[k], gamma))))  # LIST W/ OUTPUTS OF DIFF PARAMS
 
     
     #  Name EXCEL based on date
