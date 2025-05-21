@@ -30,7 +30,7 @@ def LACZOS_COEF_vary_gam_SIM(n, size, gamma, params):
     
     #return_list = [gamma, in_list, b_values]  # FIRST COMPONENT IS GAMMA VALUE
 
-    now = datetime.datetime.now()
+    #now = datetime.datetime.now()
     #npy_name = "vary_gamma_laczos_coeff" + now.strftime("%Y-%m-%d") + "_NPY.npy"
     #np.save(npy_name, np.array(return_list))  #  NOTE: First row of array is input; the rest are outputs
     npy_name = "krylov_matrix_gamma" + str(gamma) + "_NPY.npy"
@@ -58,18 +58,17 @@ def LACZOS_COEF_vary_gam_SIM(n, size, gamma, params):
 
     if gamma == 1:
         # b_values = recursion_method(n, H, size)
-        A, U = np.linalg.eig(matrix_final)
-        print(np.min(np.abs(A)))
-        in_list = np.arange(1, n+2, 1)
+        A, U = np.linalg.eigh(matrix_final)
+        in_list = np.arange(0, n+1, 1)
         EIG_STATE = np.abs(U[:, np.argmin(np.abs(A))])
         EIG_STATE = (1/np.linalg.norm(EIG_STATE)) * EIG_STATE
-        #print(np.min(A))
+
     else:
         A, U = np.linalg.eig(matrix_final)
-        in_list = np.arange(1, n+1, 1)
+        in_list = np.arange(0, n+1, 1)
         EIG_STATE = np.abs(U[:, np.argmin(np.abs(A))])
         EIG_STATE = (1/np.linalg.norm(EIG_STATE)) * EIG_STATE
-        #print(np.min(np.abs(A)))
+
 
     plt.subplot()
     plt.plot(in_list, EIG_STATE, marker = ".", linestyle = '-', color = 'r', label = 'E = ' + str(np.min(np.abs(A))))
@@ -77,7 +76,7 @@ def LACZOS_COEF_vary_gam_SIM(n, size, gamma, params):
     plt.suptitle(title)
     plt.xlabel("n")
     plt.ylabel("Eigenvector Components")
-    plt.ylim(0, 0.05)
+    #plt.ylim(0, 0.05)
     plt.legend()
     plt.tight_layout()
     plt.savefig("eigenval_graphs_krylov_matrix.png", dpi=300, bbox_inches='tight')

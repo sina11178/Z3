@@ -70,6 +70,7 @@ class model_NearlyZero_Z3_EM:
     def H_modf_Baxter(self, myL, myf, myJ, myphi, myhc): #H_pott(myL::Int, myf::Float 1D array, myJ::Float, myh::Float 1D array, myphi::Float, myhc::Float, myg::Float)
         w=np.e**(1.j*2*np.pi/3.0)
         myMTX = sparse.lil_matrix((self.deg**myL, self.deg**myL),dtype=complex)
+        #print(self.tau_x)
         for mystate in range(self.deg**myL):
             ni_all = self.ni_list(myL, mystate) 
             for n in range(myL-1):

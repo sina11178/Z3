@@ -14,16 +14,26 @@ from scipy.fft import fft, fftfreq
 
 
 
-L = int(sys.argv[1])
-J = float(sys.argv[2])
-f = float(sys.argv[3])
-phi = float(sys.argv[4])*(np.pi/6)
-Nt = int(sys.argv[5]) #number of times selection to be calculated
-Finding = str(sys.argv[6]) #'yes' --> Krylov yes, 'no' --> Krylov no, 'GS, Gram-Schmit, 'Diagonal' --> diagonalize
-Wf = float(sys.argv[7])
-hc = float(sys.argv[8])
-SSH_n = int(sys.argv[9])
-Model = str(sys.argv[10])
+#L = int(sys.argv[1])
+L = 5
+#J = float(sys.argv[2])
+J = 1.0
+#f = float(sys.argv[3])
+f = 0.1
+#phi = float(sys.argv[4])*(np.pi/6)
+phi = 0
+#Nt = int(sys.argv[5]) #number of times selection to be calculated
+Nt = 10
+#Finding = str(sys.argv[6]) #'yes' --> Krylov yes, 'no' --> Krylov no, 'GS, Gram-Schmit, 'Diagonal' --> diagonalize
+Finding = 'no'
+#Wf = float(sys.argv[7])
+Wf = 0.0
+#hc = float(sys.argv[8])
+hc = 0
+#SSH_n = int(sys.argv[9])
+SSH_n = 3
+#Model = str(sys.argv[10])
+Model = '3'
 T = 1.0
 print("L=", L, ", Wf = ", Wf)
 #####################
@@ -39,8 +49,8 @@ print("L=", L, ", Wf = ", Wf)
 
 model1 = model_NearlyZero_Z3_EM(L)
 
-Dis_f = [_+f for _ in Wf*(np.random.random(L)*2.-1.)]
-
+#Dis_f = [_+f for _ in Wf*(np.random.random(L)*2.-1.)]
+Dis_f = [0.0+f for k in range(L)]
 
 ### testing the Baxter model ###
 H = model1.H_Baxter(L, Dis_f, J, phi, hc)
@@ -57,6 +67,8 @@ Hmb = model1.H_modf_Baxter(L, Dis_f, J, phi, hc)
 x_Hmb = model1.x_H_modf_Baxter(L, Dis_f, J,  phi, hc)
 Umb, Vmb = np.linalg.eig(Hmb.todense())
 xUmb, xVmb = np.linalg.eig(x_Hmb.todense())
+np.save('Saeed_ModifiedBaxter.npy', Hmb.todense())  # COMPARE WITH YOURS
+print('SAVED')
 #print("Hmb:\n ", np.round(Hmb.A, 3))
 #print("x_Hmb:\n ", np.round(x_Hmb.A, 2)) 
 #print(np.round(model1.complex_sort(Umb), 3))

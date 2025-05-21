@@ -44,10 +44,24 @@ def f_phi_autocorrelator_SIMULATION_EXCEL(init_time, fin_time, interval, size, a
 
     print('SUCCESS')
 
+def time_sequence(myn, mys, mym):
+    sequ=[]
+    i=0
+    for x in range(myn):
+        if x < mys:
+            i = (i + x)
+        if x >= mys:
+            i = (i + x)*mym
+        sequ.append(int(i))
+    return sequ
+
+
+
+
 
 def f_phi_autocorrelator_SIMULATION_NPY(init_time, fin_time, interval, size, array_params, gamma): # COMPARES SYSTEMS W DIFFERENT PARAMS AT SAME SIZE
-    in_list = list_inputs(init_time, fin_time, interval)  # GIVES LIST OF NUMPY ARRAYS
-    #out_list = [0] * len(in_list)
+    #in_list = list_inputs(init_time, fin_time, interval)  # GIVES LIST OF NUMPY ARRAYS
+    in_list = [np.log(np.array(time_sequence(42, 15, 2.6))), np.array(time_sequence(42, 15, 2.6))]
     in_list_exp = np.ndarray.tolist(in_list[1])
     return_list = [in_list_exp]
     hamiltonians = []
@@ -56,9 +70,10 @@ def f_phi_autocorrelator_SIMULATION_NPY(init_time, fin_time, interval, size, arr
         H_dag = np.conjugate(H_1.T)
         H = H_1 + (gamma * H_dag)
         hamiltonians.append(H)
+        np.save('Sina_ModifiedBaxter.npy', H)
 
     for k in range(len(hamiltonians)):
-        return_list.append(np.ndarray.tolist(output_list(in_list_exp, size, hamiltonians[k], gamma)))  # LIST W/ OUTPUTS OF DIFF PARAMS
+        return_list.append(np.ndarray.tolist(np.abs(output_list(in_list_exp, size, hamiltonians[k], gamma))))  # LIST W/ OUTPUTS OF DIFF PARAMS
 
     
     #  Name EXCEL based on date

@@ -25,10 +25,10 @@ L_array = [5, 6, 7, 8]
 #size_autocorrelator_SIMULATION_NPY(0, 30, .5, L_array[int(int(sys.argv[1]) % 4)], array, gamma_array[int(int(sys.argv[1])/4)])
 
 
-#f_phi_autocorrelator_SIMULATION_NPY(0, 30, .5, L, [[.1, 0]], -1.5)
+#f_phi_autocorrelator_SIMULATION_NPY(0, 30, .5, 5, [[0.1, 0]], 0.4)
 
 # FOR RUNNING ON CLUSTER
 
 #size_autocorrelator_SIMULATION_NPY(0, 30, .5, L_array, array_parameters[int(sys.argv[1])], 1)
 
-LACZOS_COEF_vary_gam_SIM(40, 4, .9, [.48, cm.pi/6])
+LACZOS_COEF_vary_gam_SIM(28, 5, 0, [0.48, np.pi/6])
