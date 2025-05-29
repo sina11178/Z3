@@ -43,7 +43,9 @@ def LACZOS_COEF_vary_gam_SIM(n, size, gamma, params):
     #plt.plot(np.array(in_list), np.array(b_values), marker = ".", linestyle = '-', color = 'r', label = 'Recursive')
     #plt.plot(np.array(in_list_2), np.array(b_values_2), marker = ".", linestyle = '-', color = 'g', label = 'GS')
     F = matrix_final.real
-    plt.imshow(F, cmap='viridis', aspect='auto')
+    plt.imshow(F, cmap='seismic', aspect='auto')
+    plt.clim(-np.max(np.abs(F)), np.max(np.abs(F)))
+    #plt.clim(-0.05, 0.05)
     plt.colorbar(label='Value')  # ← this adds the side bar
     plt.title(title)
     plt.xlabel('Column Index')
@@ -61,22 +63,36 @@ def LACZOS_COEF_vary_gam_SIM(n, size, gamma, params):
         A, U = np.linalg.eigh(matrix_final)
         in_list = np.arange(0, n+1, 1)
         EIG_STATE = np.abs(U[:, np.argmin(np.abs(A))])
+        sorted = np.sort(np.abs(A))
+        EIG_STATE_2 = np.abs(U[:, np.abs(A).argsort()[1]])  # Second smallest eigenvalue
         EIG_STATE = (1/np.linalg.norm(EIG_STATE)) * EIG_STATE
+        EIG_STATE_2 = (1/np.linalg.norm(EIG_STATE_2)) * EIG_STATE_2
 
     else:
         A, U = np.linalg.eig(matrix_final)
+        #print(np.imag(A))
         in_list = np.arange(0, n+1, 1)
         EIG_STATE = np.abs(U[:, np.argmin(np.abs(A))])
+        sorted = np.sort(np.abs(A))
+        EIG_STATE_2 = np.abs(U[:, np.abs(A).argsort()[1]])
         EIG_STATE = (1/np.linalg.norm(EIG_STATE)) * EIG_STATE
-
+        EIG_STATE_2 = (1/np.linalg.norm(EIG_STATE_2)) * EIG_STATE_2
+        Abs_A = np.abs(A)
 
     plt.subplot()
     plt.plot(in_list, EIG_STATE, marker = ".", linestyle = '-', color = 'r', label = 'E = ' + str(np.min(np.abs(A))))
+    plt.plot(in_list, EIG_STATE_2, marker = ".", linestyle = '-', color = 'g', label = 'E = ' + str(sorted[1]))
     title = str(params[0]) + ", " + str(params[1]) + "  " + "(f, PHI)" + " gam = " + str(gamma) + " Eigenvector graph (L = " + str(size) + ")"
     plt.suptitle(title)
     plt.xlabel("n")
     plt.ylabel("Eigenvector Components")
-    #plt.ylim(0, 0.05)
+    plt.ylim(-.001, 0.1)
     plt.legend()
     plt.tight_layout()
     plt.savefig("eigenval_graphs_krylov_matrix.png", dpi=300, bbox_inches='tight')
+
+
+    # plt.figure()
+    # plt.plot(in_list, Abs_A, marker = ".")
+    # plt.tight_layout()
+    # plt.show()
