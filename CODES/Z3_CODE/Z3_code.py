@@ -28,7 +28,7 @@ sigma = [
     [0, 0, w**2]
 ]
 
-clock = [
+clock = [  # TAU SQUARED
     [0, 0, 1],
     [1, 0, 0],
     [0, 1, 0]
@@ -97,7 +97,7 @@ def term_one(length, Jay, PHI):
 
         list_2.append(tensor_product(list, length)) #  Performs tensor product and puts them in a list
 
-    H_XX = -Jay * np.exp(PHI * -1.j) * adding_matrixes_in_list(list_2, length)
+    H_XX = -Jay * np.exp(PHI * 1.j) * adding_matrixes_in_list(list_2, length)  # NOTE: DOUBLE CHECK PHI SIGN
 
     return H_XX
 
@@ -115,7 +115,7 @@ def term_two(F, length):
         list[i] = np_CLK
         list_2.append(tensor_product(list, length)) #  Performs tensor product and puts them in a list
     #print(list_2)
-    CLOCK_SUM = -F * w* adding_matrixes_in_list(list_2, length)  # NOTE: SAEED DOES NOT HAVE A w PREFACTOR FOR THIS TERM
+    CLOCK_SUM = -F * adding_matrixes_in_list(list_2, length)  # NOTE: SAEED DOES NOT HAVE A w PREFACTOR FOR THIS TERM
 
     return CLOCK_SUM
 
@@ -312,6 +312,7 @@ def grahm_schmidt(n, H, size):
     for i in range(size):
         list.append(np_I)
     list[0] = np_SIG
+    #list[0] = np.conjugate(np_SIG.T)  # FOR ALPHA^2 OPERATOR
 
     strong_mode = tensor_product(list, size)
     O_0 = ((strong_mode.T).flatten())

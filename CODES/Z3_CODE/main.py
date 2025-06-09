@@ -31,5 +31,5 @@ L_array = [5, 6, 7, 8]
 
 #size_autocorrelator_SIMULATION_NPY(0, 30, .5, L_array, array_parameters[int(sys.argv[1])], 1)
 
-LACZOS_COEF_vary_gam_SIM(28, 5, 0, [0.1, np.pi/6])
+LACZOS_COEF_vary_gam_SIM(60, 5, 0, [.1, np.pi/6])
 #LACZOS_COEF_vary_gam_SIM(28, 5, 0, [0.1, 0])
