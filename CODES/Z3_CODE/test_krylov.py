@@ -5,13 +5,15 @@ import pandas as pd
 import scipy.sparse as sci
 from scipy.linalg import qr
 from scipy.sparse.linalg import eigs
+from scipy.sparse import csr_matrix
+
 #import scipy
 
 # PARAMETERS TO DEFINE IN HAMILTONIAN
 J = 1
-phi = np.pi/6  # PHASE FACTOR
-f = .1
-L = 5 # SYSTEM SIZE
+phi = 0 * np.pi/6  # PHASE FACTOR
+f = .4
+L = 6 # SYSTEM SIZE
 #gamma = 1  # DETERMINES HERMICITY
 
 w = np.exp((2 * np.pi * 1.j)/3)  # For defining Sigma operator
@@ -128,10 +130,10 @@ def term_two_SIGMA(F, length):
     return CLOCK_SUM
 
 def Liovillan(Hamiltonian, size): #  Liovillan only applied to a matrix converted to vector
-    I = sci.eye(3**size, format='csr')
+    ID = sci.eye(3**size, format='csr')
     Hamiltonian = sci.csr_matrix(Hamiltonian)
-    S_1 = sci.kron(I, Hamiltonian)
-    S_2 = sci.kron((Hamiltonian.T), I)
+    S_1 = sci.kron(ID, Hamiltonian)
+    S_2 = sci.kron((Hamiltonian.T), ID)
     #S_1 = np.kron(Hamiltonian, I)
     #S_2 = np.kron(I, Hamiltonian)
     #print(S_1)
@@ -139,104 +141,103 @@ def Liovillan(Hamiltonian, size): #  Liovillan only applied to a matrix converte
     return (S_1+(-1*S_2))
 
 
-def grahm_schmidt_a(n, H, size):
-    Lio = Liovillan(H, size)
-    list = []
-    for i in range(size):
-        list.append(np_I)
-    list[0] = np_SIG
-    #list[0] = np.conjugate(np_SIG.T)  # FOR ALPHA^2 OPERATOR
+# def grahm_schmidt_a(n, H, size):
+#     Lio = Liovillan(H, size)
+#     list = []
+#     for i in range(size):
+#         list.append(np_I)
+#     list[0] = np_SIG
+#     #list[0] = np.conjugate(np_SIG.T)  # FOR ALPHA^2 OPERATOR
 
-    strong_mode = tensor_product(list, size)
-    O_0 = ((strong_mode.T).flatten())
-    gs_basis_non_ortho = [O_0]
+#     strong_mode = tensor_product(list, size)
+#     O_0 = ((strong_mode.T).flatten())
+#     gs_basis_non_ortho = [O_0]
 
-    for j in range(1, n+1):
-        p = Lio @ gs_basis_non_ortho[j-1]
-        #f = (((H @ np.reshape(gs_basis_non_ortho[j-1], (3**size, 3**size)).T) - (np.reshape(gs_basis_non_ortho[j-1], (3**size, 3**size)).T @ H)).T).flatten()
-        gs_basis_non_ortho.append(p)
+#     for j in range(1, n+1):
+#         p = Lio @ gs_basis_non_ortho[j-1]
+#         #f = (((H @ np.reshape(gs_basis_non_ortho[j-1], (3**size, 3**size)).T) - (np.reshape(gs_basis_non_ortho[j-1], (3**size, 3**size)).T @ H)).T).flatten()
+#         gs_basis_non_ortho.append(p)
 
-    print('\nDot of |O) and L|O)')
-    print(gs_basis_non_ortho[0] @ gs_basis_non_ortho[6])
+#     print('\nDot of |O) and L|O)')
+#     print(gs_basis_non_ortho[0] @ gs_basis_non_ortho[6])
 
-    for k in range(len(gs_basis_non_ortho)):
-        gs_basis_non_ortho[k] = gs_basis_non_ortho[k].tolist()  # Convert to list for easier manipulation
+#     for k in range(len(gs_basis_non_ortho)):
+#         gs_basis_non_ortho[k] = gs_basis_non_ortho[k].tolist()  # Convert to list for easier manipulation
 
-    gs_basis_non_ortho = np.array(gs_basis_non_ortho, dtype=complex).T  # Convert to numpy array for calculations
+#     gs_basis_non_ortho = np.array(gs_basis_non_ortho, dtype=complex).T  # Convert to numpy array for calculations
 
-    n = gs_basis_non_ortho.shape[1]  # Number of vectors in the basis
-    Q = np.zeros_like(gs_basis_non_ortho, dtype=np.complex128)  # Initialize orthogonal basis
-    R = np.zeros((n, n), dtype=np.complex128)
+#     n = gs_basis_non_ortho.shape[1]  # Number of vectors in the basis
+#     Q = np.zeros_like(gs_basis_non_ortho, dtype=np.complex128)  # Initialize orthogonal basis
+#     R = np.zeros((n, n), dtype=np.complex128)
 
-    for i in range(n):
-        v = gs_basis_non_ortho[:, i]
-        #print('MAX V ABS:')
-        #print(np.max(np.abs(v)))
-        #print(v.shape)
-        for j in range(i):
-            R[j, i] = np.vdot(Q[:, j], v)  # Inner product
-            v -= R[j, i] * Q[:, j]
-        R[i, i] = np.linalg.norm(v)
-        if R[i, i] < 1e-12:
-            raise ValueError("Vectors are linearly dependent or nearly so")
-    #print('MIN R DIAG: (SIG_Dagger)')
-    #print(np.min(np.abs(np.diag(R))))
-        Q[:, i] = v / R[i, i]
+#     for i in range(n):
+#         v = gs_basis_non_ortho[:, i]
+#         #print('MAX V ABS:')
+#         #print(np.max(np.abs(v)))
+#         #print(v.shape)
+#         for j in range(i):
+#             R[j, i] = np.vdot(Q[:, j], v)  # Inner product
+#             v -= R[j, i] * Q[:, j]
+#         R[i, i] = np.linalg.norm(v)
+#         if R[i, i] < 1e-12:
+#             raise ValueError("Vectors are linearly dependent or nearly so")
+#     #print('MIN R DIAG: (SIG_Dagger)')
+#     #print(np.min(np.abs(np.diag(R))))
+#         Q[:, i] = v / R[i, i]
 
-    matrix_final = np.zeros((n,n), dtype=complex)
-    for j in range(n):
-        k = Lio @ Q[:, j]
-        for i in range(n):
-            matrix_final[i, j] = np.conjugate(Q[:, i]) @ k
+#     matrix_final = np.zeros((n,n), dtype=complex)
+#     for j in range(n):
+#         k = Lio @ Q[:, j]
+#         for i in range(n):
+#             matrix_final[i, j] = np.conjugate(Q[:, i]) @ k
 
-    return matrix_final
+#     return matrix_final
 
-def grahm_schmidt_a_squared(n, H, size):
-    Lio = Liovillan(H, size)
-    list = []
-    for i in range(size):
-        list.append(np_I)
-    list[0] = np_SIG
-    #list[0] = np_SIG @ np_SIG  # FOR ALPHA^2 OPERATOR
+# def grahm_schmidt_a_squared(n, H, size):
+#     Lio = Liovillan(H, size)
+#     list = []
+#     for i in range(size):
+#         list.append(np_I)
+#     list[0] = np_SIG
+#     #list[0] = np_SIG @ np_SIG  # FOR ALPHA^2 OPERATOR
+#     strong_mode = tensor_product(list, size)
+#     O_0 = ((strong_mode.T).flatten())
+#     gs_basis_non_ortho = [O_0]
 
-    strong_mode = tensor_product(list, size)
-    O_0 = ((strong_mode.T).flatten())
-    gs_basis_non_ortho = [O_0]
+#     for j in range(1, n+1):
+#         p = Lio @ gs_basis_non_ortho[j-1]
+#         #f = (((H @ np.reshape(gs_basis_non_ortho[j-1], (3**size, 3**size)).T) - (np.reshape(gs_basis_non_ortho[j-1], (3**size, 3**size)).T @ H)).T).flatten()
+#         gs_basis_non_ortho.append(p)
+#     for k in range(len(gs_basis_non_ortho)):
+#         gs_basis_non_ortho[k] = gs_basis_non_ortho[k].tolist()  # Convert to list for easier manipulation
+#     gs_basis_non_ortho = np.array(gs_basis_non_ortho, dtype=complex).T  # Convert to numpy array for calculations
 
-    for j in range(1, n+1):
-        p = Lio @ gs_basis_non_ortho[j-1]
-        #f = (((H @ np.reshape(gs_basis_non_ortho[j-1], (3**size, 3**size)).T) - (np.reshape(gs_basis_non_ortho[j-1], (3**size, 3**size)).T @ H)).T).flatten()
-        gs_basis_non_ortho.append(p)
-    for k in range(len(gs_basis_non_ortho)):
-        gs_basis_non_ortho[k] = gs_basis_non_ortho[k].tolist()  # Convert to list for easier manipulation
-    gs_basis_non_ortho = np.array(gs_basis_non_ortho, dtype=complex).T  # Convert to numpy array for calculations
+#     n = gs_basis_non_ortho.shape[1]  # Number of vectors in the basis
+#     Q = np.zeros_like(gs_basis_non_ortho, dtype=np.complex128)  # Initialize orthogonal basis
+#     R = np.zeros((n, n), dtype=np.complex128)
 
-    n = gs_basis_non_ortho.shape[1]  # Number of vectors in the basis
-    Q = np.zeros_like(gs_basis_non_ortho, dtype=np.complex128)  # Initialize orthogonal basis
-    R = np.zeros((n, n), dtype=np.complex128)
+#     for i in range(n):
+#         v = gs_basis_non_ortho[:, i]
+#         #print('MAX V ABS:')
+#         #print(np.max(np.abs(v)))
+#         #print(v.shape)
+#         for j in range(i):
+#             R[j, i] = np.vdot(Q[:, j], v)  # Inner product
+#             v -= R[j, i] * Q[:, j]
+#         R[i, i] = np.linalg.norm(v)
+#         if R[i, i] < 1e-12:
+#             raise ValueError("Vectors are linearly dependent or nearly so")
+#     #print('MIN R DIAG: (SIG_Dagger)')
+#     #print(np.min(np.abs(np.diag(R))))
+#         Q[:, i] = v / R[i, i]
 
-    for i in range(n):
-        v = gs_basis_non_ortho[:, i]
-        #print('MAX V ABS:')
-        #print(np.max(np.abs(v)))
-        #print(v.shape)
-        for j in range(i):
-            R[j, i] = np.vdot(Q[:, j], v)  # Inner product
-            v -= R[j, i] * Q[:, j]
-        R[i, i] = np.linalg.norm(v)
-        if R[i, i] < 1e-12:
-            raise ValueError("Vectors are linearly dependent or nearly so")
-    #print('MIN R DIAG: (SIG_Dagger)')
-    #print(np.min(np.abs(np.diag(R))))
-        Q[:, i] = v / R[i, i]
+#     matrix_final = np.zeros((n,n), dtype=complex)
+#     for j in range(n):
+#         k = Lio @ Q[:, j]
+#         for i in range(n):
+#             matrix_final[i, j] = np.conjugate(Q[:, i]) @ k
 
-    matrix_final = np.zeros((n,n), dtype=complex)
-    for j in range(n):
-        k = Lio @ Q[:, j]
-        for i in range(n):
-            matrix_final[i, j] = np.conjugate(Q[:, i]) @ k
-
-    return matrix_final
+#     return matrix_final
 
 def GS_NEW(n, H, size):
     Lio = Liovillan(H, size)
@@ -459,41 +460,96 @@ n[1] = np_CLK @ np_CLK
 n[2] = np_SIG
 alpha_5 = tensor_product(n, L)
 
+# def sparse_gram_schmidt(basis, tol=1e-12):
+#     """Orthonormalize a list of sparse column vectors using Modified Gram-Schmidt."""
+#     Q = []
+#     for i, v in enumerate(basis):
+#         v = v.copy()
+#         for q in Q:
+#             proj_coeff = q.conj().T @ v
+#             v = v - q * proj_coeff[0, 0]
+#         norm_squared = (v.conj().T @ v)[0, 0]
+#         norm = np.sqrt(norm_squared)
+#         Q.append(v / norm)
+#     return Q
+
+
+# def grahm_schmidt(n, H, size):
+#     Lio = Liovillan(H, size)
+#     list = []
+#     for i in range(size):
+#         list.append(np_I)
+#     list[0] = (np_SIG)
+#     #list[0] = np.conjugate(np_SIG.T)  # FOR ALPHA^2 OPERATOR
+
+#     #strong_mode = alph_3
+#     strong_mode = tensor_product(list, size) 
+#     #strong_mode = tensor_product(list, size)
+#     #strong_mode = tensor_product(list, size) +  alph_3 + (np.conjugate(alph_3).T) @ (np.conjugate(tensor_product(list, size).T))
+#     #strong_mode = tensor_product(list, size) + ((f*w/(J*np.exp(1.j*phi)))**2) * alph_3 # + ((w+1) * (f*w/(J*np.exp(1.j*phi))) * (np.conjugate(alph_3).T) @ (np.conjugate(tensor_product(list, size).T)))
+#     #strong_mode = tensor_product(list, size) + ((w+1) * (f*w/(J*np.exp(1.j*phi))) * (np.conjugate(alph_3).T) @ (np.conjugate(tensor_product(list, size).T)))
+#     #strong_mode = tensor_product(list, size) + ((w+1) * (f*w/(J*np.exp(1.j*phi))**3) * (np.conjugate(alpha_5).T) @ (np.conjugate(tensor_product(list, size))).T)
+#     O_0 = csr_matrix((strong_mode.T).flatten()).T
+#     gs_basis_non_ortho = [O_0]
+    
+#     for P in range(1, n+1):
+#         K = Lio @ gs_basis_non_ortho[P-1]
+#         #f = (((H @ np.reshape(gs_basis_non_ortho[j-1], (3**size, 3**size)).T) - (np.reshape(gs_basis_non_ortho[j-1], (3**size, 3**size)).T @ H)).T).flatten()
+#         gs_basis_non_ortho.append(K)
+
+#     # gs_basis_non_ortho_matrix = np.column_stack(gs_basis_non_ortho)
+#     # Q, R = np.linalg.qr(gs_basis_non_ortho_matrix)
+#     orthonormal_basis = sparse_gram_schmidt(gs_basis_non_ortho)
+
+#     l = len(gs_basis_non_ortho)
+#     matrix_final = np.zeros((l,l), dtype=complex)
+#     for j in range(l):
+#         c = Lio @ orthonormal_basis[j]
+#         for i in range(l):
+#             matrix_final[i, j] = orthonormal_basis[i].T.conj().dot(c)[0, 0]
+#             #matrix_final[i, j] = orthonormal_basis[i].T.dot(c)[0, 0]
+#     return matrix_final
+
 def grahm_schmidt(n, H, size):
-    L = Liovillan(H, size)
+    Lio = Liovillan(H, size)
     list = []
     for i in range(size):
         list.append(np_I)
     list[0] = np_SIG
+    #list[0] = np.conjugate(np_SIG).T # FOR ALPHA^2 OPERATOR
+    #strong_mode = alph_3  # tensor_product(list, size)
     #list[0] = np.conjugate(np_SIG.T)  # FOR ALPHA^2 OPERATOR
-
-    strong_mode = tensor_product(list, size) + ((w+1) * (f*w/(J*np.exp(1.j*phi))) * (np.conjugate(alph_3).T) @ (np.conjugate(tensor_product(list, size).T)))
-    #strong_mode = tensor_product(list, size) + ((w+1) * (f*w/(J*np.exp(1.j*phi))**3) * (np.conjugate(alpha_5).T) @ (np.conjugate(tensor_product(list, size))).T)
-    O_0 = ((strong_mode.T).flatten())
+    seeding = tensor_product(list, size)
+    #strong_mode = tensor_product(list, size) + (f*w/(J*np.exp(1.j*phi))) * np.conjugate(alph_3).T
+    O_0 = ((seeding.T).flatten())
     gs_basis_non_ortho = [O_0]
 
     for P in range(1, n+1):
-        K = L @ gs_basis_non_ortho[P-1]
+        K = Lio @ gs_basis_non_ortho[P-1]
         #f = (((H @ np.reshape(gs_basis_non_ortho[j-1], (3**size, 3**size)).T) - (np.reshape(gs_basis_non_ortho[j-1], (3**size, 3**size)).T @ H)).T).flatten()
         gs_basis_non_ortho.append(K)
-
+    print('EXPERIMENT/TEST')
+    print(type(gs_basis_non_ortho[0]))
+    print(gs_basis_non_ortho[0].shape)
     gs_basis_non_ortho_matrix = np.column_stack(gs_basis_non_ortho)
     Q, R = np.linalg.qr(gs_basis_non_ortho_matrix)
 
     l = len(gs_basis_non_ortho)
     matrix_final = np.zeros((l,l), dtype=complex)
     for j in range(l):
-        k = L @ Q[:, j]
+        c = Lio @ Q[:, j]
         for i in range(l):
-            matrix_final[i, j] = np.conjugate(Q[:, i]) @ k
+            matrix_final[i, j] = np.conjugate(Q[:, i]) @ c
     return matrix_final
 
+
+
 def grahm_schmidt_squared(n, H, size):
-    L = Liovillan(H, size)
+    Lio = Liovillan(H, size)
     list = []
     for i in range(size):
         list.append(np_I)
-    #list[0] = np_SIG @ np_SIG
+    #list[0] = np_SIG
     list[0] = np.conjugate(np_SIG).T # FOR ALPHA^2 OPERATOR
 
     #list[0] = np.conjugate(np_SIG.T)  # FOR ALPHA^2 OPERATOR
@@ -503,7 +559,7 @@ def grahm_schmidt_squared(n, H, size):
     gs_basis_non_ortho = [O_0]
 
     for P in range(1, n+1):
-        K = L @ gs_basis_non_ortho[P-1]
+        K = Lio @ gs_basis_non_ortho[P-1]
         #f = (((H @ np.reshape(gs_basis_non_ortho[j-1], (3**size, 3**size)).T) - (np.reshape(gs_basis_non_ortho[j-1], (3**size, 3**size)).T @ H)).T).flatten()
         gs_basis_non_ortho.append(K)
 
@@ -513,85 +569,64 @@ def grahm_schmidt_squared(n, H, size):
     l = len(gs_basis_non_ortho)
     matrix_final = np.zeros((l,l), dtype=complex)
     for j in range(l):
-        k = L @ Q[:, j]
+        c = Lio @ Q[:, j]
         for i in range(l):
-            matrix_final[i, j] = np.conjugate(Q[:, i]) @ k
+            matrix_final[i, j] = np.conjugate(Q[:, i]) @ c
     return matrix_final
 
 
-
-def NO_GS(n, H, size):
-    L = Liovillan(H, size)
-    list = []
-    for i in range(size):
-        list.append(np_I)
-    list[0] = np_SIG
-    #list[0] = np.conjugate(np_SIG.T)  # FOR ALPHA^2 OPERATOR
-
-    strong_mode = tensor_product(list, size)
-    O_0 = ((strong_mode.T).flatten())
-    gs_basis_non_ortho = [O_0]
-
-    for j in range(1, n+1):
-        #f = L @ gs_basis_non_ortho[j-1]
-        f = (((H @ np.reshape(gs_basis_non_ortho[j-1], (3**size, 3**size)).T) - (np.reshape(gs_basis_non_ortho[j-1], (3**size, 3**size)).T @ H)).T).flatten()
-        gs_basis_non_ortho.append(f)
-
-    # gs_basis_non_ortho_matrix = np.column_stack(gs_basis_non_ortho)
-    # Q, R = np.linalg.qr(gs_basis_non_ortho_matrix)
-
-
-    l = len(gs_basis_non_ortho)
-    matrix_final = np.zeros((l,l), dtype=complex)
-    for j in range(l):
-        k = L @ gs_basis_non_ortho[j]
-        for i in range(l):
-            matrix_final[i, j] = np.conjugate(gs_basis_non_ortho[i]) @ k
-    return matrix_final
-
+GAMM = 0
 H_SIGMA = term_one_SIGMA(length=L, Jay=J, PHI=phi) + term_two_SIGMA(F=f, length=L)
-H_SIGMA = H_SIGMA + 0 * np.conjugate(H_SIGMA.T)  # Make Hermitian
-print('Difference between SIG^2 and SIG^t:')
+H_SIGMA = H_SIGMA + GAMM * np.conjugate(H_SIGMA.T)  # Make Hermitian
+#print('Difference between SIG^2 and SIG^t:')
 #print(np.max(np.abs((np_SIG @ np_SIG) - np.conjugate(np_SIG).T)))
-print(np.max(((0.5*(np_SIG @ np_SIG + np.conjugate(np_SIG).T)) - np.conjugate(np_SIG).T)))
+#print(np.max(((0.5*(np_SIG @ np_SIG + np.conjugate(np_SIG).T)) - np.conjugate(np_SIG).T)))
 
-p = 61 # NUMBER OF ITERATIONS
+p = 15 # NUMBER OF ITERATIONS
 #matrix_final_a = GS_NEWER(p, H_SIGMA, L)
-matrix_final_a = grahm_schmidt(p, H_SIGMA, L)
-matrix_final_a_squared = grahm_schmidt_squared(p, H_SIGMA, L)
+matrix_final_a = grahm_schmidt(p, H_SIGMA, L)  # SEED OPERATOR IS ALPHA_1
+matrix_final_a_squared = grahm_schmidt_squared(p, H_SIGMA, L)  # SEED Operator IS (ALPHA_1)^2
 
-A_dagg, U_dagg = np.linalg.eig(matrix_final_a)
+print(type(matrix_final_a[1,1]))
+
+A, U = np.linalg.eig(matrix_final_a)
 A_sqr, U_sqr = np.linalg.eig(matrix_final_a_squared)
 
-EIG_SQR = U_sqr[:, np.argmin(np.abs(A_sqr))]
-EIG_dagg = U_dagg[:, np.argmin(np.abs(A_dagg))]
+EIG_SQR = U_sqr[:, np.argmin(np.abs(A_sqr))]  # Smallest eigenvalue eigenvector of squared operator
+EIG_SINGLE = U[:, np.argmin(np.abs(A))]  # Smallest eigenvalue eigenvector of single operator
 
 print('\nABS OF DIFF OF MIN EIGENVALUE EIGENVECTOR')
-print(np.max(np.abs(EIG_SQR) - np.abs(EIG_dagg)))
+print(np.max(np.abs(EIG_SQR) - np.abs(EIG_SINGLE)))
 
 
 difference_1 = (np.abs(matrix_final_a) - np.abs(matrix_final_a_squared))
 print('\nDifference between Krylov Matrix Outputs:')
 print(np.max(np.abs(difference_1)))
 print(np.max(matrix_final_a.real - matrix_final_a_squared.real))
-#F_1 = np.abs(matrix_final_a)
+F_2 = np.abs(matrix_final_a)
 F_1 = np.abs(matrix_final_a_squared)
-#plt.subplot(1, 2, 1)
+plt.subplot(1, 2, 1)
 plt.imshow(F_1, cmap='seismic', aspect='auto')
 plt.colorbar(label='Value')
-plt.title('Graham Schmidt')
+#plt.clim(0, 3.2)
+plt.title('alpha_1_squared (abs value of matrix)')
 plt.xlabel('Column Index')
 plt.ylabel('Row Index')
-# plt.subplot(1, 2, 2)
-# plt.imshow(F_2, cmap='seismic', aspect='auto')
-# plt.colorbar(label='Value')
-# plt.title('Graham Schmidt Squared')
-# plt.xlabel('Column Index')
-# plt.ylabel('Row Index')
+
+plt.subplot(1, 2, 2)
+plt.imshow(F_2, cmap='seismic', aspect='auto')
+plt.colorbar(label='Value')
+#plt.clim(0, 1.8)
+plt.title('alpha_1 (abs value of matrix)')
+plt.xlabel('Column Index')
+plt.ylabel('Row Index')
+
+#plt.clim(-.1, .1)
 plt.tight_layout()
+plt.savefig('Krylov_Matrices.pdf')
 plt.show()
 
-A, U = np.linalg.eig((matrix_final_a))
+#A, U = np.linalg.eig((matrix_final_a))  # Get eigenvalues and eigenvectors
 #A_sqr, U_sqr = np.linalg.eig(matrix_final_a_squared)
 #print(np.imag(A))
 in_list = np.arange(0, p+1, 1)
@@ -599,23 +634,25 @@ EIG_STATES = []
 # EIG_STATE = np.abs(U[:, np.argmin(np.abs(A))])
 sorted = np.sort(np.abs(A))
 sort_sqr = np.sort(np.abs(A_sqr))
-print(sorted[6])
+#print(sorted[6])
 # EIG_STATE_2 = np.abs(U[:, np.abs(A).argsort()[1]])
 # EIG_STATE = (1/np.linalg.norm(EIG_STATE)) * EIG_STATE
 # EIG_STATE_2 = (1/np.linalg.norm(EIG_STATE_2)) * EIG_STATE_2
 # Abs_A = np.abs(A)
 for i in range(len(A)):
-    EIG_STATE = (U[:, np.abs(A).argsort()[i]])
+    #EIG_STATE = (U[:, np.abs(A).argsort()[i]])
+    EIG_STATE = U[:, np.abs(A).argsort()[i]]
     EIG_STATE = (1/np.linalg.norm(EIG_STATE)) * EIG_STATE
     #EIG_STATE = np.abs(EIG_STATE)
     EIG_STATE = np.abs(EIG_STATE)
     #print(np.linalg.norm(EIG_STATE))
     EIG_STATES.append(EIG_STATE)
 
-plt.plot(in_list, EIG_STATES[0], marker = ".", linestyle = '-', color = 'r', label = 'SINGLE E = ' + str(np.min(np.abs(A))))
-plt.plot(in_list, np.abs(EIG_SQR), marker = ".", linestyle = '-', color = 'g', label = 'SQUARED E = ' + str(np.min(np.abs(A_sqr))))
+plt.plot(in_list, EIG_STATES[0], marker = ".", linestyle = '-', color = 'r', label = 'a_1 E = ' + str(np.min(np.abs(A))))
+#plt.plot(in_list, np.abs(EIG_SQR), marker = ".", linestyle = '-', color = 'g', label = '(a_1)^dagger E = ' + str(np.min(np.abs(A_sqr))))
 plt.legend()
-plt.ylim(0, 1)
+plt.ylim(0, .2)
+plt.savefig('Krylov_Eigenvector_0.pdf')
 
 
 ncols = 4  # columns per row
