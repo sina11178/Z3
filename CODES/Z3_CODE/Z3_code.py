@@ -78,45 +78,49 @@ def adding_matrixes_in_list(array, length):  #  Used in all terms
 
 def term_one(length, Jay, PHI):
 
-    list = []
-    for k in range(length): # Initializes list to idententity operators
-        list.append(np_I)
+    #list = []
+    #for k in range(length): # Initializes list to idententity operators
+    #    list.append(np_I)
     list_2 = []  # Has all terms in a list
 
     SIG_dag = np.conjugate(np_SIG.T)
     # LIST OF DIFFERENT MATRICES ASSOCIATED WITH SITES CREATED HERE
     for i in range(length - 1):
-        for j in range(length): # Initializes list to idententity operators
-            list[j] = np_I
+        #for j in range(length): # Initializes list to idententity operators
+        #    list[j] = np_I
+        list = [np_I] * length  # Initializes list to identity operators
 
-        list[i] = np_SIG
+        list[i] = SIG_dag
         # if i == (length - 1):
         #     list[0] = np_x
         # else:
-        list[i+1] = SIG_dag
+        list[i+1] = np_SIG
 
         list_2.append(tensor_product(list, length)) #  Performs tensor product and puts them in a list
 
-    H_XX = -Jay * np.exp(PHI * 1.j) * adding_matrixes_in_list(list_2, length)  # NOTE: DOUBLE CHECK PHI SIGN
+    H_XX = -Jay * np.exp(PHI * 1.j) * adding_matrixes_in_list(list_2, length)
 
     return H_XX
 
 def term_two(F, length):
 
     list = []
-    for k in range(length): # Initializes list to idententity operators
-        list.append(np_I)
+    #for k in range(length): # Initializes list to idententity operators
+    #    list.append(np_I)
 
     list_2 = []  # Has all terms in a list
 
     for i in range(length):
-        for j in range(length): # Initializes list to idententity operators
-            list[j] = np_I
-        list[i] = np_CLK
+        #for j in range(length): # Initializes list to idententity operators
+        #    list[j] = np_I
+        list = [np_I] * length  # Initializes list to identity operators
+        list[i] = np_CLK  # Clock operator applied to Sigma operator
         list_2.append(tensor_product(list, length)) #  Performs tensor product and puts them in a list
     #print(list_2)
     CLOCK_SUM = -F * adding_matrixes_in_list(list_2, length)  # NOTE: SAEED DOES NOT HAVE A w PREFACTOR FOR THIS TERM
 
+    #print('Clock Sum:')
+    #print(CLOCK_SUM)
     return CLOCK_SUM
 
 
@@ -255,16 +259,23 @@ def recursion_method(n, H, size):
     for i in range(size):
         list.append(np_I)
     list[0] = np_SIG
+    list_squared = list
+    list_squared[0] = np.conjugate(np_SIG.T)  # FOR ALPHA^2 OPERATOR
     m = np.sqrt((1/(3**size)))
 
-    strong_mode = tensor_product(list, size)
+    seeding = tensor_product(list, size)
+    seeding_squared = tensor_product(list_squared, size)  # FOR ALPHA^2 OPERATOR
     L = Liovillan(H, size)
     b = []  # ORDER: 1, 2, ...
-    O_0 = ((strong_mode.T).flatten()) # Returns as list w/ vector inside of it;  ORDER: 0, 1, 2, ..., n
+    b_squared = []  # FOR ALPHA^2 OPERATOR
+    O_0 = ((seeding.T).flatten()) # Returns as list w/ vector inside of it;  ORDER: 0, 1, 2, ..., n
+    O_0_squared = ((seeding_squared.T).flatten())  # FOR ALPHA^2 OPERATOR
 
     #print(O_1)
     krylov_basis = [O_0]  # YOU CAN ALSO JUST NORMALIZE THIS AND LEAVE OUT THE PREFACTOR IN THE NORM FUNCTION
+    krylov_basis_squared = [O_0_squared]  # FOR ALPHA^2 OPERATOR
     A_basis = []  # ORDER: 1, 2, ...
+    A_basis_squared = []  # FOR ALPHA^2 OPERATOR
     for i in range(0, n):
         if (i == 0):  # BASE CASE
             #A_1 = L @ krylov_basis[0]
@@ -279,6 +290,17 @@ def recursion_method(n, H, size):
             O_1 = (1/(b_1))*A_1
             krylov_basis.append(O_1)
 
+            # NOTE: FOR ALPHA^2 OPERATOR
+
+            A_1_squared = (((H @ np.reshape(krylov_basis_squared[0], (3**size, 3**size)).T) -
+                           (np.reshape(krylov_basis_squared[0], (3**size, 3**size)).T @ H)).T).flatten()
+            #A_1_squared = krylov_basis_squared[0] @ np.array(L)
+            A_basis_squared.append(A_1_squared)
+            b_1_squared = m * np.linalg.norm(A_1_squared)  # FOR ALPHA^2 OPERATOR
+            b_squared.append(b_1_squared)
+            O_1_squared = (1/b_1_squared) * A_1_squared  # FOR ALPHA^2 OPERATOR
+            krylov_basis_squared.append(O_1_squared)  # FOR ALPHA^2 OP
+
         else:
             k = A_vectors(L, b, krylov_basis, i, H, size)
             A_basis.append(k)
@@ -286,15 +308,27 @@ def recursion_method(n, H, size):
             b.append(m * np.linalg.norm(k))
             krylov_basis.append((1/b[i])*A_basis[i])
 
+            # NOTE: FOR ALPHA^2 OPERATOR
+
+            k_squared = A_vectors(L, b_squared, krylov_basis_squared, i, H, size)
+            A_basis_squared.append(k_squared)
+            #b_squared.append(norm(k_squared, k_squared, size))  # FOR ALPHA^2 OPERATOR
+            b_squared.append(m * np.linalg.norm(k_squared))  # FOR ALPHA^2
+            krylov_basis_squared.append((1/b_squared[i]) * A_basis_squared[i])  # FOR ALPHA^2 OPERATOR
+
     #print(b)
 
     l = len(krylov_basis)
     matrix_final = np.zeros((l,l), dtype=complex)
+    matrix_final_squared = np.zeros((l,l), dtype=complex)  # FOR ALPHA^2 OPERATOR
     for j in range(len(krylov_basis)):
         k = L @ krylov_basis[j]
+        k_squared = L @ krylov_basis_squared[j]  # FOR ALPHA^2 OPERATOR
         for i in range(len(krylov_basis)):
             matrix_final[i, j] = np.conjugate(krylov_basis[i].T) @ k
-    return matrix_final
+            matrix_final_squared[i, j] = np.conjugate(krylov_basis_squared[i].T) @ k_squared
+    #return matrix_final
+    return [matrix_final, matrix_final_squared]  # FOR ALPHA^2 OPERATOR
     #return b
 
 
@@ -307,32 +341,52 @@ GRAHM SCHMIDT - FOR NON HERMITIAN HAMILTONIANS
 
 
 def grahm_schmidt(n, H, size):
-    L = Liovillan(H, size)
+    Lio = Liovillan(H, size)
     list = []
+    list_squared = []  # FOR ALPHA^2 OPERATOR
     for i in range(size):
         list.append(np_I)
+        list_squared.append(np_I)  # FOR ALPHA^2 OPERATOR
     list[0] = np_SIG
+    #list[0] = np.conjugate(np_SIG).T # FOR ALPHA^2 OPERATOR
+    #strong_mode = alph_3  # tensor_product(list, size)
     #list[0] = np.conjugate(np_SIG.T)  # FOR ALPHA^2 OPERATOR
-
-    strong_mode = tensor_product(list, size)
-    O_0 = ((strong_mode.T).flatten())
+    list_squared[0] = np.conjugate(np_SIG.T)  # FOR ALPHA^2 OPERATOR
+    seeding = tensor_product(list, size)
+    seeding_squared = tensor_product(list_squared, size)  # FOR ALPHA^2 OPERATOR
+    #strong_mode = tensor_product(list, size) + (f*w/(J*np.exp(1.j*phi))) * np.conjugate(alph_3).T
+    O_0 = ((seeding.T).flatten())
     gs_basis_non_ortho = [O_0]
+    #print(list == list_squared)
 
-    for j in range(1, n+1):
-        #f = L @ gs_basis_non_ortho[j-1]
-        f = (((H @ np.reshape(gs_basis_non_ortho[j-1], (3**size, 3**size)).T) - (np.reshape(gs_basis_non_ortho[j-1], (3**size, 3**size)).T @ H)).T).flatten()
-        gs_basis_non_ortho.append(f)
+    O_0_squared = ((seeding_squared.T).flatten())  # FOR ALPHA^2 OPERATOR
+    gs_basis_non_ortho_squared = [O_0_squared]  # FOR ALPHA^2 OPERATOR
+
+    for P in range(1, n+1):
+        K = Lio @ gs_basis_non_ortho[P-1]
+        K_squared = Lio @ gs_basis_non_ortho_squared[P-1]
+        #f = (((H @ np.reshape(gs_basis_non_ortho[j-1], (3**size, 3**size)).T) - (np.reshape(gs_basis_non_ortho[j-1], (3**size, 3**size)).T @ H)).T).flatten()
+        gs_basis_non_ortho.append(K)
+        gs_basis_non_ortho_squared.append(K_squared)
 
     gs_basis_non_ortho_matrix = np.column_stack(gs_basis_non_ortho)
+    gs_basis_non_ortho_matrix_squared = np.column_stack(gs_basis_non_ortho_squared)  # FOR ALPHA^2 OPERATOR
     Q, R = np.linalg.qr(gs_basis_non_ortho_matrix)
+    Q_squared, R_squared = np.linalg.qr(gs_basis_non_ortho_matrix_squared)  # FOR ALPHA^2 OPERATOR
+    #print(Q == Q_squared)
 
     l = len(gs_basis_non_ortho)
-    matrix_final = np.zeros((l,l), dtype=complex)
+    matrix_final = np.zeros((l,l), dtype=complex)  # FOR ALPHA OPERATOR
+    matrix_final_squared = np.zeros((l,l), dtype=complex)  # FOR ALPHA^2 OPERATOR
     for j in range(l):
-        k = L @ Q[:, j]
+        c = Lio @ Q[:, j]
+        c_squared = Lio @ Q_squared[:, j]
         for i in range(l):
-            matrix_final[i, j] = np.conjugate(Q[:, i]) @ k
-    return matrix_final
+            matrix_final[i, j] = np.conjugate(Q[:, i]) @ c
+            matrix_final_squared[i, j] = np.conjugate(Q_squared[:, i]) @ c_squared
+    return [matrix_final, matrix_final_squared]
+    # return matrix_final
+
 
 
 
