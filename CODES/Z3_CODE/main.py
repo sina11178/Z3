@@ -22,14 +22,29 @@ array=[.1, (cm.pi)/3]
 gamma_array = [0, .2, .4, .6, .8, 1, 1.2, 1.4]
 L_array = [5, 6, 7, 8]
 
+# FOR KRYLOV SIMULATION
+gamma_array = [0, 0.05, 1]
+size_array = [4, 5, 6, 7, 8, 9]
+N_array = [50, 50, 60, 60, 90, 90]
+f_array = [.1, .25, .4, .5]
+phi_array = [0, np.pi/6, np.pi/4, np.pi/3]
+
 #size_autocorrelator_SIMULATION_NPY(0, 30, .5, L_array[int(int(sys.argv[1]) % 4)], array, gamma_array[int(int(sys.argv[1])/4)])
 
 
 #f_phi_autocorrelator_SIMULATION_NPY(0, 30, .5, 5, [[0.1, 0]], 0.4)
 
-# FOR RUNNING ON CLUSTER
 
 #size_autocorrelator_SIMULATION_NPY(0, 30, .5, L_array, array_parameters[int(sys.argv[1])], 1)
 
-LACZOS_COEF_vary_gam_SIM(60, 5, 0, [.1, np.pi/6])
-#LACZOS_COEF_vary_gam_SIM(28, 5, 0, [0.1, 0])
+#LACZOS_COEF_vary_gam_SIM(50, 5, 0, [.1, np.pi/6])
+
+
+'''
+18 NODES NEEDED TO RUN FOR KRYLOV...288 CORES (16 CORES EACH NODE)
+'''
+
+sys_arg = int(sys.argv[1])
+
+LACZOS_COEF_vary_gam_SIM(int(sys_arg / 96), (int(sys_arg/16) % 6), (int(sys_arg/16) % 6), [sys_arg % 4, (int(sys_arg/4)) % 4])
+
