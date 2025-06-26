@@ -18,39 +18,31 @@ def LACZOS_COEF_vary_gam_SIM(n, size, gamma, params):
     H = H_1 + (gamma * H_dag)
 
     if gamma == 1:
-        # b_values = recursion_method(n, H, size)
-        #for i in range(1, n+1):
-        #     in_list.append(i)
+
         list_matrix_final = recursion_method(n, H, size)
         matrix_final = list_matrix_final[0]
         matrix_final_squared = list_matrix_final[1]
     else:
-        # b_values = grahm_schmidt(n, H, size)
-        #for i in range(1, n):
-        #     in_list.append(i)
-        #matrix_final = grahm_schmidt(n, H, size)
+
         list_matrix_final = grahm_schmidt(n, H, size)
         matrix_final = list_matrix_final[0]
         matrix_final_squared = list_matrix_final[1]
+        truncated_matrix_size = (3*size) - 2
+        matrix_final_trunc = matrix_final[:truncated_matrix_size, :truncated_matrix_size]
 
     os.makedirs('krylov_matrix/f_' + str(params[0]) + '_phi_' + str(params[1]) + '_L_'+ str(size) + '_gamm_' + str(gamma), exist_ok=True)
-    #return_list = [gamma, in_list, b_values]  # FIRST COMPONENT IS GAMMA VALUE
 
-    #now = datetime.datetime.now()
-    #npy_name = "vary_gamma_laczos_coeff" + now.strftime("%Y-%m-%d") + "_NPY.npy"
-    #np.save(npy_name, np.array(return_list))  #  NOTE: First row of array is input; the rest are outputs
     npy_name = "krylov_matrix/f_" + str(params[0]) + "_phi_" + str(params[1]) + "_L_"+ str(size) + "_gamm_" + str(gamma) + "/alpha_1_NPY.npy"
     np.save(npy_name, matrix_final)
     npy_name_2 = "krylov_matrix/f_" + str(params[0]) + "_phi_" + str(params[1]) + "_L_"+ str(size) + "_gamm_" + str(gamma) + "_alpha_1_squared_NPY.npy"
     np.save(npy_name_2, matrix_final_squared)
 
-    #plt.subplot()
-    #title = str(params[0]) + ", " + str(params[1]) + "  " + "(f, PHI)" + " gam = " + str(gamma) + " krylov hamiltonian (L = " + str(size) + ")"
-    #plt.plot(np.array(in_list), np.array(b_values), marker = ".", linestyle = '-', color = 'r', label = str(gamma))
-    #plt.xscale('log')
-    #plt.plot(np.array(in_list), np.array(b_values), marker = ".", linestyle = '-', color = 'r', label = 'Recursive')
-    #plt.plot(np.array(in_list_2), np.array(b_values_2), marker = ".", linestyle = '-', color = 'g', label = 'GS')
-    F = np.abs(matrix_final)
+  
+    if gamma != 0:
+        F = np.abs(matrix_final)
+    else:
+        F = np.abs(matrix_final_trunc)
+
     F_squared = np.abs(matrix_final_squared)
 
     plt.imshow(F, cmap='seismic', aspect='auto')
@@ -74,17 +66,10 @@ def LACZOS_COEF_vary_gam_SIM(n, size, gamma, params):
     plt.show()
 
 
-    #plt.tight_layout()
-    #file_name = "krylov_matrices_gamma_" + str(gamma) + "_params_" + str(params[0])+"_"+str(params[1])+"_matrix.pdf"
-    #plt.savefig(file_name, dpi=300, bbox_inches='tight')
-    #plt.savefig(file_name)
-    #plt.show()
-
-
     # NOTE: GRAPH OF EIGENVALUES
 
 
-    if gamma == 1:
+    if gamma != 0:
         # b_values = recursion_method(n, H, size)
         A, U = np.linalg.eigh(matrix_final)
         A_squared, U_squared = np.linalg.eigh(matrix_final_squared)
@@ -107,10 +92,11 @@ def LACZOS_COEF_vary_gam_SIM(n, size, gamma, params):
             EIG_STATES_SQUARED.append(EIG_STATE_SQUARED)
 
     else:
-        A, U = np.linalg.eig(matrix_final)
-        A_squared, U_squared = np.linalg.eig(matrix_final_squared)
+        A, U = np.linalg.eig(matrix_final_trunc)  # NOTE: WE ONLY LOOK AT TRUNCATED MATRIX FOR FULLY NON-HERMITIAN
+        A_squared, U_squared = np.linalg.eig(matrix_final_squared)  
         #print(np.imag(A))
         in_list = np.arange(0, n+1, 1)
+        in_list_trunc = np.arange(0, truncated_matrix_size, 1)
         EIG_STATES = []
         EIG_STATES_SQUARED = []
         # EIG_STATE = np.abs(U[:, np.argmin(np.abs(A))])
@@ -135,19 +121,32 @@ def LACZOS_COEF_vary_gam_SIM(n, size, gamma, params):
 
 
     #plt.subplot(2, 1, 1)
-    plt.plot(in_list, EIG_STATES[0], marker = ".", linestyle = '-', color = 'r', label = 'a_1 E = ' + str(np.min(np.abs(A))))
-    #title = str(params[0]) + ", " + str(params[1]) + "  " + "(f, PHI)" + " gam = " + str(gamma) + " Zero Eigenvector graphs (L = " + str(size) + ")"
-    #plt.suptitle(title)
-    plt.title('Eigenvector Components for Zero Eigenvalue: alpha_1')
-    plt.xlabel("n")
-    plt.ylabel("Eigenvector Components")
-    plt.ylim(0, 0.2)
-    plt.legend()
-    plt.savefig('krylov_matrix/f_' + str(params[0]) + '_phi_' + str(params[1]) + '_L_' + str(size) + '_gamm_' + str(gamma) + '/zero_eigenvector_alpha_1.pdf')
-    plt.close()
+    if gamma != 0:
+        plt.plot(in_list, EIG_STATES[0], marker = ".", linestyle = '-', color = 'r', label = 'a_1 E = ' + str(np.min(np.abs(A))))
+        #title = str(params[0]) + ", " + str(params[1]) + "  " + "(f, PHI)" + " gam = " + str(gamma) + " Zero Eigenvector graphs (L = " + str(size) + ")"
+        #plt.suptitle(title)
+        plt.title('Eigenvector Components for Zero Eigenvalue: alpha_1')
+        plt.xlabel("n")
+        plt.ylabel("Eigenvector Components")
+        plt.ylim(0, 0.2)
+        plt.legend()
+        plt.savefig('krylov_matrix/f_' + str(params[0]) + '_phi_' + str(params[1]) + '_L_' + str(size) + '_gamm_' + str(gamma) + '/zero_eigenvector_alpha_1.pdf')
+        plt.close()
+    else:
+        plt.plot(in_list_trunc, EIG_STATES[0], marker = ".", linestyle = '-', color = 'r', label = 'a_1 E = ' + str(np.min(np.abs(A))))
+        #title = str(params[0]) + ", " + str(params[1]) + "  " + "(f, PHI)" + " gam = " + str(gamma) + " Zero Eigenvector graphs (L = " + str(size) + ")"
+        #plt.suptitle(title)
+        plt.title('Eigenvector Components for Zero Eigenvalue: alpha_1 (NOTE: TRUNCATED)')
+        plt.xlabel("n")
+        plt.ylabel("Eigenvector Components")
+        plt.ylim(0, 0.2)
+        plt.legend()
+        plt.savefig('krylov_matrix/f_' + str(params[0]) + '_phi_' + str(params[1]) + '_L_' + str(size) + '_gamm_' + str(gamma) + '/zero_eigenvector_alpha_1.pdf')
+        plt.close()       
 
 
     #plt.subplot(2, 1, 2)
+    
     plt.figure()
     plt.plot(in_list, EIG_STATES_SQUARED[0], marker = ".", linestyle = '-', color = 'g', label = 'a_1^2 E = ' + str(np.min(np.abs(A_squared))))
     plt.title('Eigenvector Components for Zero Eigenvalue: alpha_1 squared')
@@ -157,8 +156,6 @@ def LACZOS_COEF_vary_gam_SIM(n, size, gamma, params):
     plt.legend()
     plt.savefig('krylov_matrix/f_' + str(params[0]) + '_phi_' + str(params[1]) + '_L_' + str(size) + '_gamm_' + str(gamma) + '/zero_eigenvector_alpha_1_squared.pdf')
 
-
-   
     # ncols = 4  # columns per row
     # nrows = int(np.ceil(len(EIG_STATES) / ncols))
     # nrows_squared = int(np.ceil(len(EIG_STATES_SQUARED) / ncols))  
