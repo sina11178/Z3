@@ -468,14 +468,14 @@ def grahm_schmidt_squared(n, H, size):
 def rank_test(stacked_matrix):
     return np.linalg.matrix_rank(stacked_matrix)
 
-GAMM = 0
+GAMM = 0.001
 H_SIGMA = term_one_SIGMA(length=L, Jay=J, PHI=phi) + term_two_SIGMA(F=f, length=L)
 H_SIGMA = H_SIGMA + GAMM * np.conjugate(H_SIGMA.T)  # Make Hermitian
 #print('Difference between SIG^2 and SIG^t:')
 #print(np.max(np.abs((np_SIG @ np_SIG) - np.conjugate(np_SIG).T)))
 #print(np.max(((0.5*(np_SIG @ np_SIG + np.conjugate(np_SIG).T)) - np.conjugate(np_SIG).T)))
 
-p = 21 # NUMBER OF ITERATIONS
+p = 50 # NUMBER OF ITERATIONS
 #matrix_final_a = GS_NEWER(p, H_SIGMA, L)
 matrix_final_a = grahm_schmidt(p, H_SIGMA, L)  # SEED OPERATOR IS ALPHA_1
 matrix_final_a_squared = grahm_schmidt_squared(p, H_SIGMA, L)  # SEED Operator IS (ALPHA_1)^2
@@ -542,27 +542,27 @@ for i in range(len(A)):
     EIG_STATES.append(EIG_STATE)
 
 plt.plot(in_list, EIG_STATES[0], marker = ".", linestyle = '-', color = 'r', label = 'a_1 E = ' + str(np.min(np.abs(A))))
-#plt.plot(in_list, np.abs(EIG_SQR), marker = ".", linestyle = '-', color = 'g', label = '(a_1)^dagger E = ' + str(np.min(np.abs(A_sqr))))
+plt.plot(in_list, np.abs(EIG_SQR), marker = ".", linestyle = '-', color = 'g', label = '(a_1)^dagger E = ' + str(np.min(np.abs(A_sqr))))
 plt.legend()
 plt.ylim(0, .2)
 plt.savefig('Krylov_Eigenvector_0.pdf')
 
 
-ncols = 4  # columns per row
-nrows = int(np.ceil(len(EIG_STATES) / ncols))
-fig, axes = plt.subplots(nrows=nrows, ncols=ncols, figsize=(4*ncols, 3*nrows))
-axes = axes.flatten()
-plt.suptitle('Hello')
-for i in range(int(len(EIG_STATES))):
-        ax = axes[i]
-        ax.plot(in_list, EIG_STATES[i], marker = ".", linestyle = '-', label = 'E = ' + str(np.round(sorted[i], 5)) + " (" + str(i) + ")")
-        #title = str(params[0]) + ", " + str(params[1]) + "  " + "(f, PHI)" + " gam = " + str(gamma) + " Eigenvector graph (L = " + str(size) + ")"
+# ncols = 4  # columns per row
+# nrows = int(np.ceil(len(EIG_STATES) / ncols))
+# fig, axes = plt.subplots(nrows=nrows, ncols=ncols, figsize=(4*ncols, 3*nrows))
+# axes = axes.flatten()
+# plt.suptitle('Hello')
+# for i in range(int(len(EIG_STATES))):
+#         ax = axes[i]
+#         ax.plot(in_list, EIG_STATES[i], marker = ".", linestyle = '-', label = 'E = ' + str(np.round(sorted[i], 5)) + " (" + str(i) + ")")
+#         #title = str(params[0]) + ", " + str(params[1]) + "  " + "(f, PHI)" + " gam = " + str(gamma) + " Eigenvector graph (L = " + str(size) + ")"
 
-        ax.set_xlabel("n")
-        ax.set_ylabel("Eigenvector Components")
+#         ax.set_xlabel("n")
+#         ax.set_ylabel("Eigenvector Components")
 
-        ax.set_ylim(0, 1)
-        ax.legend()
-plt.show()
+#         ax.set_ylim(0, 1)
+#         ax.legend()
+# plt.show()
 
 

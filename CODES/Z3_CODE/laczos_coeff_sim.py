@@ -71,8 +71,13 @@ def LACZOS_COEF_vary_gam_SIM(n, size, gamma, params):
 
     if gamma != 0:
         # b_values = recursion_method(n, H, size)
-        A, U = np.linalg.eigh(matrix_final)
-        A_squared, U_squared = np.linalg.eigh(matrix_final_squared)
+        if gamma == 1:
+            A, U = np.linalg.eigh(matrix_final)
+            A_squared, U_squared = np.linalg.eigh(matrix_final_squared)
+        else:
+            A, U = np.linalg.eig(matrix_final)
+            A_squared, U_squared = np.linalg.eig(matrix_final_squared)
+
         EIG_STATES = []
         EIG_STATES_SQUARED = []
         in_list = np.arange(0, n+1, 1)
