@@ -37,14 +37,14 @@ phi_array = [0, np.pi/6, np.pi/4, np.pi/3]
 
 #size_autocorrelator_SIMULATION_NPY(0, 30, .5, L_array, array_parameters[int(sys.argv[1])], 1)
 
-LACZOS_COEF_vary_gam_SIM(50, 5, .001, [.1, np.pi/6])
+#LACZOS_COEF_vary_gam_SIM(50, 5, .001, [.1, np.pi/6])
 
 
 '''
 18 NODES NEEDED TO RUN FOR KRYLOV...288 CORES (16 CORES EACH NODE)
 '''
 
-#sys_arg = int(sys.argv[1])
+sys_arg = int(sys.argv[1])
 
-#LACZOS_COEF_vary_gam_SIM(int(sys_arg / 96), (int(sys_arg/16) % 6), (int(sys_arg/16) % 6), [sys_arg % 4, (int(sys_arg/4)) % 4])
+LACZOS_COEF_vary_gam_SIM(int(sys_arg / 96), (int(sys_arg/16) % 6), (int(sys_arg/16) % 6), [sys_arg % 4, (int(sys_arg/4)) % 4])
 
