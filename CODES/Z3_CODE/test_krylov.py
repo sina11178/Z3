@@ -468,7 +468,7 @@ def grahm_schmidt_squared(n, H, size):
 def rank_test(stacked_matrix):
     return np.linalg.matrix_rank(stacked_matrix)
 
-GAMM = 0.001
+GAMM = 0
 H_SIGMA = term_one_SIGMA(length=L, Jay=J, PHI=phi) + term_two_SIGMA(F=f, length=L)
 H_SIGMA = H_SIGMA + GAMM * np.conjugate(H_SIGMA.T)  # Make Hermitian
 #print('Difference between SIG^2 and SIG^t:')
