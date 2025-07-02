@@ -1,0 +1,52 @@
+'''
+
+WE WILL CALL TO RUN RESPECTIVE SIMULATION HERE
+
+'''
+
+from f_phi_autocorr_SIM import f_phi_autocorrelator_SIMULATION_EXCEL, f_phi_autocorrelator_SIMULATION_NPY
+from size_comparison_autocorr_SIM import size_autocorrelator_SIMULATION_EXCEL, size_autocorrelator_SIMULATION_NPY
+from laczos_coeff_sim import LACZOS_COEF_vary_gam_SIM
+import numpy as np
+import cmath as cm
+import matplotlib.pyplot as plt
+import pandas as pd
+import sys
+
+
+#array_parameters = [[.1, (.7*cm.pi)/6], [.1, (.8*cm.pi)/6], [.1, (.9*cm.pi)/6],
+#                    [.1, (cm.pi)/6], [.1, (1.1*cm.pi)/6],
+#                    [.1, (1.2*cm.pi)/6], [.1, (1.3*cm.pi)/6]]
+#L = 4
+#array=[.1, (cm.pi)/3]
+#gamma_array = [0, .2, .4, .6, .8, 1, 1.2, 1.4]
+#L_array = [5, 6, 7, 8]
+
+# FOR KRYLOV SIMULATION
+gamma_array = [0, 0.05, 1]
+#size_array = [4, 5, 6, 7, 8, 9]
+size_array = [4, 5, 6]
+#N_array = [50, 50, 60, 60, 90, 90]
+N_array = [50, 50, 60]
+f_array = [.1, .25, .4, .5]
+phi_array = [0, np.pi/6, np.pi/4, np.pi/3]
+
+#size_autocorrelator_SIMULATION_NPY(0, 30, .5, L_array[int(int(sys.argv[1]) % 4)], array, gamma_array[int(int(sys.argv[1])/4)])
+
+
+#f_phi_autocorrelator_SIMULATION_NPY(0, 30, .5, 5, [[0.1, 0]], 0.4)
+
+
+#size_autocorrelator_SIMULATION_NPY(0, 30, .5, L_array, array_parameters[int(sys.argv[1])], 1)
+
+#LACZOS_COEF_vary_gam_SIM(50, 5, .001, [.1, np.pi/6])
+
+
+'''
+18 NODES NEEDED TO RUN FOR KRYLOV...288 CORES (16 CORES EACH NODE)
+'''
+
+sys_arg = int(sys.argv[1])
+
+LACZOS_COEF_vary_gam_SIM(N_array(int(sys_arg/16) % 3), size_array(int(sys_arg/16) % 3), gamma_array(int(sys_arg/48)), [f_array(sys_arg % 4), phi_array(int(sys_arg/4) % 4)])
+
