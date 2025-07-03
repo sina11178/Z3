@@ -1,0 +1,540 @@
+commit 4649547ecbe08007148d79eba080e242925da03b
+Author: Sina Rezvani <sxr190099@g2-l-02.localdomain>
+Date:   Thu Jul 3 13:33:47 2025 -0500
+
+    Commit before run run_063025_krylov_matrices_zero_modes
+
+commit 070aec707e5ea70db8a653e1ed74b6b222d82ec8
+Author: Sina Rezvani <sxr190099@juno-l-01.localdomain>
+Date:   Wed Jul 2 15:02:00 2025 -0500
+
+    build code altered for krylov matrix
+
+commit 964f9b9c9b481c6402ee8fd160cbe8d7f1496590
+Author: sina11178 <frsinarez4@gmail.com>
+Date:   Tue Jul 1 14:50:03 2025 -0500
+
+    Testing krylov test code
+
+commit b6b5fe4a5064bff45cbf27dfc5ee554c106008aa
+Author: sina11178 <frsinarez4@gmail.com>
+Date:   Mon Jun 30 12:34:18 2025 -0500
+
+    Fixed main code
+
+commit 077fea2db876dcd1e0fbd024994741bad16d94a6
+Author: sina11178 <frsinarez4@gmail.com>
+Date:   Mon Jun 30 12:28:39 2025 -0500
+
+    Small issue: using eigh for non-hermitian matrix --> fixed
+
+commit a08f3199242a2c48b75d6732e84b3b08e7258c8f
+Author: sina11178 <frsinarez4@gmail.com>
+Date:   Thu Jun 26 17:58:14 2025 -0500
+
+    Ran some preliminary tests and saved in krylo matrix folder
+    
+    Main.py ready to send into cluster
+
+commit 4c2394cb592c9e44a7c82462df2d9cdfbe9f7399
+Author: sina11178 <frsinarez4@gmail.com>
+Date:   Thu Jun 26 11:26:03 2025 -0500
+
+    Ran another test for smaller N size
+
+commit 0c5e6a14e86cc62715d71517e82fab90de349fd1
+Merge: 8042252 26d2487
+Author: sina11178 <frsinarez4@gmail.com>
+Date:   Thu Jun 26 11:22:30 2025 -0500
+
+    Merge branch 'main' of https://github.com/sina11178/Z3
+
+commit 80422521c5a317157cb748d06666ddd9ce0a8afa
+Author: sina11178 <frsinarez4@gmail.com>
+Date:   Thu Jun 26 11:22:24 2025 -0500
+
+    Made my matrix truncate when fully non-hermitian (gamma = 0); Also, added some data on krylov matrices for different gamma values
+
+commit 26d24877ac21beccc4a2928618cb6ec207b4fe3b
+Merge: 7f66c9a 3fc7ebe
+Author: Sina Rezvani <sxr190099@juno-l-01.localdomain>
+Date:   Mon Jun 23 17:08:51 2025 -0500
+
+    issue with .xlsx; managed to fix it...pushing old sims ran
+
+commit 7f66c9a3a4e4d877104c4ed618a57e5efcee3d92
+Author: Sina Rezvani <sxr190099@juno-l-01.localdomain>
+Date:   Mon Jun 23 17:04:48 2025 -0500
+
+    pushing old runs from juno
+
+commit 3fc7ebee2076170136be69b89336ad794134307a
+Author: sina11178 <frsinarez4@gmail.com>
+Date:   Mon Jun 23 16:34:59 2025 -0500
+
+    Fixed simulation code
+
+commit a4923172cb22abaa26a94ce6cbea746210ae8dff
+Author: sina11178 <frsinarez4@gmail.com>
+Date:   Sun Jun 22 11:53:08 2025 -0500
+
+    Completed krylov debugging code: It works properly and we get expected results
+
+commit 0b5cdf8b29774a099fdad1fbc9ff22dfd32ddc51
+Author: sina11178 <frsinarez4@gmail.com>
+Date:   Tue Jun 17 16:54:42 2025 -0500
+
+    Changes made to seed operator alpha_1 --> 'correction' term added
+
+commit d228bc8e32e656235b648d76a0452dac1b2d4a21
+Author: sina11178 <frsinarez4@gmail.com>
+Date:   Mon Jun 9 08:07:16 2025 -0500
+
+    Test code for Hamiltonian and Krylov Matrix:
+    
+    Hamiltonian matches in Sigma and Tau Basis
+    We are getting weird issue w/ Krylov matrix; still debugging
+
+commit a242c0fa0211f0ecbd66d13171c8f211658071d2
+Author: sina11178 <frsinarez4@gmail.com>
+Date:   Thu May 29 09:19:09 2025 -0500
+
+    Fixed up code to produce Right Eigenvector graph for Krylov Matrix. Different graphs were added
+
+commit 1d66d8f64798967f2484a807dd713f996eb1db5e
+Author: sina11178 <frsinarez4@gmail.com>
+Date:   Wed May 21 15:49:29 2025 -0500
+
+    Couple of things:
+    
+    Compared My hamiltonian with Saeeds hamiltonian
+    
+    When checking periodicity of fully non hermitian, I noticed:
+    1.) At different sizes and different N values, we see a clean periodicity of 3 (why?)
+    2.) I tested for L = 4 @ N=40 --> We see periodicity of three
+    3.) For L = 5 @ N=28 --> We see periodicity of 3 as well (data for this is committed along with everything else)
+    
+    Commit date - 5/21/25
+
+commit 6bcf2fe89114c75dab3788c9b6d9a6c4063d51a4
+Merge: d893bcb 0c515f6
+Author: Sina Rezvani <sxr190099@juno-l-01.localdomain>
+Date:   Fri May 9 15:59:39 2025 -0500
+
+    Merge branch 'main' of https://github.com/sina11178/Z3
+    
+    Pull to put new laczos code into cluster
+
+commit 0c515f6cda690377bec2174b8bd28bdf986edbd7
+Author: sina11178 <frsinarez4@gmail.com>
+Date:   Fri May 9 15:55:58 2025 -0500
+
+    Edits to laczos code:
+    - Normalize Eigenstates
+    - Fix legend
+
+commit d893bcb36d85926c25e662ceec15da869dbd65df
+Author: Sina Rezvani <sxr190099@juno-l-01.localdomain>
+Date:   Fri May 9 15:49:32 2025 -0500
+
+    Commit before run run_042525_autocorr_vary_gamma
+
+commit 63bc8611fc446e0c0c6fc54063aec0adfbf37f17
+Author: Sina Rezvani <sxr190099@juno-l-01.localdomain>
+Date:   Fri May 9 15:48:27 2025 -0500
+
+    Commit before run run_042525_autocorr_vary_gamma
+
+commit c581688e3b3e300fa8ce08cb6b7210d0d1b6f510
+Merge: ee2c93d 1f0d39d
+Author: sina11178 <frsinarez4@gmail.com>
+Date:   Wed May 7 16:27:12 2025 -0500
+
+    Merge branch 'main' of https://github.com/sina11178/Z3
+
+commit 1f0d39d0a1adf1dc1ceae67061d07aa6edaa08da
+Author: Sina Rezvani <sxr190099@juno-l-01.localdomain>
+Date:   Wed May 7 16:24:24 2025 -0500
+
+    updated data using saeeds input values
+
+commit ee2c93d5a641a58b70aba971bda71b0247ea0335
+Author: sina11178 <frsinarez4@gmail.com>
+Date:   Wed May 7 16:08:06 2025 -0500
+
+    Some tests ran
+
+commit c0c7905cc10119a807e2fd9d373fba11f4b4cb58
+Author: Sina Rezvani <sxr190099@juno-l-01.localdomain>
+Date:   Thu May 1 16:53:04 2025 -0500
+
+    updated data for varying gamma data
+
+commit a91ae3831aac7e6d8a1256115e24e2148a8f58ae
+Author: sina11178 <frsinarez4@gmail.com>
+Date:   Thu May 1 16:49:04 2025 -0500
+
+    Edits made to save heatmap of krylov hamiltonian; I am still trying to figure out how to plot eigenstates
+
+commit 649811f0b6e0862ee9b22a390c03402084198ea3
+Author: Sina Rezvani <sxr190099@juno-l-01.localdomain>
+Date:   Wed Apr 30 15:55:55 2025 -0500
+
+    added actual data to data files in Z3_CODES folder
+
+commit de07d6396358cd5cca7803bc5476a9fd1038920b
+Author: sina11178 <frsinarez4@gmail.com>
+Date:   Wed Apr 30 15:54:01 2025 -0500
+
+    EDITED PLOT.PY FILE
+
+commit aa9865e480b11965410a82fe50ea5be99bd6645f
+Merge: 07f33f2 197e63c
+Author: sina11178 <frsinarez4@gmail.com>
+Date:   Wed Apr 30 12:30:51 2025 -0500
+
+    Merge branch 'main' of https://github.com/sina11178/Z3
+
+commit 07f33f2cf0a666d10db36782502eb6f48e385f42
+Author: sina11178 <frsinarez4@gmail.com>
+Date:   Wed Apr 30 12:30:45 2025 -0500
+
+    Small edits
+
+commit 197e63c82c59b0d14fc7d12851305323207d3b5a
+Author: Sina Rezvani <sxr190099@juno-l-01.localdomain>
+Date:   Wed Apr 30 12:29:57 2025 -0500
+
+    Data added for (f,PHI)=(.1,0) under run_042525 folder
+
+commit f0a24a8d12ad754a72d32e9b81ffbdab9549349b
+Author: sina11178 <frsinarez4@gmail.com>
+Date:   Tue Apr 22 10:36:29 2025 -0500
+
+    Created/Altered:
+    1.) Initial draft for collection of Laczos coefficients and krylov hamiltonian
+    2.) Main.py altered to run each parameter I want on different cores
+
+commit 133ff76541f3c642c1497091f622e2d292662744
+Author: sina11178 <frsinarez4@gmail.com>
+Date:   Fri Apr 18 13:31:38 2025 -0500
+
+    Changes added for Krylov - Method implementation
+
+commit bae827242bd75e6420888b343387febf3380b46b
+Merge: 9aa8c0f e518425
+Author: sina11178 <frsinarez4@gmail.com>
+Date:   Mon Apr 14 11:12:10 2025 -0500
+
+    Merge branch 'main' of https://github.com/sina11178/Z3
+
+commit 9aa8c0f2bd633bea4295c355f2902a1ea6731b09
+Author: sina11178 <frsinarez4@gmail.com>
+Date:   Mon Apr 14 11:12:05 2025 -0500
+
+    Fixed size sim
+
+commit e518425d85ac50bb334b23c7094a55f4f0e71147
+Author: Sina Rezvani <sxr190099@juno-l-01.localdomain>
+Date:   Mon Apr 14 11:10:24 2025 -0500
+
+    Added data from L4, L5, L6, L7, L8 for parameters: [[.1, (.7*cm.pi)/6], [.1, (.8*cm.pi)/6], [.1, (.9*cm.pi)/6],[.1, (cm.pi)/6], [.1, (1.1*cm.pi)],[.1, (1.2*cm.pi)/6], [.1, (1.3*cm.pi)/6]]
+
+commit e6eb6771ce9986d51073d2a876fc585f03e9e79e
+Author: sina11178 <frsinarez4@gmail.com>
+Date:   Fri Apr 11 12:53:46 2025 -0500
+
+    Corrected time iteration
+
+commit 25076b7db494b484378ca303dc9fd3ed119d865a
+Author: sina11178 <frsinarez4@gmail.com>
+Date:   Fri Apr 11 12:45:25 2025 -0500
+
+    Made it cluster ready
+
+commit c9a090989abe2822075fef03d4f735b4ceb8df2e
+Author: sina11178 <frsinarez4@gmail.com>
+Date:   Fri Apr 11 12:44:50 2025 -0500
+
+    Edited time generation function to make code run faster -->
+     - list_inputs
+     - sim functions
+    
+     ^^ ARE THE FUNCTIONS I EDITED
+
+commit f57ecb5fb3c06ea52cb731b738418dddeabbee09
+Author: sina11178 <frsinarez4@gmail.com>
+Date:   Tue Apr 8 14:14:40 2025 -0500
+
+    bug fix to convert index to int
+
+commit 1e9c6b305021b1cde40715fe7ceb00411d3e5122
+Author: sina11178 <frsinarez4@gmail.com>
+Date:   Tue Apr 8 14:05:08 2025 -0500
+
+    Preparing params
+
+commit 718dea6773115b5d637d646ff0fbcff964b5cc9b
+Merge: 425676e 7081e49
+Author: sina11178 <frsinarez4@gmail.com>
+Date:   Tue Apr 8 12:10:49 2025 -0500
+
+    Merge branch 'main' of https://github.com/sina11178/Z3
+
+commit 425676ef4857bb04c80f6175e43749bcbf75620f
+Author: sina11178 <frsinarez4@gmail.com>
+Date:   Tue Apr 8 12:10:44 2025 -0500
+
+    Preparing for submission into cluster
+
+commit 7081e49e5a498b6afd199b07ff9dc3e412354b0a
+Author: Sina Rezvani <sxr190099@juno-l-01.localdomain>
+Date:   Sun Apr 6 11:20:25 2025 -0500
+
+    HELLO WORLD COMMIT
+
+commit fcd38504e21f93546178418e261fdb698e84a88f
+Author: Sina Rezvani <sxr190099@juno-l-01.localdomain>
+Date:   Sun Apr 6 11:18:56 2025 -0500
+
+    HELLO WORLD COMMIT
+
+commit 4aeee6a4bcb549b86c5ad4d5d94b3b291a2b2a00
+Author: Sina Rezvani <sxr190099@juno-l-01.localdomain>
+Date:   Sun Apr 6 11:16:18 2025 -0500
+
+    HELLO WORLD COMMIT
+
+commit 457216c35f027342a86d49d9d2871ab126209246
+Author: Sina Rezvani <sxr190099@juno-l-01.localdomain>
+Date:   Sun Apr 6 11:06:08 2025 -0500
+
+    Test push for linux system
+
+commit 3a049a4a68eb8abc328fd0395ab71fde82aa5351
+Author: sina11178 <frsinarez4@gmail.com>
+Date:   Sat Apr 5 15:45:00 2025 -0500
+
+    Initialized array of parameters I will test
+
+commit 269d806c8fdfdb8c9e3073e17414bfa2d0fea33a
+Author: sina11178 <frsinarez4@gmail.com>
+Date:   Sat Apr 5 15:41:12 2025 -0500
+
+    Preparing for submitting to cluster and SLURM
+
+commit b3f6df8701d65294d7721596a22af3a2920b85d3
+Author: sina11178 <frsinarez4@gmail.com>
+Date:   Wed Apr 2 12:44:21 2025 -0500
+
+    Size comparison simulation created
+    fixed legend for f, phi comparison
+
+commit 2f3c1ad181e5d4a66f32e398e692bcf1bde9a9aa
+Author: sina11178 <frsinarez4@gmail.com>
+Date:   Wed Apr 2 10:53:18 2025 -0500
+
+    Changed scaling of graph:
+    BEFORE: Using log of matplotlib to make x scale log (base 10)
+    NOW: Taking ln of each input time and plotting on linear matplotlib scaled graph
+    
+    Some new results added:
+    from --> INIT time: 0.05
+    TO --> FINAL time: 100000
+    Interval: 10
+    L = 4
+    f = .1
+    PHI = 1.3*pi/6
+    
+    Data in .npy file
+
+commit 04aca36263257261afaafd2330fbc1da5c1bf856
+Author: sina11178 <frsinarez4@gmail.com>
+Date:   Tue Apr 1 11:48:32 2025 -0500
+
+    Autocorrelator code created:
+    1.) Graphing added
+    2.) Code tested (with results added) --> f = .2, PHI = pi/6
+
+commit df89801ec66f186f1cafdbaba9d4ee9d52e3f1d9
+Author: sina11178 <frsinarez4@gmail.com>
+Date:   Mon Mar 31 17:08:25 2025 -0500
+
+    Created function that creates .npy files
+    Main file created
+
+commit 1c40c2706adedfbe6ba66a7af4ea9a23a162d731
+Author: sina11178 <frsinarez4@gmail.com>
+Date:   Mon Mar 31 13:55:41 2025 -0500
+
+    Test run
+
+commit 18c7f4ad02b374e613f20c07cf9dc6a44bc64604
+Author: sina11178 <frsinarez4@gmail.com>
+Date:   Mon Mar 31 13:50:03 2025 -0500
+
+    Bug fix -
+
+commit 561cce0f60c4ae997dc7ab4eb8c17d8c8db9bdd1
+Author: sina11178 <frsinarez4@gmail.com>
+Date:   Mon Mar 31 13:43:31 2025 -0500
+
+    Simulation code added - Prints data into excel file
+
+commit 2204aec5ca1f1373b3239dd613b917cb4b0402ad
+Merge: 87d6375 5992071
+Author: sina11178 <frsinarez4@gmail.com>
+Date:   Mon Mar 31 11:49:15 2025 -0500
+
+    Merge branch 'main' of https://github.com/sina11178/Z3
+
+commit 87d637566f9cad148ed142c3567f170c036f7e11
+Author: sina11178 <frsinarez4@gmail.com>
+Date:   Mon Mar 31 11:49:10 2025 -0500
+
+    Started on function for putting data in excel sheet
+
+commit 599207123616e399938f8dabbe351d2561526675
+Author: sina11178 <113195576+sina11178@users.noreply.github.com>
+Date:   Mon Mar 31 11:48:41 2025 -0500
+
+    Create Readme.txt
+    
+    Created data folder
+
+commit 622320442d1ee70f4f2a40d82763d1de9b829235
+Author: sina11178 <frsinarez4@gmail.com>
+Date:   Mon Mar 31 11:37:14 2025 -0500
+
+    1.)Added Input list function (for autocorr data collection)
+    2.)Added Output list for same reason
+    3.)Created new file to run simulation with imports from Z3_code
+
+commit 12249e069d7f831746877343eda046f4485abe74
+Author: sina11178 <frsinarez4@gmail.com>
+Date:   Mon Mar 31 11:02:37 2025 -0500
+
+    Rename to "Z3_code"
+    Added terms for hamiltonian
+    Added tensor product function
+    Added time evolution function
+    Added Autocorrelator function
+
+commit e0a776acda544f01ec744816f742dad7a494a1d5
+Author: sina11178 <frsinarez4@gmail.com>
+Date:   Sat Mar 29 21:58:20 2025 -0500
+
+    Defined Sigma, Clock, and Identity Operators Globally
+
+commit 47ceabe6abca3280142404c69d9c7eb8794c0f6d
+Author: sina11178 <frsinarez4@gmail.com>
+Date:   Sat Mar 29 19:24:58 2025 -0500
+
+    Initial commit - Creation of python file for main code
+
+commit f3c33339abff7f615abff348eb0d56713b856843
+Author: sina11178 <113195576+sina11178@users.noreply.github.com>
+Date:   Fri Mar 28 16:53:00 2025 -0500
+
+    Create Readme.txt
+
+commit fc19fc48891f7b953a51c0c55e9586c572d790d0
+Author: sina11178 <113195576+sina11178@users.noreply.github.com>
+Date:   Fri Mar 28 16:51:21 2025 -0500
+
+    Update Readme.txt
+
+commit ad9c2dac11ea89dfc8201b73c5e1790b4e039036
+Author: sina11178 <113195576+sina11178@users.noreply.github.com>
+Date:   Fri Mar 28 16:50:39 2025 -0500
+
+    Add files via upload
+
+commit dc4344a972d401e49089fdc3e33572bae7a20aba
+Author: sina11178 <113195576+sina11178@users.noreply.github.com>
+Date:   Fri Mar 28 16:50:06 2025 -0500
+
+    Create Readme.txt
+
+commit cf44e2eb92485997c55c8a4230e70872d46cb4c9
+Author: sina11178 <113195576+sina11178@users.noreply.github.com>
+Date:   Fri Mar 28 16:48:38 2025 -0500
+
+    Add files via upload
+
+commit e63af85ed069b5bc4f87e95bdfdb971fd027d6bf
+Author: sina11178 <113195576+sina11178@users.noreply.github.com>
+Date:   Fri Mar 28 16:48:13 2025 -0500
+
+    Create Readme.txt
+
+commit 1318b8731c7b63da011ec3e96d12e8cb4c472d9f
+Author: sina11178 <113195576+sina11178@users.noreply.github.com>
+Date:   Fri Mar 28 16:45:40 2025 -0500
+
+    Add files via upload
+
+commit ac46ac5e64c80f5072698328bc99e99534b76304
+Author: sina11178 <113195576+sina11178@users.noreply.github.com>
+Date:   Fri Mar 28 16:45:11 2025 -0500
+
+    Create Readme.txt
+
+commit 2f1f101b546e77d18ed96eeaf0f9637f168dcbdb
+Author: sina11178 <113195576+sina11178@users.noreply.github.com>
+Date:   Fri Mar 28 16:43:46 2025 -0500
+
+    Add files via upload
+
+commit 75bc6649e8e065aa95dbe80fae82bed289545645
+Author: sina11178 <113195576+sina11178@users.noreply.github.com>
+Date:   Fri Mar 28 16:43:31 2025 -0500
+
+    Create Readme.txt
+
+commit 79a044f2e85a476136ce49c6c1a4f2cc7bdba5fd
+Author: sina11178 <113195576+sina11178@users.noreply.github.com>
+Date:   Fri Mar 28 16:42:13 2025 -0500
+
+    Add files via upload
+
+commit 53453a9bb2f564b1c22150c080bf04f24806268b
+Author: sina11178 <113195576+sina11178@users.noreply.github.com>
+Date:   Fri Mar 28 16:41:30 2025 -0500
+
+    Create Readme.txt
+
+commit 4d919d4d9b4d564db1fa0fc4b69d6a9a2ff63bca
+Author: sina11178 <113195576+sina11178@users.noreply.github.com>
+Date:   Fri Mar 28 16:39:53 2025 -0500
+
+    Create Readme.txt
+
+commit d783bcc3f96959e2029c46115efb1a1f6b69b5dc
+Author: sina11178 <113195576+sina11178@users.noreply.github.com>
+Date:   Fri Mar 28 16:37:31 2025 -0500
+
+    Add files via upload
+    
+    This is the simulation code ran for Hamiltonian shown in this paper: https://journals.aps.org/prl/pdf/10.1103/PhysRevLett.124.206803
+    Includes code for:
+    1.) Measuring Autocorrelator
+    2.) Lanczos coefficients
+
+commit b1e7bb61a014b79b9b04a827a8b99f0ee021d2e4
+Author: sina11178 <113195576+sina11178@users.noreply.github.com>
+Date:   Fri Mar 28 16:34:33 2025 -0500
+
+    Create readme.txt
+
+commit b72cb8e63779c7530a09d940661f43cb752cab16
+Author: sina11178 <113195576+sina11178@users.noreply.github.com>
+Date:   Fri Mar 28 16:24:42 2025 -0500
+
+    Create readme.txt
+
+commit 0d6bc0a1d348b319a20e9f7ff187774b1047bc8c
+Author: sina11178 <113195576+sina11178@users.noreply.github.com>
+Date:   Fri Mar 28 16:21:14 2025 -0500
+
+    Initial commit
