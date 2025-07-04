@@ -308,15 +308,15 @@ def recursion_method(n, H, size):
     #print(O_1)
     krylov_basis = [O_0]  # YOU CAN ALSO JUST NORMALIZE THIS AND LEAVE OUT THE PREFACTOR IN THE NORM FUNCTION
     krylov_basis_squared = [O_0_squared]  # FOR ALPHA^2 OPERATOR
-    A_basis = []  # ORDER: 1, 2, ...
-    A_basis_squared = []  # FOR ALPHA^2 OPERATOR
+    #A_basis = []  # ORDER: 1, 2, ...
+    #A_basis_squared = []  # FOR ALPHA^2 OPERATOR
     for i in range(0, n):
         if (i == 0):  # BASE CASE
             A_1 = Lio @ krylov_basis[0]
             #A_1 = (((H @ np.reshape(krylov_basis[0], (3**size, 3**size)).T) - 
              #      (np.reshape(krylov_basis[0], (3**size, 3**size)).T @ H)).T).flatten()
             #A_1 = krylov_basis[0] @ np.array(L)
-            A_basis.append(A_1)
+            #A_basis.append(A_1)
             #b_1 = norm(A_1, A_1, size)
             b_1 = m * np.linalg.norm(A_1)
             b.append(b_1)
@@ -329,7 +329,7 @@ def recursion_method(n, H, size):
             #A_1_squared = (((H @ np.reshape(krylov_basis_squared[0], (3**size, 3**size)).T) -
             #               (np.reshape(krylov_basis_squared[0], (3**size, 3**size)).T @ H)).T).flatten()
             #A_1_squared = krylov_basis_squared[0] @ np.array(L)
-            A_basis_squared.append(A_1_squared)
+            #A_basis_squared.append(A_1_squared)
             b_1_squared = m * np.linalg.norm(A_1_squared)  # FOR ALPHA^2 OPERATOR
             b_squared.append(b_1_squared)
             O_1_squared = (1/b_1_squared) * A_1_squared  # FOR ALPHA^2 OPERATOR
@@ -337,18 +337,18 @@ def recursion_method(n, H, size):
 
         else:
             k = A_vectors(Lio, b, krylov_basis, i, H, size)
-            A_basis.append(k)
+            #A_basis.append(k)
             #b.append(norm(k, k, size))
             b.append(m * np.linalg.norm(k))
-            krylov_basis.append((1/b[i])*A_basis[i])
+            krylov_basis.append((1/b[i])*k)
 
             # NOTE: FOR ALPHA^2 OPERATOR
 
             k_squared = A_vectors(Lio, b_squared, krylov_basis_squared, i, H, size)
-            A_basis_squared.append(k_squared)
+            #A_basis_squared.append(k_squared)
             #b_squared.append(norm(k_squared, k_squared, size))  # FOR ALPHA^2 OPERATOR
             b_squared.append(m * np.linalg.norm(k_squared))  # FOR ALPHA^2
-            krylov_basis_squared.append((1/b_squared[i]) * A_basis_squared[i])  # FOR ALPHA^2 OPERATOR
+            krylov_basis_squared.append((1/b_squared[i]) * k_squared)  # FOR ALPHA^2 OPERATOR
 
     #print(b)
 

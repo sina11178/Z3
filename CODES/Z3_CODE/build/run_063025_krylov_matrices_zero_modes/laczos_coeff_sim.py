@@ -78,8 +78,8 @@ def LACZOS_COEF_vary_gam_SIM(n, size, gamma, params):
             A, U = np.linalg.eig(matrix_final)
             A_squared, U_squared = np.linalg.eig(matrix_final_squared)
 
-        EIG_STATES = []
-        EIG_STATES_SQUARED = []
+        #EIG_STATES = []
+        #EIG_STATES_SQUARED = []
         in_list = np.arange(0, n+1, 1)
         # EIG_STATE = np.abs(U[:, np.argmin(np.abs(A))])
         sorted = np.sort(np.abs(A))
@@ -87,14 +87,16 @@ def LACZOS_COEF_vary_gam_SIM(n, size, gamma, params):
         # EIG_STATE_2 = np.abs(U[:, np.abs(A).argsort()[1]])  # Second smallest eigenvalue
         # EIG_STATE = (1/np.linalg.norm(EIG_STATE)) * EIG_STATE
         # EIG_STATE_2 = (1/np.linalg.norm(EIG_STATE_2)) * EIG_STATE_2
-        for i in range(len(A)):
-            EIG_STATE = np.abs(U[:, np.abs(A).argsort()[i]])
-            EIG_STATE = (1/np.linalg.norm(EIG_STATE)) * EIG_STATE
-            EIG_STATES.append(EIG_STATE)
+      #  for i in range(len(A)):
+        EIG_STATE = np.abs(U[:, np.abs(A).argsort()[0]])
+        EIG_STATE = (1/np.linalg.norm(EIG_STATE)) * EIG_STATE
+        EIG_STATE = np.abs(EIG_STATE)
+        #    EIG_STATES.append(EIG_STATE)
 
-            EIG_STATE_SQUARED = np.abs(U_squared[:, np.abs(A_squared).argsort()[i]])
-            EIG_STATE_SQUARED = (1/np.linalg.norm(EIG_STATE_SQUARED)) * EIG_STATE_SQUARED
-            EIG_STATES_SQUARED.append(EIG_STATE_SQUARED)
+        EIG_STATE_SQUARED = np.abs(U_squared[:, np.abs(A_squared).argsort()[0]])
+        EIG_STATE_SQUARED = (1/np.linalg.norm(EIG_STATE_SQUARED)) * EIG_STATE_SQUARED
+        EIG_STATE_SQUARED = np.abs(EIG_STATE_SQUARED)
+        #    EIG_STATES_SQUARED.append(EIG_STATE_SQUARED)
 
     else:
         A, U = np.linalg.eig(matrix_final_trunc)  # NOTE: WE ONLY LOOK AT TRUNCATED MATRIX FOR FULLY NON-HERMITIAN
@@ -102,8 +104,8 @@ def LACZOS_COEF_vary_gam_SIM(n, size, gamma, params):
         #print(np.imag(A))
         in_list = np.arange(0, n+1, 1)
         in_list_trunc = np.arange(0, truncated_matrix_size, 1)
-        EIG_STATES = []
-        EIG_STATES_SQUARED = []
+        #EIG_STATES = []
+        #EIG_STATES_SQUARED = []
         # EIG_STATE = np.abs(U[:, np.argmin(np.abs(A))])
         sorted = np.sort(np.abs(A))
         sorted_squared = np.sort(np.abs(A_squared))
@@ -112,35 +114,35 @@ def LACZOS_COEF_vary_gam_SIM(n, size, gamma, params):
         # EIG_STATE = (1/np.linalg.norm(EIG_STATE)) * EIG_STATE
         # EIG_STATE_2 = (1/np.linalg.norm(EIG_STATE_2)) * EIG_STATE_2
         # Abs_A = np.abs(A)
-        for i in range(len(A)):
-            EIG_STATE = (U[:, np.abs(A).argsort()[i]])
-            EIG_STATE = (1/np.linalg.norm(EIG_STATE)) * EIG_STATE
-            EIG_STATE = np.abs(EIG_STATE)
+        #for i in range(len(A)):
+        EIG_STATE = (U[:, np.abs(A).argsort()[0]])
+        EIG_STATE = (1/np.linalg.norm(EIG_STATE)) * EIG_STATE
+        EIG_STATE = np.abs(EIG_STATE)
             #print(np.linalg.norm(EIG_STATE))
-            EIG_STATES.append(EIG_STATE)
+        #    EIG_STATES.append(EIG_STATE)
 
-            EIG_STATE_SQUARED = (U_squared[:, np.abs(A_squared).argsort()[i]])
-            EIG_STATE_SQUARED = (1/np.linalg.norm(EIG_STATE_SQUARED)) * EIG_STATE_SQUARED
-            EIG_STATE_SQUARED = np.abs(EIG_STATE_SQUARED)
-            EIG_STATES_SQUARED.append(EIG_STATE_SQUARED)
+        EIG_STATE_SQUARED = (U_squared[:, np.abs(A_squared).argsort()[0]])
+        EIG_STATE_SQUARED = (1/np.linalg.norm(EIG_STATE_SQUARED)) * EIG_STATE_SQUARED
+        EIG_STATE_SQUARED = np.abs(EIG_STATE_SQUARED)
+        #    EIG_STATES_SQUARED.append(EIG_STATE_SQUARED)
 
 
     #plt.subplot(2, 1, 1)
     if gamma != 0:
         plt.figure()
-        plt.plot(in_list, EIG_STATES[0], marker = ".", linestyle = '-', color = 'r', label = 'a_1 E = ' + str(np.min(np.abs(A))))
+        plt.plot(in_list, EIG_STATE, marker = ".", linestyle = '-', color = 'r', label = 'a_1 E = ' + str(np.min(np.abs(A))))
         #title = str(params[0]) + ", " + str(params[1]) + "  " + "(f, PHI)" + " gam = " + str(gamma) + " Zero Eigenvector graphs (L = " + str(size) + ")"
         #plt.suptitle(title)
         plt.title('Eigenvector Components for Zero Eigenvalue: alpha_1')
         plt.xlabel("n")
         plt.ylabel("Eigenvector Components")
-        plt.ylim(0, 0.2)
+        #plt.ylim(0, 0.2)
         plt.legend()
         plt.savefig('krylov_matrix/f_' + str(params[0]) + '_phi_' + str(params[1]) + '_L_' + str(size) + '_gamm_' + str(gamma) + '/zero_eigenvector_alpha_1.pdf')
         plt.close()
     else:
         plt.figure()
-        plt.plot(in_list_trunc, EIG_STATES[0], marker = ".", linestyle = '-', color = 'r', label = 'a_1 E = ' + str(np.min(np.abs(A))))
+        plt.plot(in_list_trunc, EIG_STATE, marker = ".", linestyle = '-', color = 'r', label = 'a_1 E = ' + str(np.min(np.abs(A))))
         #title = str(params[0]) + ", " + str(params[1]) + "  " + "(f, PHI)" + " gam = " + str(gamma) + " Zero Eigenvector graphs (L = " + str(size) + ")"
         #plt.suptitle(title)
         plt.title('Eigenvector Components for Zero Eigenvalue: alpha_1 (NOTE: TRUNCATED)')
@@ -155,11 +157,11 @@ def LACZOS_COEF_vary_gam_SIM(n, size, gamma, params):
     #plt.subplot(2, 1, 2)
     
     plt.figure()
-    plt.plot(in_list, EIG_STATES_SQUARED[0], marker = ".", linestyle = '-', color = 'g', label = 'a_1^2 E = ' + str(np.min(np.abs(A_squared))))
+    plt.plot(in_list, EIG_STATE_SQUARED, marker = ".", linestyle = '-', color = 'g', label = 'a_1^2 E = ' + str(np.min(np.abs(A_squared))))
     plt.title('Eigenvector Components for Zero Eigenvalue: alpha_1 squared')
     plt.xlabel("n")
     plt.ylabel("Eigenvector Components")
-    plt.ylim(0, 0.2)
+    #plt.ylim(0, 0.2)
     plt.legend()
     plt.savefig('krylov_matrix/f_' + str(params[0]) + '_phi_' + str(params[1]) + '_L_' + str(size) + '_gamm_' + str(gamma) + '/zero_eigenvector_alpha_1_squared.pdf')
 
