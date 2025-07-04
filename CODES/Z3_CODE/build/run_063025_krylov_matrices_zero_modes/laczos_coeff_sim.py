@@ -44,7 +44,7 @@ def LACZOS_COEF_vary_gam_SIM(n, size, gamma, params):
         F = np.abs(matrix_final_trunc)
 
     F_squared = np.abs(matrix_final_squared)
-
+    plt.figure()
     plt.imshow(F, cmap='seismic', aspect='auto')
     #plt.clim(-np.max(np.abs(F)), np.max(np.abs(F)))
     #plt.clim(-0.1, 0.1)
@@ -53,9 +53,9 @@ def LACZOS_COEF_vary_gam_SIM(n, size, gamma, params):
     plt.xlabel('Column Index')
     plt.ylabel('Row Index')
     plt.savefig('krylov_matrix/f_' + str(params[0]) + '_phi_' + str(params[1]) + '_L_' + str(size) + '_gamm_' + str(gamma) + '/krylov_matrix_alpha_1.pdf')
-    plt.show()
+    #plt.show()
 
-
+    plt.figure()
     plt.imshow(F_squared, cmap='seismic', aspect='auto')
     plt.colorbar(label='Value')
     #plt.clim(0, 1.8)
@@ -63,7 +63,7 @@ def LACZOS_COEF_vary_gam_SIM(n, size, gamma, params):
     plt.xlabel('Column Index')
     plt.ylabel('Row Index')
     plt.savefig('krylov_matrix/f_' + str(params[0]) + '_phi_' + str(params[1]) + '_L_' + str(size) + '_gamm_' + str(gamma) + '/krylov_matrix_alpha_1_squared.pdf')
-    plt.show()
+    #plt.show()
 
 
     # NOTE: GRAPH OF EIGENVALUES
@@ -127,6 +127,7 @@ def LACZOS_COEF_vary_gam_SIM(n, size, gamma, params):
 
     #plt.subplot(2, 1, 1)
     if gamma != 0:
+        plt.figure()
         plt.plot(in_list, EIG_STATES[0], marker = ".", linestyle = '-', color = 'r', label = 'a_1 E = ' + str(np.min(np.abs(A))))
         #title = str(params[0]) + ", " + str(params[1]) + "  " + "(f, PHI)" + " gam = " + str(gamma) + " Zero Eigenvector graphs (L = " + str(size) + ")"
         #plt.suptitle(title)
@@ -138,6 +139,7 @@ def LACZOS_COEF_vary_gam_SIM(n, size, gamma, params):
         plt.savefig('krylov_matrix/f_' + str(params[0]) + '_phi_' + str(params[1]) + '_L_' + str(size) + '_gamm_' + str(gamma) + '/zero_eigenvector_alpha_1.pdf')
         plt.close()
     else:
+        plt.figure()
         plt.plot(in_list_trunc, EIG_STATES[0], marker = ".", linestyle = '-', color = 'r', label = 'a_1 E = ' + str(np.min(np.abs(A))))
         #title = str(params[0]) + ", " + str(params[1]) + "  " + "(f, PHI)" + " gam = " + str(gamma) + " Zero Eigenvector graphs (L = " + str(size) + ")"
         #plt.suptitle(title)

@@ -24,10 +24,10 @@ import sys
 
 # FOR KRYLOV SIMULATION
 gamma_array = [0, 0.05, 1]
-#size_array = [4, 5, 6, 7, 8, 9]
-size_array = [8, 9]
-#N_array = [50, 50, 60, 60, 90, 90]
-N_array = [90, 90]
+size_array = [4, 5, 6, 7, 8, 9]
+#size_array = [8, 9]
+N_array = [50, 50, 60, 60, 90, 90]
+#N_array = [90, 90]
 f_array = [.1, .25, .4, .5]
 phi_array = [0, np.pi/6, np.pi/4, np.pi/3]
 
@@ -48,5 +48,5 @@ phi_array = [0, np.pi/6, np.pi/4, np.pi/3]
 
 sys_arg = int(sys.argv[1])
 
-LACZOS_COEF_vary_gam_SIM(N_array[int(sys_arg/16) % 2], size_array[int(sys_arg/16) % 2], gamma_array[int(sys_arg/32)], [f_array[sys_arg % 4], phi_array[int(sys_arg/4) % 4]])
+LACZOS_COEF_vary_gam_SIM(N_array[int(sys_arg/16) % 6], size_array[int(sys_arg/16) % 6], gamma_array[int(sys_arg/96)], [f_array[sys_arg % 4], phi_array[int(sys_arg/4) % 4]])
 

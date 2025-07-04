@@ -297,8 +297,8 @@ def recursion_method(n, H, size):
     list_squared[0] = np_SIG.conjugate().T  # FOR ALPHA^2 OPERATOR
     m = np.sqrt((1/(3**size)))
 
-    seeding = tensor_product(list, size)
-    seeding_squared = tensor_product(list_squared, size)  # FOR ALPHA^2 OPERATOR
+    seeding = tensor_product(list, size).toarray()
+    seeding_squared = tensor_product(list_squared, size).toarray()  # FOR ALPHA^2 OPERATOR
     Lio = Liovillan(H, size)
     b = []  # ORDER: 1, 2, ...
     b_squared = []  # FOR ALPHA^2 OPERATOR
@@ -386,8 +386,8 @@ def grahm_schmidt(n, H, size):
     #strong_mode = alph_3  # tensor_product(list, size)
     #list[0] = np.conjugate(np_SIG.T)  # FOR ALPHA^2 OPERATOR
     list_squared[0] = np_SIG.conjugate().T  # FOR ALPHA^2 OPERATOR
-    seeding = tensor_product(list, size)
-    seeding_squared = tensor_product(list_squared, size)  # FOR ALPHA^2 OPERATOR
+    seeding = tensor_product(list, size).toarray()
+    seeding_squared = tensor_product(list_squared, size).toarray()  # FOR ALPHA^2 OPERATOR
     #strong_mode = tensor_product(list, size) + (f*w/(J*np.exp(1.j*phi))) * np.conjugate(alph_3).T
     O_0 = ((seeding.T).flatten())
     gs_basis_non_ortho = [O_0]
