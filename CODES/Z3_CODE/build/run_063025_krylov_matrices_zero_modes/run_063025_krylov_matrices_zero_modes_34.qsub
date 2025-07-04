@@ -1,0 +1,62 @@
+#!/usr/bin/bash
+# Template for ".qsub" files that will be run as batch files by slurm
+
+RUN_NAME=run_063025_krylov_matrices_zero_modes
+PROJECT_NAME=Z3_CODE
+SCRATCH=$HOME/scratch
+SCRATCH_DIR=$SCRATCH/$RUN_NAME/b34
+LOCAL_DIR=$HOME/$PROJECT_NAME/build
+
+mkdir -p $SCRATCH_DIR
+
+EXEC=main.py
+HELPER1="Z3_code.py"
+HELPER2="f_phi_autocorr_SIM.py"
+HELPER3="size_comparison_autocorr_SIM.py"
+HELPER4="laczos_coeff_sim.py"
+
+cd $LOCAL_DIR/$RUN_NAME
+cp $EXEC $SCRATCH_DIR/
+if [ ! -z "$HELPER1" ] # Check that HELPER isn't empty
+then
+    cp $HELPER1 $SCRATCH_DIR/
+fi
+if [ ! -z "$HELPER2" ] # Check that HELPER isn't empty
+then
+    cp $HELPER2 $SCRATCH_DIR/
+fi
+if [ ! -z "$HELPER3" ] # Check that HELPER isn't empty
+then
+    cp $HELPER3 $SCRATCH_DIR/
+fi
+if [ ! -z "$HELPER4" ] # Check that HELPER isn't empty
+then
+    cp $HELPER4 $SCRATCH_DIR/
+fi
+
+
+cd $SCRATCH_DIR/
+
+{ time python ./$EXEC 34; } > temp.out 2> error.err
+
+if [ "$(pwd)" == $SCRATCH_DIR ]; then
+    echo "Removing files"
+    rm $EXEC
+    if [ ! -z "$HELPER1" ] # Check that HELPER isn't empty
+    then
+	rm $HELPER1
+    fi
+    if [ ! -z "$HELPER2" ] # Check that HELPER isn't empty
+    then
+        rm $HELPER2
+    fi
+    if [ ! -z "$HELPER3" ] # Check that HELPER isn't empty
+    then
+        rm $HELPER3
+    fi
+    if [ ! -z "$HELPER4" ] # Check that HELPER isn't empty
+    then
+        rm $HELPER4
+    fi
+
+fi
