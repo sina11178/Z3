@@ -256,10 +256,12 @@ def norm (L_1, L_2, size):  # L_1 is ket, L_2 is the bra
 
 def recursion_method(n, H, size):
     list = []
+    list_squared = []  # FOR ALPHA^2 OPERATOR
     for i in range(size):
         list.append(np_I)
+        list_squared.append(np_I)  # FOR ALPHA^2 OPERATOR
     list[0] = np_SIG
-    list_squared = list
+    #list_squared = list
     list_squared[0] = np.conjugate(np_SIG.T)  # FOR ALPHA^2 OPERATOR
     m = np.sqrt((1/(3**size)))
 
