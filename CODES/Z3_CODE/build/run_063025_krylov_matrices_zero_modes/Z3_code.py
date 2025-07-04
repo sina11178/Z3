@@ -268,9 +268,9 @@ def Liovillan(Hamiltonian, size): #  Liovillan only applied to a matrix converte
     return (S_1+(-1*S_2))
 
 def A_vectors(liovillan, b_array, O_basis_array, n_index, ham, size):  # Used for A_2 and on
-    #first_term = (((ham @ np.reshape(O_basis_array[n_index], (3**size, 3**size)).T) - 
-    #               (np.reshape(O_basis_array[n_index], (3**size, 3**size)).T @ ham)).T).flatten()
-    first_term = liovillan @ O_basis_array[n_index]
+    first_term = (((ham @ np.reshape(O_basis_array[n_index], (3**size, 3**size)).T) - 
+                   (np.reshape(O_basis_array[n_index], (3**size, 3**size)).T @ ham)).T).flatten()
+    #first_term = liovillan @ O_basis_array[n_index]
     second_term = (b_array[n_index - 1]) * O_basis_array[(n_index - 1)]
 
     return (first_term +(-1*second_term))
@@ -299,7 +299,8 @@ def recursion_method(n, H, size):
 
     seeding = tensor_product(list, size).toarray()
     seeding_squared = tensor_product(list_squared, size).toarray()  # FOR ALPHA^2 OPERATOR
-    Lio = Liovillan(H, size)
+    #Lio = Liovillan(H, size)
+    Lio = 0
     b = []  # ORDER: 1, 2, ...
     b_squared = []  # FOR ALPHA^2 OPERATOR
     O_0 = ((seeding.T).flatten()) # Returns as list w/ vector inside of it;  ORDER: 0, 1, 2, ..., n
@@ -312,9 +313,9 @@ def recursion_method(n, H, size):
     #A_basis_squared = []  # FOR ALPHA^2 OPERATOR
     for i in range(0, n):
         if (i == 0):  # BASE CASE
-            A_1 = Lio @ krylov_basis[0]
-            #A_1 = (((H @ np.reshape(krylov_basis[0], (3**size, 3**size)).T) - 
-             #      (np.reshape(krylov_basis[0], (3**size, 3**size)).T @ H)).T).flatten()
+            #A_1 = Lio @ krylov_basis[0]
+            A_1 = (((H @ np.reshape(krylov_basis[0], (3**size, 3**size)).T) - 
+                   (np.reshape(krylov_basis[0], (3**size, 3**size)).T @ H)).T).flatten()
             #A_1 = krylov_basis[0] @ np.array(L)
             #A_basis.append(A_1)
             #b_1 = norm(A_1, A_1, size)
@@ -325,9 +326,9 @@ def recursion_method(n, H, size):
             krylov_basis.append(O_1)
 
             # NOTE: FOR ALPHA^2 OPERATOR
-            A_1_squared = Lio @ krylov_basis_squared[0]
-            #A_1_squared = (((H @ np.reshape(krylov_basis_squared[0], (3**size, 3**size)).T) -
-            #               (np.reshape(krylov_basis_squared[0], (3**size, 3**size)).T @ H)).T).flatten()
+            #A_1_squared = Lio @ krylov_basis_squared[0]
+            A_1_squared = (((H @ np.reshape(krylov_basis_squared[0], (3**size, 3**size)).T) -
+                           (np.reshape(krylov_basis_squared[0], (3**size, 3**size)).T @ H)).T).flatten()
             #A_1_squared = krylov_basis_squared[0] @ np.array(L)
             #A_basis_squared.append(A_1_squared)
             b_1_squared = m * np.linalg.norm(A_1_squared)  # FOR ALPHA^2 OPERATOR
@@ -356,8 +357,12 @@ def recursion_method(n, H, size):
     matrix_final = np.zeros((l,l), dtype=complex)
     matrix_final_squared = np.zeros((l,l), dtype=complex)  # FOR ALPHA^2 OPERATOR
     for j in range(len(krylov_basis)):
-        k = Lio @ krylov_basis[j]
-        k_squared = Lio @ krylov_basis_squared[j]  # FOR ALPHA^2 OPERATOR
+        #k = Lio @ krylov_basis[j]
+        k = (((H @ np.reshape(krylov_basis[j], (3**size, 3**size)).T) -
+                   (np.reshape(krylov_basis[j], (3**size, 3**size)).T @ H)).T).flatten()
+        #k_squared = Lio @ krylov_basis_squared[j]  # FOR ALPHA^2 OPERATOR
+        k_squared = (((H @ np.reshape(krylov_basis_squared[j], (3**size, 3**size)).T) -
+                   (np.reshape(krylov_basis_squared[j], (3**size, 3**size)).T @ H)).T).flatten()
         for i in range(len(krylov_basis)):
             matrix_final[i, j] = np.conjugate(krylov_basis[i].T) @ k
             matrix_final_squared[i, j] = np.conjugate(krylov_basis_squared[i].T) @ k_squared
@@ -375,7 +380,8 @@ GRAHM SCHMIDT - FOR NON HERMITIAN HAMILTONIANS
 
 
 def grahm_schmidt(n, H, size):
-    Lio = Liovillan(H, size)
+    #Lio = Liovillan(H, size)
+    Lio = 0
     list = []
     list_squared = []  # FOR ALPHA^2 OPERATOR
     for i in range(size):
@@ -397,9 +403,12 @@ def grahm_schmidt(n, H, size):
     gs_basis_non_ortho_squared = [O_0_squared]  # FOR ALPHA^2 OPERATOR
 
     for P in range(1, n+1):
-        K = Lio @ gs_basis_non_ortho[P-1]
-        K_squared = Lio @ gs_basis_non_ortho_squared[P-1]
-        #f = (((H @ np.reshape(gs_basis_non_ortho[j-1], (3**size, 3**size)).T) - (np.reshape(gs_basis_non_ortho[j-1], (3**size, 3**size)).T @ H)).T).flatten()
+        #K = Lio @ gs_basis_non_ortho[P-1]
+        #K_squared = Lio @ gs_basis_non_ortho_squared[P-1]
+        K = (((H @ np.reshape(gs_basis_non_ortho[P-1], (3**size, 3**size)).T) - (np.reshape(gs_basis_non_ortho[P-1], (3**size, 3**size)).T @ H)).T).flatten()
+
+        K_squared = (((H @ np.reshape(gs_basis_non_ortho_squared[P-1], (3**size, 3**size)).T) - (np.reshape(gs_basis_non_ortho_squared[P-1], (3**size, 3**size)).T @ H)).T).flatten()
+        
         gs_basis_non_ortho.append(K)
         gs_basis_non_ortho_squared.append(K_squared)
 
@@ -413,8 +422,12 @@ def grahm_schmidt(n, H, size):
     matrix_final = np.zeros((l,l), dtype=complex)  # FOR ALPHA OPERATOR
     matrix_final_squared = np.zeros((l,l), dtype=complex)  # FOR ALPHA^2 OPERATOR
     for j in range(l):
-        c = Lio @ Q[:, j]
-        c_squared = Lio @ Q_squared[:, j]
+        #c = Lio @ Q[:, j]
+        c = (((H @ np.reshape(Q[:, j], (3**size, 3**size)).T) -
+            (np.reshape(Q[:,j], (3**size, 3**size)).T @ H)).T).flatten()
+        #c_squared = Lio @ Q_squared[:, j]
+        c_squared = (((H @ np.reshape(Q_squared[:, j], (3**size, 3**size)).T) -
+            (np.reshape(Q_squared[:, j], (3**size, 3**size)).T @ H)).T).flatten()
         for i in range(l):
             matrix_final[i, j] = np.conjugate(Q[:, i]) @ c
             matrix_final_squared[i, j] = np.conjugate(Q_squared[:, i]) @ c_squared
