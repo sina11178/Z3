@@ -1,0 +1,575 @@
+Starting job run_063025_krylov_matrices_zero_modes
+WARNING (07/03/25 18:22:56): LAUNCHER_WORKDIR variable not set. Using current directory.
+Launcher: Setup complete.
+
+------------- SUMMARY ---------------
+   Number of hosts:    6
+   Working directory:  /home/sxr190099/Z3/CODES/Z3_CODE/build/run_063025_krylov_matrices_zero_modes
+   Processes per host: 16
+   Total processes:    96
+   Total jobs:         96
+   Scheduling method:  interleaved
+
+-------------------------------------
+Launcher: Starting parallel tasks...
+using /tmp/launcher.1118121.hostlist.kwSANJbV to get hosts
+starting job on c-09-13
+starting job on c-09-14
+starting job on c-10-01
+starting job on c-10-02
+starting job on c-10-03
+starting job on c-10-04
+Lmod has detected the following error: The following module(s) are unknown:
+"git"
+
+Please check the spelling or version number. Also try "module spider ..."
+It is also possible your cache file is out-of-date; it may help to try:
+  $ module --ignore_cache load "git"
+
+Also make sure that all modulefiles written in TCL start with the string
+#%Module
+
+
+
+Lmod has detected the following error: The following module(s) are unknown:
+"git"
+
+Please check the spelling or version number. Also try "module spider ..."
+It is also possible your cache file is out-of-date; it may help to try:
+  $ module --ignore_cache load "git"
+
+Also make sure that all modulefiles written in TCL start with the string
+#%Module
+
+
+
+Lmod has detected the following error: The following module(s) are unknown:
+"git"
+
+Please check the spelling or version number. Also try "module spider ..."
+It is also possible your cache file is out-of-date; it may help to try:
+  $ module --ignore_cache load "git"
+
+Also make sure that all modulefiles written in TCL start with the string
+#%Module
+
+
+
+Lmod has detected the following error: The following module(s) are unknown:
+"git"
+
+Please check the spelling or version number. Also try "module spider ..."
+It is also possible your cache file is out-of-date; it may help to try:
+  $ module --ignore_cache load "git"
+
+Also make sure that all modulefiles written in TCL start with the string
+#%Module
+
+
+
+Lmod has detected the following error: The following module(s) are unknown:
+"git"
+
+Please check the spelling or version number. Also try "module spider ..."
+It is also possible your cache file is out-of-date; it may help to try:
+  $ module --ignore_cache load "git"
+
+Also make sure that all modulefiles written in TCL start with the string
+#%Module
+
+
+
+Lmod has detected the following error: The following module(s) are unknown:
+"git"
+
+Please check the spelling or version number. Also try "module spider ..."
+It is also possible your cache file is out-of-date; it may help to try:
+  $ module --ignore_cache load "git"
+
+Also make sure that all modulefiles written in TCL start with the string
+#%Module
+
+
+
+Launcher: Task 39 running job 40 on c-10-01 (bash run_063025_krylov_matrices_zero_modes_39.qsub)
+run_063025_krylov_matrices_zero_modes_39.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_063025_krylov_matrices_zero_modes: No such file or directory
+Launcher: Task 89 running job 90 on c-10-04 (bash run_063025_krylov_matrices_zero_modes_89.qsub)
+run_063025_krylov_matrices_zero_modes_89.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_063025_krylov_matrices_zero_modes: No such file or directory
+Launcher: Task 60 running job 61 on c-10-02 (bash run_063025_krylov_matrices_zero_modes_60.qsub)
+Launcher: Task 51 running job 52 on c-10-02 (bash run_063025_krylov_matrices_zero_modes_51.qsub)
+run_063025_krylov_matrices_zero_modes_51.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_063025_krylov_matrices_zero_modes: No such file or directory
+run_063025_krylov_matrices_zero_modes_60.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_063025_krylov_matrices_zero_modes: No such file or directory
+Launcher: Task 5 running job 6 on c-09-13 (bash run_063025_krylov_matrices_zero_modes_5.qsub)
+run_063025_krylov_matrices_zero_modes_5.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_063025_krylov_matrices_zero_modes: No such file or directory
+Launcher: Task 25 running job 26 on c-09-14 (bash run_063025_krylov_matrices_zero_modes_25.qsub)
+run_063025_krylov_matrices_zero_modes_25.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_063025_krylov_matrices_zero_modes: No such file or directory
+Launcher: Task 35 running job 36 on c-10-01 (bash run_063025_krylov_matrices_zero_modes_35.qsub)
+run_063025_krylov_matrices_zero_modes_35.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_063025_krylov_matrices_zero_modes: No such file or directory
+Launcher: Task 90 running job 91 on c-10-04 (bash run_063025_krylov_matrices_zero_modes_90.qsub)
+run_063025_krylov_matrices_zero_modes_90.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_063025_krylov_matrices_zero_modes: No such file or directory
+Launcher: Task 67 running job 68 on c-10-03 (bash run_063025_krylov_matrices_zero_modes_67.qsub)
+Launcher: Task 70 running job 71 on c-10-03 (bash run_063025_krylov_matrices_zero_modes_70.qsub)
+Launcher: Task 65 running job 66 on c-10-03 (bash run_063025_krylov_matrices_zero_modes_65.qsub)
+run_063025_krylov_matrices_zero_modes_65.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_063025_krylov_matrices_zero_modes: No such file or directory
+run_063025_krylov_matrices_zero_modes_67.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_063025_krylov_matrices_zero_modes: No such file or directory
+run_063025_krylov_matrices_zero_modes_70.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_063025_krylov_matrices_zero_modes: No such file or directory
+Launcher: Task 1 running job 2 on c-09-13 (bash run_063025_krylov_matrices_zero_modes_1.qsub)
+Launcher: Task 3 running job 4 on c-09-13 (bash run_063025_krylov_matrices_zero_modes_3.qsub)
+Launcher: Task 7 running job 8 on c-09-13 (bash run_063025_krylov_matrices_zero_modes_7.qsub)
+run_063025_krylov_matrices_zero_modes_1.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_063025_krylov_matrices_zero_modes: No such file or directory
+run_063025_krylov_matrices_zero_modes_3.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_063025_krylov_matrices_zero_modes: No such file or directory
+run_063025_krylov_matrices_zero_modes_7.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_063025_krylov_matrices_zero_modes: No such file or directory
+Launcher: Task 20 running job 21 on c-09-14 (bash run_063025_krylov_matrices_zero_modes_20.qsub)
+run_063025_krylov_matrices_zero_modes_20.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_063025_krylov_matrices_zero_modes: No such file or directory
+Launcher: Task 79 running job 80 on c-10-03 (bash run_063025_krylov_matrices_zero_modes_79.qsub)
+run_063025_krylov_matrices_zero_modes_79.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_063025_krylov_matrices_zero_modes: No such file or directory
+Launcher: Task 18 running job 19 on c-09-14 (bash run_063025_krylov_matrices_zero_modes_18.qsub)
+run_063025_krylov_matrices_zero_modes_18.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_063025_krylov_matrices_zero_modes: No such file or directory
+Launcher: Task 82 running job 83 on c-10-04 (bash run_063025_krylov_matrices_zero_modes_82.qsub)
+run_063025_krylov_matrices_zero_modes_82.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_063025_krylov_matrices_zero_modes: No such file or directory
+Launcher: Task 61 running job 62 on c-10-02 (bash run_063025_krylov_matrices_zero_modes_61.qsub)
+Launcher: Task 56 running job 57 on c-10-02 (bash run_063025_krylov_matrices_zero_modes_56.qsub)
+Launcher: Task 75 running job 76 on c-10-03 (bash run_063025_krylov_matrices_zero_modes_75.qsub)
+run_063025_krylov_matrices_zero_modes_61.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_063025_krylov_matrices_zero_modes: No such file or directory
+run_063025_krylov_matrices_zero_modes_56.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_063025_krylov_matrices_zero_modes: No such file or directory
+run_063025_krylov_matrices_zero_modes_75.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_063025_krylov_matrices_zero_modes: No such file or directory
+Launcher: Task 16 running job 17 on c-09-14 (bash run_063025_krylov_matrices_zero_modes_16.qsub)
+run_063025_krylov_matrices_zero_modes_16.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_063025_krylov_matrices_zero_modes: No such file or directory
+Launcher: Task 36 running job 37 on c-10-01 (bash run_063025_krylov_matrices_zero_modes_36.qsub)
+run_063025_krylov_matrices_zero_modes_36.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_063025_krylov_matrices_zero_modes: No such file or directory
+Launcher: Task 6 running job 7 on c-09-13 (bash run_063025_krylov_matrices_zero_modes_6.qsub)
+run_063025_krylov_matrices_zero_modes_6.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_063025_krylov_matrices_zero_modes: No such file or directory
+Launcher: Task 28 running job 29 on c-09-14 (bash run_063025_krylov_matrices_zero_modes_28.qsub)
+run_063025_krylov_matrices_zero_modes_28.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_063025_krylov_matrices_zero_modes: No such file or directory
+Launcher: Task 11 running job 12 on c-09-13 (bash run_063025_krylov_matrices_zero_modes_11.qsub)
+run_063025_krylov_matrices_zero_modes_11.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_063025_krylov_matrices_zero_modes: No such file or directory
+Launcher: Task 31 running job 32 on c-09-14 (bash run_063025_krylov_matrices_zero_modes_31.qsub)
+run_063025_krylov_matrices_zero_modes_31.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_063025_krylov_matrices_zero_modes: No such file or directory
+Launcher: Task 38 running job 39 on c-10-01 (bash run_063025_krylov_matrices_zero_modes_38.qsub)
+Launcher: Task 37 running job 38 on c-10-01 (bash run_063025_krylov_matrices_zero_modes_37.qsub)
+run_063025_krylov_matrices_zero_modes_38.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_063025_krylov_matrices_zero_modes: No such file or directory
+run_063025_krylov_matrices_zero_modes_37.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_063025_krylov_matrices_zero_modes: No such file or directory
+Launcher: Task 92 running job 93 on c-10-04 (bash run_063025_krylov_matrices_zero_modes_92.qsub)
+run_063025_krylov_matrices_zero_modes_92.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_063025_krylov_matrices_zero_modes: No such file or directory
+Launcher: Task 12 running job 13 on c-09-13 (bash run_063025_krylov_matrices_zero_modes_12.qsub)
+run_063025_krylov_matrices_zero_modes_12.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_063025_krylov_matrices_zero_modes: No such file or directory
+Launcher: Task 44 running job 45 on c-10-01 (bash run_063025_krylov_matrices_zero_modes_44.qsub)
+run_063025_krylov_matrices_zero_modes_44.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_063025_krylov_matrices_zero_modes: No such file or directory
+Launcher: Task 83 running job 84 on c-10-04 (bash run_063025_krylov_matrices_zero_modes_83.qsub)
+Launcher: Task 85 running job 86 on c-10-04 (bash run_063025_krylov_matrices_zero_modes_85.qsub)
+run_063025_krylov_matrices_zero_modes_83.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_063025_krylov_matrices_zero_modes: No such file or directory
+run_063025_krylov_matrices_zero_modes_85.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_063025_krylov_matrices_zero_modes: No such file or directory
+Launcher: Task 54 running job 55 on c-10-02 (bash run_063025_krylov_matrices_zero_modes_54.qsub)
+run_063025_krylov_matrices_zero_modes_54.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_063025_krylov_matrices_zero_modes: No such file or directory
+Launcher: Task 19 running job 20 on c-09-14 (bash run_063025_krylov_matrices_zero_modes_19.qsub)
+run_063025_krylov_matrices_zero_modes_19.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_063025_krylov_matrices_zero_modes: No such file or directory
+Launcher: Task 87 running job 88 on c-10-04 (bash run_063025_krylov_matrices_zero_modes_87.qsub)
+Launcher: Task 80 running job 81 on c-10-04 (bash run_063025_krylov_matrices_zero_modes_80.qsub)
+run_063025_krylov_matrices_zero_modes_80.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_063025_krylov_matrices_zero_modes: No such file or directory
+run_063025_krylov_matrices_zero_modes_87.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_063025_krylov_matrices_zero_modes: No such file or directory
+Launcher: Task 9 running job 10 on c-09-13 (bash run_063025_krylov_matrices_zero_modes_9.qsub)
+Launcher: Task 2 running job 3 on c-09-13 (bash run_063025_krylov_matrices_zero_modes_2.qsub)
+run_063025_krylov_matrices_zero_modes_9.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_063025_krylov_matrices_zero_modes: No such file or directory
+run_063025_krylov_matrices_zero_modes_2.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_063025_krylov_matrices_zero_modes: No such file or directory
+Launcher: Task 32 running job 33 on c-10-01 (bash run_063025_krylov_matrices_zero_modes_32.qsub)
+run_063025_krylov_matrices_zero_modes_32.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_063025_krylov_matrices_zero_modes: No such file or directory
+Launcher: Task 88 running job 89 on c-10-04 (bash run_063025_krylov_matrices_zero_modes_88.qsub)
+run_063025_krylov_matrices_zero_modes_88.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_063025_krylov_matrices_zero_modes: No such file or directory
+Launcher: Task 74 running job 75 on c-10-03 (bash run_063025_krylov_matrices_zero_modes_74.qsub)
+Launcher: Task 66 running job 67 on c-10-03 (bash run_063025_krylov_matrices_zero_modes_66.qsub)
+run_063025_krylov_matrices_zero_modes_74.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_063025_krylov_matrices_zero_modes: No such file or directory
+run_063025_krylov_matrices_zero_modes_66.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_063025_krylov_matrices_zero_modes: No such file or directory
+Launcher: Task 4 running job 5 on c-09-13 (bash run_063025_krylov_matrices_zero_modes_4.qsub)
+run_063025_krylov_matrices_zero_modes_4.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_063025_krylov_matrices_zero_modes: No such file or directory
+Launcher: Task 22 running job 23 on c-09-14 (bash run_063025_krylov_matrices_zero_modes_22.qsub)
+run_063025_krylov_matrices_zero_modes_22.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_063025_krylov_matrices_zero_modes: No such file or directory
+Launcher: Task 95 running job 96 on c-10-04 (bash run_063025_krylov_matrices_zero_modes_95.qsub)
+Launcher: Task 86 running job 87 on c-10-04 (bash run_063025_krylov_matrices_zero_modes_86.qsub)
+run_063025_krylov_matrices_zero_modes_95.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_063025_krylov_matrices_zero_modes: No such file or directory
+run_063025_krylov_matrices_zero_modes_86.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_063025_krylov_matrices_zero_modes: No such file or directory
+Launcher: Task 58 running job 59 on c-10-02 (bash run_063025_krylov_matrices_zero_modes_58.qsub)
+Launcher: Task 57 running job 58 on c-10-02 (bash run_063025_krylov_matrices_zero_modes_57.qsub)
+run_063025_krylov_matrices_zero_modes_58.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_063025_krylov_matrices_zero_modes: No such file or directory
+run_063025_krylov_matrices_zero_modes_57.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_063025_krylov_matrices_zero_modes: No such file or directory
+Launcher: Task 14 running job 15 on c-09-13 (bash run_063025_krylov_matrices_zero_modes_14.qsub)
+run_063025_krylov_matrices_zero_modes_14.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_063025_krylov_matrices_zero_modes: No such file or directory
+Launcher: Task 21 running job 22 on c-09-14 (bash run_063025_krylov_matrices_zero_modes_21.qsub)
+Launcher: Task 26 running job 27 on c-09-14 (bash run_063025_krylov_matrices_zero_modes_26.qsub)
+run_063025_krylov_matrices_zero_modes_21.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_063025_krylov_matrices_zero_modes: No such file or directory
+run_063025_krylov_matrices_zero_modes_26.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_063025_krylov_matrices_zero_modes: No such file or directory
+Launcher: Task 43 running job 44 on c-10-01 (bash run_063025_krylov_matrices_zero_modes_43.qsub)
+Launcher: Task 34 running job 35 on c-10-01 (bash run_063025_krylov_matrices_zero_modes_34.qsub)
+Launcher: Task 33 running job 34 on c-10-01 (bash run_063025_krylov_matrices_zero_modes_33.qsub)
+run_063025_krylov_matrices_zero_modes_34.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_063025_krylov_matrices_zero_modes: No such file or directory
+run_063025_krylov_matrices_zero_modes_43.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_063025_krylov_matrices_zero_modes: No such file or directory
+run_063025_krylov_matrices_zero_modes_33.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_063025_krylov_matrices_zero_modes: No such file or directory
+Launcher: Task 50 running job 51 on c-10-02 (bash run_063025_krylov_matrices_zero_modes_50.qsub)
+Launcher: Task 53 running job 54 on c-10-02 (bash run_063025_krylov_matrices_zero_modes_53.qsub)
+run_063025_krylov_matrices_zero_modes_53.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_063025_krylov_matrices_zero_modes: No such file or directory
+run_063025_krylov_matrices_zero_modes_50.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_063025_krylov_matrices_zero_modes: No such file or directory
+Launcher: Task 72 running job 73 on c-10-03 (bash run_063025_krylov_matrices_zero_modes_72.qsub)
+run_063025_krylov_matrices_zero_modes_72.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_063025_krylov_matrices_zero_modes: No such file or directory
+Launcher: Task 81 running job 82 on c-10-04 (bash run_063025_krylov_matrices_zero_modes_81.qsub)
+run_063025_krylov_matrices_zero_modes_81.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_063025_krylov_matrices_zero_modes: No such file or directory
+Launcher: Task 73 running job 74 on c-10-03 (bash run_063025_krylov_matrices_zero_modes_73.qsub)
+run_063025_krylov_matrices_zero_modes_73.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_063025_krylov_matrices_zero_modes: No such file or directory
+Launcher: Task 47 running job 48 on c-10-01 (bash run_063025_krylov_matrices_zero_modes_47.qsub)
+run_063025_krylov_matrices_zero_modes_47.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_063025_krylov_matrices_zero_modes: No such file or directory
+Launcher: Task 48 running job 49 on c-10-02 (bash run_063025_krylov_matrices_zero_modes_48.qsub)
+Launcher: Task 63 running job 64 on c-10-02 (bash run_063025_krylov_matrices_zero_modes_63.qsub)
+Launcher: Task 62 running job 63 on c-10-02 (bash run_063025_krylov_matrices_zero_modes_62.qsub)
+Launcher: Task 59 running job 60 on c-10-02 (bash run_063025_krylov_matrices_zero_modes_59.qsub)
+Launcher: Task 69 running job 70 on c-10-03 (bash run_063025_krylov_matrices_zero_modes_69.qsub)
+run_063025_krylov_matrices_zero_modes_48.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_063025_krylov_matrices_zero_modes: No such file or directory
+run_063025_krylov_matrices_zero_modes_63.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_063025_krylov_matrices_zero_modes: No such file or directory
+run_063025_krylov_matrices_zero_modes_62.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_063025_krylov_matrices_zero_modes: No such file or directory
+run_063025_krylov_matrices_zero_modes_59.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_063025_krylov_matrices_zero_modes: No such file or directory
+run_063025_krylov_matrices_zero_modes_69.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_063025_krylov_matrices_zero_modes: No such file or directory
+Launcher: Task 15 running job 16 on c-09-13 (bash run_063025_krylov_matrices_zero_modes_15.qsub)
+run_063025_krylov_matrices_zero_modes_15.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_063025_krylov_matrices_zero_modes: No such file or directory
+Launcher: Task 23 running job 24 on c-09-14 (bash run_063025_krylov_matrices_zero_modes_23.qsub)
+Launcher: Task 17 running job 18 on c-09-14 (bash run_063025_krylov_matrices_zero_modes_17.qsub)
+run_063025_krylov_matrices_zero_modes_23.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_063025_krylov_matrices_zero_modes: No such file or directory
+run_063025_krylov_matrices_zero_modes_17.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_063025_krylov_matrices_zero_modes: No such file or directory
+Launcher: Task 42 running job 43 on c-10-01 (bash run_063025_krylov_matrices_zero_modes_42.qsub)
+run_063025_krylov_matrices_zero_modes_42.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_063025_krylov_matrices_zero_modes: No such file or directory
+Launcher: Task 55 running job 56 on c-10-02 (bash run_063025_krylov_matrices_zero_modes_55.qsub)
+Launcher: Task 71 running job 72 on c-10-03 (bash run_063025_krylov_matrices_zero_modes_71.qsub)
+Launcher: Task 68 running job 69 on c-10-03 (bash run_063025_krylov_matrices_zero_modes_68.qsub)
+run_063025_krylov_matrices_zero_modes_71.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_063025_krylov_matrices_zero_modes: No such file or directory
+run_063025_krylov_matrices_zero_modes_55.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_063025_krylov_matrices_zero_modes: No such file or directory
+run_063025_krylov_matrices_zero_modes_68.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_063025_krylov_matrices_zero_modes: No such file or directory
+Launcher: Task 41 running job 42 on c-10-01 (bash run_063025_krylov_matrices_zero_modes_41.qsub)
+run_063025_krylov_matrices_zero_modes_41.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_063025_krylov_matrices_zero_modes: No such file or directory
+Launcher: Task 49 running job 50 on c-10-02 (bash run_063025_krylov_matrices_zero_modes_49.qsub)
+Launcher: Task 76 running job 77 on c-10-03 (bash run_063025_krylov_matrices_zero_modes_76.qsub)
+Launcher: Task 64 running job 65 on c-10-03 (bash run_063025_krylov_matrices_zero_modes_64.qsub)
+run_063025_krylov_matrices_zero_modes_76.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_063025_krylov_matrices_zero_modes: No such file or directory
+run_063025_krylov_matrices_zero_modes_49.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_063025_krylov_matrices_zero_modes: No such file or directory
+run_063025_krylov_matrices_zero_modes_64.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_063025_krylov_matrices_zero_modes: No such file or directory
+Launcher: Task 13 running job 14 on c-09-13 (bash run_063025_krylov_matrices_zero_modes_13.qsub)
+Launcher: Task 10 running job 11 on c-09-13 (bash run_063025_krylov_matrices_zero_modes_10.qsub)
+run_063025_krylov_matrices_zero_modes_13.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_063025_krylov_matrices_zero_modes: No such file or directory
+run_063025_krylov_matrices_zero_modes_10.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_063025_krylov_matrices_zero_modes: No such file or directory
+Launcher: Task 45 running job 46 on c-10-01 (bash run_063025_krylov_matrices_zero_modes_45.qsub)
+run_063025_krylov_matrices_zero_modes_45.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_063025_krylov_matrices_zero_modes: No such file or directory
+Launcher: Task 93 running job 94 on c-10-04 (bash run_063025_krylov_matrices_zero_modes_93.qsub)
+run_063025_krylov_matrices_zero_modes_93.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_063025_krylov_matrices_zero_modes: No such file or directory
+Launcher: Task 84 running job 85 on c-10-04 (bash run_063025_krylov_matrices_zero_modes_84.qsub)
+Launcher: Task 77 running job 78 on c-10-03 (bash run_063025_krylov_matrices_zero_modes_77.qsub)
+run_063025_krylov_matrices_zero_modes_84.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_063025_krylov_matrices_zero_modes: No such file or directory
+run_063025_krylov_matrices_zero_modes_77.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_063025_krylov_matrices_zero_modes: No such file or directory
+Removing files
+Launcher: Job 81 completed in 11 seconds.
+Launcher: Task 80 done. Exiting.
+Launcher: Task 27 running job 28 on c-09-14 (bash run_063025_krylov_matrices_zero_modes_27.qsub)
+run_063025_krylov_matrices_zero_modes_27.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_063025_krylov_matrices_zero_modes: No such file or directory
+Launcher: Task 8 running job 9 on c-09-13 (bash run_063025_krylov_matrices_zero_modes_8.qsub)
+Launcher: Task 0 running job 1 on c-09-13 (bash run_063025_krylov_matrices_zero_modes_0.qsub)
+run_063025_krylov_matrices_zero_modes_8.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_063025_krylov_matrices_zero_modes: No such file or directory
+run_063025_krylov_matrices_zero_modes_0.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_063025_krylov_matrices_zero_modes: No such file or directory
+Removing files
+Launcher: Job 94 completed in 4 seconds.
+Launcher: Task 93 done. Exiting.
+Removing files
+Launcher: Job 91 completed in 21 seconds.
+Launcher: Task 90 done. Exiting.
+Launcher: Task 46 running job 47 on c-10-01 (bash run_063025_krylov_matrices_zero_modes_46.qsub)
+run_063025_krylov_matrices_zero_modes_46.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_063025_krylov_matrices_zero_modes: No such file or directory
+Launcher: Task 91 running job 92 on c-10-04 (bash run_063025_krylov_matrices_zero_modes_91.qsub)
+Launcher: Task 94 running job 95 on c-10-04 (bash run_063025_krylov_matrices_zero_modes_94.qsub)
+run_063025_krylov_matrices_zero_modes_94.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_063025_krylov_matrices_zero_modes: No such file or directory
+run_063025_krylov_matrices_zero_modes_91.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_063025_krylov_matrices_zero_modes: No such file or directory
+Launcher: Task 52 running job 53 on c-10-02 (bash run_063025_krylov_matrices_zero_modes_52.qsub)
+Launcher: Task 78 running job 79 on c-10-03 (bash run_063025_krylov_matrices_zero_modes_78.qsub)
+run_063025_krylov_matrices_zero_modes_52.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_063025_krylov_matrices_zero_modes: No such file or directory
+run_063025_krylov_matrices_zero_modes_78.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_063025_krylov_matrices_zero_modes: No such file or directory
+Launcher: Task 29 running job 30 on c-09-14 (bash run_063025_krylov_matrices_zero_modes_29.qsub)
+Launcher: Task 30 running job 31 on c-09-14 (bash run_063025_krylov_matrices_zero_modes_30.qsub)
+Launcher: Task 24 running job 25 on c-09-14 (bash run_063025_krylov_matrices_zero_modes_24.qsub)
+run_063025_krylov_matrices_zero_modes_30.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_063025_krylov_matrices_zero_modes: No such file or directory
+run_063025_krylov_matrices_zero_modes_29.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_063025_krylov_matrices_zero_modes: No such file or directory
+run_063025_krylov_matrices_zero_modes_24.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_063025_krylov_matrices_zero_modes: No such file or directory
+Launcher: Task 40 running job 41 on c-10-01 (bash run_063025_krylov_matrices_zero_modes_40.qsub)
+run_063025_krylov_matrices_zero_modes_40.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_063025_krylov_matrices_zero_modes: No such file or directory
+Removing files
+Launcher: Job 93 completed in 17 seconds.
+Launcher: Task 92 done. Exiting.
+Removing files
+Launcher: Job 84 completed in 16 seconds.
+Launcher: Task 83 done. Exiting.
+Removing files
+Launcher: Job 88 completed in 16 seconds.
+Launcher: Task 87 done. Exiting.
+Removing files
+Removing files
+Launcher: Job 85 completed in 9 seconds.
+Launcher: Job 61 completed in 28 seconds.
+Launcher: Task 84 done. Exiting.
+Launcher: Task 60 done. Exiting.
+Removing files
+Launcher: Job 96 completed in 17 seconds.
+Launcher: Task 95 done. Exiting.
+Removing files
+Launcher: Job 89 completed in 19 seconds.
+Launcher: Task 88 done. Exiting.
+Removing files
+Removing files
+Removing files
+Removing files
+Launcher: Job 53 completed in 8 seconds.
+Launcher: Job 59 completed in 19 seconds.
+Launcher: Job 55 completed in 22 seconds.
+Launcher: Task 58 done. Exiting.
+Launcher: Task 54 done. Exiting.
+Launcher: Task 52 done. Exiting.
+Launcher: Job 58 completed in 19 seconds.
+Launcher: Task 57 done. Exiting.
+Removing files
+Launcher: Job 51 completed in 19 seconds.
+Launcher: Task 50 done. Exiting.
+Removing files
+Launcher: Job 60 completed in 17 seconds.
+Launcher: Task 59 done. Exiting.
+Removing files
+Launcher: Job 50 completed in 15 seconds.
+Launcher: Task 49 done. Exiting.
+Removing files
+Launcher: Job 80 completed in 29 seconds.
+Launcher: Task 79 done. Exiting.
+Removing files
+Launcher: Job 63 completed in 18 seconds.
+Launcher: Task 62 done. Exiting.
+Removing files
+Launcher: Job 37 completed in 28 seconds.
+Launcher: Task 36 done. Exiting.
+Removing files
+Launcher: Job 90 completed in 34 seconds.
+Launcher: Task 89 done. Exiting.
+Removing files
+Launcher: Job 49 completed in 19 seconds.
+Launcher: Task 48 done. Exiting.
+Removing files
+Launcher: Job 64 completed in 19 seconds.
+Launcher: Task 63 done. Exiting.
+Removing files
+Launcher: Job 68 completed in 34 seconds.
+Launcher: Task 67 done. Exiting.
+Removing files
+Launcher: Job 47 completed in 14 seconds.
+Launcher: Task 46 done. Exiting.
+Removing files
+Launcher: Job 45 completed in 28 seconds.
+Launcher: Task 44 done. Exiting.
+Removing files
+Launcher: Job 54 completed in 24 seconds.
+Launcher: Task 53 done. Exiting.
+Removing files
+Launcher: Job 42 completed in 21 seconds.
+Launcher: Task 41 done. Exiting.
+Removing files
+Launcher: Job 40 completed in 38 seconds.
+Launcher: Task 39 done. Exiting.
+Removing files
+Launcher: Job 79 completed in 17 seconds.
+Launcher: Task 78 done. Exiting.
+Removing files
+Launcher: Job 78 completed in 20 seconds.
+Launcher: Task 77 done. Exiting.
+Removing files
+Removing files
+Launcher: Job 77 completed in 22 seconds.
+Launcher: Job 83 completed in 35 seconds.
+Launcher: Task 76 done. Exiting.
+Launcher: Task 82 done. Exiting.
+Removing files
+Launcher: Job 52 completed in 40 seconds.
+Launcher: Task 51 done. Exiting.
+Removing files
+Launcher: Job 72 completed in 24 seconds.
+Launcher: Task 71 done. Exiting.
+Removing files
+Launcher: Job 69 completed in 26 seconds.
+Launcher: Task 68 done. Exiting.
+Removing files
+Launcher: Job 41 completed in 20 seconds.
+Launcher: Task 40 done. Exiting.
+Removing files
+Launcher: Job 87 completed in 33 seconds.
+Launcher: Task 86 done. Exiting.
+Removing files
+Removing files
+Launcher: Job 66 completed in 44 seconds.
+Launcher: Job 33 completed in 35 seconds.
+Launcher: Task 65 done. Exiting.
+Launcher: Task 32 done. Exiting.
+Removing files
+Launcher: Job 86 completed in 39 seconds.
+Launcher: Task 85 done. Exiting.
+Removing files
+Launcher: Job 34 completed in 37 seconds.
+Launcher: Task 33 done. Exiting.
+Removing files
+Launcher: Job 2 completed in 49 seconds.
+Launcher: Task 1 done. Exiting.
+Removing files
+Launcher: Job 9 completed in 29 seconds.
+Launcher: Task 8 done. Exiting.
+Removing files
+Launcher: Job 65 completed in 34 seconds.
+Launcher: Task 64 done. Exiting.
+Removing files
+Launcher: Job 48 completed in 37 seconds.
+Launcher: Task 47 done. Exiting.
+Removing files
+Launcher: Job 12 completed in 45 seconds.
+Launcher: Task 11 done. Exiting.
+Removing files
+Launcher: Job 8 completed in 51 seconds.
+Launcher: Task 7 done. Exiting.
+Removing files
+Launcher: Job 35 completed in 43 seconds.
+Launcher: Task 34 done. Exiting.
+Removing files
+Launcher: Job 73 completed in 42 seconds.
+Launcher: Task 72 done. Exiting.
+Removing files
+Removing files
+Launcher: Job 56 completed in 42 seconds.
+Launcher: Task 55 done. Exiting.
+Launcher: Job 36 completed in 57 seconds.
+Launcher: Task 35 done. Exiting.
+Removing files
+Launcher: Job 75 completed in 52 seconds.
+Launcher: Task 74 done. Exiting.
+Removing files
+Launcher: Job 10 completed in 54 seconds.
+Launcher: Task 9 done. Exiting.
+Removing files
+Launcher: Job 71 completed in 64 seconds.
+Launcher: Task 70 done. Exiting.
+Removing files
+Launcher: Job 76 completed in 62 seconds.
+Launcher: Task 75 done. Exiting.
+Removing files
+Launcher: Job 11 completed in 49 seconds.
+Launcher: Task 10 done. Exiting.
+Removing files
+Launcher: Job 67 completed in 60 seconds.
+Launcher: Task 66 done. Exiting.
+Removing files
+Launcher: Job 7 completed in 66 seconds.
+Launcher: Task 6 done. Exiting.
+Removing files
+Launcher: Job 44 completed in 61 seconds.
+Launcher: Task 43 done. Exiting.
+Removing files
+Launcher: Job 39 completed in 66 seconds.
+Launcher: Task 38 done. Exiting.
+Removing files
+Launcher: Job 38 completed in 67 seconds.
+Launcher: Task 37 done. Exiting.
+Removing files
+Launcher: Job 16 completed in 58 seconds.
+Launcher: Task 15 done. Exiting.
+Removing files
+Launcher: Job 43 completed in 60 seconds.
+Launcher: Task 42 done. Exiting.
+Removing files
+Launcher: Job 82 completed in 63 seconds.
+Launcher: Task 81 done. Exiting.
+Removing files
+Launcher: Job 70 completed in 66 seconds.
+Launcher: Task 69 done. Exiting.
+Removing files
+Launcher: Job 74 completed in 68 seconds.
+Launcher: Task 73 done. Exiting.
+Removing files
+Launcher: Job 46 completed in 64 seconds.
+Launcher: Task 45 done. Exiting.
+Removing files
+Launcher: Job 57 completed in 86 seconds.
+Launcher: Task 56 done. Exiting.
+Removing files
+Launcher: Job 13 completed in 91 seconds.
+Launcher: Task 12 done. Exiting.
+Removing files
+Launcher: Job 4 completed in 103 seconds.
+Launcher: Task 3 done. Exiting.
+Removing files
+Launcher: Job 14 completed in 91 seconds.
+Launcher: Task 13 done. Exiting.
+Removing files
+Launcher: Job 92 completed in 89 seconds.
+Launcher: Task 91 done. Exiting.
+Removing files
+Launcher: Job 19 completed in 108 seconds.
+Launcher: Task 18 done. Exiting.
+Removing files
+Launcher: Job 17 completed in 109 seconds.
+Launcher: Task 16 done. Exiting.
+Removing files
+Launcher: Job 29 completed in 109 seconds.
+Launcher: Task 28 done. Exiting.
+Removing files
+Launcher: Job 32 completed in 109 seconds.
+Launcher: Task 31 done. Exiting.
+Removing files
+Launcher: Job 20 completed in 108 seconds.
+Launcher: Task 19 done. Exiting.
+Removing files
+Launcher: Job 6 completed in 117 seconds.
+Launcher: Task 5 done. Exiting.
+Removing files
+Launcher: Job 23 completed in 109 seconds.
+Launcher: Task 22 done. Exiting.
+Removing files
+Launcher: Job 22 completed in 108 seconds.
+Launcher: Task 21 done. Exiting.
+Removing files
+Launcher: Job 3 completed in 119 seconds.
+Launcher: Task 2 done. Exiting.
+Removing files
+Launcher: Job 1 completed in 113 seconds.
+Launcher: Task 0 done. Exiting.
+Removing files
+Launcher: Job 15 completed in 124 seconds.
+Launcher: Task 14 done. Exiting.
+Removing files
+Launcher: Job 5 completed in 127 seconds.
+Launcher: Task 4 done. Exiting.
+Removing files
+Launcher: Job 26 completed in 138 seconds.
+Launcher: Task 25 done. Exiting.
+Removing files
+Launcher: Job 21 completed in 142 seconds.
+Launcher: Task 20 done. Exiting.
+Removing files
+Launcher: Job 27 completed in 137 seconds.
+Launcher: Task 26 done. Exiting.
+Removing files
+Launcher: Job 31 completed in 136 seconds.
+Launcher: Task 30 done. Exiting.
+Removing files
+Launcher: Job 28 completed in 140 seconds.
+Launcher: Task 27 done. Exiting.
+Removing files
+Launcher: Job 62 completed in 177 seconds.
+Launcher: Task 61 done. Exiting.
+Removing files
+Launcher: Job 25 completed in 160 seconds.
+Launcher: Task 24 done. Exiting.
+Removing files
+Launcher: Job 95 completed in 179 seconds.
+Launcher: Task 94 done. Exiting.
+Removing files
+Launcher: Job 18 completed in 206 seconds.
+Launcher: Task 17 done. Exiting.
+Removing files
+Launcher: Job 24 completed in 241 seconds.
+Launcher: Task 23 done. Exiting.
+Removing files
+Launcher: Job 30 completed in 373 seconds.
+Launcher: Task 29 done. Exiting.
+Launcher: Done. Job exited without errors
+Job run_063025_krylov_matrices_zero_modes complete

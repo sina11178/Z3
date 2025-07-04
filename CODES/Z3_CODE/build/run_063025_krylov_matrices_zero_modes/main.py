@@ -25,9 +25,9 @@ import sys
 # FOR KRYLOV SIMULATION
 gamma_array = [0, 0.05, 1]
 size_array = [4, 5, 6, 7, 8, 9]
-#size_array = [4, 5, 6]
+#size_array = [8, 9]
 N_array = [50, 50, 60, 60, 90, 90]
-#N_array = [50, 50, 60]
+#N_array = [90, 90]
 f_array = [.1, .25, .4, .5]
 phi_array = [0, np.pi/6, np.pi/4, np.pi/3]
 
