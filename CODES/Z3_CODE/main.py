@@ -32,12 +32,12 @@ phi_array = [0, np.pi/6, np.pi/4, np.pi/3]
 #size_autocorrelator_SIMULATION_NPY(0, 30, .5, L_array[int(int(sys.argv[1]) % 4)], array, gamma_array[int(int(sys.argv[1])/4)])
 
 
-#f_phi_autocorrelator_SIMULATION_NPY(0, 30, .5, 5, [[0.1, 0]], 0.4)
+#f_phi_autocorrelator_SIMULATION_NPY(0, 30, .5, 5, [[0.1, np.pi/6]], .5)
 
 
 #size_autocorrelator_SIMULATION_NPY(0, 30, .5, L_array, array_parameters[int(sys.argv[1])], 1)
 
-LACZOS_COEF_vary_gam_SIM(50, 4, 0, [.1, 0])
+LACZOS_COEF_vary_gam_SIM(50, 5, .45, [.1, np.pi/6])
 
 
 '''
