@@ -1,8 +1,42 @@
+commit f1d7b89cbe541b14fada88df1add181e3665268c
+Author: Sina Rezvani <sxr190099@g2-l-02.localdomain>
+Date:   Fri Jul 4 14:41:05 2025 -0500
+
+    Commit before run run_063025_krylov_matrices_zero_modes
+
+commit 0755edd1d7f54c266651c28b2ff7319895ff9c11
+Merge: 75fae34 b27aafd
+Author: Sina Rezvani <sxr190099@g2-l-02.localdomain>
+Date:   Fri Jul 4 13:27:30 2025 -0500
+
+    Merge branch 'main' of https://github.com/sina11178/Z3
+    
+    NEW DATA ADDED
+
+commit 75fae34b2b81dab6b9d39de284521eef3d9ba8c6
+Author: Sina Rezvani <sxr190099@g2-l-02.localdomain>
+Date:   Fri Jul 4 13:26:27 2025 -0500
+
+    Revised data
+
 commit d4a775a38edf702d2ec61c2099c13c2adc0d4df9
 Author: Sina Rezvani <sxr190099@g2-l-01.localdomain>
 Date:   Fri Jul 4 00:25:49 2025 -0500
 
     Commit before run run_063025_krylov_matrices_zero_modes
+
+commit b27aafd6f7f4fae0e68ba647452a176c1e1ccc09
+Merge: fc9bd85 a08ad0c
+Author: sina11178 <frsinarez4@gmail.com>
+Date:   Fri Jul 4 00:22:40 2025 -0500
+
+    Merge branch 'main' of https://github.com/sina11178/Z3
+
+commit fc9bd8515728fdc0b7d5495aa195d9053034d7cc
+Author: sina11178 <frsinarez4@gmail.com>
+Date:   Fri Jul 4 00:22:33 2025 -0500
+
+    .
 
 commit a08ad0c057034470c04589f0de3c8bae3cedfbce
 Merge: 3c8c220 697245f
