@@ -12,7 +12,7 @@ from scipy.sparse import csr_matrix
 # PARAMETERS TO DEFINE IN HAMILTONIAN
 J = 1
 phi = 1 * np.pi/6  # PHASE FACTOR
-f = .1
+f = .4
 L = 5 # SYSTEM SIZE
 #gamma = 1  # DETERMINES HERMICITY
 
@@ -371,7 +371,7 @@ alpha_5 = tensor_product(n, L)
 
 
 def grahm_schmidt(n, H, size):
-    Lio = Liovillan(H, size)
+    #Lio = Liovillan(H, size)
     list = []
     for i in range(size):
         list.append(np_I)
@@ -384,8 +384,8 @@ def grahm_schmidt(n, H, size):
     gs_basis_non_ortho = [O_0]
 
     for P in range(1, n+1):
-        K = Lio @ gs_basis_non_ortho[P-1]
-        #f = (((H @ np.reshape(gs_basis_non_ortho[j-1], (3**size, 3**size)).T) - (np.reshape(gs_basis_non_ortho[j-1], (3**size, 3**size)).T @ H)).T).flatten()
+        #K = Lio @ gs_basis_non_ortho[P-1]
+        K = (((H @ np.reshape(gs_basis_non_ortho[P-1], (3**size, 3**size)).T) - (np.reshape(gs_basis_non_ortho[P-1], (3**size, 3**size)).T @ H)).T).flatten()
         gs_basis_non_ortho.append(K)
     #print('EXPERIMENT/TEST')
     #print(type(gs_basis_non_ortho[0]))
@@ -402,7 +402,9 @@ def grahm_schmidt(n, H, size):
     l = len(gs_basis_non_ortho)
     matrix_final = np.zeros((l,l), dtype=complex)
     for j in range(l):
-        c = Lio @ Q[:, j]
+        #c = Lio @ Q[:, j]
+        c = (((H @ np.reshape(Q[:, j], (3**size, 3**size)).T) -
+            (np.reshape(Q[:,j], (3**size, 3**size)).T @ H)).T).flatten()
         for i in range(l):
             matrix_final[i, j] = np.conjugate(Q[:, i]) @ c
 
@@ -450,8 +452,8 @@ def grahm_schmidt_squared(n, H, size):
     gs_basis_non_ortho = [O_0]
 
     for P in range(1, n+1):
-        K = Lio @ gs_basis_non_ortho[P-1]
-        #f = (((H @ np.reshape(gs_basis_non_ortho[j-1], (3**size, 3**size)).T) - (np.reshape(gs_basis_non_ortho[j-1], (3**size, 3**size)).T @ H)).T).flatten()
+        #K = Lio @ gs_basis_non_ortho[P-1]
+        K = (((H @ np.reshape(gs_basis_non_ortho[P-1], (3**size, 3**size)).T) - (np.reshape(gs_basis_non_ortho[P-1], (3**size, 3**size)).T @ H)).T).flatten()
         gs_basis_non_ortho.append(K)
 
     gs_basis_non_ortho_matrix = np.column_stack(gs_basis_non_ortho)
@@ -460,7 +462,9 @@ def grahm_schmidt_squared(n, H, size):
     l = len(gs_basis_non_ortho)
     matrix_final = np.zeros((l,l), dtype=complex)
     for j in range(l):
-        c = Lio @ Q[:, j]
+        #c = Lio @ Q[:, j]
+        c = (((H @ np.reshape(Q[:, j], (3**size, 3**size)).T) -
+            (np.reshape(Q[:,j], (3**size, 3**size)).T @ H)).T).flatten()
         for i in range(l):
             matrix_final[i, j] = np.conjugate(Q[:, i]) @ c
     return matrix_final
@@ -468,9 +472,9 @@ def grahm_schmidt_squared(n, H, size):
 def rank_test(stacked_matrix):
     return np.linalg.matrix_rank(stacked_matrix)
 
-GAMM = 0
+GAMM = 1
 H_SIGMA = term_one_SIGMA(length=L, Jay=J, PHI=phi) + term_two_SIGMA(F=f, length=L)
-H_SIGMA = H_SIGMA + GAMM * np.conjugate(H_SIGMA.T)  # Make Hermitian
+H_SIGMA = H_SIGMA + GAMM * (H_SIGMA.conjugate().T)  # Make Hermitian
 #print('Difference between SIG^2 and SIG^t:')
 #print(np.max(np.abs((np_SIG @ np_SIG) - np.conjugate(np_SIG).T)))
 #print(np.max(((0.5*(np_SIG @ np_SIG + np.conjugate(np_SIG).T)) - np.conjugate(np_SIG).T)))
@@ -481,9 +485,12 @@ matrix_final_a = grahm_schmidt(p, H_SIGMA, L)  # SEED OPERATOR IS ALPHA_1
 matrix_final_a_squared = grahm_schmidt_squared(p, H_SIGMA, L)  # SEED Operator IS (ALPHA_1)^2
 
 #print(type(matrix_final_a[1,1]))
-
-A, U = np.linalg.eig(matrix_final_a)
-A_sqr, U_sqr = np.linalg.eig(matrix_final_a_squared)
+if GAMM == 1:
+    A, U = np.linalg.eigh(matrix_final_a)
+    A_sqr, U_sqr = np.linalg.eigh(matrix_final_a_squared)
+else:
+    A, U = np.linalg.eig(matrix_final_a)  # Get eigenvalues and eigenvectors
+    A_sqr, U_sqr = np.linalg.eig(matrix_final_a_squared)
 
 EIG_SQR = U_sqr[:, np.argmin(np.abs(A_sqr))]  # Smallest eigenvalue eigenvector of squared operator
 EIG_SINGLE = U[:, np.argmin(np.abs(A))]  # Smallest eigenvalue eigenvector of single operator
@@ -527,11 +534,7 @@ EIG_STATES = []
 # EIG_STATE = np.abs(U[:, np.argmin(np.abs(A))])
 sorted = np.sort(np.abs(A))
 sort_sqr = np.sort(np.abs(A_sqr))
-#print(sorted[6])
-# EIG_STATE_2 = np.abs(U[:, np.abs(A).argsort()[1]])
-# EIG_STATE = (1/np.linalg.norm(EIG_STATE)) * EIG_STATE
-# EIG_STATE_2 = (1/np.linalg.norm(EIG_STATE_2)) * EIG_STATE_2
-# Abs_A = np.abs(A)
+
 for i in range(len(A)):
     #EIG_STATE = (U[:, np.abs(A).argsort()[i]])
     EIG_STATE = U[:, np.abs(A).argsort()[i]]
@@ -544,7 +547,7 @@ for i in range(len(A)):
 plt.plot(in_list, EIG_STATES[0], marker = ".", linestyle = '-', color = 'r', label = 'a_1 E = ' + str(np.min(np.abs(A))))
 plt.plot(in_list, np.abs(EIG_SQR), marker = ".", linestyle = '-', color = 'g', label = '(a_1)^dagger E = ' + str(np.min(np.abs(A_sqr))))
 plt.legend()
-plt.ylim(0, .2)
+plt.ylim(0, .5)
 plt.savefig('Krylov_Eigenvector_0.pdf')
 
 
