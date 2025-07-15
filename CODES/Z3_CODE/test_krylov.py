@@ -11,8 +11,8 @@ from scipy.sparse import csr_matrix
 
 # PARAMETERS TO DEFINE IN HAMILTONIAN
 J = 1
-phi = 1 * np.pi/6  # PHASE FACTOR
-f = .4
+phi = 0 * np.pi/6  # PHASE FACTOR
+f = .1
 L = 5 # SYSTEM SIZE
 #gamma = 1  # DETERMINES HERMICITY
 
@@ -385,7 +385,8 @@ def grahm_schmidt(n, H, size):
 
     for P in range(1, n+1):
         #K = Lio @ gs_basis_non_ortho[P-1]
-        K = (((H @ np.reshape(gs_basis_non_ortho[P-1], (3**size, 3**size)).T) - (np.reshape(gs_basis_non_ortho[P-1], (3**size, 3**size)).T @ H)).T).flatten()
+        #K = (((H @ np.reshape(gs_basis_non_ortho[P-1], (3**size, 3**size)).T) - (np.reshape(gs_basis_non_ortho[P-1], (3**size, 3**size)).T @ H)).T).flatten()
+        K = (((H.conjugate().T @ np.reshape(gs_basis_non_ortho[P-1], (3**size, 3**size)).T) - (np.reshape(gs_basis_non_ortho[P-1], (3**size, 3**size)).T @ H)).T).flatten()
         gs_basis_non_ortho.append(K)
     #print('EXPERIMENT/TEST')
     #print(type(gs_basis_non_ortho[0]))
@@ -453,7 +454,9 @@ def grahm_schmidt_squared(n, H, size):
 
     for P in range(1, n+1):
         #K = Lio @ gs_basis_non_ortho[P-1]
-        K = (((H @ np.reshape(gs_basis_non_ortho[P-1], (3**size, 3**size)).T) - (np.reshape(gs_basis_non_ortho[P-1], (3**size, 3**size)).T @ H)).T).flatten()
+        #K = (((H @ np.reshape(gs_basis_non_ortho[P-1], (3**size, 3**size)).T) - (np.reshape(gs_basis_non_ortho[P-1], (3**size, 3**size)).T @ H)).T).flatten()
+        K = (((H.conjugate().T @ np.reshape(gs_basis_non_ortho[P-1], (3**size, 3**size)).T) - (np.reshape(gs_basis_non_ortho[P-1], (3**size, 3**size)).T @ H)).T).flatten()
+
         gs_basis_non_ortho.append(K)
 
     gs_basis_non_ortho_matrix = np.column_stack(gs_basis_non_ortho)
@@ -472,7 +475,7 @@ def grahm_schmidt_squared(n, H, size):
 def rank_test(stacked_matrix):
     return np.linalg.matrix_rank(stacked_matrix)
 
-GAMM = 1
+GAMM = 0
 H_SIGMA = term_one_SIGMA(length=L, Jay=J, PHI=phi) + term_two_SIGMA(F=f, length=L)
 H_SIGMA = H_SIGMA + GAMM * (H_SIGMA.conjugate().T)  # Make Hermitian
 #print('Difference between SIG^2 and SIG^t:')

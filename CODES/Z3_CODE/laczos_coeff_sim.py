@@ -26,12 +26,13 @@ def LACZOS_COEF_vary_gam_SIM(n, size, gamma, params):
         arr_1 = []
         arr_2 = []
         for i in range(len(matrix_final)-1):
-            arr_1.append((matrix_final[i, i+1]).imag)
-            arr_2.append(((list_matrix_final_2[0][i, i+1])).imag)
+            arr_1.append(np.abs(matrix_final[i, i+1]))
+            arr_2.append(np.abs((list_matrix_final_2[0][i, i+1])))
         in_list = np.arange(0, n, 1)
         plt.figure()
         plt.plot(in_list, arr_1, marker = ".", linestyle = '-', color = 'r', label = 'a_1')
         plt.plot(in_list, arr_2, marker = ".", linestyle = '-', color = 'b', label = 'a_1 (Graham Schmidt)')
+        #plt.ylim(7, 8.5, .05)
         plt.legend()
         plt.show()
 
@@ -98,14 +99,14 @@ def LACZOS_COEF_vary_gam_SIM(n, size, gamma, params):
 
         EIG_STATE = np.abs(U[:, np.argmin(np.abs(A))])
         EIG_STATE = (1/np.linalg.norm(EIG_STATE)) * EIG_STATE
-        EIG_STATE_2 = np.abs(U_2[:, np.argmin(np.abs(A_2))])
-        EIG_STATE_2 = (1/np.linalg.norm(EIG_STATE_2)) * EIG_STATE_2
+        #EIG_STATE_2 = np.abs(U_2[:, np.argmin(np.abs(A_2))])
+        #EIG_STATE_2 = (1/np.linalg.norm(EIG_STATE_2)) * EIG_STATE_2
         EIG_STATE_SQUARED = np.abs(U_squared[:, np.argmin(np.abs(A_squared))])
         EIG_STATE_SQUARED = (1/np.linalg.norm(EIG_STATE_SQUARED)) * EIG_STATE_SQUARED
         
         plt.figure()
         plt.plot(in_list, EIG_STATE, marker = ".", linestyle = '-', color = 'r', label = 'a_1 E = ' + str(np.min(np.abs(A))))
-        plt.plot(in_list, EIG_STATE_2, marker = ".", linestyle = '-', color = 'b', label = 'a_1 (Graham Schmidt) E = ' + str(np.min(np.abs(A_2))))
+        #plt.plot(in_list, EIG_STATE_2, marker = ".", linestyle = '-', color = 'b', label = 'a_1 (Graham Schmidt) E = ' + str(np.min(np.abs(A_2))))
         plt.title('Eigenvector Components for Zero Eigenvalue: alpha_1')
         plt.xlabel("n")
         plt.ylabel("Eigenvector Components")
@@ -142,7 +143,7 @@ def LACZOS_COEF_vary_gam_SIM(n, size, gamma, params):
         plt.title('Eigenvector Components for Zero Eigenvalue: alpha_1 (NOTE: TRUNCATED)')
         plt.xlabel("n")
         plt.ylabel("Eigenvector Components")
-        plt.ylim(0, 0.5)
+        plt.ylim(0, 0.2)
         plt.legend()
         plt.savefig('krylov_matrix/f_' + str(params[0]) + '_phi_' + str(params[1]) + '_L_' + str(size) + '_gamm_' + str(gamma) + '/zero_eigenvector_alpha_1.pdf')
         plt.close()    
@@ -152,7 +153,7 @@ def LACZOS_COEF_vary_gam_SIM(n, size, gamma, params):
         plt.title('Eigenvector Components for Zero Eigenvalue: alpha_1 squared')
         plt.xlabel("n")
         plt.ylabel("Eigenvector Components")
-        plt.ylim(0, 0.5)
+        plt.ylim(0, 0.2)
         plt.legend()
         plt.savefig('krylov_matrix/f_' + str(params[0]) + '_phi_' + str(params[1]) + '_L_' + str(size) + '_gamm_' + str(gamma) + '/zero_eigenvector_alpha_1_squared.pdf')
     
