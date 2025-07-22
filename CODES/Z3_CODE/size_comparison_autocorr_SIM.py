@@ -52,14 +52,46 @@ def size_autocorrelator_SIMULATION_NPY(init_time, fin_time, interval, size_array
     in_list_exp = np.ndarray.tolist(in_list[1])
     return_list = [in_list_exp]
     hamiltonians = []
+    A_list = []
+    U_list = []
+    U_inv_list = []
     for j in range(len(size_array)):
         H_1 = term_one(size_array[j], Jay=1, PHI=params[1]) + term_two(F=params[0], length=size_array[j])
-        H_dag = np.conjugate(H_1.T)
-        H = H_1 + (gamma * H_dag)
+        if gamma == 0:
+            H = H_1
+            ham = H.toarray()
+            U, V = np.linalg.eig(ham)
+            #print(hamiltonian.shape)
+            #print((1.j*max(np.array(U).imag)*np.eye(3**L)).shape)
+            Hpr = (ham - 1.j*max(np.array(U).imag)*np.eye(3**size_array[j]))
+
+            A, U = np.linalg.eig(Hpr)
+            U_inv = np.linalg.inv(U)
+
+        elif gamma == 1:
+            H_dag = np.conjugate(H_1.T)
+            H = H_1 + H_dag
+            A, U = np.linalg.eigh(H.toarray())  # A is vector of eigenvalues; U is matrix of eigenvectors
+            U_inv = np.conjugate(U).T  # Conjugate transpose of U
+
+        else:
+            H_dag = np.conjugate(H_1.T)
+            H = H_1 + (gamma * H_dag)
+            ham = H.toarray()
+            U, V = np.linalg.eig(ham)
+            #print(hamiltonian.shape)
+            #print((1.j*max(np.array(U).imag)*np.eye(3**L)).shape)
+            Hpr = (ham - 1.j*max(np.array(U).imag)*np.eye(3**size_array[j]))
+            A, U = np.linalg.eig(Hpr)
+            U_inv = np.linalg.inv(U)
+
         hamiltonians.append(H)
+        A_list.append(A)
+        U_list.append(U)
+        U_inv_list.append(U_inv)
 
     for k in range(len(hamiltonians)):
-        return_list.append(np.ndarray.tolist(output_list(in_list_exp, size_array[k], hamiltonians[k], gamma)))  # LIST W/ OUTPUTS OF DIFF PARAMS
+        return_list.append(np.ndarray.tolist(output_list(A_list[k], U_list[k], U_inv_list[k], in_list_exp, size_array[k], hamiltonians[k], gamma)))  # LIST W/ OUTPUTS OF DIFF PARAMS
 
     
     #  Name EXCEL based on date
@@ -73,7 +105,7 @@ def size_autocorrelator_SIMULATION_NPY(init_time, fin_time, interval, size_array
     title = str(params[0]) + ", " + str(params[1]) + "  " + "(f, PHI)" + " gam = " + str(gamma)
     for i in range(len(hamiltonians)):
         #plt.subplot(1, int(len(hamiltonians)), i+1)
-        plt.plot(in_list[0], return_list[i+1], label= "L = " + str(size_array[i]))
+        plt.plot(in_list[0], np.abs(return_list[i+1]), label= "L = " + str(size_array[i]))
         plt.title(title)
         plt.xlabel("Time: ln(t)")
         plt.ylabel("Autocorr.")

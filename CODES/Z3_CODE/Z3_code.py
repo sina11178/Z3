@@ -204,34 +204,34 @@ RUNNING SIMULATIONS
 
 #  AUTOCORRELATOR
 
-def time_evol_op_at_time_t(hamiltonian, time, gamma, size):
+def time_evol_op_at_time_t(A, U, U_inv, time, gamma, size):
     if gamma == 1:
-        A, U = np.linalg.eigh(hamiltonian.toarray())  # A is vector of eigenvalues; U is matrix of eigenvectors
-        U_T = np.conjugate(U).T  # Conjugate transpose of U
+        #A, U = np.linalg.eigh(hamiltonian.toarray())  # A is vector of eigenvalues; U is matrix of eigenvectors
+        #U_T = np.conjugate(U).T  # Conjugate transpose of U
         #A_matrix = exp_diag_matrix(A, time)
         A_matrix = np.diag(np.exp(A* time*(-1.j)))
-        evol_to_t = U @ A_matrix @ U_T
+        evol_to_t = U @ A_matrix @ U_inv
         return evol_to_t
     else:
         # A, U = np.linalg.eig(hamiltonian)  # A is vector of eigenvalues; U is matrix of eigenvectors
         # U_inv = np.linalg.inv(U)  # Conjugate transpose of U
-        ham = hamiltonian.toarray()
-        U, V = np.linalg.eig(ham)
+        #ham = hamiltonian.toarray()
+        #U, V = np.linalg.eig(ham)
         #print(hamiltonian.shape)
         #print((1.j*max(np.array(U).imag)*np.eye(3**L)).shape)
-        Hpr = (ham - 1.j*max(np.array(U).imag)*np.eye(3**size))
+        #Hpr = (ham - 1.j*max(np.array(U).imag)*np.eye(3**size))
 
-        A, U = np.linalg.eig(Hpr)
-        U_inv = np.linalg.inv(U)
+        #A, U = np.linalg.eig(Hpr)
+        #U_inv = np.linalg.inv(U)
         #A_matrix = exp_diag_matrix(A, time)
         #A_matrix = np.diag(np.exp((A - (1.j)*np.imag(A).max())* time*(-1.j)))
         A_matrix = np.diag(np.exp(A*(-1.j)*time))
         evol_to_t = U @ A_matrix @ U_inv
-        print('SUBTRACTION: \n')
-        print(np.max(np.abs(np.conjugate(evol_to_t.T) - (np.conjugate(U_inv.T) @ np.conjugate(A_matrix.T) @ np.conjugate(U.T)))))
+        #print('SUBTRACTION: \n')
+        #print(np.max(np.abs(np.conjugate(evol_to_t.T) - (np.conjugate(U_inv.T) @ np.conjugate(A_matrix.T) @ np.conjugate(U.T)))))
         return evol_to_t
 
-def autocorrelator(time, size, hamiltonian, gamma):  # ONLY FOR SIG1_X
+def autocorrelator(A, U, U_inv, time, size, hamiltonian, gamma):  # ONLY FOR SIG1_X
     list = []
     for a in range(size):
         list.append(np_I)
@@ -240,7 +240,10 @@ def autocorrelator(time, size, hamiltonian, gamma):  # ONLY FOR SIG1_X
     
     # print(time_evol_op.getH() * time_evol_op)
     if gamma == 1:
-        time_evol_op = time_evol_op_at_time_t(hamiltonian, time, gamma, size)  # Finds time evol operator at time t
+        #A, U = np.linalg.eigh(hamiltonian.toarray())  # A is vector of eigenvalues; U is matrix of eigenvectors
+        #U_inv = np.conjugate(U).T  # Conjugate transpose of U
+
+        time_evol_op = time_evol_op_at_time_t(A, U, U_inv, time, gamma, size)  # Finds time evol operator at time t
         non_time_evold_op_sig = tensor_product(list, size) #  SIGX_1(0)
         time_evol_op_dag = (np.conjugate(time_evol_op.T))
         time_evolved_sig = time_evol_op_dag @ non_time_evold_op_sig @ (time_evol_op)  #  SIGX_1(time)
@@ -252,7 +255,16 @@ def autocorrelator(time, size, hamiltonian, gamma):  # ONLY FOR SIG1_X
 
         return autocorr_SIG
     else:
-        time_evol_op = time_evol_op_at_time_t(hamiltonian, time, gamma, size)  # Finds time evol operator at time t
+        #ham = hamiltonian.toarray()
+        #U, V = np.linalg.eig(ham)
+        #print(hamiltonian.shape)
+        #print((1.j*max(np.array(U).imag)*np.eye(3**L)).shape)
+        #Hpr = (ham - 1.j*max(np.array(U).imag)*np.eye(3**size))
+
+        #A, U = np.linalg.eig(Hpr)
+        #U_inv = np.linalg.inv(U)
+
+        time_evol_op = time_evol_op_at_time_t(A, U, U_inv, time, gamma, size)  # Finds time evol operator at time t
         #norm = np.linalg.norm(time_evol_op)
         #norm_time_evol_op = (1/norm)*time_evol_op
         non_time_evold_op_sig = tensor_product(list, size) #  SIGX_1(0)
@@ -276,10 +288,10 @@ def list_inputs(init_time, fin_time, interval):
     list_exp = np.exp(list_non_exp)
     return [list_non_exp, list_exp] # SECOND INDEX HAS LIST OF ACTUAL TIMES; FIRST HAS LOG TIMES
 
-def output_list(input_list, size, hamiltonian, gamma):# TOOK OUT .REAL
+def output_list(A, U, U_inv, input_list, size, hamiltonian, gamma):# TOOK OUT .REAL
     out_list = [0] * len(input_list)
     for i in range(len(input_list)):
-        out_list[i] = autocorrelator(input_list[i], size, hamiltonian, gamma).real  #  Stores respective outputs in list
+        out_list[i] = autocorrelator(A, U, U_inv, input_list[i], size, hamiltonian, gamma).real  #  Stores respective outputs in list
     return np.array(out_list)
 
 
