@@ -313,6 +313,19 @@ def Liovillan(Hamiltonian, size): #  Liovillan only applied to a matrix converte
 
     return (S_1+(-1*S_2))
 
+def Liovillan_twisted(Hamiltonian, size): #  Liovillan only applied to a matrix converted to vector
+    I = sci.eye(3**size, format='csr')
+    Hamiltonian = sci.csr_matrix(Hamiltonian)
+    S_1 = sci.kron(I, Hamiltonian.conjugate().T)
+    S_2 = sci.kron((Hamiltonian.T), I)
+    #S_1 = np.kron(Hamiltonian, I)
+    #S_2 = np.kron(I, Hamiltonian)
+    #print(S_1)
+
+    return (S_1+(-1*S_2))
+
+
+
 def A_vectors(liovillan, b_array, O_basis_array, n_index, ham, size):  # Used for A_2 and on
     first_term = (((ham @ np.reshape(O_basis_array[n_index], (3**size, 3**size)).T) - 
                    (np.reshape(O_basis_array[n_index], (3**size, 3**size)).T @ ham)).T).flatten()
@@ -417,7 +430,19 @@ GRAHM SCHMIDT - FOR NON HERMITIAN HAMILTONIANS
 '''
 
 def grahm_schmidt(n, H, size):
-    #Lio = Liovillan(H, size)
+    Lio = Liovillan(H, size)
+    # A_lio, U_lio = np.linalg.eig(Lio.toarray())  # A_lio is vector of eigenvalues; U_lio is matrix of eigenvectors
+    # print(len(A_lio))
+    # plt.figure()
+    # plt.plot(A_lio.real, A_lio.imag, marker = ".", linestyle = 'None', color = 'r', label = 'Eigenvalues of (alpha_1)^2')
+    # #plt.plot(A.real, A.imag, marker = ".", linestyle = 'None', color = 'g', label = 'Eigenvalues of alpha_1')
+    # #plt.legend()
+    # plt.title('Liovillan Eigenvalues')
+    # plt.xlabel("Real Part")
+    # plt.ylabel("Imaginary Part")
+    # plt.show()
+    
+
     list = []
     list_squared = []  # FOR ALPHA^2 OPERATOR
     for i in range(size):
@@ -428,20 +453,20 @@ def grahm_schmidt(n, H, size):
     #strong_mode = alph_3  # tensor_product(list, size)
     #list[0] = np.conjugate(np_SIG.T)  # FOR ALPHA^2 OPERATOR
     list_squared[0] = (np_SIG.conjugate().T)  # FOR ALPHA^2 OPERATOR
-    seeding = tensor_product(list, size).toarray()  # Converts to array for matrix operations
-    seeding_squared = tensor_product(list_squared, size).toarray()  # FOR ALPHA^2 OPERATOR
-    O_0 = ((seeding.T).flatten())
-    gs_basis_non_ortho = [O_0]
+    seeding = tensor_product(list, size).T.toarray().flatten()  # Converts to array for matrix operations
+    seeding_squared = tensor_product(list_squared, size).T.toarray().flatten()  # FOR ALPHA^2 OPERATOR
+    #O_0 = ((seeding.T).toarray().flatten())
+    gs_basis_non_ortho = [seeding]
     #print(list == list_squared)
 
-    O_0_squared = ((seeding_squared.T).flatten())  # FOR ALPHA^2 OPERATOR
-    gs_basis_non_ortho_squared = [O_0_squared]  # FOR ALPHA^2 OPERATOR
+    #O_0_squared = ((seeding_squared.T).toarray().flatten())  # FOR ALPHA^2 OPERATOR
+    gs_basis_non_ortho_squared = [seeding_squared]  # FOR ALPHA^2 OPERATOR
 
     for P in range(1, n+1):
-        #K = Lio @ gs_basis_non_ortho[P-1]
-        K = (((H @ np.reshape(gs_basis_non_ortho[P-1], (3**size, 3**size)).T) - (np.reshape(gs_basis_non_ortho[P-1], (3**size, 3**size)).T @ H)).T).flatten()
-        #K_squared = Lio @ gs_basis_non_ortho_squared[P-1]
-        K_squared = (((H @ np.reshape(gs_basis_non_ortho_squared[P-1], (3**size, 3**size)).T) - (np.reshape(gs_basis_non_ortho_squared[P-1], (3**size, 3**size)).T @ H)).T).flatten()
+        K = Lio @ gs_basis_non_ortho[P-1]
+        #K = (((H @ np.reshape(gs_basis_non_ortho[P-1], (3**size, 3**size)).T) - (np.reshape(gs_basis_non_ortho[P-1], (3**size, 3**size)).T @ H)).T).flatten()
+        K_squared = Lio @ gs_basis_non_ortho_squared[P-1]
+        #K_squared = (((H @ np.reshape(gs_basis_non_ortho_squared[P-1], (3**size, 3**size)).T) - (np.reshape(gs_basis_non_ortho_squared[P-1], (3**size, 3**size)).T @ H)).T).flatten()
         gs_basis_non_ortho.append(K)
         gs_basis_non_ortho_squared.append(K_squared)
 
@@ -455,12 +480,12 @@ def grahm_schmidt(n, H, size):
     matrix_final = np.zeros((l,l), dtype=complex)  # FOR ALPHA OPERATOR
     matrix_final_squared = np.zeros((l,l), dtype=complex)  # FOR ALPHA^2 OPERATOR
     for j in range(l):
-        #c = Lio @ Q[:, j]
-        c = (((H @ np.reshape(Q[:, j], (3**size, 3**size)).T) -
-            (np.reshape(Q[:,j], (3**size, 3**size)).T @ H)).T).flatten()
-        #c_squared = Lio @ Q_squared[:, j]
-        c_squared = (((H @ np.reshape(Q_squared[:, j], (3**size, 3**size)).T) -
-            (np.reshape(Q_squared[:,j], (3**size, 3**size)).T @ H)).T).flatten()
+        c = Lio @ Q[:, j]
+        #c = (((H @ np.reshape(Q[:, j], (3**size, 3**size)).T) -
+        #    (np.reshape(Q[:,j], (3**size, 3**size)).T @ H)).T).flatten()
+        c_squared = Lio @ Q_squared[:, j]
+        #c_squared = (((H @ np.reshape(Q_squared[:, j], (3**size, 3**size)).T) -
+        #    (np.reshape(Q_squared[:,j], (3**size, 3**size)).T @ H)).T).flatten()
         for i in range(l):
             matrix_final[i, j] = np.conjugate(Q[:, i]) @ c
             matrix_final_squared[i, j] = np.conjugate(Q_squared[:, i]) @ c_squared

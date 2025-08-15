@@ -22,19 +22,19 @@ def LACZOS_COEF_vary_gam_SIM(n, size, gamma, params):
         matrix_final_squared = list_matrix_final[1]
         list_matrix_final_2 = grahm_schmidt(n, H, size)
 
-        print(np.max(np.abs((matrix_final)-(list_matrix_final_2[0]))))
-        arr_1 = []
-        arr_2 = []
-        for i in range(len(matrix_final)-1):
-            arr_1.append(np.abs(matrix_final[i, i+1]))
-            arr_2.append(np.abs((list_matrix_final_2[0][i, i+1])))
-        in_list = np.arange(0, n, 1)
-        plt.figure()
-        plt.plot(in_list, arr_1, marker = ".", linestyle = '-', color = 'r', label = 'a_1')
-        plt.plot(in_list, arr_2, marker = ".", linestyle = '-', color = 'b', label = 'a_1 (Graham Schmidt)')
-        #plt.ylim(7, 8.5, .05)
-        plt.legend()
-        plt.show()
+        # print(np.max(np.abs((matrix_final)-(list_matrix_final_2[0]))))
+        # arr_1 = []
+        # arr_2 = []
+        # for i in range(len(matrix_final)-1):
+        #     arr_1.append(np.abs(matrix_final[i, i+1]))
+        #     arr_2.append(np.abs((list_matrix_final_2[0][i, i+1])))
+        # in_list = np.arange(0, n, 1)
+        # plt.figure()
+        # plt.plot(in_list, arr_1, marker = ".", linestyle = '-', color = 'r', label = 'a_1')
+        # plt.plot(in_list, arr_2, marker = ".", linestyle = '-', color = 'b', label = 'a_1 (Graham Schmidt)')
+        # #plt.ylim(7, 8.5, .05)
+        # plt.legend()
+        # plt.show()
 
     else:
 
@@ -130,6 +130,7 @@ def LACZOS_COEF_vary_gam_SIM(n, size, gamma, params):
         #print(np.imag(A))
         in_list = np.arange(0, n+1, 1)
         in_list_trunc = np.arange(0, truncated_matrix_size, 1)
+
 
         EIG_STATE = np.abs(U[:, np.argmin(np.abs(A))])
         EIG_STATE = (1/np.linalg.norm(EIG_STATE)) * EIG_STATE

@@ -385,8 +385,8 @@ def grahm_schmidt(n, H, size):
 
     for P in range(1, n+1):
         #K = Lio @ gs_basis_non_ortho[P-1]
-        #K = (((H @ np.reshape(gs_basis_non_ortho[P-1], (3**size, 3**size)).T) - (np.reshape(gs_basis_non_ortho[P-1], (3**size, 3**size)).T @ H)).T).flatten()
-        K = (((H.conjugate().T @ np.reshape(gs_basis_non_ortho[P-1], (3**size, 3**size)).T) - (np.reshape(gs_basis_non_ortho[P-1], (3**size, 3**size)).T @ H)).T).flatten()
+        K = (((H @ np.reshape(gs_basis_non_ortho[P-1], (3**size, 3**size)).T) - (np.reshape(gs_basis_non_ortho[P-1], (3**size, 3**size)).T @ H)).T).flatten()
+        #K = (((H.conjugate().T @ np.reshape(gs_basis_non_ortho[P-1], (3**size, 3**size)).T) - (np.reshape(gs_basis_non_ortho[P-1], (3**size, 3**size)).T @ H)).T).flatten()
         gs_basis_non_ortho.append(K)
     #print('EXPERIMENT/TEST')
     #print(type(gs_basis_non_ortho[0]))
@@ -454,8 +454,8 @@ def grahm_schmidt_squared(n, H, size):
 
     for P in range(1, n+1):
         #K = Lio @ gs_basis_non_ortho[P-1]
-        #K = (((H @ np.reshape(gs_basis_non_ortho[P-1], (3**size, 3**size)).T) - (np.reshape(gs_basis_non_ortho[P-1], (3**size, 3**size)).T @ H)).T).flatten()
-        K = (((H.conjugate().T @ np.reshape(gs_basis_non_ortho[P-1], (3**size, 3**size)).T) - (np.reshape(gs_basis_non_ortho[P-1], (3**size, 3**size)).T @ H)).T).flatten()
+        K = (((H @ np.reshape(gs_basis_non_ortho[P-1], (3**size, 3**size)).T) - (np.reshape(gs_basis_non_ortho[P-1], (3**size, 3**size)).T @ H)).T).flatten()
+        #K = (((H.conjugate().T @ np.reshape(gs_basis_non_ortho[P-1], (3**size, 3**size)).T) - (np.reshape(gs_basis_non_ortho[P-1], (3**size, 3**size)).T @ H)).T).flatten()
 
         gs_basis_non_ortho.append(K)
 
@@ -475,6 +475,60 @@ def grahm_schmidt_squared(n, H, size):
 def rank_test(stacked_matrix):
     return np.linalg.matrix_rank(stacked_matrix)
 
+
+def Liovillan_new(Hamiltonian, size): #  Liovillan only applied to a matrix converted to vector
+    ID = sci.eye(3**size, format='csr')
+    Hamiltonian = sci.csr_matrix(Hamiltonian)
+    S_1 = sci.kron(ID, Hamiltonian.conjugate().T)
+    S_2 = sci.kron((Hamiltonian.T), ID)
+    #S_1 = np.kron(Hamiltonian, I)
+    #S_2 = np.kron(I, Hamiltonian)
+    #print(S_1)
+
+    return (S_1+(-1*S_2))
+
+def Experiment(n, H, size):
+    Lio = Liovillan_new(H, size)
+    list = []
+    list_2 = []
+    for i in range(size):
+        list.append(np_I)
+        #list_2.append(np_I)
+    #list[0] = np_SIG
+    #list[0] = np.conjugate(np_SIG).T # FOR ALPHA^2 OPERATOR
+    list[0] = np_SIG.conjugate().T
+    #list_2[0] = np_SIG
+
+    #strong_mode = tensor_product(list, size)
+    #strong_mode = tensor_product(list, size).toarray()
+    #O_0 = (strong_mode.T.reshape((-1, 1))).T
+    O_0 = ((tensor_product(list, size).toarray().T).flatten())
+    #O_0_2 = ((tensor_product(list_2, size).toarray().T).flatten())
+    gs_basis_non_ortho = [O_0]
+    #gs_basis_non_ortho_2 = [O_0_2]
+
+    for P in range(1, n+1):
+        K = Lio @ gs_basis_non_ortho[P-1]
+        #K = (((H @ np.reshape(gs_basis_non_ortho[P-1], (3**size, 3**size)).T) - (np.reshape(gs_basis_non_ortho[P-1], (3**size, 3**size)).T @ H)).T).flatten()
+        #K = (((H.conjugate().T @ np.reshape(gs_basis_non_ortho[P-1], (3**size, 3**size)).T) - (np.reshape(gs_basis_non_ortho[P-1], (3**size, 3**size)).T @ H)).T).flatten()
+
+        gs_basis_non_ortho.append(K)
+
+    gs_basis_non_ortho_matrix = np.column_stack(gs_basis_non_ortho)
+    Q, R = np.linalg.qr(gs_basis_non_ortho_matrix)
+
+    l = len(gs_basis_non_ortho)
+    matrix_final = np.zeros((l,l), dtype=complex)
+    for j in range(l):
+        c = Lio @ Q[:, j]
+        #c = (((H @ np.reshape(Q[:, j], (3**size, 3**size)).T) -
+        #    (np.reshape(Q[:,j], (3**size, 3**size)).T @ H)).T).flatten()
+        for i in range(l):
+            #print(np.conjugate(Q[:, i]) @ Q[:, j])
+            matrix_final[i, j] = np.conjugate(Q[:, i]) @ c
+    return matrix_final
+
+
 GAMM = 0
 H_SIGMA = term_one_SIGMA(length=L, Jay=J, PHI=phi) + term_two_SIGMA(F=f, length=L)
 H_SIGMA = H_SIGMA + GAMM * (H_SIGMA.conjugate().T)  # Make Hermitian
@@ -482,10 +536,12 @@ H_SIGMA = H_SIGMA + GAMM * (H_SIGMA.conjugate().T)  # Make Hermitian
 #print(np.max(np.abs((np_SIG @ np_SIG) - np.conjugate(np_SIG).T)))
 #print(np.max(((0.5*(np_SIG @ np_SIG + np.conjugate(np_SIG).T)) - np.conjugate(np_SIG).T)))
 
-p = 50 # NUMBER OF ITERATIONS
+p = 200 # NUMBER OF ITERATIONS
 #matrix_final_a = GS_NEWER(p, H_SIGMA, L)
-matrix_final_a = grahm_schmidt(p, H_SIGMA, L)  # SEED OPERATOR IS ALPHA_1
-matrix_final_a_squared = grahm_schmidt_squared(p, H_SIGMA, L)  # SEED Operator IS (ALPHA_1)^2
+matrix_final_a = Experiment(p, H_SIGMA, L)  # SEED OPERATOR IS ALPHA_1
+#matrix_final_a = grahm_schmidt(p, H_SIGMA, L)  # SEED OPERATOR IS ALPHA_1
+matrix_final_a_squared = Experiment(p, H_SIGMA, L)  # SEED OPERATOR IS (ALPHA_1)^2
+#matrix_final_a_squared = grahm_schmidt_squared(p, H_SIGMA, L)  # SEED Operator IS (ALPHA_1)^2
 
 #print(type(matrix_final_a[1,1]))
 if GAMM == 1:
@@ -498,6 +554,10 @@ else:
 EIG_SQR = U_sqr[:, np.argmin(np.abs(A_sqr))]  # Smallest eigenvalue eigenvector of squared operator
 EIG_SINGLE = U[:, np.argmin(np.abs(A))]  # Smallest eigenvalue eigenvector of single operator
 
+plt.figure()
+plt.plot(np.real(A_sqr), np.imag(A_sqr), marker = ".", linestyle = 'None', color = 'r', label = 'Eigenvalues of (alpha_1)^2')
+plt.legend()
+plt.show()
 #print('\nABS OF DIFF OF MIN EIGENVALUE EIGENVECTOR')
 #print(np.max(np.abs(EIG_SQR) - np.abs(EIG_SINGLE)))
 
@@ -550,7 +610,7 @@ for i in range(len(A)):
 plt.plot(in_list, EIG_STATES[0], marker = ".", linestyle = '-', color = 'r', label = 'a_1 E = ' + str(np.min(np.abs(A))))
 plt.plot(in_list, np.abs(EIG_SQR), marker = ".", linestyle = '-', color = 'g', label = '(a_1)^dagger E = ' + str(np.min(np.abs(A_sqr))))
 plt.legend()
-plt.ylim(0, .5)
+plt.ylim(0, 1)
 plt.savefig('Krylov_Eigenvector_0.pdf')
 
 

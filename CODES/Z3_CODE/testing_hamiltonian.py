@@ -119,7 +119,7 @@ def term_two_SIGMA(F, length):
     return CLOCK_SUM
 
 
-H_SIGMA = term_one_SIGMA(length=L, Jay=J, PHI=phi) + term_two_SIGMA(F=f, length=L)
+# H_SIGMA = term_one_SIGMA(length=L, Jay=J, PHI=phi) + term_two_SIGMA(F=f, length=L)
 
 
 
@@ -170,7 +170,7 @@ def term_two_TAU(F, length):
 
     return SIG_SUM
 
-H_TAU = term_one_TAU(length=L, Jay=J, PHI=phi) + term_two_TAU(F=f, length=L)
+#H_TAU = term_one_TAU(length=L, Jay=J, PHI=phi) + term_two_TAU(F=f, length=L)
 
 #print(H_TAU.dtype)
 
@@ -178,25 +178,25 @@ H_TAU = term_one_TAU(length=L, Jay=J, PHI=phi) + term_two_TAU(F=f, length=L)
 #H_TAU = np.round(H_TAU, decimals=14)
 
 
-A_SIGMA, U_SIGMA = np.linalg.eig(H_SIGMA)  # NOTE: EIGENVALUES AND EIGENVECTORS OF HAMILTONIAN IN SIGMA BASIS
-A_TAU, U_TAU = np.linalg.eig(H_TAU)      # NOTE: EIGENVALUES AND EIGENVECTORS OF HAMILTONIAN IN TAU BASIS
+# A_SIGMA, U_SIGMA = np.linalg.eig(H_SIGMA)  # NOTE: EIGENVALUES AND EIGENVECTORS OF HAMILTONIAN IN SIGMA BASIS
+# A_TAU, U_TAU = np.linalg.eig(H_TAU)      # NOTE: EIGENVALUES AND EIGENVECTORS OF HAMILTONIAN IN TAU BASIS
 
-#A_SIGMA_ABS_SORTED = np.argsort(np.abs(A_SIGMA))  # SORTS EIGENVALUES IN ABSOLUTE VALUE
-#A_TAU_ABS_SORTED = np.argsort(np.abs(A_TAU))      # SORTS EIGENVALUES IN ABSOLUTE VALUE
+# #A_SIGMA_ABS_SORTED = np.argsort(np.abs(A_SIGMA))  # SORTS EIGENVALUES IN ABSOLUTE VALUE
+# #A_TAU_ABS_SORTED = np.argsort(np.abs(A_TAU))      # SORTS EIGENVALUES IN ABSOLUTE VALUE
 
-#print(np.abs(A_SIGMA))
-#print(np.abs(A_TAU))
-#print(A_SIGMA)
-#print(A_TAU)
-#idx_SIGMA = np.lexsort((A_SIGMA.imag, A_SIGMA.real))  # SORTS EIGENVALUES IN SIGMA BASIS
-#idx_TAU = np.lexsort((A_TAU.imag, A_TAU.real))      # SORTS EIGENVALUES IN TAU BASIS
+# #print(np.abs(A_SIGMA))
+# #print(np.abs(A_TAU))
+# #print(A_SIGMA)
+# #print(A_TAU)
+# #idx_SIGMA = np.lexsort((A_SIGMA.imag, A_SIGMA.real))  # SORTS EIGENVALUES IN SIGMA BASIS
+# #idx_TAU = np.lexsort((A_TAU.imag, A_TAU.real))      # SORTS EIGENVALUES IN TAU BASIS
 
 
-A_SIGMA_SORT = np.sort_complex(A_SIGMA)  # SORTS EIGENVALUES IN ABSOLUTE VALUE
-A_TAU_SORT = np.sort_complex(A_TAU)      # SORTS EIGENVALUES IN ABSOLUTE VALUE
-#print(A_SIGMA_SORT)
-#print(A_TAU_SORT)
-difference = A_SIGMA_SORT - A_TAU_SORT  # DIFF BETWEEN EIGENVALUES IN SIGMA AND TAU BASIS
+# A_SIGMA_SORT = np.sort_complex(A_SIGMA)  # SORTS EIGENVALUES IN ABSOLUTE VALUE
+# A_TAU_SORT = np.sort_complex(A_TAU)      # SORTS EIGENVALUES IN ABSOLUTE VALUE
+# #print(A_SIGMA_SORT)
+# #print(A_TAU_SORT)
+# difference = A_SIGMA_SORT - A_TAU_SORT  # DIFF BETWEEN EIGENVALUES IN SIGMA AND TAU BASIS
 
 #print(difference)
 
@@ -250,7 +250,70 @@ def eigenvalues_match(arr1, arr2, tol=1e-15):
 
 #A_TAU_SORT[2] = 2 
 
+def Liovillan(Hamiltonian, size): #  Liovillan only applied to a matrix converted to vector
+    I = sci.eye(3**size, format='csr')
+    Hamiltonian = sci.csr_matrix(Hamiltonian)
+    S_1 = sci.kron(I, Hamiltonian)
+    S_2 = sci.kron((Hamiltonian.T), I)
+    #S_1 = np.kron(Hamiltonian, I)
+    #S_2 = np.kron(I, Hamiltonian)
+    #print(S_1)
 
-diff = eigenvalues_match(A_SIGMA_SORT, A_TAU_SORT)
+    return (S_1+(-1*S_2))
 
-print(diff)
+J = 1
+phi = 0  # PHASE FACTOR
+f = .1
+L = 2  # SYSTEM SIZE
+gamma = 1  # DETERMINES HERMICITY
+
+H = term_one_SIGMA(L, Jay=J, PHI=phi) + term_two_SIGMA(F=f, length=L)
+H_3 = term_one_SIGMA(3, Jay=J, PHI=phi) + term_two_SIGMA(F=f, length=3)
+H_4 = term_one_SIGMA(4, Jay=J, PHI=phi) + term_two_SIGMA(F=f, length=4)
+
+# A, U = np.linalg.eig(H)  # A is vector of eigenvalues; U is matrix of eigenvectors
+# print(len(A))
+# plt.figure()
+# plt.plot(A.real, A.imag, marker=".", linestyle="None", color="r", label="Eigenvalues of H")
+# plt.title("Eigenvalues of H")
+# plt.xlabel("Real Part")
+# plt.ylabel("Imaginary Part")
+# plt.legend()
+# plt.grid()
+# plt.show()
+
+Lio = Liovillan(H, L)
+Lio_3 = Liovillan(H_3, 3)
+Lio_4 = Liovillan(H_4, 4)
+A, U = np.linalg.eig(Lio.toarray())  # A is vector of eigenvalues; U is matrix of eigenvectors
+arg = np.argsort(np.abs(A))  # Index of minimum eigenvalue
+A_3, U_3 = np.linalg.eig(Lio_3.toarray())  # A is vector of eigenvalues; U is matrix of eigenvectors
+arg_3 = np.argsort(np.abs(A_3))  # Index of minimum eigenvalue
+A_4, U_4 = np.linalg.eig(Lio_4.toarray())  # A is vector of eigenvalues; U is matrix of eigenvectors
+arg_4 = np.argsort(np.abs(A_4))  # Index of minimum eigenvalue
+vect = np.trace(np.reshape(U[:, arg[60]], (3**L, 3**L)).T)
+vect_3 = np.trace(np.reshape(U_3[:, arg_3[60]], (3**3, 3**3)).T)
+vect_4 = np.trace(np.reshape(U_4[:, arg_4[60]], (3**4, 3**4)).T)
+plt.figure()
+plt.plot(np.array([2, 3, 4]), np.array([vect, vect_3, vect_4]).real, marker=".", linestyle="None", color="r", label="Traces of Liovillan eigenvectors")
+plt.title("Traces of Liovillan Eigenvectors")
+plt.xlabel("System Size")
+plt.ylabel("Trace")
+plt.legend()
+plt.show()
+# NOTE: BELOW IS THE COMPARISON BETWEEN TWO BASES
+# H_SIGMA = term_one_SIGMA(length=L, Jay=J, PHI=phi) + term_two_SIGMA(F=f, length=L)
+# H_TAU = term_one_TAU(length=L, Jay=J, PHI=phi) + term_two_TAU(F=f, length=L)
+
+# A_SIGMA, U_SIGMA = np.linalg.eig(H_SIGMA)  # NOTE: EIGENVALUES AND EIGENVECTORS OF HAMILTONIAN IN SIGMA BASIS
+# A_TAU, U_TAU = np.linalg.eig(H_TAU)      # NOTE: EIGENVALUES AND EIGENVECTORS OF HAMILTONIAN IN TAU BASIS
+# A_SIGMA_SORT = np.sort_complex(A_SIGMA)  # SORTS EIGENVALUES IN ABSOLUTE VALUE
+# A_TAU_SORT = np.sort_complex(A_TAU)      # SORTS EIGENVALUES IN ABSOLUTE VALUE
+# #print(A_SIGMA_SORT)
+# #print(A_TAU_SORT)
+# difference = A_SIGMA_SORT - A_TAU_SORT  # DIFF BETWEEN EIGENVALUES IN SIGMA AND TAU BASIS
+
+
+# diff = eigenvalues_match(A_SIGMA_SORT, A_TAU_SORT)
+
+# print(diff)

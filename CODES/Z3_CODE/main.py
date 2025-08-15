@@ -7,6 +7,7 @@ WE WILL CALL TO RUN RESPECTIVE SIMULATION HERE
 from f_phi_autocorr_SIM import f_phi_autocorrelator_SIMULATION_EXCEL, f_phi_autocorrelator_SIMULATION_NPY
 from size_comparison_autocorr_SIM import size_autocorrelator_SIMULATION_EXCEL, size_autocorrelator_SIMULATION_NPY
 from laczos_coeff_sim import LACZOS_COEF_vary_gam_SIM
+from measure_decay_autocorr import decay_rates
 import numpy as np
 import cmath as cm
 import matplotlib.pyplot as plt
@@ -37,8 +38,11 @@ phi_array = [0, np.pi/6, np.pi/4, np.pi/3]
 
 #size_autocorrelator_SIMULATION_NPY(0, 30, .5, L_array, array_parameters[int(sys.argv[1])], 1)
 
-size_autocorrelator_SIMULATION_NPY(0, 5, .1, [4, 5, 6, 7], [.5, 0], 0)
-#LACZOS_COEF_vary_gam_SIM(60, 5, 0, [.1, 0])
+#size_autocorrelator_SIMULATION_NPY(0, 20, .5, [5], [.1, np.pi/6], 1)
+LACZOS_COEF_vary_gam_SIM(60, 5, 1, [.1, np.pi/6])
+#gamma_array = np.arange(0, 1, 0.1)
+
+#decay_rates(0, 15, 1, 5, [.15, 1*np.pi/6], gamma_array)
 
 
 '''
