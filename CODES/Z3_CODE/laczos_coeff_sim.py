@@ -20,7 +20,7 @@ def LACZOS_COEF_vary_gam_SIM(n, size, gamma, params):
         list_matrix_final = recursion_method(n, H, size)
         matrix_final = list_matrix_final[0]
         matrix_final_squared = list_matrix_final[1]
-        list_matrix_final_2 = grahm_schmidt(n, H, size)
+        #list_matrix_final_2 = grahm_schmidt(n, H, size)
 
         # print(np.max(np.abs((matrix_final)-(list_matrix_final_2[0]))))
         # arr_1 = []
@@ -87,7 +87,7 @@ def LACZOS_COEF_vary_gam_SIM(n, size, gamma, params):
         # b_values = recursion_method(n, H, size)
         if gamma == 1:
             A, U = np.linalg.eigh(matrix_final)
-            A_2, U_2 = np.linalg.eigh(list_matrix_final_2[0])
+            #A_2, U_2 = np.linalg.eigh(list_matrix_final_2[0])
             A_squared, U_squared = np.linalg.eigh(matrix_final_squared)
             #print(np.min(np.abs(A)))
         else:

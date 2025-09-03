@@ -488,7 +488,7 @@ def Liovillan_new(Hamiltonian, size): #  Liovillan only applied to a matrix conv
     return (S_1+(-1*S_2))
 
 def Experiment(n, H, size):
-    Lio = Liovillan_new(H, size)
+    Lio = Liovillan(H, size)
     list = []
     list_2 = []
     for i in range(size):
@@ -525,18 +525,18 @@ def Experiment(n, H, size):
         #    (np.reshape(Q[:,j], (3**size, 3**size)).T @ H)).T).flatten()
         for i in range(l):
             #print(np.conjugate(Q[:, i]) @ Q[:, j])
-            matrix_final[i, j] = np.conjugate(Q[:, i]) @ c
+            matrix_final[i, j] = (Q[:, i]).conjugate() @ c
     return matrix_final
 
 
 GAMM = 0
-H_SIGMA = term_one_SIGMA(length=L, Jay=J, PHI=phi) + term_two_SIGMA(F=f, length=L)
+H_SIGMA = term_one_SIGMA(length=L, Jay=J, PHI=0 * np.pi/6) + term_two_SIGMA(F=f, length=L)
 H_SIGMA = H_SIGMA + GAMM * (H_SIGMA.conjugate().T)  # Make Hermitian
 #print('Difference between SIG^2 and SIG^t:')
 #print(np.max(np.abs((np_SIG @ np_SIG) - np.conjugate(np_SIG).T)))
 #print(np.max(((0.5*(np_SIG @ np_SIG + np.conjugate(np_SIG).T)) - np.conjugate(np_SIG).T)))
 
-p = 200 # NUMBER OF ITERATIONS
+p = 120 # NUMBER OF ITERATIONS
 #matrix_final_a = GS_NEWER(p, H_SIGMA, L)
 matrix_final_a = Experiment(p, H_SIGMA, L)  # SEED OPERATOR IS ALPHA_1
 #matrix_final_a = grahm_schmidt(p, H_SIGMA, L)  # SEED OPERATOR IS ALPHA_1
