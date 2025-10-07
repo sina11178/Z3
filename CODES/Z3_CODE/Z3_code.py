@@ -283,6 +283,65 @@ def autocorrelator(A, U, U_inv, time, size, hamiltonian, gamma):  # ONLY FOR SIG
 
         return autocorr_SIG    
 
+def correlator(A, U, U_inv, time, size, hamiltonian, gamma):  # ONLY FOR SIG1_X
+    list = []
+    list_2 = []
+    for a in range(size):
+        list.append(np_I)
+        list_2.append(np_I)
+    list[0] = np_SIG # first site association with sig_x set
+    list_2[1] = np_SIG # second site association with sig_x set
+    #list[size-1] = np_SIG
+    
+    # print(time_evol_op.getH() * time_evol_op)
+    if gamma == 1:
+        #A, U = np.linalg.eigh(hamiltonian.toarray())  # A is vector of eigenvalues; U is matrix of eigenvectors
+        #U_inv = np.conjugate(U).T  # Conjugate transpose of U
+
+        time_evol_op = time_evol_op_at_time_t(A, U, U_inv, time, gamma, size)  # Finds time evol operator at time t
+        non_time_evold_op_sig = tensor_product(list, size) #  SIGX_1(0)
+        sig_2 = tensor_product(list_2, size)
+        time_evol_op_dag = (np.conjugate(time_evol_op.T))
+        time_evolved_sig = time_evol_op_dag @ non_time_evold_op_sig @ (time_evol_op)  #  SIGX_1(time)
+        #print(time_evolved_sig)
+        prefactor = 1/(3**size)
+        product_SIG = np.conjugate(time_evolved_sig.T) @ sig_2
+        autocorr_SIG = prefactor * np.trace(product_SIG)
+        #print(autocorr_SIG)
+
+        return autocorr_SIG
+    else:
+        #ham = hamiltonian.toarray()
+        #U, V = np.linalg.eig(ham)
+        #print(hamiltonian.shape)
+        #print((1.j*max(np.array(U).imag)*np.eye(3**L)).shape)
+        #Hpr = (ham - 1.j*max(np.array(U).imag)*np.eye(3**size))
+
+        #A, U = np.linalg.eig(Hpr)
+        #U_inv = np.linalg.inv(U)
+
+        time_evol_op = time_evol_op_at_time_t(A, U, U_inv, time, gamma, size)  # Finds time evol operator at time t
+        #norm = np.linalg.norm(time_evol_op)
+        #norm_time_evol_op = (1/norm)*time_evol_op
+        non_time_evold_op_sig = tensor_product(list, size) #  SIGX_1(0)
+        sig_2 = tensor_product(list_2, size)
+        #norm_time_evol_op_dag = (np.conjugate(norm_time_evol_op.T))
+        #time_evolved_sig = norm_time_evol_op_dag @ non_time_evold_op_sig @ (norm_time_evol_op)  #  SIGX_1(time)
+        time_evol_op_dag = (np.conjugate(time_evol_op.T))  # ERROR THIS LINE
+        time_evolved_sig = time_evol_op_dag @ np.conjugate(non_time_evold_op_sig) @ (time_evol_op)  # TAKING DAGGER OF SIGMA ONLY (RATHER THAN ENTIRE THING)
+        #print(time_evolved_sig)
+        prefactor = 1/(np.trace(time_evol_op_dag @ time_evol_op))
+        #product_SIG = np.conjugate(time_evolved_sig.T) @ non_time_evold_op_sig
+        product_SIG = (time_evolved_sig) @ sig_2
+        #product_SIG = (time_evolved_sig) @ non_time_evold_op_sig
+
+        autocorr_SIG = prefactor * np.trace(product_SIG)
+        #print(autocorr_SIG)
+
+        return autocorr_SIG   
+
+
+
 def list_inputs(init_time, fin_time, interval):
     list_non_exp = np.arange(init_time, fin_time, interval)
     list_exp = np.exp(list_non_exp)
@@ -294,6 +353,11 @@ def output_list(A, U, U_inv, input_list, size, hamiltonian, gamma):# TOOK OUT .R
         out_list[i] = autocorrelator(A, U, U_inv, input_list[i], size, hamiltonian, gamma).real  #  Stores respective outputs in list
     return np.array(out_list)
 
+def output_list_corr(A, U, U_inv, input_list, size, hamiltonian, gamma):# TOOK OUT .REAL
+    out_list = [0] * len(input_list)
+    for i in range(len(input_list)):
+        out_list[i] = correlator(A, U, U_inv, input_list[i], size, hamiltonian, gamma).real  #  Stores respective outputs in list
+    return np.array(out_list)
 
 '''
 

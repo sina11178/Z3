@@ -21,10 +21,10 @@ sigma = [
     [0, 0, w**2]
 ]
 
-clock = [
-    [0, 1, 0],
+clock = [  # TAU SQUARED
     [0, 0, 1],
-    [1, 0, 0]
+    [1, 0, 0],
+    [0, 1, 0]
 ]
 
 I = [
@@ -38,6 +38,11 @@ I = [
 np_SIG = np.array(sigma, dtype=np.complex128)  # Sigma operator
 np_CLK = np.array(clock, dtype=np.complex128)  # Clock operator
 np_I = np.array(I, dtype=np.complex128)  # Identity operator
+
+# np_SIG = sci.csr_matrix(sigma, dtype=np.complex128)  # Sigma operator
+# np_CLK = sci.csr_matrix(clock, dtype=np.complex128)  # Clock operator
+# np_I = sci.csr_matrix(I, dtype=np.complex128)  # Identity operator
+
 
 '''
 
@@ -79,19 +84,19 @@ def term_one_SIGMA(length, Jay, PHI):
     #for k in range(length): # Initializes list to idententity operators
     #    list.append(np_I)
     list_2 = []  # Has all terms in a list
-
-    SIG_dag = np.conjugate(np_SIG.T)
+    SIG_dag = np_SIG.conjugate().T
+    #SIG_dag = np.conjugate(np_SIG.T)
     # LIST OF DIFFERENT MATRICES ASSOCIATED WITH SITES CREATED HERE
     for i in range(length - 1):
         #for j in range(length): # Initializes list to idententity operators
         #    list[j] = np_I
         list = [np_I] * length  # Initializes list to identity operators
 
-        list[i] = np_SIG
+        list[i] = SIG_dag
         # if i == (length - 1):
         #     list[0] = np_x
         # else:
-        list[i+1] = SIG_dag
+        list[i+1] = np_SIG
 
         list_2.append(tensor_product(list, length)) #  Performs tensor product and puts them in a list
 
@@ -111,11 +116,13 @@ def term_two_SIGMA(F, length):
         #for j in range(length): # Initializes list to idententity operators
         #    list[j] = np_I
         list = [np_I] * length  # Initializes list to identity operators
-        list[i] = np_CLK
+        list[i] = np_CLK  # Clock operator applied to Sigma operator
         list_2.append(tensor_product(list, length)) #  Performs tensor product and puts them in a list
     #print(list_2)
     CLOCK_SUM = -F * adding_matrixes_in_list(list_2, length)  # NOTE: SAEED DOES NOT HAVE A w PREFACTOR FOR THIS TERM
 
+    #print('Clock Sum:')
+    #print(CLOCK_SUM)
     return CLOCK_SUM
 
 
@@ -260,60 +267,90 @@ def Liovillan(Hamiltonian, size): #  Liovillan only applied to a matrix converte
     #print(S_1)
 
     return (S_1+(-1*S_2))
+def Liovillan_new(Hamiltonian, size): #  Liovillan only applied to a matrix converted to vector
+    ID = sci.eye(3**size, format='csr')
+    Hamiltonian = sci.csr_matrix(Hamiltonian)
+    S_1 = sci.kron(ID, Hamiltonian.conjugate().T)
+    S_2 = sci.kron((Hamiltonian.T), ID)
+    #S_1 = np.kron(Hamiltonian, I)
+    #S_2 = np.kron(I, Hamiltonian)
+    #print(S_1)
+
+    return (S_1+(-1*S_2))
 
 J = 1
-phi = 0  # PHASE FACTOR
+phi = 0*np.pi/6  # PHASE FACTOR
 f = .1
-L = 2  # SYSTEM SIZE
+L = 5  # SYSTEM SIZE
 gamma = 1  # DETERMINES HERMICITY
+H = term_one_SIGMA(L, Jay=1, PHI=phi) + term_two_SIGMA(F=f, length=L)
 
-H = term_one_SIGMA(L, Jay=J, PHI=phi) + term_two_SIGMA(F=f, length=L)
-H_3 = term_one_SIGMA(3, Jay=J, PHI=phi) + term_two_SIGMA(F=f, length=3)
-H_4 = term_one_SIGMA(4, Jay=J, PHI=phi) + term_two_SIGMA(F=f, length=4)
+A, U = np.linalg.eig(H)  # A is vector of eigenvalues; U is matrix of eigenvectors
 
-# A, U = np.linalg.eig(H)  # A is vector of eigenvalues; U is matrix of eigenvectors
-# print(len(A))
-# plt.figure()
-# plt.plot(A.real, A.imag, marker=".", linestyle="None", color="r", label="Eigenvalues of H")
-# plt.title("Eigenvalues of H")
-# plt.xlabel("Real Part")
-# plt.ylabel("Imaginary Part")
-# plt.legend()
-# plt.grid()
-# plt.show()
-
-Lio = Liovillan(H, L)
-Lio_3 = Liovillan(H_3, 3)
-Lio_4 = Liovillan(H_4, 4)
-A, U = np.linalg.eig(Lio.toarray())  # A is vector of eigenvalues; U is matrix of eigenvectors
-arg = np.argsort(np.abs(A))  # Index of minimum eigenvalue
-A_3, U_3 = np.linalg.eig(Lio_3.toarray())  # A is vector of eigenvalues; U is matrix of eigenvectors
-arg_3 = np.argsort(np.abs(A_3))  # Index of minimum eigenvalue
-A_4, U_4 = np.linalg.eig(Lio_4.toarray())  # A is vector of eigenvalues; U is matrix of eigenvectors
-arg_4 = np.argsort(np.abs(A_4))  # Index of minimum eigenvalue
-vect = np.trace(np.reshape(U[:, arg[60]], (3**L, 3**L)).T)
-vect_3 = np.trace(np.reshape(U_3[:, arg_3[60]], (3**3, 3**3)).T)
-vect_4 = np.trace(np.reshape(U_4[:, arg_4[60]], (3**4, 3**4)).T)
 plt.figure()
-plt.plot(np.array([2, 3, 4]), np.array([vect, vect_3, vect_4]).real, marker=".", linestyle="None", color="r", label="Traces of Liovillan eigenvectors")
-plt.title("Traces of Liovillan Eigenvectors")
-plt.xlabel("System Size")
-plt.ylabel("Trace")
+plt.plot(A.real, A.imag, marker=".", linestyle="None", color="r", label="Eigenvalues of H")
+plt.title("Eigenvalues of H")
+plt.xlabel("Real Part")
+plt.ylabel("Imaginary Part")
 plt.legend()
+plt.grid()
 plt.show()
-# NOTE: BELOW IS THE COMPARISON BETWEEN TWO BASES
-# H_SIGMA = term_one_SIGMA(length=L, Jay=J, PHI=phi) + term_two_SIGMA(F=f, length=L)
-# H_TAU = term_one_TAU(length=L, Jay=J, PHI=phi) + term_two_TAU(F=f, length=L)
-
-# A_SIGMA, U_SIGMA = np.linalg.eig(H_SIGMA)  # NOTE: EIGENVALUES AND EIGENVECTORS OF HAMILTONIAN IN SIGMA BASIS
-# A_TAU, U_TAU = np.linalg.eig(H_TAU)      # NOTE: EIGENVALUES AND EIGENVECTORS OF HAMILTONIAN IN TAU BASIS
-# A_SIGMA_SORT = np.sort_complex(A_SIGMA)  # SORTS EIGENVALUES IN ABSOLUTE VALUE
-# A_TAU_SORT = np.sort_complex(A_TAU)      # SORTS EIGENVALUES IN ABSOLUTE VALUE
-# #print(A_SIGMA_SORT)
-# #print(A_TAU_SORT)
-# difference = A_SIGMA_SORT - A_TAU_SORT  # DIFF BETWEEN EIGENVALUES IN SIGMA AND TAU BASIS
 
 
-# diff = eigenvalues_match(A_SIGMA_SORT, A_TAU_SORT)
+# NOTE: COMPARING HAMILTONIANS IN SIGMA AND TAU BASIS
+# J = 1
+# phi = 0  # PHASE FACTOR
+# f = .1
+# L = 2  # SYSTEM SIZE
+# gamma = 1  # DETERMINES HERMICITY
 
-# print(diff)
+# H = term_one_SIGMA(L, Jay=J, PHI=phi) + term_two_SIGMA(F=f, length=L)
+# H_3 = term_one_SIGMA(3, Jay=J, PHI=phi) + term_two_SIGMA(F=f, length=3)
+# H_4 = term_one_SIGMA(4, Jay=J, PHI=phi) + term_two_SIGMA(F=f, length=4)
+
+# # A, U = np.linalg.eig(H)  # A is vector of eigenvalues; U is matrix of eigenvectors
+# # print(len(A))
+# # plt.figure()
+# # plt.plot(A.real, A.imag, marker=".", linestyle="None", color="r", label="Eigenvalues of H")
+# # plt.title("Eigenvalues of H")
+# # plt.xlabel("Real Part")
+# # plt.ylabel("Imaginary Part")
+# # plt.legend()
+# # plt.grid()
+# # plt.show()
+
+# Lio = Liovillan(H, L)
+# Lio_3 = Liovillan(H_3, 3)
+# Lio_4 = Liovillan(H_4, 4)
+# A, U = np.linalg.eig(Lio.toarray())  # A is vector of eigenvalues; U is matrix of eigenvectors
+# arg = np.argsort(np.abs(A))  # Index of minimum eigenvalue
+# A_3, U_3 = np.linalg.eig(Lio_3.toarray())  # A is vector of eigenvalues; U is matrix of eigenvectors
+# arg_3 = np.argsort(np.abs(A_3))  # Index of minimum eigenvalue
+# A_4, U_4 = np.linalg.eig(Lio_4.toarray())  # A is vector of eigenvalues; U is matrix of eigenvectors
+# arg_4 = np.argsort(np.abs(A_4))  # Index of minimum eigenvalue
+# vect = np.trace(np.reshape(U[:, arg[60]], (3**L, 3**L)).T)
+# vect_3 = np.trace(np.reshape(U_3[:, arg_3[60]], (3**3, 3**3)).T)
+# vect_4 = np.trace(np.reshape(U_4[:, arg_4[60]], (3**4, 3**4)).T)
+# plt.figure()
+# plt.plot(np.array([2, 3, 4]), np.array([vect, vect_3, vect_4]).real, marker=".", linestyle="None", color="r", label="Traces of Liovillan eigenvectors")
+# plt.title("Traces of Liovillan Eigenvectors")
+# plt.xlabel("System Size")
+# plt.ylabel("Trace")
+# plt.legend()
+# plt.show()
+# # NOTE: BELOW IS THE COMPARISON BETWEEN TWO BASES
+# # H_SIGMA = term_one_SIGMA(length=L, Jay=J, PHI=phi) + term_two_SIGMA(F=f, length=L)
+# # H_TAU = term_one_TAU(length=L, Jay=J, PHI=phi) + term_two_TAU(F=f, length=L)
+
+# # A_SIGMA, U_SIGMA = np.linalg.eig(H_SIGMA)  # NOTE: EIGENVALUES AND EIGENVECTORS OF HAMILTONIAN IN SIGMA BASIS
+# # A_TAU, U_TAU = np.linalg.eig(H_TAU)      # NOTE: EIGENVALUES AND EIGENVECTORS OF HAMILTONIAN IN TAU BASIS
+# # A_SIGMA_SORT = np.sort_complex(A_SIGMA)  # SORTS EIGENVALUES IN ABSOLUTE VALUE
+# # A_TAU_SORT = np.sort_complex(A_TAU)      # SORTS EIGENVALUES IN ABSOLUTE VALUE
+# # #print(A_SIGMA_SORT)
+# # #print(A_TAU_SORT)
+# # difference = A_SIGMA_SORT - A_TAU_SORT  # DIFF BETWEEN EIGENVALUES IN SIGMA AND TAU BASIS
+
+
+# # diff = eigenvalues_match(A_SIGMA_SORT, A_TAU_SORT)
+
+# # print(diff)

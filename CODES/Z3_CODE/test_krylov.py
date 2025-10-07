@@ -13,7 +13,7 @@ from scipy.sparse import csr_matrix
 J = 1
 phi = 0 * np.pi/6  # PHASE FACTOR
 f = .1
-L = 5 # SYSTEM SIZE
+L = 6 # SYSTEM SIZE
 #gamma = 1  # DETERMINES HERMICITY
 
 w = np.exp((2 * np.pi * 1.j)/3)  # For defining Sigma operator
@@ -481,6 +481,10 @@ def Liovillan_new(Hamiltonian, size): #  Liovillan only applied to a matrix conv
     Hamiltonian = sci.csr_matrix(Hamiltonian)
     S_1 = sci.kron(ID, Hamiltonian.conjugate().T)
     S_2 = sci.kron((Hamiltonian.T), ID)
+
+    #S_1 = sci.kron(ID, Hamiltonian)
+    #S_2 = sci.kron((Hamiltonian.conjugate()), ID)
+
     #S_1 = np.kron(Hamiltonian, I)
     #S_2 = np.kron(I, Hamiltonian)
     #print(S_1)
@@ -488,7 +492,7 @@ def Liovillan_new(Hamiltonian, size): #  Liovillan only applied to a matrix conv
     return (S_1+(-1*S_2))
 
 def Experiment(n, H, size):
-    Lio = Liovillan(H, size)
+    Lio = Liovillan_new(H, size)
     list = []
     list_2 = []
     for i in range(size):
@@ -535,8 +539,21 @@ H_SIGMA = H_SIGMA + GAMM * (H_SIGMA.conjugate().T)  # Make Hermitian
 #print('Difference between SIG^2 and SIG^t:')
 #print(np.max(np.abs((np_SIG @ np_SIG) - np.conjugate(np_SIG).T)))
 #print(np.max(((0.5*(np_SIG @ np_SIG + np.conjugate(np_SIG).T)) - np.conjugate(np_SIG).T)))
+A_H, U_H = np.linalg.eig(H_SIGMA.toarray())  # A is vector of eigenvalues; U is matrix of eigenvectors
 
-p = 120 # NUMBER OF ITERATIONS
+
+
+plt.figure()
+plt.plot(A_H.real, A_H.imag, marker=".", linestyle="None", color="r", label="Eigenvalues of H")
+plt.title("Eigenvalues of H")
+plt.xlabel("Real Part")
+plt.ylabel("Imaginary Part")
+plt.legend()
+plt.grid()
+plt.show()
+
+
+p = 50 # NUMBER OF ITERATIONS
 #matrix_final_a = GS_NEWER(p, H_SIGMA, L)
 matrix_final_a = Experiment(p, H_SIGMA, L)  # SEED OPERATOR IS ALPHA_1
 #matrix_final_a = grahm_schmidt(p, H_SIGMA, L)  # SEED OPERATOR IS ALPHA_1
@@ -551,21 +568,20 @@ else:
     A, U = np.linalg.eig(matrix_final_a)  # Get eigenvalues and eigenvectors
     A_sqr, U_sqr = np.linalg.eig(matrix_final_a_squared)
 
-EIG_SQR = U_sqr[:, np.argmin(np.abs(A_sqr))]  # Smallest eigenvalue eigenvector of squared operator
-EIG_SINGLE = U[:, np.argmin(np.abs(A))]  # Smallest eigenvalue eigenvector of single operator
+#EIG_SQR = U_sqr[:, np.argmin(np.abs(A_sqr))]  # Smallest eigenvalue eigenvector of squared operator
+#EIG_SINGLE = U[:, np.argmin(np.abs(A))]  # Smallest eigenvalue eigenvector of single operator
+EIG_SQR = U_sqr[:, np.argmax(np.imag(A_sqr))]  # Smallest eigenvalue eigenvector of squared operator
+EIG_SINGLE = U[:, np.argmax(np.imag(A))]  # Smallest eigenvalue eigenvector of single operator
+in_list = np.arange(0, p+1, 1)
+plt.figure()
+plt.plot(in_list, np.abs(EIG_SQR))
+
 
 plt.figure()
 plt.plot(np.real(A_sqr), np.imag(A_sqr), marker = ".", linestyle = 'None', color = 'r', label = 'Eigenvalues of (alpha_1)^2')
 plt.legend()
 plt.show()
-#print('\nABS OF DIFF OF MIN EIGENVALUE EIGENVECTOR')
-#print(np.max(np.abs(EIG_SQR) - np.abs(EIG_SINGLE)))
 
-
-difference_1 = (np.abs(matrix_final_a) - np.abs(matrix_final_a_squared))
-#print('\nDifference between Krylov Matrix Outputs:')
-#print(np.max(np.abs(difference_1)))
-#rint(np.max(matrix_final_a.real - matrix_final_a_squared.real))
 F_2 = np.abs(matrix_final_a)
 F_1 = np.abs(matrix_final_a_squared)
 plt.subplot(1, 2, 1)
@@ -607,28 +623,33 @@ for i in range(len(A)):
     #print(np.linalg.norm(EIG_STATE))
     EIG_STATES.append(EIG_STATE)
 
-plt.plot(in_list, EIG_STATES[0], marker = ".", linestyle = '-', color = 'r', label = 'a_1 E = ' + str(np.min(np.abs(A))))
-plt.plot(in_list, np.abs(EIG_SQR), marker = ".", linestyle = '-', color = 'g', label = '(a_1)^dagger E = ' + str(np.min(np.abs(A_sqr))))
-plt.legend()
-plt.ylim(0, 1)
-plt.savefig('Krylov_Eigenvector_0.pdf')
-
-
-# ncols = 4  # columns per row
-# nrows = int(np.ceil(len(EIG_STATES) / ncols))
-# fig, axes = plt.subplots(nrows=nrows, ncols=ncols, figsize=(4*ncols, 3*nrows))
-# axes = axes.flatten()
-# plt.suptitle('Hello')
-# for i in range(int(len(EIG_STATES))):
-#         ax = axes[i]
-#         ax.plot(in_list, EIG_STATES[i], marker = ".", linestyle = '-', label = 'E = ' + str(np.round(sorted[i], 5)) + " (" + str(i) + ")")
-#         #title = str(params[0]) + ", " + str(params[1]) + "  " + "(f, PHI)" + " gam = " + str(gamma) + " Eigenvector graph (L = " + str(size) + ")"
-
-#         ax.set_xlabel("n")
-#         ax.set_ylabel("Eigenvector Components")
-
-#         ax.set_ylim(0, 1)
-#         ax.legend()
+# #plt.plot(in_list, EIG_STATES[0], marker = ".", linestyle = '-', color = 'r', label = 'a_1 E = ' + str(A[np.abs(A).argsort()[0]]))
+# #plt.plot(in_list, np.abs(EIG_SQR), marker = ".", linestyle = '-', color = 'g', label = '(a_1)^dagger E = ' + str(A_sqr[np.abs(A_sqr).argsort()[0]]))
+# plt.plot(in_list, EIG_SQR, marker = ".", linestyle = '-', color = 'g', label = str(np.max(np.imag(A_sqr))))
+# plt.plot(in_list, EIG_SINGLE, marker = ".", linestyle = '-', color = 'g')
+# plt.legend()
+# plt.ylim(0, 1)
+# #plt.savefig('Krylov_Eigenvector_0.pdf')
 # plt.show()
+#plt.figure()
+#plt.plot(in_list, EIG_STATES[49], marker = ".", linestyle = '-', color = 'r', label = 'a_1 E = ' + str(A[np.abs(A).argsort()[0]]))
+
+ncols = 4  # columns per row
+nrows = int(np.ceil(len(EIG_STATES) / ncols))
+fig, axes = plt.subplots(nrows=nrows, ncols=ncols, figsize=(4*ncols, 3*nrows))
+axes = axes.flatten()
+plt.suptitle('Hello')
+for i in range(int(len(EIG_STATES))):
+        ax = axes[i]
+        ax.plot(in_list, EIG_STATES[i], marker = ".", linestyle = '-', label = "E = {:.2e} ({})".format(A[np.abs(A).argsort()[i]], i))
+        #title = str(params[0]) + ", " + str(params[1]) + "  " + "(f, PHI)" + " gam = " + str(gamma) + " Eigenvector graph (L = " + str(size) + ")"
+        ax.ticklabel_format(style='sci', axis='x', scilimits=(0, 0))
+        ax.set_xlabel("n")
+        ax.set_ylabel("Eigenvector Components")
+
+        ax.set_ylim(0, 1)
+        ax.legend()
+
+plt.show()
 
 
