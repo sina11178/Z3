@@ -23,7 +23,7 @@ param_array=[[0.1, 0], [0.1, np.pi/6]]
 gamma_array = [0, .2, .4, .6, .8, 1]
 L_array = [4, 6, 8, 9, 10]
 
-size_autocorrelator_SIMULATION_NPY(0, 30, .5, [L_array[int(int(sys.argv[1]) % 5)]], param_array[int(sys.argv[1]%30)], gamma_array[int(int(sys.argv[1])/5)%6])
+size_autocorrelator_SIMULATION_NPY(0, 30, .5, [L_array[int(sys.argv[1]) % 5]], param_array[int(sys.argv[1]%30)], gamma_array[int(int(sys.argv[1])/5)%6])
 
 
 
