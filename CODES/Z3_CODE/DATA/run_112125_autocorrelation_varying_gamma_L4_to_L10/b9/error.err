@@ -1,0 +1,5 @@
+run_112125_autocorrelation_varying_gamma_L4_to_L10_9.qsub: line 43: 4014640 Killed                  python ./$EXEC 9
+
+real	552m4.406s
+user	3110m40.234s
+sys	10m43.004s
