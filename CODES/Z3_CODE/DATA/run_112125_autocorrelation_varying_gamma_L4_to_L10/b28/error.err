@@ -1,0 +1,22 @@
+Traceback (most recent call last):
+  File "/scratch/ganymede2/sxr190099/run_112125_autocorrelation_varying_gamma_L4_to_L10/b28/./main.py", line 26, in <module>
+    size_autocorrelator_SIMULATION_NPY(0, 30, .5, [L_array[int(sys.argv[1]) % 5]], param_array[int(int(sys.argv[1])/30)], gamma_array[int(int(sys.argv[1])/5)%6])
+  File "/scratch/ganymede2/sxr190099/run_112125_autocorrelation_varying_gamma_L4_to_L10/b28/size_comparison_autocorr_SIM.py", line 94, in size_autocorrelator_SIMULATION_NPY
+    return_list.append(np.ndarray.tolist(output_list(A_list[k], U_list[k], U_inv_list[k], in_list_exp, size_array[k], hamiltonians[k], gamma)))  # LIST W/ OUTPUTS OF DIFF PARAMS
+  File "/scratch/ganymede2/sxr190099/run_112125_autocorrelation_varying_gamma_L4_to_L10/b28/Z3_code.py", line 353, in output_list
+    out_list[i] = autocorrelator(A, U, U_inv, input_list[i], size, hamiltonian, gamma).real  #  Stores respective outputs in list
+  File "/scratch/ganymede2/sxr190099/run_112125_autocorrelation_varying_gamma_L4_to_L10/b28/Z3_code.py", line 249, in autocorrelator
+    time_evolved_sig = time_evol_op_dag @ non_time_evold_op_sig @ (time_evol_op)  #  SIGX_1(time)
+  File "/home/sxr190099/.local/lib/python3.9/site-packages/scipy/sparse/_base.py", line 701, in __rmatmul__
+    return self._rmatmul_dispatch(other)
+  File "/home/sxr190099/.local/lib/python3.9/site-packages/scipy/sparse/_base.py", line 682, in _rmatmul_dispatch
+    ret = self.transpose()._matmul_dispatch(tr)
+  File "/home/sxr190099/.local/lib/python3.9/site-packages/scipy/sparse/_base.py", line 595, in _matmul_dispatch
+    return self._matmul_multivector(other)
+  File "/home/sxr190099/.local/lib/python3.9/site-packages/scipy/sparse/_coo.py", line 575, in _matmul_multivector
+    result = np.zeros(result_shape, dtype=result_dtype)
+numpy._core._exceptions._ArrayMemoryError: Unable to allocate 5.77 GiB for an array with shape (19683, 19683) and data type complex128
+
+real	374m17.428s
+user	2003m21.385s
+sys	4m26.407s

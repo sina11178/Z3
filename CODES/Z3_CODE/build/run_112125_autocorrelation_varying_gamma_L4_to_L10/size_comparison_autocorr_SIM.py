@@ -97,7 +97,7 @@ def size_autocorrelator_SIMULATION_NPY(init_time, fin_time, interval, size_array
     #  Name EXCEL based on date
     now = datetime.datetime.now()
     if len(size_array) == 1:
-        npy_name = "size_autocorr_comparison_gamma_" + str(gamma) + "_size_"+str(size_array[0])"_NPY.npy" #NOTE: ONLY FOR ARRAY SIZE OF 1
+        npy_name = "size_autocorr_comparison_gamma_" + str(gamma) + "_size_" + str(size_array[0]) + "_NPY.npy" #NOTE: ONLY FOR ARRAY SIZE OF 1
     else:
         npy_name = "size_autocorr_comparison_gamma_" + str(gamma) +"_NPY.npy"
     np.save(npy_name, np.array(return_list))  #  NOTE: First row of array is input; the rest are outputs
