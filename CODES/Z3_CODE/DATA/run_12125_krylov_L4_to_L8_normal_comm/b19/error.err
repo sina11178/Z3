@@ -1,0 +1,20 @@
+Traceback (most recent call last):
+  File "/scratch/ganymede2/sxr190099/run_12125_krylov_L4_to_L10_normal_comm/b19/./main.py", line 27, in <module>
+    LACZOS_COEF_vary_gam_SIM(100, L_array[int(sys.argv[1]) % 5], gamma_array[int(int(sys.argv[1])/5)%6], param_array[int(int(sys.argv[1])/30)])
+  File "/scratch/ganymede2/sxr190099/run_12125_krylov_L4_to_L10_normal_comm/b19/laczos_coeff_sim.py", line 34, in LACZOS_COEF_vary_gam_SIM
+    list_matrix_final = grahm_schmidt(n, H, size)
+  File "/scratch/ganymede2/sxr190099/run_12125_krylov_L4_to_L10_normal_comm/b19/Z3_code.py", line 534, in grahm_schmidt
+    w = w - q.multiply(alpha)            # sparse subtraction
+  File "/home/sxr190099/.local/lib/python3.9/site-packages/scipy/sparse/_base.py", line 448, in multiply
+    return self.tocsr().multiply(other)
+  File "/home/sxr190099/.local/lib/python3.9/site-packages/scipy/sparse/_compressed.py", line 368, in multiply
+    return self._mul_scalar(other)
+  File "/home/sxr190099/.local/lib/python3.9/site-packages/scipy/sparse/_data.py", line 140, in _mul_scalar
+    return self._with_data(self.data * other)
+  File "/home/sxr190099/.local/lib/python3.9/site-packages/scipy/sparse/_compressed.py", line 1285, in _with_data
+    self.indptr.copy()),
+numpy._core._exceptions._ArrayMemoryError: Unable to allocate 164. MiB for an array with shape (43046722,) and data type int32
+
+real	294m46.152s
+user	206m2.990s
+sys	87m45.080s

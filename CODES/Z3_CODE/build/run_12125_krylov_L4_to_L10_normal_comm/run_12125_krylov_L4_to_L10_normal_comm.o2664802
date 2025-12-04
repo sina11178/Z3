@@ -1,0 +1,327 @@
+Starting job run_12125_krylov_L4_to_L10_normal_comm
+WARNING (12/01/25 17:11:35): LAUNCHER_WORKDIR variable not set. Using current directory.
+Launcher: Setup complete.
+
+------------- SUMMARY ---------------
+   Number of hosts:    1
+   Working directory:  /home/sxr190099/Z3/CODES/Z3_CODE/build/run_12125_krylov_L4_to_L10_normal_comm
+   Processes per host: 64
+   Total processes:    64
+   Total jobs:         64
+   Scheduling method:  interleaved
+
+-------------------------------------
+Launcher: Starting parallel tasks...
+using /tmp/launcher.2664802.hostlist.u5wGm6EY to get hosts
+starting job on c-01-02
+Lmod has detected the following error: The following module(s) are unknown:
+"git"
+
+Please check the spelling or version number. Also try "module spider ..."
+It is also possible your cache file is out-of-date; it may help to try:
+  $ module --ignore_cache load "git"
+
+Also make sure that all modulefiles written in TCL start with the string
+#%Module
+
+
+
+Launcher: Task 19 running job 20 on c-01-02 (bash run_12125_krylov_L4_to_L10_normal_comm_19.qsub)
+Launcher: Task 44 running job 45 on c-01-02 (bash run_12125_krylov_L4_to_L10_normal_comm_44.qsub)
+Launcher: Task 6 running job 7 on c-01-02 (bash run_12125_krylov_L4_to_L10_normal_comm_6.qsub)
+run_12125_krylov_L4_to_L10_normal_comm_6.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_12125_krylov_L4_to_L10_normal_comm: No such file or directory
+run_12125_krylov_L4_to_L10_normal_comm_44.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_12125_krylov_L4_to_L10_normal_comm: No such file or directory
+run_12125_krylov_L4_to_L10_normal_comm_19.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_12125_krylov_L4_to_L10_normal_comm: No such file or directory
+Launcher: Task 36 running job 37 on c-01-02 (bash run_12125_krylov_L4_to_L10_normal_comm_36.qsub)
+run_12125_krylov_L4_to_L10_normal_comm_36.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_12125_krylov_L4_to_L10_normal_comm: No such file or directory
+Launcher: Task 54 running job 55 on c-01-02 (bash run_12125_krylov_L4_to_L10_normal_comm_54.qsub)
+Launcher: Task 61 running job 62 on c-01-02 (echo "Fake run")
+Fake run
+Launcher: Task 42 running job 43 on c-01-02 (bash run_12125_krylov_L4_to_L10_normal_comm_42.qsub)
+run_12125_krylov_L4_to_L10_normal_comm_54.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_12125_krylov_L4_to_L10_normal_comm: No such file or directory
+Launcher: Job 62 completed in 0 seconds.
+Launcher: Task 61 done. Exiting.
+Launcher: Task 11 running job 12 on c-01-02 (bash run_12125_krylov_L4_to_L10_normal_comm_11.qsub)
+run_12125_krylov_L4_to_L10_normal_comm_42.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_12125_krylov_L4_to_L10_normal_comm: No such file or directory
+Launcher: Task 34 running job 35 on c-01-02 (bash run_12125_krylov_L4_to_L10_normal_comm_34.qsub)
+run_12125_krylov_L4_to_L10_normal_comm_11.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_12125_krylov_L4_to_L10_normal_comm: No such file or directory
+run_12125_krylov_L4_to_L10_normal_comm_34.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_12125_krylov_L4_to_L10_normal_comm: No such file or directory
+Launcher: Task 33 running job 34 on c-01-02 (bash run_12125_krylov_L4_to_L10_normal_comm_33.qsub)
+Launcher: Task 63 running job 64 on c-01-02 (echo "Fake run")
+Fake run
+Launcher: Task 20 running job 21 on c-01-02 (bash run_12125_krylov_L4_to_L10_normal_comm_20.qsub)
+Launcher: Task 51 running job 52 on c-01-02 (bash run_12125_krylov_L4_to_L10_normal_comm_51.qsub)
+Launcher: Job 64 completed in 0 seconds.
+Launcher: Task 63 done. Exiting.
+run_12125_krylov_L4_to_L10_normal_comm_20.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_12125_krylov_L4_to_L10_normal_comm: No such file or directory
+run_12125_krylov_L4_to_L10_normal_comm_33.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_12125_krylov_L4_to_L10_normal_comm: No such file or directory
+run_12125_krylov_L4_to_L10_normal_comm_51.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_12125_krylov_L4_to_L10_normal_comm: No such file or directory
+Launcher: Task 58 running job 59 on c-01-02 (bash run_12125_krylov_L4_to_L10_normal_comm_58.qsub)
+run_12125_krylov_L4_to_L10_normal_comm_58.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_12125_krylov_L4_to_L10_normal_comm: No such file or directory
+Launcher: Task 53 running job 54 on c-01-02 (bash run_12125_krylov_L4_to_L10_normal_comm_53.qsub)
+Launcher: Task 48 running job 49 on c-01-02 (bash run_12125_krylov_L4_to_L10_normal_comm_48.qsub)
+run_12125_krylov_L4_to_L10_normal_comm_53.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_12125_krylov_L4_to_L10_normal_comm: No such file or directory
+run_12125_krylov_L4_to_L10_normal_comm_48.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_12125_krylov_L4_to_L10_normal_comm: No such file or directory
+Launcher: Task 45 running job 46 on c-01-02 (bash run_12125_krylov_L4_to_L10_normal_comm_45.qsub)
+Launcher: Task 18 running job 19 on c-01-02 (bash run_12125_krylov_L4_to_L10_normal_comm_18.qsub)
+run_12125_krylov_L4_to_L10_normal_comm_45.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_12125_krylov_L4_to_L10_normal_comm: No such file or directory
+run_12125_krylov_L4_to_L10_normal_comm_18.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_12125_krylov_L4_to_L10_normal_comm: No such file or directory
+Launcher: Task 4 running job 5 on c-01-02 (bash run_12125_krylov_L4_to_L10_normal_comm_4.qsub)
+run_12125_krylov_L4_to_L10_normal_comm_4.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_12125_krylov_L4_to_L10_normal_comm: No such file or directory
+Launcher: Task 14 running job 15 on c-01-02 (bash run_12125_krylov_L4_to_L10_normal_comm_14.qsub)
+run_12125_krylov_L4_to_L10_normal_comm_14.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_12125_krylov_L4_to_L10_normal_comm: No such file or directory
+Launcher: Task 13 running job 14 on c-01-02 (bash run_12125_krylov_L4_to_L10_normal_comm_13.qsub)
+Launcher: Task 30 running job 31 on c-01-02 (bash run_12125_krylov_L4_to_L10_normal_comm_30.qsub)
+run_12125_krylov_L4_to_L10_normal_comm_13.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_12125_krylov_L4_to_L10_normal_comm: No such file or directory
+run_12125_krylov_L4_to_L10_normal_comm_30.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_12125_krylov_L4_to_L10_normal_comm: No such file or directory
+Launcher: Task 10 running job 11 on c-01-02 (bash run_12125_krylov_L4_to_L10_normal_comm_10.qsub)
+run_12125_krylov_L4_to_L10_normal_comm_10.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_12125_krylov_L4_to_L10_normal_comm: No such file or directory
+Launcher: Task 32 running job 33 on c-01-02 (bash run_12125_krylov_L4_to_L10_normal_comm_32.qsub)
+Launcher: Task 8 running job 9 on c-01-02 (bash run_12125_krylov_L4_to_L10_normal_comm_8.qsub)
+Launcher: Task 55 running job 56 on c-01-02 (bash run_12125_krylov_L4_to_L10_normal_comm_55.qsub)
+run_12125_krylov_L4_to_L10_normal_comm_32.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_12125_krylov_L4_to_L10_normal_comm: No such file or directory
+run_12125_krylov_L4_to_L10_normal_comm_8.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_12125_krylov_L4_to_L10_normal_comm: No such file or directory
+Launcher: Task 22 running job 23 on c-01-02 (bash run_12125_krylov_L4_to_L10_normal_comm_22.qsub)
+Launcher: Task 52 running job 53 on c-01-02 (bash run_12125_krylov_L4_to_L10_normal_comm_52.qsub)
+run_12125_krylov_L4_to_L10_normal_comm_55.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_12125_krylov_L4_to_L10_normal_comm: No such file or directory
+run_12125_krylov_L4_to_L10_normal_comm_52.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_12125_krylov_L4_to_L10_normal_comm: No such file or directory
+run_12125_krylov_L4_to_L10_normal_comm_22.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_12125_krylov_L4_to_L10_normal_comm: No such file or directory
+Launcher: Task 47 running job 48 on c-01-02 (bash run_12125_krylov_L4_to_L10_normal_comm_47.qsub)
+run_12125_krylov_L4_to_L10_normal_comm_47.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_12125_krylov_L4_to_L10_normal_comm: No such file or directory
+Launcher: Task 59 running job 60 on c-01-02 (bash run_12125_krylov_L4_to_L10_normal_comm_59.qsub)
+Launcher: Task 43 running job 44 on c-01-02 (bash run_12125_krylov_L4_to_L10_normal_comm_43.qsub)
+run_12125_krylov_L4_to_L10_normal_comm_59.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_12125_krylov_L4_to_L10_normal_comm: No such file or directory
+Launcher: Task 41 running job 42 on c-01-02 (bash run_12125_krylov_L4_to_L10_normal_comm_41.qsub)
+run_12125_krylov_L4_to_L10_normal_comm_43.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_12125_krylov_L4_to_L10_normal_comm: No such file or directory
+Launcher: Task 17 running job 18 on c-01-02 (bash run_12125_krylov_L4_to_L10_normal_comm_17.qsub)
+Launcher: Task 40 running job 41 on c-01-02 (bash run_12125_krylov_L4_to_L10_normal_comm_40.qsub)
+run_12125_krylov_L4_to_L10_normal_comm_41.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_12125_krylov_L4_to_L10_normal_comm: No such file or directory
+run_12125_krylov_L4_to_L10_normal_comm_17.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_12125_krylov_L4_to_L10_normal_comm: No such file or directory
+run_12125_krylov_L4_to_L10_normal_comm_40.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_12125_krylov_L4_to_L10_normal_comm: No such file or directory
+Launcher: Task 21 running job 22 on c-01-02 (bash run_12125_krylov_L4_to_L10_normal_comm_21.qsub)
+Launcher: Task 26 running job 27 on c-01-02 (bash run_12125_krylov_L4_to_L10_normal_comm_26.qsub)
+Launcher: Task 57 running job 58 on c-01-02 (bash run_12125_krylov_L4_to_L10_normal_comm_57.qsub)
+Launcher: Task 7 running job 8 on c-01-02 (bash run_12125_krylov_L4_to_L10_normal_comm_7.qsub)
+run_12125_krylov_L4_to_L10_normal_comm_21.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_12125_krylov_L4_to_L10_normal_comm: No such file or directory
+run_12125_krylov_L4_to_L10_normal_comm_57.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_12125_krylov_L4_to_L10_normal_comm: No such file or directory
+run_12125_krylov_L4_to_L10_normal_comm_26.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_12125_krylov_L4_to_L10_normal_comm: No such file or directory
+run_12125_krylov_L4_to_L10_normal_comm_7.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_12125_krylov_L4_to_L10_normal_comm: No such file or directory
+Launcher: Task 0 running job 1 on c-01-02 (bash run_12125_krylov_L4_to_L10_normal_comm_0.qsub)
+Launcher: Task 15 running job 16 on c-01-02 (bash run_12125_krylov_L4_to_L10_normal_comm_15.qsub)
+run_12125_krylov_L4_to_L10_normal_comm_0.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_12125_krylov_L4_to_L10_normal_comm: No such file or directory
+run_12125_krylov_L4_to_L10_normal_comm_15.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_12125_krylov_L4_to_L10_normal_comm: No such file or directory
+Launcher: Task 12 running job 13 on c-01-02 (bash run_12125_krylov_L4_to_L10_normal_comm_12.qsub)
+Launcher: Task 62 running job 63 on c-01-02 (echo "Fake run")
+Fake run
+Launcher: Task 27 running job 28 on c-01-02 (bash run_12125_krylov_L4_to_L10_normal_comm_27.qsub)
+Launcher: Task 16 running job 17 on c-01-02 (bash run_12125_krylov_L4_to_L10_normal_comm_16.qsub)
+Launcher: Job 63 completed in 0 seconds.
+Launcher: Task 35 running job 36 on c-01-02 (bash run_12125_krylov_L4_to_L10_normal_comm_35.qsub)
+Launcher: Task 62 done. Exiting.
+run_12125_krylov_L4_to_L10_normal_comm_12.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_12125_krylov_L4_to_L10_normal_comm: No such file or directory
+run_12125_krylov_L4_to_L10_normal_comm_35.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_12125_krylov_L4_to_L10_normal_comm: No such file or directory
+run_12125_krylov_L4_to_L10_normal_comm_27.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_12125_krylov_L4_to_L10_normal_comm: No such file or directory
+run_12125_krylov_L4_to_L10_normal_comm_16.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_12125_krylov_L4_to_L10_normal_comm: No such file or directory
+Removing files
+Launcher: Job 46 completed in 10 seconds.
+Launcher: Task 45 done. Exiting.
+Removing files
+Launcher: Task 1 running job 2 on c-01-02 (bash run_12125_krylov_L4_to_L10_normal_comm_1.qsub)
+Launcher: Task 49 running job 50 on c-01-02 (bash run_12125_krylov_L4_to_L10_normal_comm_49.qsub)
+Launcher: Task 56 running job 57 on c-01-02 (bash run_12125_krylov_L4_to_L10_normal_comm_56.qsub)
+Launcher: Task 9 running job 10 on c-01-02 (bash run_12125_krylov_L4_to_L10_normal_comm_9.qsub)
+Launcher: Task 39 running job 40 on c-01-02 (bash run_12125_krylov_L4_to_L10_normal_comm_39.qsub)
+Launcher: Task 60 running job 61 on c-01-02 (echo "Fake run")
+Fake run
+Launcher: Job 21 completed in 13 seconds.
+Launcher: Task 20 done. Exiting.
+Launcher: Job 61 completed in 0 seconds.
+Launcher: Task 60 done. Exiting.
+run_12125_krylov_L4_to_L10_normal_comm_49.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_12125_krylov_L4_to_L10_normal_comm: No such file or directory
+run_12125_krylov_L4_to_L10_normal_comm_1.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_12125_krylov_L4_to_L10_normal_comm: No such file or directory
+run_12125_krylov_L4_to_L10_normal_comm_9.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_12125_krylov_L4_to_L10_normal_comm: No such file or directory
+run_12125_krylov_L4_to_L10_normal_comm_39.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_12125_krylov_L4_to_L10_normal_comm: No such file or directory
+run_12125_krylov_L4_to_L10_normal_comm_56.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_12125_krylov_L4_to_L10_normal_comm: No such file or directory
+Removing files
+Launcher: Job 31 completed in 9 seconds.
+Launcher: Task 30 done. Exiting.
+Launcher: Task 46 running job 47 on c-01-02 (bash run_12125_krylov_L4_to_L10_normal_comm_46.qsub)
+run_12125_krylov_L4_to_L10_normal_comm_46.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_12125_krylov_L4_to_L10_normal_comm: No such file or directory
+Launcher: Task 38 running job 39 on c-01-02 (bash run_12125_krylov_L4_to_L10_normal_comm_38.qsub)
+Launcher: Task 24 running job 25 on c-01-02 (bash run_12125_krylov_L4_to_L10_normal_comm_24.qsub)
+Removing files
+run_12125_krylov_L4_to_L10_normal_comm_24.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_12125_krylov_L4_to_L10_normal_comm: No such file or directory
+Launcher: Job 11 completed in 9 seconds.
+Launcher: Task 10 done. Exiting.
+run_12125_krylov_L4_to_L10_normal_comm_38.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_12125_krylov_L4_to_L10_normal_comm: No such file or directory
+Launcher: Task 37 running job 38 on c-01-02 (bash run_12125_krylov_L4_to_L10_normal_comm_37.qsub)
+Launcher: Task 25 running job 26 on c-01-02 (bash run_12125_krylov_L4_to_L10_normal_comm_25.qsub)
+run_12125_krylov_L4_to_L10_normal_comm_37.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_12125_krylov_L4_to_L10_normal_comm: No such file or directory
+run_12125_krylov_L4_to_L10_normal_comm_25.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_12125_krylov_L4_to_L10_normal_comm: No such file or directory
+Removing files
+Launcher: Job 56 completed in 10 seconds.
+Launcher: Task 55 done. Exiting.
+Launcher: Task 28 running job 29 on c-01-02 (bash run_12125_krylov_L4_to_L10_normal_comm_28.qsub)
+Launcher: Task 23 running job 24 on c-01-02 (bash run_12125_krylov_L4_to_L10_normal_comm_23.qsub)
+Launcher: Task 29 running job 30 on c-01-02 (bash run_12125_krylov_L4_to_L10_normal_comm_29.qsub)
+Launcher: Task 5 running job 6 on c-01-02 (bash run_12125_krylov_L4_to_L10_normal_comm_5.qsub)
+run_12125_krylov_L4_to_L10_normal_comm_28.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_12125_krylov_L4_to_L10_normal_comm: No such file or directory
+run_12125_krylov_L4_to_L10_normal_comm_29.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_12125_krylov_L4_to_L10_normal_comm: No such file or directory
+run_12125_krylov_L4_to_L10_normal_comm_23.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_12125_krylov_L4_to_L10_normal_comm: No such file or directory
+run_12125_krylov_L4_to_L10_normal_comm_5.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_12125_krylov_L4_to_L10_normal_comm: No such file or directory
+Launcher: Task 2 running job 3 on c-01-02 (bash run_12125_krylov_L4_to_L10_normal_comm_2.qsub)
+Launcher: Task 31 running job 32 on c-01-02 (bash run_12125_krylov_L4_to_L10_normal_comm_31.qsub)
+Launcher: Task 3 running job 4 on c-01-02 (bash run_12125_krylov_L4_to_L10_normal_comm_3.qsub)
+run_12125_krylov_L4_to_L10_normal_comm_2.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_12125_krylov_L4_to_L10_normal_comm: No such file or directory
+run_12125_krylov_L4_to_L10_normal_comm_3.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_12125_krylov_L4_to_L10_normal_comm: No such file or directory
+run_12125_krylov_L4_to_L10_normal_comm_31.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_12125_krylov_L4_to_L10_normal_comm: No such file or directory
+Launcher: Task 50 running job 51 on c-01-02 (bash run_12125_krylov_L4_to_L10_normal_comm_50.qsub)
+Removing files
+run_12125_krylov_L4_to_L10_normal_comm_50.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_12125_krylov_L4_to_L10_normal_comm: No such file or directory
+Launcher: Job 41 completed in 13 seconds.
+Launcher: Task 40 done. Exiting.
+Removing files
+Launcher: Job 16 completed in 13 seconds.
+Launcher: Task 15 done. Exiting.
+Removing files
+Launcher: Job 1 completed in 14 seconds.
+Launcher: Task 0 done. Exiting.
+Removing files
+Launcher: Job 36 completed in 13 seconds.
+Launcher: Task 35 done. Exiting.
+Removing files
+Launcher: Job 26 completed in 13 seconds.
+Launcher: Task 25 done. Exiting.
+Removing files
+Launcher: Job 6 completed in 14 seconds.
+Launcher: Task 5 done. Exiting.
+Removing files
+Launcher: Job 55 completed in 44 seconds.
+Launcher: Task 54 done. Exiting.
+Removing files
+Launcher: Job 51 completed in 25 seconds.
+Launcher: Task 50 done. Exiting.
+Removing files
+Removing files
+Launcher: Job 2 completed in 46 seconds.
+Launcher: Task 1 done. Exiting.
+Launcher: Job 17 completed in 47 seconds.
+Launcher: Task 16 done. Exiting.
+Removing files
+Launcher: Job 32 completed in 42 seconds.
+Removing files
+Launcher: Task 31 done. Exiting.
+Launcher: Job 42 completed in 52 seconds.
+Launcher: Task 41 done. Exiting.
+Removing files
+Removing files
+Launcher: Job 20 completed in 68 seconds.
+Launcher: Job 29 completed in 48 seconds.
+Launcher: Task 19 done. Exiting.
+Launcher: Task 28 done. Exiting.
+Removing files
+Launcher: Job 45 completed in 77 seconds.
+Launcher: Task 44 done. Exiting.
+Removing files
+Launcher: Job 10 completed in 66 seconds.
+Launcher: Task 9 done. Exiting.
+Removing files
+Launcher: Job 50 completed in 68 seconds.
+Launcher: Task 49 done. Exiting.
+Removing files
+Launcher: Job 25 completed in 72 seconds.
+Launcher: Task 24 done. Exiting.
+Removing files
+Launcher: Job 15 completed in 110 seconds.
+Launcher: Task 14 done. Exiting.
+Removing files
+Removing files
+Launcher: Job 35 completed in 1168 seconds.
+Launcher: Task 34 done. Exiting.
+Launcher: Job 5 completed in 1165 seconds.
+Launcher: Task 4 done. Exiting.
+Removing files
+Removing files
+Removing files
+Removing files
+Launcher: Job 19 completed in 1167 seconds.
+Launcher: Job 43 completed in 1171 seconds.
+Launcher: Task 18 done. Exiting.
+Launcher: Job 54 completed in 1168 seconds.
+Launcher: Job 18 completed in 1161 seconds.
+Launcher: Task 42 done. Exiting.
+Launcher: Task 53 done. Exiting.
+Launcher: Task 17 done. Exiting.
+Removing files
+Launcher: Job 12 completed in 1526 seconds.
+Launcher: Task 11 done. Exiting.
+Removing files
+Launcher: Job 7 completed in 1542 seconds.
+Launcher: Task 6 done. Exiting.
+Removing files
+Launcher: Job 40 completed in 1580 seconds.
+Launcher: Task 39 done. Exiting.
+Removing files
+Launcher: Job 37 completed in 1692 seconds.
+Launcher: Task 36 done. Exiting.
+Removing files
+Launcher: Job 52 completed in 1714 seconds.
+Removing files
+Launcher: Task 51 done. Exiting.
+Launcher: Job 22 completed in 1704 seconds.
+Launcher: Task 21 done. Exiting.
+Removing files
+Launcher: Job 47 completed in 1709 seconds.
+Launcher: Task 46 done. Exiting.
+Removing files
+Launcher: Job 27 completed in 1732 seconds.
+Launcher: Task 26 done. Exiting.
+Removing files
+Launcher: Job 57 completed in 1761 seconds.
+Launcher: Task 56 done. Exiting.
+Removing files
+Launcher: Job 33 completed in 1830 seconds.
+Launcher: Task 32 done. Exiting.
+Removing files
+Launcher: Job 3 completed in 1875 seconds.
+Launcher: Task 2 done. Exiting.
+Removing files
+Launcher: Job 34 completed in 1926 seconds.
+Launcher: Task 33 done. Exiting.
+Removing files
+Launcher: Job 8 completed in 1991 seconds.
+Launcher: Task 7 done. Exiting.
+Removing files
+Launcher: Job 13 completed in 2012 seconds.
+Launcher: Task 12 done. Exiting.
+Removing files
+Launcher: Job 4 completed in 2081 seconds.
+Launcher: Task 3 done. Exiting.
+Removing files
+Launcher: Job 49 completed in 2171 seconds.
+Launcher: Task 48 done. Exiting.
+Removing files
+Launcher: Job 9 completed in 2220 seconds.
+Launcher: Task 8 done. Exiting.
+Removing files
+Launcher: Job 53 completed in 2330 seconds.
+Launcher: Task 52 done. Exiting.
+Removing files
+Launcher: Job 38 completed in 2406 seconds.
+Launcher: Task 37 done. Exiting.
+Removing files
+Launcher: Job 30 completed in 2683 seconds.
+Launcher: Task 29 done. Exiting.
+Removing files
+Launcher: Job 60 completed in 2704 seconds.
+Launcher: Task 59 done. Exiting.
+Removing files
+Launcher: Job 23 completed in 2750 seconds.
+Launcher: Task 22 done. Exiting.
+Removing files
+Launcher: Job 48 completed in 2873 seconds.
+Launcher: Task 47 done. Exiting.
+Removing files
+Launcher: Job 44 completed in 3411 seconds.
+Launcher: Task 43 done. Exiting.
+slurmstepd-c-01-02: error: *** JOB 2664802 ON c-01-02 CANCELLED AT 2025-12-01T18:12:58 ***
