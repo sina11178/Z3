@@ -1,0 +1,14 @@
+Traceback (most recent call last):
+  File "/scratch/ganymede2/sxr190099/run_12125_krylov_L4_to_L10_normal_comm/b43/./main.py", line 27, in <module>
+    LACZOS_COEF_vary_gam_SIM(100, L_array[int(sys.argv[1]) % 5], gamma_array[int(int(sys.argv[1])/5)%6], param_array[int(int(sys.argv[1])/30)])
+  File "/scratch/ganymede2/sxr190099/run_12125_krylov_L4_to_L10_normal_comm/b43/laczos_coeff_sim.py", line 34, in LACZOS_COEF_vary_gam_SIM
+    list_matrix_final = grahm_schmidt(n, H, size)
+  File "/scratch/ganymede2/sxr190099/run_12125_krylov_L4_to_L10_normal_comm/b43/Z3_code.py", line 563, in grahm_schmidt
+    matrix_final[i, j] = (Q[i].conjugate().T @ c)[0,0]
+  File "/home/sxr190099/.local/lib/python3.9/site-packages/scipy/sparse/_data.py", line 86, in conjugate
+    return self._with_data(self.data.conjugate(), copy=copy)
+numpy._core._exceptions._ArrayMemoryError: Unable to allocate 73.0 MiB for an array with shape (4782969,) and data type complex128
+
+real	64m12.913s
+user	51m36.223s
+sys	12m24.473s

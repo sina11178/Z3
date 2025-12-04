@@ -1,0 +1,5 @@
+run_12125_krylov_L4_to_L10_normal_comm_44.qsub: line 43: 587883 Killed                  python ./$EXEC 44
+
+real	200m39.929s
+user	143m54.105s
+sys	56m6.133s

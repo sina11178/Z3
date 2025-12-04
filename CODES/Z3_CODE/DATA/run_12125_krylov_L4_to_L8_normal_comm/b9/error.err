@@ -1,0 +1,18 @@
+Traceback (most recent call last):
+  File "/scratch/ganymede2/sxr190099/run_12125_krylov_L4_to_L10_normal_comm/b9/./main.py", line 27, in <module>
+    LACZOS_COEF_vary_gam_SIM(100, L_array[int(sys.argv[1]) % 5], gamma_array[int(int(sys.argv[1])/5)%6], param_array[int(int(sys.argv[1])/30)])
+  File "/scratch/ganymede2/sxr190099/run_12125_krylov_L4_to_L10_normal_comm/b9/laczos_coeff_sim.py", line 34, in LACZOS_COEF_vary_gam_SIM
+    list_matrix_final = grahm_schmidt(n, H, size)
+  File "/scratch/ganymede2/sxr190099/run_12125_krylov_L4_to_L10_normal_comm/b9/Z3_code.py", line 534, in grahm_schmidt
+    w = w - q.multiply(alpha)            # sparse subtraction
+  File "/home/sxr190099/.local/lib/python3.9/site-packages/scipy/sparse/_base.py", line 549, in __sub__
+    return self._sub_sparse(other)
+  File "/home/sxr190099/.local/lib/python3.9/site-packages/scipy/sparse/_compressed.py", line 360, in _sub_sparse
+    return self._binopt(other, '_minus_')
+  File "/home/sxr190099/.local/lib/python3.9/site-packages/scipy/sparse/_compressed.py", line 1310, in _binopt
+    data = np.empty(maxnnz, dtype=upcast(self.dtype, other.dtype))
+numpy._core._exceptions._ArrayMemoryError: Unable to allocate 1.28 GiB for an array with shape (86093440,) and data type complex128
+
+real	39m35.482s
+user	32m54.307s
+sys	6m33.985s

@@ -1,0 +1,22 @@
+Traceback (most recent call last):
+  File "/scratch/ganymede2/sxr190099/run_12125_krylov_L4_to_L10_normal_comm/b14/./main.py", line 27, in <module>
+    LACZOS_COEF_vary_gam_SIM(100, L_array[int(sys.argv[1]) % 5], gamma_array[int(int(sys.argv[1])/5)%6], param_array[int(int(sys.argv[1])/30)])
+  File "/scratch/ganymede2/sxr190099/run_12125_krylov_L4_to_L10_normal_comm/b14/laczos_coeff_sim.py", line 34, in LACZOS_COEF_vary_gam_SIM
+    list_matrix_final = grahm_schmidt(n, H, size)
+  File "/scratch/ganymede2/sxr190099/run_12125_krylov_L4_to_L10_normal_comm/b14/Z3_code.py", line 495, in grahm_schmidt
+    Lio = Liovillan(H, size)
+  File "/scratch/ganymede2/sxr190099/run_12125_krylov_L4_to_L10_normal_comm/b14/Z3_code.py", line 378, in Liovillan
+    return (S_1+(-1*S_2))
+  File "/home/sxr190099/.local/lib/python3.9/site-packages/scipy/sparse/_base.py", line 530, in __add__
+    return self._add_sparse(other)
+  File "/home/sxr190099/.local/lib/python3.9/site-packages/scipy/sparse/_base.py", line 505, in _add_sparse
+    return self.tocsr()._add_sparse(other)
+  File "/home/sxr190099/.local/lib/python3.9/site-packages/scipy/sparse/_compressed.py", line 357, in _add_sparse
+    return self._binopt(other, '_plus_')
+  File "/home/sxr190099/.local/lib/python3.9/site-packages/scipy/sparse/_compressed.py", line 1310, in _binopt
+    data = np.empty(maxnnz, dtype=upcast(self.dtype, other.dtype))
+numpy._core._exceptions._ArrayMemoryError: Unable to allocate 21.8 GiB for an array with shape (1463588514,) and data type complex128
+
+real	3m7.909s
+user	2m27.949s
+sys	0m36.870s

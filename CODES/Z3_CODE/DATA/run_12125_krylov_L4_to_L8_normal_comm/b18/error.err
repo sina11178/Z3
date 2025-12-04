@@ -1,0 +1,24 @@
+Traceback (most recent call last):
+  File "/scratch/ganymede2/sxr190099/run_12125_krylov_L4_to_L10_normal_comm/b18/./main.py", line 27, in <module>
+    LACZOS_COEF_vary_gam_SIM(100, L_array[int(sys.argv[1]) % 5], gamma_array[int(int(sys.argv[1])/5)%6], param_array[int(int(sys.argv[1])/30)])
+  File "/scratch/ganymede2/sxr190099/run_12125_krylov_L4_to_L10_normal_comm/b18/laczos_coeff_sim.py", line 34, in LACZOS_COEF_vary_gam_SIM
+    list_matrix_final = grahm_schmidt(n, H, size)
+  File "/scratch/ganymede2/sxr190099/run_12125_krylov_L4_to_L10_normal_comm/b18/Z3_code.py", line 564, in grahm_schmidt
+    matrix_final_squared[i, j] = (Q_squared[i].conjugate().T @ c_squared)[0, 0]
+  File "/home/sxr190099/.local/lib/python3.9/site-packages/scipy/sparse/_base.py", line 695, in __matmul__
+    return self._matmul_dispatch(other)
+  File "/home/sxr190099/.local/lib/python3.9/site-packages/scipy/sparse/_base.py", line 606, in _matmul_dispatch
+    return self._matmul_sparse(other)
+  File "/home/sxr190099/.local/lib/python3.9/site-packages/scipy/sparse/_compressed.py", line 514, in _matmul_sparse
+    other = self.__class__(other)  # convert to this format
+  File "/home/sxr190099/.local/lib/python3.9/site-packages/scipy/sparse/_compressed.py", line 34, in __init__
+    arg1 = arg1.asformat(self.format)
+  File "/home/sxr190099/.local/lib/python3.9/site-packages/scipy/sparse/_base.py", line 435, in asformat
+    return convert_method(copy=copy)
+  File "/home/sxr190099/.local/lib/python3.9/site-packages/scipy/sparse/_csr.py", line 63, in tocsc
+    data = np.empty(self.nnz, dtype=upcast(self.dtype))
+numpy._core._exceptions._ArrayMemoryError: Unable to allocate 73.0 MiB for an array with shape (4782969,) and data type complex128
+
+real	64m15.916s
+user	52m12.488s
+sys	11m50.432s
