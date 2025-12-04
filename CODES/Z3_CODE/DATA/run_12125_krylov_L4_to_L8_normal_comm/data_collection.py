@@ -19,7 +19,7 @@ for i in range(60):
         phi = round(param_array[int(i/30)][1], 3)
         
         destination = '../krylov_matrices/normal/krylov_matrices_120425_vary_gamma/f_'+str(f)+'_phi_'+str(phi)+'/seed/'
-        f_n = './b'+str(i)+'/krylov_matrix_L' + str(L_array[int(i) % 5]) + '_gamma_'+str(gamma_array[int(int(i)/5)%6])+'_f_'+str( param_array[int(int(i)/30)][0])+'_phi_'+str( param_array[int(int(i)/30)][1])+'.npy'
+        f_n = './b'+str(i)+'/krylov_matrix_L' + str(L_array[int(i) % 5]) + '_gamma_'+str(gamma_array[int(int(i)/5)%6])+'_f_'+str( param_array[int(int(i)/30)][0])+'_phi_'+str(param_array[int(int(i)/30)][1])+'.npy'
         shutil.copy(f_n, destination)
 
 
@@ -31,7 +31,7 @@ for i in range(60):
         phi = round(param_array[int(i/30)][1], 3)
 
         destination = '../krylov_matrices/normal/krylov_matrices_120425_vary_gamma/f_'+str(f)+'_phi_'+str(phi)+'/seed_squared/'
-        f_n = './b'+str(i)+'/krylov_matrix_L' + str(L_array[int(i) % 5]) + '_gamma_'+str(gamma_array[int(int(i)/5)%6])+'_f_'+str( param_array[int(int(i)/30)][0])+'_phi_'+str( param_array[int(int(i)/30)][1])+'_squared.npy'
+        f_n = './b'+str(i)+'/krylov_matrix_L' + str(L_array[int(i) % 5]) + '_gamma_'+str(gamma_array[int(int(i)/5)%6])+'_f_'+str( param_array[int(int(i)/30)][0])+'_phi_'+str(param_array[int(int(i)/30)][1])+'_squared.npy'
         shutil.copy(f_n, destination)
 
 
