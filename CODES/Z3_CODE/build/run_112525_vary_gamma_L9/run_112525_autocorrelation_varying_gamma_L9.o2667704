@@ -14,7 +14,11 @@ Launcher: Setup complete.
 Launcher: Starting parallel tasks...
 using /tmp/launcher.2667704.hostlist.u4XBO6wH to get hosts
 starting job on c-06-17
+<<<<<<< HEAD
 Warning: Permanently added 'c-06-17,10.247.225.92' (ECDSA) to the list of known hosts.
+=======
+Warning: Permanently added 'c-06-17,10.247.225.92' (ECDSA) to the list of known hosts.
+>>>>>>> 149ed3def87fcc79f8f1613d8cb25716845f20d0
 Lmod has detected the following error: The following module(s) are unknown:
 "git"
 
