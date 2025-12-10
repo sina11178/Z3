@@ -26,7 +26,7 @@ module load launcher
 
 export LAUNCHER_PLUGIN_DIR=$LAUNCHER_DIR/plugins
 export LAUNCHER_RMI=SLURM
-export LAUNCHER_JOB_FILE=run_12125_krylov_L4_to_L10_normal_comm.task
+export LAUNCHER_JOB_FILE=run_121025_krylov_L8_twisted.task
 export LAUNCHER_SCHED=interleaved
 
 $LAUNCHER_DIR/paramrun
