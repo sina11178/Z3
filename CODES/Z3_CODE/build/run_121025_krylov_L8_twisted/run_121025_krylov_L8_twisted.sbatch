@@ -3,7 +3,7 @@
 #SBATCH --job-name=run_121025_krylov_L8_twisted
 #
 # Partition:
-#SBATCH --partition=normal
+#SBATCH --partition=normal*
 #
 # Processors:
 #SBATCH --ntasks=64
