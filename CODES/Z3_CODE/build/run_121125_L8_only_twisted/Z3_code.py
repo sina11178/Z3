@@ -611,7 +611,7 @@ def liouvillian_linop_twisted(Hamiltonian, H_dag, size):
         return C.ravel(order='F')
     return LinearOperator((d*d, d*d), matvec=mv, dtype=np.complex128)
 
-
+'''
 def grahm_schmidt(n, H, size):
     """
     Constructs two Krylov bases (for alpha and alpha^2) using the Liouvillian,
@@ -661,4 +661,55 @@ def grahm_schmidt(n, H, size):
             matrix_final[i, j] = np.vdot(Q[:, i], c)
             matrix_final_squared[i, j] = np.vdot(Q2[:, i], c2)
 
+    return [matrix_final, matrix_final_squared]
+
+'''
+
+
+def grahm_schmidt(n, H, size):
+    H_dag = H.conjugate().T
+    #Lio = liouvillian_linop(H, size)
+    Lio = liouvillian_linop_twisted(H, H_dag, size)
+    d = 3**size
+    list = []
+    list_squared = []  # FOR ALPHA^2 OPERATOR
+    for i in range(size):
+        list.append(np_I)
+        list_squared.append(np_I)  # FOR ALPHA^2 OPERATOR
+    list[0] = np_SIG
+    list_squared[0] = (np_SIG.conjugate().T)  # FOR ALPHA^2 OPERATOR
+    seeding = tensor_product(list, size).toarray().ravel(order = 'F')  # Converts to array for matrix operations
+    seeding_squared = tensor_product(list_squared, size).toarray().ravel(order = 'F')  # FOR ALPHA^2 OPERATOR
+
+    Q = []  # ORTHONORMAL BASIS
+    Q_squared = []  # FOR ALPHA^2 OPERATOR
+    v = seeding
+    v_squared = seeding_squared
+    for k in range(n):
+        w = Lio.matvec(v)   # L sparse
+        w_squared = Lio.matvec(v_squared)
+        for q in Q:
+            alpha =  np.vdot(q, w)   # inner product
+            w = w - alpha * q           # sparse subtraction
+        for q_squared in Q_squared:
+            alpha_sq = np.vdot(q_squared, w_squared)
+            w_squared = w_squared - alpha_sq * q_squared
+
+        w = w / np.linalg.norm(w)
+        w_squared = w_squared/np.linalg.norm(w_squared)
+        Q.append(w)
+        Q_squared.append(w_squared)
+        v = w
+        v_squared = w_squared
+    Q = [seeding/np.linalg.norm(seeding)] + Q
+    Q_squared = [seeding_squared/np.linalg.norm(seeding_squared)] + Q_squared
+    l = len(Q)
+    matrix_final = np.zeros((l,l), dtype=complex)  # FOR ALPHA OPERATOR
+    matrix_final_squared = np.zeros((l,l), dtype=complex)  # FOR ALPHA^2 OPERATOR
+    for j in range(l):
+        c = Lio.matvec(Q[j])
+        c_squared = Lio.matvec(Q_squared[j])
+        for i in range(l):
+            matrix_final[i, j] = np.vdot(Q[i], c)
+            matrix_final_squared[i, j] = np.vdot(Q_squared[i], c_squared)
     return [matrix_final, matrix_final_squared]
