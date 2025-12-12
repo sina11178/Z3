@@ -4,9 +4,9 @@ import subprocess
 import numpy
 import os
 
-partition_info=['amdgpu',64] # = [partition,ncores]
+partition_info=['amdgpu',24] # = [partition,ncores]
 # partition_info=['debug',16] # = [partition,ncores]
-time_str='2-00:00:00'
+time_str='1-00:00:00'
 project_name='Z3/CODES/Z3_CODE'
 myemail=os.environ["MYEMAIL"]
 

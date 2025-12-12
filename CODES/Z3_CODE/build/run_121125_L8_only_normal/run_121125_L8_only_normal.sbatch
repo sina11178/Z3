@@ -3,7 +3,7 @@
 #SBATCH --job-name=run_121125_L8_only_normal
 #
 # Partition:
-#SBATCH --partition=cmt
+#SBATCH --partition=amdgpu
 #
 # Processors:
 #SBATCH --ntasks=64
