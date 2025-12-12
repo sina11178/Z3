@@ -3,10 +3,10 @@
 #SBATCH --job-name=run_121125_L8_only_normal
 #
 # Partition:
-#SBATCH --partition=normal
+#SBATCH --partition=cmt
 #
 # Processors:
-#SBATCH --ntasks=32
+#SBATCH --ntasks=64
 #SBATCH --nodes=1
 #
 # Wall clock limit:
