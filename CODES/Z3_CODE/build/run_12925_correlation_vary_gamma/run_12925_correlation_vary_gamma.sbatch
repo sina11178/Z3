@@ -3,14 +3,14 @@
 #SBATCH --job-name=run_12925_correlation_vary_gamma
 #
 # Partition:
-#SBATCH --partition=cmt
+#SBATCH --partition=normal
 #
 # Processors:
-#SBATCH --ntasks=128
-#SBATCH --nodes=1
+#SBATCH --ntasks=64
+#SBATCH --nodes=2
 #
 # Wall clock limit:
-#SBATCH --time=3-00:00:00
+#SBATCH --time=2-00:00:00
 #
 # Email at end:
 #SBATCH --mail-user=sxr190099@utdallas.edu
@@ -26,7 +26,7 @@ module load launcher
 
 export LAUNCHER_PLUGIN_DIR=$LAUNCHER_DIR/plugins
 export LAUNCHER_RMI=SLURM
-export LAUNCHER_JOB_FILE=run_112125_autocorrelation_varying_gamma_L4_to_L10.task
+export LAUNCHER_JOB_FILE=run_12925_correlation_vary_gamma.task
 export LAUNCHER_SCHED=interleaved
 
 $LAUNCHER_DIR/paramrun

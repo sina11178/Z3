@@ -1,0 +1,5 @@
+run_121025_krylov_L8_twisted_39.qsub: line 43: 576416 Killed                  python ./$EXEC 39
+
+real	419m19.649s
+user	81m58.770s
+sys	333m55.203s

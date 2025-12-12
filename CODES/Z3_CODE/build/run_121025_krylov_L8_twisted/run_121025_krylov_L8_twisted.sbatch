@@ -3,14 +3,14 @@
 #SBATCH --job-name=run_121025_krylov_L8_twisted
 #
 # Partition:
-#SBATCH --partition=cmt
+#SBATCH --partition=normal
 #
 # Processors:
 #SBATCH --ntasks=64
-#SBATCH --nodes=1
+#SBATCH --nodes=2
 #
 # Wall clock limit:
-#SBATCH --time=7-00:00:00
+#SBATCH --time=2-00:00:00
 #
 # Email at end:
 #SBATCH --mail-user=sxr190099@utdallas.edu
@@ -26,7 +26,7 @@ module load launcher
 
 export LAUNCHER_PLUGIN_DIR=$LAUNCHER_DIR/plugins
 export LAUNCHER_RMI=SLURM
-export LAUNCHER_JOB_FILE=run_12125_krylov_L4_to_L10_normal_comm.task
+export LAUNCHER_JOB_FILE=run_121025_krylov_L8_twisted.task
 export LAUNCHER_SCHED=interleaved
 
 $LAUNCHER_DIR/paramrun
