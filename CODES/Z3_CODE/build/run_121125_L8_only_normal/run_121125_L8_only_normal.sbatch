@@ -6,11 +6,11 @@
 #SBATCH --partition=amdgpu
 #
 # Processors:
-#SBATCH --ntasks=64
+#SBATCH --ntasks=24
 #SBATCH --nodes=1
 #
 # Wall clock limit:
-#SBATCH --time=2-00:00:00
+#SBATCH --time=1-00:00:00
 #
 # Email at end:
 #SBATCH --mail-user=sxr190099@utdallas.edu
