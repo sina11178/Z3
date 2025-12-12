@@ -4,7 +4,7 @@ import subprocess
 import numpy
 import os
 
-partition_info=['cmt',64] # = [partition,ncores]
+partition_info=['gpu-preempt',16] # = [partition,ncores]
 # partition_info=['debug',16] # = [partition,ncores]
 #time_str='1-00:00:00'
 time_str = '3:00:00'

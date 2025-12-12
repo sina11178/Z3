@@ -3,14 +3,14 @@
 #SBATCH --job-name=run_121125_L8_only_normal
 #
 # Partition:
-#SBATCH --partition=amdgpu
+#SBATCH --partition=cmt
 #
 # Processors:
-#SBATCH --ntasks=24
+#SBATCH --ntasks=64
 #SBATCH --nodes=1
 #
 # Wall clock limit:
-#SBATCH --time=1-00:00:00
+#SBATCH --time=3:00:00
 #
 # Email at end:
 #SBATCH --mail-user=sxr190099@utdallas.edu
