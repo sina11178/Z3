@@ -24,6 +24,6 @@ gamma_array = [0, .4, .8, .8]
 L_array = [8]
 
 #size_autocorrelator_SIMULATION_NPY(log_times[(int(sys.argv[1]) % 10)*6], log_times[(int(sys.argv[1]) % 10)*6 + 5], .5, [L_array[0]], param_array[int(int(sys.argv[1])/60)], gamma_array[int(int(sys.argv[1])/10)%6])
-LACZOS_COEF_vary_gam_SIM(75, L_array[0], gamma_array[int(sys.argv[1])], param_array[int(int(sys.argv[1])/3)])
+LACZOS_COEF_vary_gam_SIM(100, L_array[0], gamma_array[int(sys.argv[1])], param_array[int(int(sys.argv[1])/3)])
 
 
