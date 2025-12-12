@@ -3,14 +3,14 @@
 #SBATCH --job-name=run_121125_L8_only_twisted
 #
 # Partition:
-#SBATCH --partition=cmt
+#SBATCH --partition=gpu-preempt
 #
 # Processors:
-#SBATCH --ntasks=64
+#SBATCH --ntasks=16
 #SBATCH --nodes=1
 #
 # Wall clock limit:
-#SBATCH --time=2-00:00:00
+#SBATCH --time=3:00:00
 #
 # Email at end:
 #SBATCH --mail-user=sxr190099@utdallas.edu

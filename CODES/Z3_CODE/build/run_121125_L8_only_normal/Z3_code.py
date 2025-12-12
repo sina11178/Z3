@@ -587,7 +587,7 @@ def liouvillian_linop(Hamiltonian, size):
         return C.ravel(order='F')
     return LinearOperator((d*d, d*d), matvec=mv, dtype=np.complex128)
 
-'''
+
 def grahm_schmidt(n, H, size):
     Lio = liouvillian_linop(H, size) 
     d = 3**size
@@ -633,12 +633,12 @@ def grahm_schmidt(n, H, size):
             matrix_final[i, j] = np.vdot(Q[i], c)
             matrix_final_squared[i, j] = np.vdot(Q_squared[i], c_squared)
     return [matrix_final, matrix_final_squared]
-'''
+
 
 
 
 # NOTE: USING QR
-
+'''
 def grahm_schmidt(n, H, size):
     """
     Constructs two Krylov bases (for alpha and alpha^2) using the Liouvillian,
@@ -688,4 +688,4 @@ def grahm_schmidt(n, H, size):
             matrix_final_squared[i, j] = np.vdot(Q2[:, i], c2)
 
     return [matrix_final, matrix_final_squared]
-    
+   ''' 
