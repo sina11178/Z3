@@ -2,10 +2,10 @@ bash run_121125_L8_only_twisted_0.qsub
 bash run_121125_L8_only_twisted_1.qsub
 bash run_121125_L8_only_twisted_2.qsub
 bash run_121125_L8_only_twisted_3.qsub
-echo "Fake run"
-echo "Fake run"
-echo "Fake run"
-echo "Fake run"
+bash run_121125_L8_only_twisted_4.qsub
+bash run_121125_L8_only_twisted_5.qsub
+bash run_121125_L8_only_twisted_6.qsub
+bash run_121125_L8_only_twisted_7.qsub
 echo "Fake run"
 echo "Fake run"
 echo "Fake run"
