@@ -1,3 +1,21 @@
+commit 04efb8f49afdbad4d780d945ec7a37860e37cdd2
+Author: Sina Rezvani <sxr190099@g2-l-02.localdomain>
+Date:   Sat Dec 13 17:38:33 2025 -0600
+
+    Commit before run run_121125_L8_only_twisted
+
+commit 31708ff01ba42fe2c5d2f183099258e4faa9afde
+Author: Sina Rezvani <sxr190099@g2-l-02.localdomain>
+Date:   Sat Dec 13 17:33:22 2025 -0600
+
+    Commit before run run_121025_krylov_L8_twisted
+
+commit 89658af38e5432b2583de35a77bc93f56c4f99d2
+Author: Sina Rezvani <sxr190099@g2-l-01.localdomain>
+Date:   Sat Dec 13 17:27:52 2025 -0600
+
+    Commit before run run_12125_krylov_L4_to_L10_normal_comm
+
 commit 2b506dfbe019046c5b25bf091b201ee2fe1e2564
 Author: Sina Rezvani <sxr190099@g2-l-01.localdomain>
 Date:   Sat Dec 13 16:44:06 2025 -0600
