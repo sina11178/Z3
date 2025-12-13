@@ -391,13 +391,25 @@ def Liovillan_twisted(Hamiltonian, size): #  Liovillan only applied to a matrix 
     return (S_1+(-1*S_2))
 
 
-
+'''
 def A_vectors(liovillan, b_array, O_basis_array, n_index, ham, size):  # Used for A_2 and on
     first_term = ((ham @ O_basis_array[n_index]) - (O_basis_array[n_index]@ ham))
     #first_term = liovillan @ O_basis_array[n_index]
     second_term = (b_array[n_index - 1]) * O_basis_array[(n_index - 1)]
 
     return (first_term +(-1*second_term))
+'''
+
+def A_vectors(liovillan, b_array, O_basis_array, n_index, ham, size):  # Used for A_2 and on
+    #first_term = (((ham @ np.reshape(O_basis_array[n_index], (3**size, 3**size)).T) - 
+    #               (np.reshape(O_basis_array[n_index], (3**size, 3**size)).T @ ham)).T).flatten()
+    #first_term = liovillan @ O_basis_array[n_index]
+    first_term = liovillan.matvec(O_basis_array[n_index])
+    second_term = (b_array[n_index - 1]) * O_basis_array[(n_index - 1)]
+
+    return (first_term +(-1*second_term))
+
+
 
 
 def norm (L_1, L_2, size):  # L_1 is ket, L_2 is the bra

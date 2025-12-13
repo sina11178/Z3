@@ -20,7 +20,7 @@ import sys
 log_times = np.arange(0, 30, .5)
 
 param_array=[[0.1, 0], [0.1, np.pi/6]]
-gamma_array = [0, .2, .4, .6, .8, 1]
+gamma_array = [0, .2, .4, .6, .8, .9]
 L_array = [4, 5, 6, 7]
 
 #size_autocorrelator_SIMULATION_NPY(log_times[(int(sys.argv[1]) % 10)*6], log_times[(int(sys.argv[1]) % 10)*6 + 5], .5, [L_array[0]], param_array[int(int(sys.argv[1])/60)], gamma_array[int(int(sys.argv[1])/10)%6])

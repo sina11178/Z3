@@ -3,14 +3,14 @@
 #SBATCH --job-name=run_121025_krylov_L8_twisted
 #
 # Partition:
-#SBATCH --partition=normal
+#SBATCH --partition=cmt
 #
 # Processors:
 #SBATCH --ntasks=64
-#SBATCH --nodes=2
+#SBATCH --nodes=1
 #
 # Wall clock limit:
-#SBATCH --time=2-00:00:00
+#SBATCH --time=3:00:00
 #
 # Email at end:
 #SBATCH --mail-user=sxr190099@utdallas.edu

@@ -11,7 +11,8 @@ import matplotlib.pyplot as plt
 import pandas as pd
 import scipy.sparse as sci
 from scipy.linalg import qr
-from scipy.sparse.linalg import eigsh, eigs
+from scipy.sparse.linalg import eigsh, eigs, LinearOperator
+from scipy.sparse import issparse
 #import scipy
 
 # PARAMETERS TO DEFINE IN HAMILTONIAN
