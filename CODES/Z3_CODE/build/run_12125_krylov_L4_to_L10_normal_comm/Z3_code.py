@@ -645,9 +645,53 @@ def grahm_schmidt(n, H, size):
             matrix_final_squared[i, j] = (Q_squared[i].conjugate().T @ c_squared)[0, 0]
     return [matrix_final, matrix_final_squared]
 
-
-
 '''
+
+def liouvillian_linop(Hamiltonian, size):
+    H = sci.csr_matrix(Hamiltonian)
+    #H = Hamiltonian.toarray()
+    d = H.shape[0]
+    def mv(x):
+        # ensure x is a 1-D numpy array
+        #x = np.asarray(x, dtype=np.complex128).ravel()
+        # reshape to (d,d) using the same order you use when flattening elsewhere
+        M = x.reshape((d, d), order='F')   # use 'F' if you ravel(..., order='F')
+        # ensure M is dense ndarray (needed to do M @ H where H is sparse)
+        if issparse(M):
+            M = M.toarray()
+        # compute commutator; H is sparse so H.dot(M) returns dense ndarray
+        left = H @ M     # shape (d,d) dense
+        right = M @ H       # shape (d,d) dense
+        C = left - right
+        return C.ravel(order='F')
+    return LinearOperator((d*d, d*d), matvec=mv, dtype=np.complex128)
+
+def liouvillian_linop_twisted(Hamiltonian, size):
+    """
+    Return a LinearOperator that performs the commutator action on flattened operators:
+        x -> (H @ M - M @ H).ravel(order='F')
+    without building the full d^2 x d^2 superoperator.
+    """
+    #H = sci.csr_matrix(Hamiltonian)
+    H = Hamiltonian.toarray()
+    d = H.shape[0]
+    def mv(x):
+        # ensure x is a 1-D numpy array
+        x = np.asarray(x, dtype=np.complex128).ravel()
+        # reshape to (d,d) using the same order you use when flattening elsewhere
+        M = x.reshape((d, d), order='F')   # use 'F' if you ravel(..., order='F')
+        # ensure M is dense ndarray (needed to do M @ H where H is sparse)
+        if issparse(M):
+            M = M.toarray()
+        # compute commutator; H is sparse so H.dot(M) returns dense ndarray
+        left = H.conjugate().T @ M     # shape (d,d) dense
+        right = M @ H       # shape (d,d) dense
+        C = left - right
+        return C.ravel(order='F')
+    return LinearOperator((d*d, d*d), matvec=mv, dtype=np.complex128)
+
+
+
 
 def grahm_schmidt(n, H, size):
     """
