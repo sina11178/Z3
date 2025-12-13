@@ -1,0 +1,5 @@
+Starting job run_12925_correlation_vary_gamma
+WARNING (12/11/25 14:02:23): LAUNCHER_WORKDIR variable not set. Using current directory.
+ERROR (12/11/25 14:02:23): LAUNCHER_JOB_FILE (run_112125_autocorrelation_varying_gamma_L4_to_L10.task) not found.
+Launcher exited without completing.
+Job rrun_12925_correlation_vary_gamma complete

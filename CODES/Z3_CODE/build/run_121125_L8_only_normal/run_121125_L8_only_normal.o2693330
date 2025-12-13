@@ -1,0 +1,61 @@
+Starting job run_121125_L8_only_normal
+WARNING (12/12/25 11:46:20): LAUNCHER_WORKDIR variable not set. Using current directory.
+Launcher: Setup complete.
+
+------------- SUMMARY ---------------
+   Number of hosts:    1
+   Working directory:  /home/sxr190099/Z3/CODES/Z3_CODE/build/run_121125_L8_only_normal
+   Processes per host: 24
+   Total processes:    24
+   Total jobs:         24
+   Scheduling method:  interleaved
+
+-------------------------------------
+Launcher: Starting parallel tasks...
+using /tmp/launcher.2693330.hostlist.7sFYljml to get hosts
+starting job on g-07-01
+Warning: Permanently added 'g-07-01,10.247.225.142' (ECDSA) to the list of known hosts.
+Lmod has detected the following error: The following module(s) are unknown:
+"git"
+
+Please check the spelling or version number. Also try "module spider ..."
+It is also possible your cache file is out-of-date; it may help to try:
+  $ module --ignore_cache load "git"
+
+Also make sure that all modulefiles written in TCL start with the string
+#%Module
+
+
+
+Launcher: Task 5 running job 6 on g-07-01 (echo "Fake run")
+Fake run
+Launcher: Task 3 running job 4 on g-07-01 (bash run_121125_L8_only_normal_3.qsub)
+Launcher: Job 6 completed in 0 seconds.
+Launcher: Task 5 done. Exiting.
+Launcher: Task 17 running job 18 on g-07-01 (echo "Fake run")
+Fake run
+Launcher: Job 18 completed in 0 seconds.
+Launcher: Task 17 done. Exiting.
+Launcher: Task 13 running job 14 on g-07-01 (echo "Fake run")
+Fake run
+Launcher: Task 23 running job 24 on g-07-01 (echo "Fake run")
+Fake run
+Launcher: Job 14 completed in 0 seconds.
+Launcher: Job 24 completed in 0 seconds.
+Launcher: Task 13 done. Exiting.
+Launcher: Task 23 done. Exiting.
+Launcher: Task 14 running job 15 on g-07-01 (echo "Fake run")
+Fake run
+Launcher: Job 15 completed in 0 seconds.
+Launcher: Task 14 done. Exiting.
+Launcher: Task 12 running job 13 on g-07-01 (echo "Fake run")
+Fake run
+Launcher: Job 13 completed in 0 seconds.
+Launcher: Task 2 running job 3 on g-07-01 (bash run_121125_L8_only_normal_2.qsub)
+Launcher: Task 12 done. Exiting.
+Launcher: Task 1 running job 2 on g-07-01 (bash run_121125_L8_only_normal_1.qsub)
+Launcher: Task 4 running job 5 on g-07-01 (echo "Fake run")
+Fake run
+Launcher: Job 5 completed in 0 seconds.
+Launcher: Task 4 done. Exiting.
+slurmstepd-g-07-01: error: *** JOB 2693330 ON g-07-01 CANCELLED AT 2025-12-12T11:46:31 ***
