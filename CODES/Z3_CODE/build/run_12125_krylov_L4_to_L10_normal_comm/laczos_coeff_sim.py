@@ -39,9 +39,9 @@ def LACZOS_COEF_vary_gam_SIM(n, size, gamma, params):
 
     #os.makedirs('krylov_matrix/f_' + str(params[0]) + '_phi_' + str(params[1]) + '_L_'+ str(size) + '_gamm_' + str(gamma), exist_ok=True)
 
-    npy_name = "krylov_matrix_"+"L"+str(size)+"_gamma_"+str(gamma)+"_f_"+str(params[0])+"_phi_"+str(params[1])+".npy"
+    npy_name = "krylov_matrix_"+"L"+str(size)+"_gamma_"+str(gamma)+"_f_"+str(params[0])+"_phi_"+str(round(params[1], 3))+".npy"
     np.save(npy_name, matrix_final)
-    npy_name_2 = "krylov_matrix_"+"L"+str(size)+"_gamma_"+str(gamma)+"_f_"+str(params[0])+"_phi_"+str(params[1])+"_squared.npy"
+    npy_name_2 = "krylov_matrix_"+"L"+str(size)+"_gamma_"+str(gamma)+"_f_"+str(params[0])+"_phi_"+str(round(params[1],3))+"_squared.npy"
     np.save(npy_name_2, matrix_final_squared)
 
   
