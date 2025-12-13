@@ -1,8 +1,83 @@
+commit 0618fe7b1b7c23d4c084fb26af397fdf75c7a1d3
+Author: Sina Rezvani <sxr190099@g2-l-01.localdomain>
+Date:   Sat Dec 13 16:42:36 2025 -0600
+
+    Commit before run run_121125_L8_only_normal
+
+commit a0e8f4d8c637e3bf7a249b7266b5792aa97e6c18
+Author: Sina Rezvani <sxr190099@g2-l-01.localdomain>
+Date:   Sat Dec 13 16:07:08 2025 -0600
+
+    Commit before run run_121025_krylov_L8_twisted
+
+commit c6d5e90953990153fdd98f40676fc69fc8d637ce
+Author: Sina Rezvani <sxr190099@g2-l-01.localdomain>
+Date:   Sat Dec 13 16:06:29 2025 -0600
+
+    Commit before run run_121025_krylov_L8_twisted
+
+commit 76112dc392620bea67ab1d0e250a9c18895b1494
+Author: Sina Rezvani <sxr190099@g2-l-01.localdomain>
+Date:   Sat Dec 13 15:45:02 2025 -0600
+
+    Commit before run run_12125_krylov_L4_to_L10_normal_comm
+
+commit 7a39faf2c599f6a785ae6f473e74b83d7359f764
+Author: Sina Rezvani <sxr190099@g2-l-01.localdomain>
+Date:   Sat Dec 13 15:42:36 2025 -0600
+
+    Commit before run run_12125_krylov_L4_to_L10_normal_comm
+
+commit ee6752d523fc0082c6115b044f8a378f54bf9358
+Author: Sina Rezvani <sxr190099@g2-l-01.localdomain>
+Date:   Sat Dec 13 14:01:44 2025 -0600
+
+    Added data for normal commutator for gamma = 0.4, L=8
+
+commit 1eda3eb0cbff5f5d2fca35d1a9022ef46d06df27
+Author: Sina Rezvani <sxr190099@g2-l-02.localdomain>
+Date:   Sat Dec 13 12:44:44 2025 -0600
+
+    Commit before run run_121325_L8_gam0.4_phi_0.524
+
+commit 499e47a9cb62e8dad9e97eefe5fd349e0834afc5
+Merge: 15d3d2b b6e4c2a
+Author: Sina Rezvani <sxr190099@g2-l-01.localdomain>
+Date:   Fri Dec 12 18:44:46 2025 -0600
+
+    Merge branch 'main' of https://github.com/sina11178/Z3
+    Adding previously missing L=8 data
+
+commit 15d3d2b42fd199282adfa29f5480d38d8912e36d
+Author: Sina Rezvani <sxr190099@g2-l-01.localdomain>
+Date:   Fri Dec 12 18:44:14 2025 -0600
+
+    Added data for previously missing L=8 values
+
+commit b6e4c2ab4e9ab435da695da08c4773e4249f1f87
+Author: sina11178 <frsinarez4@gmail.com>
+Date:   Fri Dec 12 17:57:58 2025 -0600
+
+    Created correlation function graphs
+
 commit 22ac2efb1a3bb9dde092a86748b582276b74370e
 Author: Sina Rezvani <sxr190099@g2-l-02.localdomain>
 Date:   Fri Dec 12 17:19:45 2025 -0600
 
     Commit before run run_121125_L8_only_normal
+
+commit 0523338c01caf52cd801dbe71211dfcbafc20d14
+Merge: d10b5bd 41ee234
+Author: sina11178 <frsinarez4@gmail.com>
+Date:   Fri Dec 12 16:17:37 2025 -0600
+
+    Merge branch 'main' of https://github.com/sina11178/Z3
+
+commit d10b5bd0b01d02604fd2125a0af1e6b6cf68a878
+Author: sina11178 <frsinarez4@gmail.com>
+Date:   Fri Dec 12 16:17:22 2025 -0600
+
+    Ran some tests on different methods of orthonormalization
 
 commit 61bb24e8cd24f743c91f56ebcc6d112d669e93b3
 Author: Sina Rezvani <sxr190099@g2-l-01.localdomain>

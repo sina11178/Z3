@@ -2,10 +2,10 @@ bash run_121125_L8_only_normal_0.qsub
 bash run_121125_L8_only_normal_1.qsub
 bash run_121125_L8_only_normal_2.qsub
 bash run_121125_L8_only_normal_3.qsub
-echo "Fake run"
-echo "Fake run"
-echo "Fake run"
-echo "Fake run"
+bash run_121125_L8_only_normal_4.qsub
+bash run_121125_L8_only_normal_5.qsub
+bash run_121125_L8_only_normal_6.qsub
+bash run_121125_L8_only_normal_7.qsub
 echo "Fake run"
 echo "Fake run"
 echo "Fake run"
