@@ -41,7 +41,7 @@ phi_array = [0, np.pi/6, np.pi/4, np.pi/3]
 #size_autocorrelator_SIMULATION_NPY(0, 1, .5, [9], [.1, 0*np.pi/6], 0)
 #size_correlator_SIM_NPY(0, 20, .1, [2, 3, 4, 5, 6], [0, 1*np.pi/6], 1)
 
-LACZOS_COEF_vary_gam_SIM(6, 6, 1, [.1, 0])
+LACZOS_COEF_vary_gam_SIM(102, 4, 1, [.1, 0])
 #gamma_array = np.arange(0, 1, 0.1)
 
 #decay_rates(0, 15, 1, 5, [.15, 1*np.pi/6], gamma_array)
