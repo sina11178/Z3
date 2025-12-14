@@ -530,6 +530,17 @@ def recursion_method(n, H, size):
         matrix_final_squared[j, j+1] = b_squared[j]  # Diagonal elements FOR ALPHA^2 OPERATOR
         matrix_final_squared[j+1, j] = (b_squared[j])
     return [matrix_final, matrix_final_squared]  # FOR ALPHA^2 OPERATOR
+    # for j in range(l):
+    #     c = Lio.matvec(krylov_basis[j])
+    #     #c = (((H @ np.reshape(Q[:, j], (3**size, 3**size)).T) -
+    #     #    (np.reshape(Q[:,j], (3**size, 3**size)).T @ H)).T).flatten()
+    #     c_squared = Lio.matvec(krylov_basis_squared[j])
+    #     #c_squared = (((H @ np.reshape(Q_squared[:, j], (3**size, 3**size)).T) -
+    #     #    (np.reshape(Q_squared[:,j], (3**size, 3**size)).T @ H)).T).flatten()
+    #     for i in range(l):
+    #         matrix_final[i, j] = np.conjugate(krylov_basis[i]) @ c
+    #         matrix_final_squared[i, j] = np.conjugate(krylov_basis_squared[i]) @ c_squared
+    # return [matrix_final, matrix_final_squared]
 
 '''
 

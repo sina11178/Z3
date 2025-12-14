@@ -7,7 +7,7 @@ parameters = [[0.1, 0], [0.1, 0.524]]
 size = [4, 6, 8]
 gamma = [0, 0.4, 0.8, 1]
 
-n_max = 59
+n_max = 31
 plt.figure()
 BASE = Path(__file__).resolve().parent
 path = (
@@ -56,7 +56,7 @@ for i, param in enumerate(parameters):
             EIG_STATE_SQUARED = np.abs(U[:, index])
             ax.plot(np.arange(n_max), EIG_STATE_SQUARED, label=f'L = {L}, $|λ_{L}|$={np.abs(eigval_min):.3e}')
             ax.legend()
-            ax.set_ylim(0, 1)
+            ax.set_ylim(0, .3)
 
     #    if i == 0 and j == 0:
     #         ax.legend()

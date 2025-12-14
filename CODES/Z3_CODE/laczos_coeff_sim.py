@@ -60,7 +60,7 @@ def LACZOS_COEF_vary_gam_SIM(n, size, gamma, params):
     F_squared = np.abs(matrix_final_squared)
 
     plt.imshow(F, cmap='seismic', aspect='auto')
-    #plt.clim(-np.max(np.abs(F)), np.max(np.abs(F)))
+    plt.clim(-np.max(np.abs(F)), np.max(np.abs(F)))
     #plt.clim(-0.1, 0.1)
     plt.colorbar(label='Value')  # ← this adds the side bar
     plt.title('alpha_1 (abs value of matrix)')
@@ -72,6 +72,8 @@ def LACZOS_COEF_vary_gam_SIM(n, size, gamma, params):
 
     plt.imshow(F_squared, cmap='seismic', aspect='auto')
     plt.colorbar(label='Value')
+    plt.clim(-np.max(np.abs(F_squared)), np.max(np.abs(F_squared)))
+
     #plt.clim(0, 1.8)
     plt.title('alpha_1 squared (abs value of matrix)')
     plt.xlabel('Column Index')
