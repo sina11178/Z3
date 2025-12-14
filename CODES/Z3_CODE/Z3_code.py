@@ -436,7 +436,8 @@ def Liovillan_twisted(Hamiltonian, size): #  Liovillan only applied to a matrix 
 def A_vectors(liovillan, b_array, O_basis_array, n_index, ham, size):  # Used for A_2 and on
     #first_term = (((ham @ np.reshape(O_basis_array[n_index], (3**size, 3**size)).T) - 
     #               (np.reshape(O_basis_array[n_index], (3**size, 3**size)).T @ ham)).T).flatten()
-    first_term = liovillan @ O_basis_array[n_index]
+    #first_term = liovillan @ O_basis_array[n_index]
+    first_term = liovillan.matvec(O_basis_array[n_index])
     second_term = (b_array[n_index - 1]) * O_basis_array[(n_index - 1)]
 
     return (first_term +(-1*second_term))
@@ -465,7 +466,7 @@ def recursion_method(n, H, size):
 
     seeding = tensor_product(list, size).toarray()
     seeding_squared = tensor_product(list_squared, size).toarray()  # FOR ALPHA^2 OPERATOR
-    Lio = Liovillan(H, size)
+    Lio = liouvillian_linop(H, size)
     #Lio = 0
     b = []  # ORDER: 1, 2, ...
     b_squared = []  # FOR ALPHA^2 OPERATOR
@@ -479,7 +480,7 @@ def recursion_method(n, H, size):
     #A_basis_squared = []  # FOR ALPHA^2 OPERATOR
     for i in range(0, n):
         if (i == 0):  # BASE CASE
-            A_1 = Lio @ krylov_basis[0]
+            A_1 = Lio.matvec(krylov_basis[0])
             #A_1 = (((H @ np.reshape(krylov_basis[0], (3**size, 3**size)).T) - 
             #       (np.reshape(krylov_basis[0], (3**size, 3**size)).T @ H)).T).flatten()
             #A_1 = krylov_basis[0] @ np.array(L)
@@ -492,7 +493,7 @@ def recursion_method(n, H, size):
             krylov_basis.append(O_1)
 
             # NOTE: FOR ALPHA^2 OPERATOR
-            A_1_squared = Lio @ krylov_basis_squared[0]  # FOR ALPHA^2 OPERATOR
+            A_1_squared = Lio.matvec(krylov_basis_squared[0])  # FOR ALPHA^2 OPERATOR
             #A_1_squared = (((H @ np.reshape(krylov_basis_squared[0], (3**size, 3**size)).T) -
             #               (np.reshape(krylov_basis_squared[0], (3**size, 3**size)).T @ H)).T).flatten()
             #A_1_squared = krylov_basis_squared[0] @ np.array(L)
@@ -696,3 +697,4 @@ def grahm_schmidt(n, H, size):
             matrix_final_squared[i, j] = np.vdot(Q2[:, i], c2)
 
     return [matrix_final, matrix_final_squared]
+
