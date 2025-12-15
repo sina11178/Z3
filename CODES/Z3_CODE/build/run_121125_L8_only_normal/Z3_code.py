@@ -12,8 +12,7 @@ import pandas as pd
 import scipy.sparse as sci
 from scipy.linalg import qr
 from scipy.sparse.linalg import eigsh, eigs, LinearOperator
-from scipy.sparse import issparse
-#import scipy
+from sklearn.utils import issparse
 #import scipy
 
 # PARAMETERS TO DEFINE IN HAMILTONIAN
@@ -366,6 +365,48 @@ def output_list_corr(A, U, U_inv, input_list, size, hamiltonian, gamma):# TOOK O
 RECURSION METHOD FOR HERMITIAN HAMILTONIAN
 
 '''
+def liouvillian_linop(Hamiltonian, size):
+    H = sci.csr_matrix(Hamiltonian)
+    #H = Hamiltonian.toarray()
+    d = H.shape[0]
+    def mv(x):
+        # ensure x is a 1-D numpy array
+        #x = np.asarray(x, dtype=np.complex128).ravel()
+        # reshape to (d,d) using the same order you use when flattening elsewhere
+        M = x.reshape((d, d), order='F')   # use 'F' if you ravel(..., order='F')
+        # ensure M is dense ndarray (needed to do M @ H where H is sparse)
+        if issparse(M):
+            M = M.toarray()
+        # compute commutator; H is sparse so H.dot(M) returns dense ndarray
+        left = H @ M     # shape (d,d) dense
+        right = M @ H       # shape (d,d) dense
+        C = left - right
+        return C.ravel(order='F')
+    return LinearOperator((d*d, d*d), matvec=mv, dtype=np.complex128)
+
+def liouvillian_linop_twisted(Hamiltonian, size):
+    """
+    Return a LinearOperator that performs the commutator action on flattened operators:
+        x -> (H @ M - M @ H).ravel(order='F')
+    without building the full d^2 x d^2 superoperator.
+    """
+    #H = sci.csr_matrix(Hamiltonian)
+    H = Hamiltonian.toarray()
+    d = H.shape[0]
+    def mv(x):
+        # ensure x is a 1-D numpy array
+        x = np.asarray(x, dtype=np.complex128).ravel()
+        # reshape to (d,d) using the same order you use when flattening elsewhere
+        M = x.reshape((d, d), order='F')   # use 'F' if you ravel(..., order='F')
+        # ensure M is dense ndarray (needed to do M @ H where H is sparse)
+        if issparse(M):
+            M = M.toarray()
+        # compute commutator; H is sparse so H.dot(M) returns dense ndarray
+        left = H.conjugate().T @ M     # shape (d,d) dense
+        right = M @ H       # shape (d,d) dense
+        C = left - right
+        return C.ravel(order='F')
+    return LinearOperator((d*d, d*d), matvec=mv, dtype=np.complex128)
 
 
 def Liovillan(Hamiltonian, size): #  Liovillan only applied to a matrix converted to vector
@@ -392,38 +433,6 @@ def Liovillan_twisted(Hamiltonian, size): #  Liovillan only applied to a matrix 
 
 
 
-def liouvillian_linop(Hamiltonian, size):
-    H = sci.csr_matrix(Hamiltonian)
-    #H = Hamiltonian.toarray()
-    d = H.shape[0]
-    def mv(x):
-        # ensure x is a 1-D numpy array
-        #x = np.asarray(x, dtype=np.complex128).ravel()
-        # reshape to (d,d) using the same order you use when flattening elsewhere
-        M = x.reshape((d, d), order='F')   # use 'F' if you ravel(..., order='F')
-        # ensure M is dense ndarray (needed to do M @ H where H is sparse)
-        if issparse(M):
-            M = M.toarray()
-        # compute commutator; H is sparse so H.dot(M) returns dense ndarray
-        left = H @ M     # shape (d,d) dense
-        right = M @ H       # shape (d,d) dense
-        C = left - right
-        return C.ravel(order='F')
-    return LinearOperator((d*d, d*d), matvec=mv, dtype=np.complex128)
-
-
-
-
-'''
-def A_vectors(liovillan, b_array, O_basis_array, n_index, ham, size):  # Used for A_2 and on
-#    first_term = ((ham @ O_basis_array[n_index]) - (O_basis_array[n_index]@ ham))
-    first_term = liovillan @ O_basis_array[n_index]
-    second_term = (b_array[n_index - 1]) * O_basis_array[(n_index - 1)]
-
-    return (first_term +(-1*second_term))
-'''
-
-
 def A_vectors(liovillan, b_array, O_basis_array, n_index, ham, size):  # Used for A_2 and on
     #first_term = (((ham @ np.reshape(O_basis_array[n_index], (3**size, 3**size)).T) - 
     #               (np.reshape(O_basis_array[n_index], (3**size, 3**size)).T @ ham)).T).flatten()
@@ -432,8 +441,6 @@ def A_vectors(liovillan, b_array, O_basis_array, n_index, ham, size):  # Used fo
     second_term = (b_array[n_index - 1]) * O_basis_array[(n_index - 1)]
 
     return (first_term +(-1*second_term))
-
-
 
 
 def norm (L_1, L_2, size):  # L_1 is ket, L_2 is the bra
@@ -445,168 +452,6 @@ def norm (L_1, L_2, size):  # L_1 is ket, L_2 is the bra
     #print(norm)
     #return np.linalg.norm(norm)
     return norm.real
-
-
-'''
-def recursion_method(n, H, size):
-    list = []
-    list_squared = []  # FOR ALPHA^2 OPERATOR
-    for i in range(size):
-        list.append(np_I)
-        list_squared.append(np_I)  # FOR ALPHA^2 OPERATOR
-    list[0] = np_SIG
-    #list_squared = list
-    list_squared[0] =(np_SIG.conjugate().T)  # FOR ALPHA^2 OPERATOR
-    m = np.sqrt((1/(3**size)))
-
-    seeding = tensor_product(list, size)
-    seeding_squared = tensor_product(list_squared, size)  # FOR ALPHA^2 OPERATOR
-    #Lio = Liovillan(H, size)
-    Lio = 0
-    b = []  # ORDER: 1, 2, ...
-    b_squared = []  # FOR ALPHA^2 OPERATOR
-    O_0 = seeding # Returns as list w/ vector inside of it;  ORDER: 0, 1, 2, ..., n
-    O_0_squared = seeding_squared  # FOR ALPHA^2 OPERATOR
-
-    #print(O_1)
-    krylov_basis = [O_0]  # YOU CAN ALSO JUST NORMALIZE THIS AND LEAVE OUT THE PREFACTOR IN THE NORM FUNCTION
-    krylov_basis_squared = [O_0_squared]  # FOR ALPHA^2 OPERATOR
-    #A_basis = []  # ORDER: 1, 2, ...
-    #A_basis_squared = []  # FOR ALPHA^2 OPERATOR
-    for i in range(0, n):
-        if (i == 0):  # BASE CASE
-            #A_1 = Lio @ krylov_basis[0]
-            A_1 = ((H @ krylov_basis[0]) - (krylov_basis[0]@ H))
-            #A_1 = krylov_basis[0] @ np.array(L)
-            #A_basis.append(A_1)
-            #b_1 = norm(A_1, A_1, size)
-            b_1 = m * (A_1.T.conjugate()@A_1).trace()
-            b.append(b_1)
-            #print(type(A_1))
-            O_1 = (1/(b_1))*A_1
-            krylov_basis.append(O_1)
-
-            # NOTE: FOR ALPHA^2 OPERATOR
-            #A_1_squared = Lio @ krylov_basis_squared[0]  # FOR ALPHA^2 OPERATOR
-            A_1_squared = ((H @ krylov_basis_squared[0]) -(krylov_basis_squared[0]@ H))
-            #A_1_squared = krylov_basis_squared[0] @ np.array(L)
-            #A_basis_squared.append(A_1_squared)
-            #b_1_squared = m * np.linalg.norm(A_1_squared)  # FOR ALPHA^2 OPERATOR
-            b_1_squared = m * (A_1_squared.T.conjugate()@A_1_squared).trace()
-            b_squared.append(b_1_squared)
-            O_1_squared = (1/b_1_squared) * A_1_squared  # FOR ALPHA^2 OPERATOR
-            krylov_basis_squared.append(O_1_squared)  # FOR ALPHA^2 OP
-
-        else:
-            k = A_vectors(Lio, b, krylov_basis, i, H, size)
-            #A_basis.append(k)
-            #b.append(norm(k, k, size))
-            b.append(m * (k.T.conjugate()@k).trace())
-            krylov_basis.append((1/b[i])*k)
-
-            # NOTE: FOR ALPHA^2 OPERATOR
-
-            k_squared = A_vectors(Lio, b_squared, krylov_basis_squared, i, H, size)
-            #A_basis_squared.append(k_squared)
-            #b_squared.append(norm(k_squared, k_squared, size))  # FOR ALPHA^2 OPERATOR
-            b_squared.append(m * (k_squared.T.conjugate()@k_squared).trace())  # FOR ALPHA^2
-            krylov_basis_squared.append((1/b_squared[i]) * k_squared)  # FOR ALPHA^2 OPERATOR
-
-    #print(b)
-
-    l = len(krylov_basis)
-    matrix_final = np.zeros((l,l), dtype=complex)
-    matrix_final_squared = np.zeros((l,l), dtype=complex)  # FOR ALPHA^2 OPERATOR
-    for j in range(len(b)):
-        matrix_final[j, j+1] = b[j]  # Diagonal elements
-        matrix_final[j+1, j] = (b[j])  # Off-diagonal elements
-
-        matrix_final_squared[j, j+1] = b_squared[j]  # Diagonal elements FOR ALPHA^2 OPERATOR
-        matrix_final_squared[j+1, j] = (b_squared[j])
-    return [matrix_final, matrix_final_squared]  # FOR ALPHA^2 OPERATOR
-'''
-
-'''
-def recursion_method(n, H, size):
-    list = []
-    list_squared = []  # FOR ALPHA^2 OPERATOR
-    for i in range(size):
-        list.append(np_I)
-        list_squared.append(np_I)  # FOR ALPHA^2 OPERATOR
-    list[0] = np_SIG
-    #list_squared = list
-    list_squared[0] =(np_SIG.conjugate().T)  # FOR ALPHA^2 OPERATOR
-    m = np.sqrt((1/(3**size)))
-
-    seeding = tensor_product(list, size).toarray()
-    seeding_squared = tensor_product(list_squared, size).toarray()  # FOR ALPHA^2 OPERATOR
-    Lio = Liovillan(H, size)
-    #Lio = 0
-    b = []  # ORDER: 1, 2, ...
-    b_squared = []  # FOR ALPHA^2 OPERATOR
-    O_0 = ((seeding.T).flatten()) # Returns as list w/ vector inside of it;  ORDER: 0, 1, 2, ..., n
-    O_0_squared = ((seeding_squared.T).flatten())  # FOR ALPHA^2 OPERATOR
-
-    #print(O_1)
-    krylov_basis = [O_0]  # YOU CAN ALSO JUST NORMALIZE THIS AND LEAVE OUT THE PREFACTOR IN THE NORM FUNCTION
-    krylov_basis_squared = [O_0_squared]  # FOR ALPHA^2 OPERATOR
-    #A_basis = []  # ORDER: 1, 2, ...
-    #A_basis_squared = []  # FOR ALPHA^2 OPERATOR
-    for i in range(0, n):
-        if (i == 0):  # BASE CASE
-            A_1 = Lio @ krylov_basis[0]
-            #A_1 = (((H @ np.reshape(krylov_basis[0], (3**size, 3**size)).T) - 
-            #       (np.reshape(krylov_basis[0], (3**size, 3**size)).T @ H)).T).flatten()
-            #A_1 = krylov_basis[0] @ np.array(L)
-            #A_basis.append(A_1)
-            #b_1 = norm(A_1, A_1, size)
-            b_1 = m * np.linalg.norm(A_1)
-            b.append(b_1)
-            #print(type(A_1))
-            O_1 = (1/(b_1))*A_1
-            krylov_basis.append(O_1)
-
-            # NOTE: FOR ALPHA^2 OPERATOR
-            A_1_squared = Lio @ krylov_basis_squared[0]  # FOR ALPHA^2 OPERATOR
-            #A_1_squared = (((H @ np.reshape(krylov_basis_squared[0], (3**size, 3**size)).T) -
-            #               (np.reshape(krylov_basis_squared[0], (3**size, 3**size)).T @ H)).T).flatten()
-            #A_1_squared = krylov_basis_squared[0] @ np.array(L)
-            #A_basis_squared.append(A_1_squared)
-            b_1_squared = m * np.linalg.norm(A_1_squared)  # FOR ALPHA^2 OPERATOR
-            b_squared.append(b_1_squared)
-            O_1_squared = (1/b_1_squared) * A_1_squared  # FOR ALPHA^2 OPERATOR
-            krylov_basis_squared.append(O_1_squared)  # FOR ALPHA^2 OP
-
-        else:
-            k = A_vectors(Lio, b, krylov_basis, i, H, size)
-            #A_basis.append(k)
-            #b.append(norm(k, k, size))
-            b.append(m * np.linalg.norm(k))
-            krylov_basis.append((1/b[i])*k)
-
-            # NOTE: FOR ALPHA^2 OPERATOR
-
-            k_squared = A_vectors(Lio, b_squared, krylov_basis_squared, i, H, size)
-            #A_basis_squared.append(k_squared)
-            #b_squared.append(norm(k_squared, k_squared, size))  # FOR ALPHA^2 OPERATOR
-            b_squared.append(m * np.linalg.norm(k_squared))  # FOR ALPHA^2
-            krylov_basis_squared.append((1/b_squared[i]) * k_squared)  # FOR ALPHA^2 OPERATOR
-
-   #print(b)
-
-    l = len(krylov_basis)
-    matrix_final = np.zeros((l,l), dtype=complex)
-    matrix_final_squared = np.zeros((l,l), dtype=complex)  # FOR ALPHA^2 OPERATOR
-    for j in range(len(b)):
-        matrix_final[j, j+1] = b[j]  # Diagonal elements
-        matrix_final[j+1, j] = (b[j])  # Off-diagonal elements
-
-        matrix_final_squared[j, j+1] = b_squared[j]  # Diagonal elements FOR ALPHA^2 OPERATOR
-        matrix_final_squared[j+1, j] = (b_squared[j])
-    return [matrix_final, matrix_final_squared]  # FOR ALPHA^2 OPERATOR
-
-'''
-
 
 def recursion_method(n, H, size):
     list = []
@@ -685,15 +530,17 @@ def recursion_method(n, H, size):
         matrix_final_squared[j, j+1] = b_squared[j]  # Diagonal elements FOR ALPHA^2 OPERATOR
         matrix_final_squared[j+1, j] = (b_squared[j])
     return [matrix_final, matrix_final_squared]  # FOR ALPHA^2 OPERATOR
-
-
-
-
-
-
-
-
-
+    # for j in range(l):
+    #     c = Lio.matvec(krylov_basis[j])
+    #     #c = (((H @ np.reshape(Q[:, j], (3**size, 3**size)).T) -
+    #     #    (np.reshape(Q[:,j], (3**size, 3**size)).T @ H)).T).flatten()
+    #     c_squared = Lio.matvec(krylov_basis_squared[j])
+    #     #c_squared = (((H @ np.reshape(Q_squared[:, j], (3**size, 3**size)).T) -
+    #     #    (np.reshape(Q_squared[:,j], (3**size, 3**size)).T @ H)).T).flatten()
+    #     for i in range(l):
+    #         matrix_final[i, j] = np.conjugate(krylov_basis[i]) @ c
+    #         matrix_final_squared[i, j] = np.conjugate(krylov_basis_squared[i]) @ c_squared
+    # return [matrix_final, matrix_final_squared]
 
 '''
 
@@ -701,101 +548,7 @@ GRAHM SCHMIDT - FOR NON HERMITIAN HAMILTONIANS
 
 '''
 
-'''
-def grahm_schmidt(n, H, size):
-    Lio = Liovillan(H, size)
-    #Lio = 0      
-    d = 3**size
-    list = []
-    list_squared = []  # FOR ALPHA^2 OPERATOR
-    for i in range(size):
-        list.append(np_I)
-        list_squared.append(np_I)  # FOR ALPHA^2 OPERATOR
-    list[0] = np_SIG
-    #list[0] = np.conjugate(np_SIG).T # FOR ALPHA^2 OPERATOR
-    #strong_mode = alph_3  # tensor_product(list, size)
-    #list[0] = np.conjugate(np_SIG.T)  # FOR ALPHA^2 OPERATOR
-    list_squared[0] = (np_SIG.conjugate().T)  # FOR ALPHA^2 OPERATOR
-    seeding = tensor_product(list, size).reshape((-1, 1), order='F')  # Converts to array for matrix operations
-    seeding_squared = tensor_product(list_squared, size).reshape((-1, 1), order='F')  # FOR ALPHA^2 OPERATOR
-    #O_0 = ((seeding.T).toarray().flatten())
-    #gs_basis_non_ortho = [seeding]
-    #print(list == list_squared)
-
-    #O_0_squared = ((seeding_squared.T).toarray().flatten())  # FOR ALPHA^2 OPERATOR
-    #gs_basis_non_ortho_squared = [seeding_squared]  # FOR ALPHA^2 OPERATOR
-
-    #for P in range(1, n+1):
-    #    K = Lio @ gs_basis_non_ortho[P-1]
-        #K = (((H @ np.reshape(gs_basis_non_ortho[P-1], (d, d)).T) - (np.reshape(gs_basis_non_ortho[P-1], (d, d)).T @ H)).T).flatten()
-    #    K_squared = Lio @ gs_basis_non_ortho_squared[P-1]
-        #K_squared = (((H @ np.reshape(gs_basis_non_ortho_squared[P-1], (d, d)).T) - (np.reshape(gs_basis_non_ortho_squared[P-1], (d, d)).T @ H)).T).flatten()
-    #    gs_basis_non_ortho.append(K)
-    #    gs_basis_non_ortho_squared.append(K_squared)
-
-    Q = [seeding]
-    Q_squared = [seeding_squared]
-    v = seeding
-    v_squared = seeding_squared
-    for k in range(n):
-        w = Lio @ v   # L sparse
-        w_squared = Lio @ v_squared
-        for q in Q:
-            alpha = (q.conjugate().T @ w)[0,0]   # inner product
-            w = w - q.multiply(alpha)            # sparse subtraction
-        for q_squared in Q_squared:
-            alpha_sq = (q_squared.conjugate().T @ w_squared)[0,0]
-            w_squared = w_squared - q_squared.multiply(alpha_sq)
-
-        w = w / np.sqrt((w.conjugate().T @ w)[0,0])
-        w_squared = w_squared/np.sqrt((w_squared.conjugate().T @ w_squared)[0,0])
-        Q.append(w)
-        Q_squared.append(w_squared)
-        v = w
-        v_squared = w_squared
-
-    #gs_basis_non_ortho_matrix = np.column_stack(gs_basis_non_ortho)
-    #gs_basis_non_ortho_matrix_squared = np.column_stack(gs_basis_non_ortho_squared)  # FOR ALPHA^2 OPERATOR
-    #Q, R = np.linalg.qr(gs_basis_non_ortho_matrix)
-    #Q_squared, R_squared = np.linalg.qr(gs_basis_non_ortho_matrix_squared)  # FOR ALPHA^2 OPERATOR
-    #print(Q == Q_squared)
-
-    l = len(Q)
-    matrix_final = np.zeros((l,l), dtype=complex)  # FOR ALPHA OPERATOR
-    matrix_final_squared = np.zeros((l,l), dtype=complex)  # FOR ALPHA^2 OPERATOR
-    for j in range(l):
-        #c = Lio @ Q[:, j]
-        c = Lio @ Q[j]
-        #c = (((H @ np.reshape(Q[:, j], (d, d)).T) - (np.reshape(Q[:,j], (d, d)).T @ H)).T).flatten()
-        #c_squared = Lio @ Q_squared[:, j]
-        c_squared = Lio @ Q_squared[j]
-        #c_squared = (((H @ np.reshape(Q_squared[:, j], (d, d)).T) - (np.reshape(Q_squared[:,j], (d, d)).T @ H)).T).flatten()
-        for i in range(l):
-            matrix_final[i, j] = (Q[i].conjugate().T @ c)[0,0]
-            matrix_final_squared[i, j] = (Q_squared[i].conjugate().T @ c_squared)[0, 0]
-    return [matrix_final, matrix_final_squared]
-'''    
-'''
-def liouvillian_linop(Hamiltonian, size):
-    H = sci.csr_matrix(Hamiltonian)
-    #H = Hamiltonian.toarray()
-    d = H.shape[0]
-    def mv(x):
-        # ensure x is a 1-D numpy array
-        #x = np.asarray(x, dtype=np.complex128).ravel()
-        # reshape to (d,d) using the same order you use when flattening elsewhere
-        M = x.reshape((d, d), order='F')   # use 'F' if you ravel(..., order='F')
-        # ensure M is dense ndarray (needed to do M @ H where H is sparse)
-        if issparse(M):
-            M = M.toarray()
-        # compute commutator; H is sparse so H.dot(M) returns dense ndarray
-        left = H @ M     # shape (d,d) dense
-        right = M @ H       # shape (d,d) dense
-        C = left - right
-        return C.ravel(order='F')
-    return LinearOperator((d*d, d*d), matvec=mv, dtype=np.complex128)
-'''
-
+#NOTE: ITERATIVE GS
 def grahm_schmidt(n, H, size):
     Lio = liouvillian_linop(H, size) 
     d = 3**size
@@ -809,8 +562,8 @@ def grahm_schmidt(n, H, size):
     seeding = tensor_product(list, size).toarray().ravel(order = 'F')  # Converts to array for matrix operations
     seeding_squared = tensor_product(list_squared, size).toarray().ravel(order = 'F')  # FOR ALPHA^2 OPERATOR
 
-    Q = []  # ORTHONORMAL BASIS
-    Q_squared = []  # FOR ALPHA^2 OPERATOR
+    Q = [seeding/np.linalg.norm(seeding)]  # ORTHONORMAL BASIS
+    Q_squared = [seeding_squared/np.linalg.norm(seeding_squared)]  # FOR ALPHA^2 OPERATOR
     v = seeding
     v_squared = seeding_squared
     for k in range(n):
@@ -829,8 +582,8 @@ def grahm_schmidt(n, H, size):
         Q_squared.append(w_squared)
         v = w
         v_squared = w_squared
-    Q = [seeding/np.linalg.norm(seeding)] + Q
-    Q_squared = [seeding_squared/np.linalg.norm(seeding_squared)] + Q_squared
+    #Q = [seeding/np.linalg.norm(seeding)] + Q
+    #Q_squared = [seeding_squared/np.linalg.norm(seeding_squared)] + Q_squared
     l = len(Q)
     matrix_final = np.zeros((l,l), dtype=complex)  # FOR ALPHA OPERATOR
     matrix_final_squared = np.zeros((l,l), dtype=complex)  # FOR ALPHA^2 OPERATOR
@@ -843,57 +596,3 @@ def grahm_schmidt(n, H, size):
     return [matrix_final, matrix_final_squared]
 
 
-
-
-# NOTE: USING QR
-'''
-def grahm_schmidt(n, H, size):
-    """
-    Constructs two Krylov bases (for alpha and alpha^2) using the Liouvillian,
-    orthonormalizes them, and returns the projected Liouvillian matrices.
-    This version ensures consistent flattening order and inner products.
-    """
-    # 1️⃣ Liouvillian as LinearOperator
-    Lio = liouvillian_linop(H, size)
-    d = 3**size
-
-    # 2️⃣ Build seeding operators
-    ops_alpha = [np_I] * size
-    ops_alpha2 = [np_I] * size
-    ops_alpha[0] = np_SIG
-    ops_alpha2[0] = np_SIG.conjugate().T
-
-    # Flatten in column-major order (Fortran) for consistency
-    seeding = tensor_product(ops_alpha, size).toarray().ravel(order='F').astype(np.complex128)
-    seeding_squared = tensor_product(ops_alpha2, size).toarray().ravel(order='F').astype(np.complex128)
-
-    # 3️⃣ Build non-orthonormal Krylov basis
-    Q_nonortho = [seeding]
-    Q2_nonortho = [seeding_squared]
-
-    for k in range(n):
-        Q_nonortho.append(Lio.matvec(Q_nonortho[-1]))
-        Q2_nonortho.append(Lio.matvec(Q2_nonortho[-1]))
-
-    # Stack as (d^2, n+1) matrices
-    Q_matrix = np.column_stack(Q_nonortho)
-    Q2_matrix = np.column_stack(Q2_nonortho)
-
-    # 4️⃣ Orthonormalize using QR
-    Q, _ = np.linalg.qr(Q_matrix)
-    Q2, _ = np.linalg.qr(Q2_matrix)
-
-    # 5️⃣ Project Liouvillian onto Krylov basis
-    l = Q.shape[1]
-    matrix_final = np.zeros((l, l), dtype=complex)
-    matrix_final_squared = np.zeros((l, l), dtype=complex)
-
-    for j in range(l):
-        c = Lio.matvec(Q[:, j])
-        c2 = Lio.matvec(Q2[:, j])
-        for i in range(l):
-            matrix_final[i, j] = np.vdot(Q[:, i], c)
-            matrix_final_squared[i, j] = np.vdot(Q2[:, i], c2)
-
-    return [matrix_final, matrix_final_squared]
-   ''' 

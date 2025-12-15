@@ -10,7 +10,7 @@ param_array=[[0.1, 0], [0.1, np.pi/6]]
 #L_array = [4, 5, 6, 8]
 gamma_array = [0, .4, .8, .9]
 
-for i in range(4):
+for i in range(8):
     if os.path.isfile('./b'+str(i)+'/krylov_matrix_L' + str(8) + '_gamma_'+str(gamma_array[i%4])+'_twisted.npy') == True:
 
         #p = np.load('./b'+str(i)+'/size_autocorr_comparison_gamma_' + str(gamma_list[int(i/4)]) + '_NPY.npy')

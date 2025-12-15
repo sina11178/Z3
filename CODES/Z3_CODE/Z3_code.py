@@ -612,100 +612,100 @@ def grahm_schmidt(n, H, size):
     return [matrix_final, matrix_final_squared]
 '''
 #NOTE: ITERATIVE GS
-# def grahm_schmidt(n, H, size):
-#     Lio = liouvillian_linop(H, size) 
-#     d = 3**size
-#     list = []
-#     list_squared = []  # FOR ALPHA^2 OPERATOR
-#     for i in range(size):
-#         list.append(np_I)
-#         list_squared.append(np_I)  # FOR ALPHA^2 OPERATOR
-#     list[0] = np_SIG
-#     list_squared[0] = (np_SIG.conjugate().T)  # FOR ALPHA^2 OPERATOR
-#     seeding = tensor_product(list, size).toarray().ravel(order = 'F')  # Converts to array for matrix operations
-#     seeding_squared = tensor_product(list_squared, size).toarray().ravel(order = 'F')  # FOR ALPHA^2 OPERATOR
+def grahm_schmidt(n, H, size):
+    Lio = liouvillian_linop_twisted(H, size) 
+    d = 3**size
+    list = []
+    list_squared = []  # FOR ALPHA^2 OPERATOR
+    for i in range(size):
+        list.append(np_I)
+        list_squared.append(np_I)  # FOR ALPHA^2 OPERATOR
+    list[0] = np_SIG
+    list_squared[0] = (np_SIG.conjugate().T)  # FOR ALPHA^2 OPERATOR
+    seeding = tensor_product(list, size).toarray().ravel(order = 'F')  # Converts to array for matrix operations
+    seeding_squared = tensor_product(list_squared, size).toarray().ravel(order = 'F')  # FOR ALPHA^2 OPERATOR
 
-#     Q = []  # ORTHONORMAL BASIS
-#     Q_squared = []  # FOR ALPHA^2 OPERATOR
-#     v = seeding
-#     v_squared = seeding_squared
-#     for k in range(n):
-#         w = Lio.matvec(v)   # L sparse
-#         w_squared = Lio.matvec(v_squared)
-#         for q in Q:
-#             alpha =  np.vdot(q, w)   # inner product
-#             w = w - alpha * q           # sparse subtraction
-#         for q_squared in Q_squared:
-#             alpha_sq = np.vdot(q_squared, w_squared)
-#             w_squared = w_squared - alpha_sq * q_squared
+    Q = [seeding/np.linalg.norm(seeding)]  # ORTHONORMAL BASIS
+    Q_squared = [seeding_squared/np.linalg.norm(seeding_squared)]  # FOR ALPHA^2 OPERATOR
+    v = seeding
+    v_squared = seeding_squared
+    for k in range(n):
+        w = Lio.matvec(v)   # L sparse
+        w_squared = Lio.matvec(v_squared)
+        for q in Q:
+            alpha =  np.vdot(q, w)   # inner product
+            w = w - alpha * q           # sparse subtraction
+        for q_squared in Q_squared:
+            alpha_sq = np.vdot(q_squared, w_squared)
+            w_squared = w_squared - alpha_sq * q_squared
 
-#         w = w / np.linalg.norm(w)
-#         w_squared = w_squared/np.linalg.norm(w_squared)
-#         Q.append(w)
-#         Q_squared.append(w_squared)
-#         v = w
-#         v_squared = w_squared
-#     Q = [seeding/np.linalg.norm(seeding)] + Q
-#     Q_squared = [seeding_squared/np.linalg.norm(seeding_squared)] + Q_squared
-#     l = len(Q)
-#     matrix_final = np.zeros((l,l), dtype=complex)  # FOR ALPHA OPERATOR
-#     matrix_final_squared = np.zeros((l,l), dtype=complex)  # FOR ALPHA^2 OPERATOR
-#     for j in range(l):
-#         c = Lio.matvec(Q[j])
-#         c_squared = Lio.matvec(Q_squared[j])
-#         for i in range(l):
-#             matrix_final[i, j] = np.vdot(Q[i], c)
-#             matrix_final_squared[i, j] = np.vdot(Q_squared[i], c_squared)
-#     return [matrix_final, matrix_final_squared]
+        w = w / np.linalg.norm(w)
+        w_squared = w_squared/np.linalg.norm(w_squared)
+        Q.append(w)
+        Q_squared.append(w_squared)
+        v = w
+        v_squared = w_squared
+    #Q = [seeding/np.linalg.norm(seeding)] + Q
+    #Q_squared = [seeding_squared/np.linalg.norm(seeding_squared)] + Q_squared
+    l = len(Q)
+    matrix_final = np.zeros((l,l), dtype=complex)  # FOR ALPHA OPERATOR
+    matrix_final_squared = np.zeros((l,l), dtype=complex)  # FOR ALPHA^2 OPERATOR
+    for j in range(l):
+        c = Lio.matvec(Q[j])
+        c_squared = Lio.matvec(Q_squared[j])
+        for i in range(l):
+            matrix_final[i, j] = np.vdot(Q[i], c)
+            matrix_final_squared[i, j] = np.vdot(Q_squared[i], c_squared)
+    return [matrix_final, matrix_final_squared]
 
 # NOTE: QR METHOD
-def grahm_schmidt(n, H, size):
-    """
-    Constructs two Krylov bases (for alpha and alpha^2) using the Liouvillian,
-    orthonormalizes them, and returns the projected Liouvillian matrices.
-    This version ensures consistent flattening order and inner products.
-    """
-    # 1️⃣ Liouvillian as LinearOperator
-    Lio = liouvillian_linop(H, size)
-    d = 3**size
+# def grahm_schmidt(n, H, size):
+#     """
+#     Constructs two Krylov bases (for alpha and alpha^2) using the Liouvillian,
+#     orthonormalizes them, and returns the projected Liouvillian matrices.
+#     This version ensures consistent flattening order and inner products.
+#     """
+#     # 1️⃣ Liouvillian as LinearOperator
+#     Lio = liouvillian_linop_twisted(H, size)
+#     d = 3**size
 
-    # 2️⃣ Build seeding operators
-    ops_alpha = [np_I] * size
-    ops_alpha2 = [np_I] * size
-    ops_alpha[0] = np_SIG
-    ops_alpha2[0] = np_SIG.conjugate().T
+#     # 2️⃣ Build seeding operators
+#     ops_alpha = [np_I] * size
+#     ops_alpha2 = [np_I] * size
+#     ops_alpha[0] = np_SIG
+#     ops_alpha2[0] = np_SIG.conjugate().T
 
-    # Flatten in column-major order (Fortran) for consistency
-    seeding = tensor_product(ops_alpha, size).toarray().ravel(order='F').astype(np.complex128)
-    seeding_squared = tensor_product(ops_alpha2, size).toarray().ravel(order='F').astype(np.complex128)
+#     # Flatten in column-major order (Fortran) for consistency
+#     seeding = tensor_product(ops_alpha, size).toarray().ravel(order='F').astype(np.complex128)
+#     seeding_squared = tensor_product(ops_alpha2, size).toarray().ravel(order='F').astype(np.complex128)
 
-    # 3️⃣ Build non-orthonormal Krylov basis
-    Q_nonortho = [seeding]
-    Q2_nonortho = [seeding_squared]
+#     # 3️⃣ Build non-orthonormal Krylov basis
+#     Q_nonortho = [seeding]
+#     Q2_nonortho = [seeding_squared]
 
-    for k in range(n):
-        Q_nonortho.append(Lio.matvec(Q_nonortho[-1]))
-        Q2_nonortho.append(Lio.matvec(Q2_nonortho[-1]))
+#     for k in range(n):
+#         Q_nonortho.append(Lio.matvec(Q_nonortho[-1]))
+#         Q2_nonortho.append(Lio.matvec(Q2_nonortho[-1]))
 
-    # Stack as (d^2, n+1) matrices
-    Q_matrix = np.column_stack(Q_nonortho)
-    Q2_matrix = np.column_stack(Q2_nonortho)
+#     # Stack as (d^2, n+1) matrices
+#     Q_matrix = np.column_stack(Q_nonortho)
+#     Q2_matrix = np.column_stack(Q2_nonortho)
 
-    # 4️⃣ Orthonormalize using QR
-    Q, _ = np.linalg.qr(Q_matrix)
-    Q2, _ = np.linalg.qr(Q2_matrix)
+#     # 4️⃣ Orthonormalize using QR
+#     Q, _ = np.linalg.qr(Q_matrix)
+#     Q2, _ = np.linalg.qr(Q2_matrix)
 
-    # 5️⃣ Project Liouvillian onto Krylov basis
-    l = Q.shape[1]
-    matrix_final = np.zeros((l, l), dtype=complex)
-    matrix_final_squared = np.zeros((l, l), dtype=complex)
+#     # 5️⃣ Project Liouvillian onto Krylov basis
+#     l = Q.shape[1]
+#     matrix_final = np.zeros((l, l), dtype=complex)
+#     matrix_final_squared = np.zeros((l, l), dtype=complex)
 
-    for j in range(l):
-        c = Lio.matvec(Q[:, j])
-        c2 = Lio.matvec(Q2[:, j])
-        for i in range(l):
-            matrix_final[i, j] = np.vdot(Q[:, i], c)
-            matrix_final_squared[i, j] = np.vdot(Q2[:, i], c2)
+#     for j in range(l):
+#         c = Lio.matvec(Q[:, j])
+#         c2 = Lio.matvec(Q2[:, j])
+#         for i in range(l):
+#             matrix_final[i, j] = np.vdot(Q[:, i], c)
+#             matrix_final_squared[i, j] = np.vdot(Q2[:, i], c2)
 
-    return [matrix_final, matrix_final_squared]
+#     return [matrix_final, matrix_final_squared]
 
