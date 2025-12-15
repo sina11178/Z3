@@ -3,11 +3,11 @@
 #SBATCH --job-name=run_12125_krylov_L4_to_L10_normal_comm
 #
 # Partition:
-#SBATCH --partition=cmt
+#SBATCH --partition=normal
 #
 # Processors:
 #SBATCH --ntasks=64
-#SBATCH --nodes=1
+#SBATCH --nodes=2
 #
 # Wall clock limit:
 #SBATCH --time=3:00:00
