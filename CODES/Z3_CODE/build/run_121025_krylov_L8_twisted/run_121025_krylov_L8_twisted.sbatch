@@ -3,11 +3,11 @@
 #SBATCH --job-name=run_121025_krylov_L8_twisted
 #
 # Partition:
-#SBATCH --partition=cmt
+#SBATCH --partition=normal
 #
 # Processors:
 #SBATCH --ntasks=64
-#SBATCH --nodes=1
+#SBATCH --nodes=2
 #
 # Wall clock limit:
 #SBATCH --time=3:00:00

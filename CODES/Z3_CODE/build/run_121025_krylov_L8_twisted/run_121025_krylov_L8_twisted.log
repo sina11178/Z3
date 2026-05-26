@@ -4,4 +4,8 @@ run_121025_krylov_L8_twisted:
 
 Codebase: 
 Cluster: ganymede 
+<<<<<<< HEAD
+gittag: 
+=======
 gittag: f1b7945e87716672ad86dd0eae45c16db55af283
+>>>>>>> 3aeebc2ea3d7f9e63ec38b0f9bf92372d381a060
