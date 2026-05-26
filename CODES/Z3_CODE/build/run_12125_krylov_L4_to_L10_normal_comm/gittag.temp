@@ -1,3 +1,110 @@
+commit bba8ee6df123ce011b48c813657501ad2a73a51f
+Author: Sina Rezvani <sxr190099@g2-l-01.localdomain>
+Date:   Sun Dec 14 20:17:00 2025 -0600
+
+    Commit before run run_12125_krylov_L4_to_L10_normal_comm
+
+commit 503837efb7d1803a8778c8a3d9030398b2b283e5
+Author: Sina Rezvani <sxr190099@g2-l-01.localdomain>
+Date:   Sun Dec 14 20:15:51 2025 -0600
+
+    Commit before run run_121125_L8_only_twisted
+
+commit 54ce70d7ab46b56875686c6ced5084d7d5fb70a7
+Author: Sina Rezvani <sxr190099@g2-l-01.localdomain>
+Date:   Sun Dec 14 20:14:53 2025 -0600
+
+    Commit before run run_121125_L8_only_normal
+
+commit f1b7945e87716672ad86dd0eae45c16db55af283
+Author: Sina Rezvani <sxr190099@g2-l-01.localdomain>
+Date:   Sun Dec 14 20:13:44 2025 -0600
+
+    Commit before run run_121025_krylov_L8_twisted
+
+commit 2334a36081a1915f6c9c419eb4cd412d61c23cce
+Author: sina11178 <frsinarez4@gmail.com>
+Date:   Sun Dec 14 20:09:29 2025 -0600
+
+    Changed Z3 codes for simulation purposes
+
+commit d140a8ab5e44ea3c3d2d2723563b1ccbbca7e7b7
+Author: Sina Rezvani <sxr190099@g2-l-02.localdomain>
+Date:   Sun Dec 14 12:54:31 2025 -0600
+
+    New data for the twisted commutator added
+
+commit da6107da1a0fa475de4640dcb9d662af9ceb4722
+Author: sina11178 <frsinarez4@gmail.com>
+Date:   Sun Dec 14 12:37:17 2025 -0600
+
+    Ran some test code
+
+commit 237a1e59f44cf390ea82a9d14ed5533261942ea1
+Merge: 1d12077 b6c72f9
+Author: Sina Rezvani <sxr190099@g2-l-01.localdomain>
+Date:   Sun Dec 14 01:38:16 2025 -0600
+
+    Merge branch 'main' of https://github.com/sina11178/Z3
+    Correcting data
+
+commit 1d12077642c32ae60bb559c8499f477c6b3864ef
+Author: Sina Rezvani <sxr190099@g2-l-01.localdomain>
+Date:   Sun Dec 14 01:37:46 2025 -0600
+
+    corrected L=8 data for gamma=0 normal seed_sqraured
+
+commit b6c72f98a94ef2d662ae4c94fa2720d4712fc049
+Author: sina11178 <frsinarez4@gmail.com>
+Date:   Sun Dec 14 01:30:51 2025 -0600
+
+    small edits made
+
+commit de14f0331d0234cddcd1e1528e37a2e75d0a61d2
+Author: Sina Rezvani <sxr190099@g2-l-01.localdomain>
+Date:   Sat Dec 13 18:52:29 2025 -0600
+
+    corrected
+
+commit b0e48287ee041d364c48304882528ffaa2522d4a
+Author: Sina Rezvani <sxr190099@g2-l-01.localdomain>
+Date:   Sat Dec 13 18:31:41 2025 -0600
+
+    corrected data for the normal commutator
+
+commit d60930dc2648a31d325dc63ff8321618240c0c31
+Merge: 6635637 5e5c090
+Author: Sina Rezvani <sxr190099@g2-l-01.localdomain>
+Date:   Sat Dec 13 18:12:58 2025 -0600
+
+    Merge branch 'main' of https://github.com/sina11178/Z3
+    
+    Correcting code for krylov simulations
+
+commit 5e5c0904ae8a23755a53c9532b300ad913ac261a
+Author: sina11178 <frsinarez4@gmail.com>
+Date:   Sat Dec 13 18:12:45 2025 -0600
+
+    Deleted incorrect data
+
+commit 6635637ff5c3772b58bb467b2ce1a3e38f9dca5e
+Author: Sina Rezvani <sxr190099@g2-l-02.localdomain>
+Date:   Sat Dec 13 17:40:33 2025 -0600
+
+    Commit before run run_121125_L8_only_normal
+
+commit 04efb8f49afdbad4d780d945ec7a37860e37cdd2
+Author: Sina Rezvani <sxr190099@g2-l-02.localdomain>
+Date:   Sat Dec 13 17:38:33 2025 -0600
+
+    Commit before run run_121125_L8_only_twisted
+
+commit 31708ff01ba42fe2c5d2f183099258e4faa9afde
+Author: Sina Rezvani <sxr190099@g2-l-02.localdomain>
+Date:   Sat Dec 13 17:33:22 2025 -0600
+
+    Commit before run run_121025_krylov_L8_twisted
+
 commit 89658af38e5432b2583de35a77bc93f56c4f99d2
 Author: Sina Rezvani <sxr190099@g2-l-01.localdomain>
 Date:   Sat Dec 13 17:27:52 2025 -0600

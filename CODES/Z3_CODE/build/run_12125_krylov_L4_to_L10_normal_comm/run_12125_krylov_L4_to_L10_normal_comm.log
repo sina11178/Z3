@@ -4,4 +4,8 @@ run_12125_krylov_L4_to_L10_normal_comm:
 
 Codebase: 
 Cluster: ganymede 
+<<<<<<< HEAD
 gittag: 
+=======
+gittag: bba8ee6df123ce011b48c813657501ad2a73a51f
+>>>>>>> 3aeebc2ea3d7f9e63ec38b0f9bf92372d381a060
