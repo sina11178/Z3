@@ -3,10 +3,10 @@
 #SBATCH --job-name=run_12925_correlation_vary_gamma
 #
 # Partition:
-#SBATCH --partition=normal
+#SBATCH --partition=cpu-preempt
 #
 # Processors:
-#SBATCH --ntasks=64
+#SBATCH --ntasks=96
 #SBATCH --nodes=2
 #
 # Wall clock limit:
@@ -24,6 +24,7 @@ echo "Starting job run_12925_correlation_vary_gamma"
 
 module load launcher
 
+export PYTHONNOUSERSITE=1 # ADDED TO AVOID MIXING CONDA ON CLUSTER W/ MY LOCAL PACKAGES; ADD THIS FROM NOW ON
 export LAUNCHER_PLUGIN_DIR=$LAUNCHER_DIR/plugins
 export LAUNCHER_RMI=SLURM
 export LAUNCHER_JOB_FILE=run_12925_correlation_vary_gamma.task
