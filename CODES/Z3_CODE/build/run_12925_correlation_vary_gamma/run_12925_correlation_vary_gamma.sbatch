@@ -24,7 +24,6 @@ echo "Starting job run_12925_correlation_vary_gamma"
 
 module load launcher
 
-export PYTHONNOUSERSITE=1 # ADDED TO AVOID MIXING OF PLUGINS FROM LOCAL AND CLUSTER
 export LAUNCHER_PLUGIN_DIR=$LAUNCHER_DIR/plugins
 export LAUNCHER_RMI=SLURM
 export LAUNCHER_JOB_FILE=run_12925_correlation_vary_gamma.task

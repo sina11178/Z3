@@ -1,0 +1,487 @@
+Starting job run_12925_correlation_vary_gamma
+WARNING (05/26/26 17:51:12): LAUNCHER_WORKDIR variable not set. Using current directory.
+Launcher: Setup complete.
+
+------------- SUMMARY ---------------
+   Number of hosts:    2
+   Working directory:  /home/sxr190099/Z3/CODES/Z3_CODE/build/run_12925_correlation_vary_gamma
+   Processes per host: 48
+   Total processes:    96
+   Total jobs:         96
+   Scheduling method:  interleaved
+
+-------------------------------------
+Launcher: Starting parallel tasks...
+using /tmp/launcher.3721373.hostlist.1C8vptLe to get hosts
+starting job on c-10-03
+starting job on c-10-06
+Lmod has detected the following error: The following module(s) are unknown:
+"git"
+
+Please check the spelling or version number. Also try "module spider ..."
+It is also possible your cache file is out-of-date; it may help to try:
+  $ module --ignore_cache load "git"
+
+Also make sure that all modulefiles written in TCL start with the string
+#%Module
+
+
+
+Lmod has detected the following error: The following module(s) are unknown:
+"git"
+
+Please check the spelling or version number. Also try "module spider ..."
+It is also possible your cache file is out-of-date; it may help to try:
+  $ module --ignore_cache load "git"
+
+Also make sure that all modulefiles written in TCL start with the string
+#%Module
+
+
+
+Launcher: Task 89 running job 90 on c-10-06 (echo "Fake run")
+Fake run
+Launcher: Job 90 completed in 0 seconds.
+Launcher: Task 89 done. Exiting.
+Launcher: Task 61 running job 62 on c-10-06 (echo "Fake run")
+Fake run
+Launcher: Job 62 completed in 0 seconds.
+Launcher: Task 61 done. Exiting.
+Launcher: Task 30 running job 31 on c-10-03 (bash run_12925_correlation_vary_gamma_30.qsub)
+Launcher: Task 29 running job 30 on c-10-03 (bash run_12925_correlation_vary_gamma_29.qsub)
+Launcher: Task 31 running job 32 on c-10-03 (bash run_12925_correlation_vary_gamma_31.qsub)
+run_12925_correlation_vary_gamma_30.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_12925_correlation_vary_gamma: No such file or directory
+Launcher: Task 35 running job 36 on c-10-03 (bash run_12925_correlation_vary_gamma_35.qsub)
+run_12925_correlation_vary_gamma_29.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_12925_correlation_vary_gamma: No such file or directory
+run_12925_correlation_vary_gamma_31.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_12925_correlation_vary_gamma: No such file or directory
+run_12925_correlation_vary_gamma_35.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_12925_correlation_vary_gamma: No such file or directory
+Launcher: Task 4 running job 5 on c-10-03 (bash run_12925_correlation_vary_gamma_4.qsub)
+run_12925_correlation_vary_gamma_4.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_12925_correlation_vary_gamma: No such file or directory
+Launcher: Task 36 running job 37 on c-10-03 (bash run_12925_correlation_vary_gamma_36.qsub)
+Launcher: Task 60 running job 61 on c-10-06 (echo "Fake run")
+Fake run
+Launcher: Job 61 completed in 0 seconds.
+Launcher: Task 60 done. Exiting.
+run_12925_correlation_vary_gamma_36.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_12925_correlation_vary_gamma: No such file or directory
+Removing files
+Removing files
+Removing files
+Removing files
+Launcher: Job 31 completed in 1 seconds.
+Launcher: Task 30 done. Exiting.
+Launcher: Job 32 completed in 1 seconds.
+Launcher: Job 36 completed in 1 seconds.
+Launcher: Job 30 completed in 1 seconds.
+Launcher: Task 35 done. Exiting.
+Launcher: Task 31 done. Exiting.
+Launcher: Task 29 done. Exiting.
+Removing files
+Launcher: Job 5 completed in 1 seconds.
+Launcher: Task 4 done. Exiting.
+Removing files
+Launcher: Job 37 completed in 1 seconds.
+Launcher: Task 36 done. Exiting.
+Launcher: Task 7 running job 8 on c-10-03 (bash run_12925_correlation_vary_gamma_7.qsub)
+Launcher: Task 25 running job 26 on c-10-03 (bash run_12925_correlation_vary_gamma_25.qsub)
+run_12925_correlation_vary_gamma_7.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_12925_correlation_vary_gamma: No such file or directory
+Launcher: Task 67 running job 68 on c-10-06 (echo "Fake run")
+Fake run
+Launcher: Job 68 completed in 0 seconds.
+Launcher: Task 67 done. Exiting.
+run_12925_correlation_vary_gamma_25.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_12925_correlation_vary_gamma: No such file or directory
+Removing files
+Removing files
+Launcher: Job 8 completed in 1 seconds.
+Launcher: Job 26 completed in 1 seconds.
+Launcher: Task 7 done. Exiting.
+Launcher: Task 25 done. Exiting.
+Launcher: Task 2 running job 3 on c-10-03 (bash run_12925_correlation_vary_gamma_2.qsub)
+Launcher: Task 32 running job 33 on c-10-03 (bash run_12925_correlation_vary_gamma_32.qsub)
+run_12925_correlation_vary_gamma_2.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_12925_correlation_vary_gamma: No such file or directory
+Launcher: Task 62 running job 63 on c-10-06 (echo "Fake run")
+Fake run
+run_12925_correlation_vary_gamma_32.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_12925_correlation_vary_gamma: No such file or directory
+Launcher: Job 63 completed in 0 seconds.
+Launcher: Task 62 done. Exiting.
+Launcher: Task 84 running job 85 on c-10-06 (echo "Fake run")
+Fake run
+Launcher: Job 85 completed in 0 seconds.
+Launcher: Task 84 done. Exiting.
+Removing files
+Launcher: Job 3 completed in 1 seconds.
+Launcher: Task 2 done. Exiting.
+Removing files
+Launcher: Job 33 completed in 1 seconds.
+Launcher: Task 32 done. Exiting.
+Launcher: Task 3 running job 4 on c-10-03 (bash run_12925_correlation_vary_gamma_3.qsub)
+Launcher: Task 0 running job 1 on c-10-03 (bash run_12925_correlation_vary_gamma_0.qsub)
+run_12925_correlation_vary_gamma_3.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_12925_correlation_vary_gamma: No such file or directory
+Launcher: Task 5 running job 6 on c-10-03 (bash run_12925_correlation_vary_gamma_5.qsub)
+Launcher: Task 70 running job 71 on c-10-06 (echo "Fake run")
+Fake run
+run_12925_correlation_vary_gamma_0.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_12925_correlation_vary_gamma: No such file or directory
+Launcher: Job 71 completed in 0 seconds.
+Launcher: Task 47 running job 48 on c-10-03 (bash run_12925_correlation_vary_gamma_47.qsub)
+Launcher: Task 70 done. Exiting.
+Launcher: Task 54 running job 55 on c-10-06 (bash run_12925_correlation_vary_gamma_54.qsub)
+run_12925_correlation_vary_gamma_5.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_12925_correlation_vary_gamma: No such file or directory
+run_12925_correlation_vary_gamma_47.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_12925_correlation_vary_gamma: No such file or directory
+run_12925_correlation_vary_gamma_54.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_12925_correlation_vary_gamma: No such file or directory
+Launcher: Task 93 running job 94 on c-10-06 (echo "Fake run")
+Fake run
+Launcher: Job 94 completed in 0 seconds.
+Launcher: Task 93 done. Exiting.
+Removing files
+Launcher: Job 4 completed in 0 seconds.
+Launcher: Task 3 done. Exiting.
+Removing files
+Removing files
+Launcher: Job 6 completed in 1 seconds.
+Launcher: Task 5 done. Exiting.
+Launcher: Job 1 completed in 1 seconds.
+Launcher: Task 0 done. Exiting.
+Removing files
+Launcher: Job 48 completed in 1 seconds.
+Launcher: Task 47 done. Exiting.
+Removing files
+Launcher: Job 55 completed in 1 seconds.
+Launcher: Task 54 done. Exiting.
+Launcher: Task 44 running job 45 on c-10-03 (bash run_12925_correlation_vary_gamma_44.qsub)
+Launcher: Task 40 running job 41 on c-10-03 (bash run_12925_correlation_vary_gamma_40.qsub)
+Launcher: Task 72 running job 73 on c-10-06 (echo "Fake run")
+Fake run
+run_12925_correlation_vary_gamma_44.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_12925_correlation_vary_gamma: No such file or directory
+Launcher: Job 73 completed in 0 seconds.
+run_12925_correlation_vary_gamma_40.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_12925_correlation_vary_gamma: No such file or directory
+Launcher: Task 74 running job 75 on c-10-06 (echo "Fake run")
+Fake run
+Launcher: Task 72 done. Exiting.
+Launcher: Job 75 completed in 0 seconds.
+Launcher: Task 74 done. Exiting.
+Removing files
+Removing files
+Launcher: Job 41 completed in 1 seconds.
+Launcher: Job 45 completed in 1 seconds.
+Launcher: Task 40 done. Exiting.
+Launcher: Task 44 done. Exiting.
+Launcher: Task 12 running job 13 on c-10-03 (bash run_12925_correlation_vary_gamma_12.qsub)
+Launcher: Task 23 running job 24 on c-10-03 (bash run_12925_correlation_vary_gamma_23.qsub)
+run_12925_correlation_vary_gamma_12.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_12925_correlation_vary_gamma: No such file or directory
+run_12925_correlation_vary_gamma_23.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_12925_correlation_vary_gamma: No such file or directory
+Removing files
+Removing files
+Launcher: Job 24 completed in 1 seconds.
+Launcher: Task 23 done. Exiting.
+Launcher: Job 13 completed in 1 seconds.
+Launcher: Task 12 done. Exiting.
+Launcher: Task 33 running job 34 on c-10-03 (bash run_12925_correlation_vary_gamma_33.qsub)
+Launcher: Task 10 running job 11 on c-10-03 (bash run_12925_correlation_vary_gamma_10.qsub)
+run_12925_correlation_vary_gamma_33.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_12925_correlation_vary_gamma: No such file or directory
+Launcher: Task 49 running job 50 on c-10-06 (bash run_12925_correlation_vary_gamma_49.qsub)
+run_12925_correlation_vary_gamma_10.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_12925_correlation_vary_gamma: No such file or directory
+run_12925_correlation_vary_gamma_49.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_12925_correlation_vary_gamma: No such file or directory
+Removing files
+Launcher: Job 50 completed in 0 seconds.
+Launcher: Task 49 done. Exiting.
+Removing files
+Removing files
+Launcher: Job 34 completed in 1 seconds.
+Launcher: Task 33 done. Exiting.
+Launcher: Job 11 completed in 1 seconds.
+Launcher: Task 10 done. Exiting.
+Launcher: Task 26 running job 27 on c-10-03 (bash run_12925_correlation_vary_gamma_26.qsub)
+Launcher: Task 24 running job 25 on c-10-03 (bash run_12925_correlation_vary_gamma_24.qsub)
+run_12925_correlation_vary_gamma_26.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_12925_correlation_vary_gamma: No such file or directory
+Launcher: Task 58 running job 59 on c-10-06 (bash run_12925_correlation_vary_gamma_58.qsub)
+run_12925_correlation_vary_gamma_24.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_12925_correlation_vary_gamma: No such file or directory
+Launcher: Task 65 running job 66 on c-10-06 (echo "Fake run")
+Fake run
+Launcher: Job 66 completed in 0 seconds.
+Launcher: Task 76 running job 77 on c-10-06 (echo "Fake run")
+Fake run
+Launcher: Task 65 done. Exiting.
+Launcher: Job 77 completed in 0 seconds.
+Launcher: Task 76 done. Exiting.
+run_12925_correlation_vary_gamma_58.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_12925_correlation_vary_gamma: No such file or directory
+Removing files
+Launcher: Job 59 completed in 0 seconds.
+Launcher: Task 58 done. Exiting.
+Removing files
+Launcher: Job 27 completed in 1 seconds.
+Removing files
+Launcher: Task 26 done. Exiting.
+Launcher: Job 25 completed in 1 seconds.
+Launcher: Task 24 done. Exiting.
+Launcher: Task 16 running job 17 on c-10-03 (bash run_12925_correlation_vary_gamma_16.qsub)
+Launcher: Task 51 running job 52 on c-10-06 (bash run_12925_correlation_vary_gamma_51.qsub)
+Launcher: Task 39 running job 40 on c-10-03 (bash run_12925_correlation_vary_gamma_39.qsub)
+Launcher: Task 34 running job 35 on c-10-03 (bash run_12925_correlation_vary_gamma_34.qsub)
+run_12925_correlation_vary_gamma_16.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_12925_correlation_vary_gamma: No such file or directory
+Launcher: Task 68 running job 69 on c-10-06 (echo "Fake run")
+Fake run
+run_12925_correlation_vary_gamma_51.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_12925_correlation_vary_gamma: No such file or directory
+Launcher: Task 81 running job 82 on c-10-06 (echo "Fake run")
+Fake run
+Launcher: Job 69 completed in 0 seconds.
+Launcher: Task 68 done. Exiting.
+Launcher: Job 82 completed in 0 seconds.
+Launcher: Task 81 done. Exiting.
+Launcher: Task 82 running job 83 on c-10-06 (echo "Fake run")
+Fake run
+run_12925_correlation_vary_gamma_39.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_12925_correlation_vary_gamma: No such file or directory
+Launcher: Job 83 completed in 0 seconds.
+Launcher: Task 82 done. Exiting.
+run_12925_correlation_vary_gamma_34.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_12925_correlation_vary_gamma: No such file or directory
+Removing files
+Launcher: Job 52 completed in 0 seconds.
+Launcher: Task 51 done. Exiting.
+Removing files
+Removing files
+Removing files
+Launcher: Job 17 completed in 1 seconds.
+Launcher: Job 40 completed in 1 seconds.
+Launcher: Task 16 done. Exiting.
+Launcher: Task 39 done. Exiting.
+Launcher: Job 35 completed in 1 seconds.
+Launcher: Task 34 done. Exiting.
+Launcher: Task 52 running job 53 on c-10-06 (bash run_12925_correlation_vary_gamma_52.qsub)
+Launcher: Task 59 running job 60 on c-10-06 (bash run_12925_correlation_vary_gamma_59.qsub)
+Launcher: Task 92 running job 93 on c-10-06 (echo "Fake run")
+Fake run
+Launcher: Job 93 completed in 0 seconds.
+Launcher: Task 92 done. Exiting.
+Launcher: Task 75 running job 76 on c-10-06 (echo "Fake run")
+Fake run
+Launcher: Job 76 completed in 0 seconds.
+Launcher: Task 75 done. Exiting.
+run_12925_correlation_vary_gamma_52.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_12925_correlation_vary_gamma: No such file or directory
+run_12925_correlation_vary_gamma_59.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_12925_correlation_vary_gamma: No such file or directory
+Removing files
+Launcher: Job 60 completed in 0 seconds.
+Launcher: Task 59 done. Exiting.
+Removing files
+Launcher: Job 53 completed in 1 seconds.
+Launcher: Task 52 done. Exiting.
+Launcher: Task 18 running job 19 on c-10-03 (bash run_12925_correlation_vary_gamma_18.qsub)
+run_12925_correlation_vary_gamma_18.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_12925_correlation_vary_gamma: No such file or directory
+Launcher: Task 63 running job 64 on c-10-06 (echo "Fake run")
+Fake run
+Launcher: Task 85 running job 86 on c-10-06 (echo "Fake run")
+Fake run
+Launcher: Job 64 completed in 0 seconds.
+Launcher: Job 86 completed in 0 seconds.
+Launcher: Task 63 done. Exiting.
+Launcher: Task 85 done. Exiting.
+Removing files
+Launcher: Job 19 completed in 1 seconds.
+Launcher: Task 18 done. Exiting.
+Launcher: Task 45 running job 46 on c-10-03 (bash run_12925_correlation_vary_gamma_45.qsub)
+Launcher: Task 38 running job 39 on c-10-03 (bash run_12925_correlation_vary_gamma_38.qsub)
+run_12925_correlation_vary_gamma_45.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_12925_correlation_vary_gamma: No such file or directory
+Launcher: Task 21 running job 22 on c-10-03 (bash run_12925_correlation_vary_gamma_21.qsub)
+run_12925_correlation_vary_gamma_38.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_12925_correlation_vary_gamma: No such file or directory
+run_12925_correlation_vary_gamma_21.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_12925_correlation_vary_gamma: No such file or directory
+Launcher: Task 86 running job 87 on c-10-06 (echo "Fake run")
+Fake run
+Launcher: Job 87 completed in 0 seconds.
+Launcher: Task 86 done. Exiting.
+Removing files
+Removing files
+Removing files
+Launcher: Job 39 completed in 1 seconds.
+Launcher: Task 38 done. Exiting.
+Launcher: Job 46 completed in 1 seconds.
+Launcher: Task 45 done. Exiting.
+Launcher: Job 22 completed in 1 seconds.
+Launcher: Task 21 done. Exiting.
+Launcher: Task 28 running job 29 on c-10-03 (bash run_12925_correlation_vary_gamma_28.qsub)
+Launcher: Task 80 running job 81 on c-10-06 (echo "Fake run")
+Fake run
+Launcher: Task 50 running job 51 on c-10-06 (bash run_12925_correlation_vary_gamma_50.qsub)
+Launcher: Task 64 running job 65 on c-10-06 (echo "Fake run")
+Fake run
+Launcher: Job 81 completed in 0 seconds.
+Launcher: Task 80 done. Exiting.
+Launcher: Task 66 running job 67 on c-10-06 (echo "Fake run")
+Fake run
+Launcher: Job 65 completed in 0 seconds.
+Launcher: Task 64 done. Exiting.
+run_12925_correlation_vary_gamma_28.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_12925_correlation_vary_gamma: No such file or directory
+Launcher: Job 67 completed in 0 seconds.
+Launcher: Task 66 done. Exiting.
+run_12925_correlation_vary_gamma_50.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_12925_correlation_vary_gamma: No such file or directory
+Removing files
+Launcher: Job 51 completed in 0 seconds.
+Launcher: Task 50 done. Exiting.
+Removing files
+Launcher: Job 29 completed in 1 seconds.
+Launcher: Task 28 done. Exiting.
+Launcher: Task 90 running job 91 on c-10-06 (echo "Fake run")
+Fake run
+Launcher: Task 57 running job 58 on c-10-06 (bash run_12925_correlation_vary_gamma_57.qsub)
+Launcher: Job 91 completed in 0 seconds.
+Launcher: Task 90 done. Exiting.
+Launcher: Task 15 running job 16 on c-10-03 (bash run_12925_correlation_vary_gamma_15.qsub)
+run_12925_correlation_vary_gamma_57.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_12925_correlation_vary_gamma: No such file or directory
+run_12925_correlation_vary_gamma_15.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_12925_correlation_vary_gamma: No such file or directory
+Removing files
+Launcher: Job 58 completed in 0 seconds.
+Launcher: Task 57 done. Exiting.
+Removing files
+Launcher: Job 16 completed in 1 seconds.
+Launcher: Task 15 done. Exiting.
+Launcher: Task 1 running job 2 on c-10-03 (bash run_12925_correlation_vary_gamma_1.qsub)
+run_12925_correlation_vary_gamma_1.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_12925_correlation_vary_gamma: No such file or directory
+Launcher: Task 56 running job 57 on c-10-06 (bash run_12925_correlation_vary_gamma_56.qsub)
+run_12925_correlation_vary_gamma_56.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_12925_correlation_vary_gamma: No such file or directory
+Removing files
+Launcher: Job 57 completed in 0 seconds.
+Launcher: Task 56 done. Exiting.
+Removing files
+Launcher: Job 2 completed in 1 seconds.
+Launcher: Task 1 done. Exiting.
+Launcher: Task 87 running job 88 on c-10-06 (echo "Fake run")
+Fake run
+Launcher: Job 88 completed in 0 seconds.
+Launcher: Task 87 done. Exiting.
+Launcher: Task 20 running job 21 on c-10-03 (bash run_12925_correlation_vary_gamma_20.qsub)
+Launcher: Task 19 running job 20 on c-10-03 (bash run_12925_correlation_vary_gamma_19.qsub)
+Launcher: Task 48 running job 49 on c-10-06 (bash run_12925_correlation_vary_gamma_48.qsub)
+Launcher: Task 42 running job 43 on c-10-03 (bash run_12925_correlation_vary_gamma_42.qsub)
+Launcher: Task 27 running job 28 on c-10-03 (bash run_12925_correlation_vary_gamma_27.qsub)
+run_12925_correlation_vary_gamma_19.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_12925_correlation_vary_gamma: No such file or directory
+run_12925_correlation_vary_gamma_20.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_12925_correlation_vary_gamma: No such file or directory
+run_12925_correlation_vary_gamma_48.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_12925_correlation_vary_gamma: No such file or directory
+run_12925_correlation_vary_gamma_42.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_12925_correlation_vary_gamma: No such file or directory
+Launcher: Task 71 running job 72 on c-10-06 (echo "Fake run")
+Fake run
+Launcher: Job 72 completed in 0 seconds.
+Launcher: Task 71 done. Exiting.
+run_12925_correlation_vary_gamma_27.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_12925_correlation_vary_gamma: No such file or directory
+Launcher: Task 79 running job 80 on c-10-06 (echo "Fake run")
+Fake run
+Launcher: Job 80 completed in 0 seconds.
+Launcher: Task 79 done. Exiting.
+Removing files
+Launcher: Job 49 completed in 0 seconds.
+Launcher: Task 48 done. Exiting.
+Removing files
+Removing files
+Removing files
+Launcher: Job 21 completed in 1 seconds.
+Launcher: Task 20 done. Exiting.
+Launcher: Job 20 completed in 1 seconds.
+Launcher: Job 43 completed in 1 seconds.
+Removing files
+Launcher: Task 19 done. Exiting.
+Launcher: Task 42 done. Exiting.
+Launcher: Job 28 completed in 1 seconds.
+Launcher: Task 27 done. Exiting.
+Launcher: Task 88 running job 89 on c-10-06 (echo "Fake run")
+Fake run
+Launcher: Job 89 completed in 0 seconds.
+Launcher: Task 88 done. Exiting.
+Launcher: Task 95 running job 96 on c-10-06 (echo "Fake run")
+Fake run
+Launcher: Job 96 completed in 0 seconds.
+Launcher: Task 95 done. Exiting.
+Launcher: Task 77 running job 78 on c-10-06 (echo "Fake run")
+Fake run
+Launcher: Job 78 completed in 0 seconds.
+Launcher: Task 77 done. Exiting.
+Launcher: Task 37 running job 38 on c-10-03 (bash run_12925_correlation_vary_gamma_37.qsub)
+run_12925_correlation_vary_gamma_37.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_12925_correlation_vary_gamma: No such file or directory
+Removing files
+Launcher: Job 38 completed in 1 seconds.
+Launcher: Task 37 done. Exiting.
+Launcher: Task 13 running job 14 on c-10-03 (bash run_12925_correlation_vary_gamma_13.qsub)
+Launcher: Task 43 running job 44 on c-10-03 (bash run_12925_correlation_vary_gamma_43.qsub)
+Launcher: Task 41 running job 42 on c-10-03 (bash run_12925_correlation_vary_gamma_41.qsub)
+run_12925_correlation_vary_gamma_13.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_12925_correlation_vary_gamma: No such file or directory
+Launcher: Task 22 running job 23 on c-10-03 (bash run_12925_correlation_vary_gamma_22.qsub)
+run_12925_correlation_vary_gamma_43.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_12925_correlation_vary_gamma: No such file or directory
+Launcher: Task 94 running job 95 on c-10-06 (echo "Fake run")
+Fake run
+Launcher: Job 95 completed in 0 seconds.
+run_12925_correlation_vary_gamma_41.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_12925_correlation_vary_gamma: No such file or directory
+Launcher: Task 94 done. Exiting.
+Launcher: Task 83 running job 84 on c-10-06 (echo "Fake run")
+Fake run
+Launcher: Job 84 completed in 0 seconds.
+Launcher: Task 83 done. Exiting.
+run_12925_correlation_vary_gamma_22.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_12925_correlation_vary_gamma: No such file or directory
+Launcher: Task 73 running job 74 on c-10-06 (echo "Fake run")
+Fake run
+Launcher: Task 55 running job 56 on c-10-06 (bash run_12925_correlation_vary_gamma_55.qsub)
+Launcher: Job 74 completed in 0 seconds.
+Launcher: Task 73 done. Exiting.
+run_12925_correlation_vary_gamma_55.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_12925_correlation_vary_gamma: No such file or directory
+Removing files
+Launcher: Job 56 completed in 0 seconds.
+Launcher: Task 55 done. Exiting.
+Removing files
+Removing files
+Launcher: Job 14 completed in 0 seconds.
+Launcher: Task 13 done. Exiting.
+Launcher: Job 44 completed in 0 seconds.
+Launcher: Task 43 done. Exiting.
+Removing files
+Removing files
+Launcher: Job 23 completed in 1 seconds.
+Launcher: Job 42 completed in 1 seconds.
+Launcher: Task 22 done. Exiting.
+Launcher: Task 41 done. Exiting.
+Launcher: Task 17 running job 18 on c-10-03 (bash run_12925_correlation_vary_gamma_17.qsub)
+Launcher: Task 8 running job 9 on c-10-03 (bash run_12925_correlation_vary_gamma_8.qsub)
+run_12925_correlation_vary_gamma_17.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_12925_correlation_vary_gamma: No such file or directory
+run_12925_correlation_vary_gamma_8.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_12925_correlation_vary_gamma: No such file or directory
+Launcher: Task 14 running job 15 on c-10-03 (bash run_12925_correlation_vary_gamma_14.qsub)
+Launcher: Task 9 running job 10 on c-10-03 (bash run_12925_correlation_vary_gamma_9.qsub)
+run_12925_correlation_vary_gamma_14.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_12925_correlation_vary_gamma: No such file or directory
+Launcher: Task 78 running job 79 on c-10-06 (echo "Fake run")
+Fake run
+run_12925_correlation_vary_gamma_9.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_12925_correlation_vary_gamma: No such file or directory
+Launcher: Job 79 completed in 0 seconds.
+Launcher: Task 78 done. Exiting.
+Removing files
+Removing files
+Launcher: Job 18 completed in 1 seconds.
+Launcher: Task 17 done. Exiting.
+Launcher: Job 9 completed in 1 seconds.
+Launcher: Task 8 done. Exiting.
+Removing files
+Removing files
+Launcher: Job 10 completed in 1 seconds.
+Launcher: Task 9 done. Exiting.
+Launcher: Job 15 completed in 1 seconds.
+Launcher: Task 14 done. Exiting.
+Launcher: Task 46 running job 47 on c-10-03 (bash run_12925_correlation_vary_gamma_46.qsub)
+Launcher: Task 6 running job 7 on c-10-03 (bash run_12925_correlation_vary_gamma_6.qsub)
+Launcher: Task 69 running job 70 on c-10-06 (echo "Fake run")
+Fake run
+Launcher: Task 11 running job 12 on c-10-03 (bash run_12925_correlation_vary_gamma_11.qsub)
+Launcher: Job 70 completed in 0 seconds.
+Launcher: Task 69 done. Exiting.
+Launcher: Task 91 running job 92 on c-10-06 (echo "Fake run")
+Fake run
+run_12925_correlation_vary_gamma_46.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_12925_correlation_vary_gamma: No such file or directory
+Launcher: Job 92 completed in 0 seconds.
+Launcher: Task 53 running job 54 on c-10-06 (bash run_12925_correlation_vary_gamma_53.qsub)
+run_12925_correlation_vary_gamma_6.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_12925_correlation_vary_gamma: No such file or directory
+Launcher: Task 91 done. Exiting.
+run_12925_correlation_vary_gamma_11.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_12925_correlation_vary_gamma: No such file or directory
+run_12925_correlation_vary_gamma_53.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_12925_correlation_vary_gamma: No such file or directory
+Removing files
+Launcher: Job 54 completed in 0 seconds.
+Launcher: Task 53 done. Exiting.
+Removing files
+Launcher: Job 47 completed in 1 seconds.
+Launcher: Task 46 done. Exiting.
+Removing files
+Launcher: Job 7 completed in 1 seconds.
+Launcher: Task 6 done. Exiting.
+Removing files
+Launcher: Job 12 completed in 1 seconds.
+Launcher: Task 11 done. Exiting.
+Launcher: Done. Job exited without errors
+Job rrun_12925_correlation_vary_gamma complete
