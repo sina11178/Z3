@@ -289,8 +289,9 @@ def correlator(A, U, U_inv, time, size, hamiltonian, gamma):  # ONLY FOR SIG1_X
     for a in range(size):
         list.append(np_I)
         list_2.append(np_I)
+    second_site = int(size/2) - 1
     list[0] = np_SIG # first site association with sig_x set
-    list_2[1] = np_SIG # second site association with sig_x set
+    list_2[second_site] = np_SIG # second site association with sig_x set
     #list[size-1] = np_SIG
     
     # print(time_evol_op.getH() * time_evol_op)
