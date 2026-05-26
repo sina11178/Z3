@@ -4,7 +4,7 @@ import subprocess
 import numpy
 import os
 
-partition_info=['cpu-preempt',48] # = [partition,ncores]
+partition_info=['normal',32] # = [partition,ncores]
 # partition_info=['debug',16] # = [partition,ncores]
 time_str='2-00:00:00'
 project_name=os.getcwd().split('/')[-3]
