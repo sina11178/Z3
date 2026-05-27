@@ -1,3 +1,39 @@
+commit 24780177b0d5af53907c3941e868e3f1594988b0
+Author: Sina Rezvani <sxr190099@g2-l-01.localdomain>
+Date:   Wed May 27 14:29:41 2026 -0500
+
+    Commit before run run_52626_autocorr_vary_gamma
+
+commit 68badcb51db667a66e36abe77162df3bbda2d71c
+Author: Sina Rezvani <sxr190099@juno-l-01.localdomain>
+Date:   Wed May 27 12:26:41 2026 -0500
+
+    Data obtained for: 2p correlation, Krylov matrices for L=4, 6, 8 on JUNO
+
+commit c80c20d0fc327f3f82a42b4d5515492d4cb7e204
+Author: Sina Rezvani <sxr190099@juno-l-01.localdomain>
+Date:   Wed May 27 10:39:48 2026 -0500
+
+    Commit before run run_52726_krylov_L8_norm
+
+commit 26f7e8ed0729b25beeb9e46cfac9e4cb1ebf399f
+Author: Sina Rezvani <sxr190099@juno-l-01.localdomain>
+Date:   Tue May 26 20:22:38 2026 -0500
+
+    Created simulation folder for new krylov results
+
+commit 283fcbd108d139b11ed977f48a3b89fda7f3d3d2
+Author: Sina Rezvani <sxr190099@g2-l-01.localdomain>
+Date:   Tue May 26 20:00:07 2026 -0500
+
+    added AUTOCORRELATION code stuff... This is meant for G2; however, G2 is not working for some reason
+
+commit 1bd0ec83ad2c7b83b6fbbac396c851c385c3d014
+Author: Sina Rezvani <sxr190099@juno-l-01.localdomain>
+Date:   Tue May 26 19:57:20 2026 -0500
+
+    pushing after starting sim
+
 commit c6ac512128fd05d49a6833b0b48424402b8068a1
 Author: Sina Rezvani <sxr190099@juno-l-01.localdomain>
 Date:   Tue May 26 19:07:45 2026 -0500
