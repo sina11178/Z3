@@ -20,7 +20,7 @@ import sys
 
 
 param_array=[[0.1, 0], [0.1, np.pi/6]]
-gamma_array = [0, .2, .4, .6, .8, 1]
+gamma_array = [0, .1, .5, .6, .9, 1]
 L_array = [4, 5, 6, 7, 8]
 
 size_correlator_SIM_NPY(0, 30, .5, [L_array[int(sys.argv[1]) % 5]], param_array[int(int(sys.argv[1])/30)], gamma_array[int(int(sys.argv[1])/5)%6])

@@ -3,10 +3,10 @@
 #SBATCH --job-name=run_12925_correlation_vary_gamma
 #
 # Partition:
-#SBATCH --partition=cpu-preempt
+#SBATCH --partition=normal
 #
 # Processors:
-#SBATCH --ntasks=96
+#SBATCH --ntasks=64
 #SBATCH --nodes=2
 #
 # Wall clock limit:
