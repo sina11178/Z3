@@ -1,0 +1,5 @@
+run_52626_krylov_norm_com_27.qsub: line 43: 1663244 Killed                  python ./$EXEC 27
+
+real	34m3.932s
+user	149m15.475s
+sys	15m58.629s
