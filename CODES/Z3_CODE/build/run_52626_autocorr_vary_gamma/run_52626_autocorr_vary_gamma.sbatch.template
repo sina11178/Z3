@@ -22,6 +22,11 @@
 
 echo "Starting job run_52626_autocorr_vary_gamma"
 
+module load miniconda
+source ~/.bashrc
+conda activate myenv
+
+
 module load launcher
 
 export LAUNCHER_PLUGIN_DIR=$LAUNCHER_DIR/plugins
