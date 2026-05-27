@@ -23,8 +23,7 @@
 echo "Starting job run_52626_autocorr_vary_gamma"
 
 module load miniconda
-source $(conda info --base)/etc/profile.d/conda.sh
-#source ~/.bashrc
+source ~/.bashrc
 conda activate myenv
 
 
