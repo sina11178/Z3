@@ -36,4 +36,4 @@ export LAUNCHER_SCHED=interleaved
 
 $LAUNCHER_DIR/paramrun
 
-echo "Job rrun_52626_autocorr_vary_gamma complete"
+echo "Job run_52626_autocorr_vary_gamma complete"
