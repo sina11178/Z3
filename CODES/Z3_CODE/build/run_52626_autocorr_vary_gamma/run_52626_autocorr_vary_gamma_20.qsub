@@ -2,7 +2,7 @@
 # Template for ".qsub" files that will be run as batch files by slurm
 
 RUN_NAME=run_52626_autocorr_vary_gamma
-PROJECT_NAME=Z3/CODES/Z3_CODE
+PROJECT_NAME=sxr190099/Z3/CODES/Z3_CODE
 SCRATCH=$HOME/scratch
 SCRATCH_DIR=$SCRATCH/$RUN_NAME/b20
 LOCAL_DIR=$HOME/$PROJECT_NAME/build
