@@ -7,7 +7,8 @@ import os
 partition_info=['cmt',128] # = [partition,ncores]
 # partition_info=['debug',16] # = [partition,ncores]
 time_str='3-00:00:00'
-project_name=os.getcwd().split('/')[-3]
+#project_name=os.getcwd().split('/')[-3]
+project_name = 'Z3/CODES/Z3_CODE'
 myemail=os.environ["MYEMAIL"]
 
 #Log the current submission

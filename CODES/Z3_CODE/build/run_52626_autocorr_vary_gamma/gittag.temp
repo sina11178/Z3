@@ -1,3 +1,9 @@
+commit a4cb7e5561ef924d94da9d8b5eaf7f49ed2295d2
+Author: Sina Rezvani <sxr190099@g2-l-01.localdomain>
+Date:   Wed May 27 14:31:20 2026 -0500
+
+    Added virtual environment so that autocorrelation sims can run on G2
+
 commit 24780177b0d5af53907c3941e868e3f1594988b0
 Author: Sina Rezvani <sxr190099@g2-l-01.localdomain>
 Date:   Wed May 27 14:29:41 2026 -0500
