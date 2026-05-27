@@ -1,0 +1,257 @@
+Starting job run_52626_krylov_norm_com
+WARNING (05/26/26 20:16:31): LAUNCHER_WORKDIR variable not set. Using current directory.
+Launcher: Setup complete.
+
+------------- SUMMARY ---------------
+   Number of hosts:    2
+   Working directory:  /home/sxr190099/Z3/CODES/Z3_CODE/build/run_52626_krylov_norm_com
+   Processes per host: 32
+   Total processes:    64
+   Total jobs:         64
+   Scheduling method:  interleaved
+
+-------------------------------------
+Launcher: Starting parallel tasks...
+using /tmp/launcher.203330.hostlist.jTpK3BGN to get hosts
+starting job on c-05-04
+starting job on c-05-07
+Warning: Permanently added 'c-05-04' (ED25519) to the list of known hosts.
+Warning: Permanently added 'c-05-07' (ED25519) to the list of known hosts.
+Launcher: Task 14 running job 15 on c-05-04 (bash run_52626_krylov_norm_com_14.qsub)
+run_52626_krylov_norm_com_14.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_52626_krylov_norm_com: No such file or directory
+Launcher: Task 34 running job 35 on c-05-07 (bash run_52626_krylov_norm_com_34.qsub)
+Launcher: Task 50 running job 51 on c-05-07 (echo "Fake run")
+Fake run
+Launcher: Job 51 completed in 0 seconds.
+Launcher: Task 50 done. Exiting.
+run_52626_krylov_norm_com_34.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_52626_krylov_norm_com: No such file or directory
+Launcher: Task 27 running job 28 on c-05-04 (bash run_52626_krylov_norm_com_27.qsub)
+run_52626_krylov_norm_com_27.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_52626_krylov_norm_com: No such file or directory
+Launcher: Task 21 running job 22 on c-05-04 (bash run_52626_krylov_norm_com_21.qsub)
+Launcher: Task 16 running job 17 on c-05-04 (bash run_52626_krylov_norm_com_16.qsub)
+Launcher: Task 2 running job 3 on c-05-04 (bash run_52626_krylov_norm_com_2.qsub)
+Launcher: Task 20 running job 21 on c-05-04 (bash run_52626_krylov_norm_com_20.qsub)
+run_52626_krylov_norm_com_21.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_52626_krylov_norm_com: No such file or directory
+run_52626_krylov_norm_com_16.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_52626_krylov_norm_com: No such file or directory
+run_52626_krylov_norm_com_20.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_52626_krylov_norm_com: No such file or directory
+run_52626_krylov_norm_com_2.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_52626_krylov_norm_com: No such file or directory
+Launcher: Task 38 running job 39 on c-05-07 (bash run_52626_krylov_norm_com_38.qsub)
+Launcher: Task 33 running job 34 on c-05-07 (bash run_52626_krylov_norm_com_33.qsub)
+run_52626_krylov_norm_com_38.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_52626_krylov_norm_com: No such file or directory
+Launcher: Task 44 running job 45 on c-05-07 (bash run_52626_krylov_norm_com_44.qsub)
+run_52626_krylov_norm_com_44.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_52626_krylov_norm_com: No such file or directory
+run_52626_krylov_norm_com_33.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_52626_krylov_norm_com: No such file or directory
+Launcher: Task 30 running job 31 on c-05-04 (bash run_52626_krylov_norm_com_30.qsub)
+run_52626_krylov_norm_com_30.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_52626_krylov_norm_com: No such file or directory
+Launcher: Task 4 running job 5 on c-05-04 (bash run_52626_krylov_norm_com_4.qsub)
+Launcher: Task 6 running job 7 on c-05-04 (bash run_52626_krylov_norm_com_6.qsub)
+Launcher: Task 11 running job 12 on c-05-04 (bash run_52626_krylov_norm_com_11.qsub)
+run_52626_krylov_norm_com_4.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_52626_krylov_norm_com: No such file or directory
+Launcher: Task 24 running job 25 on c-05-04 (bash run_52626_krylov_norm_com_24.qsub)
+run_52626_krylov_norm_com_6.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_52626_krylov_norm_com: No such file or directory
+run_52626_krylov_norm_com_11.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_52626_krylov_norm_com: No such file or directory
+run_52626_krylov_norm_com_24.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_52626_krylov_norm_com: No such file or directory
+Launcher: Task 40 running job 41 on c-05-07 (bash run_52626_krylov_norm_com_40.qsub)
+Launcher: Task 39 running job 40 on c-05-07 (bash run_52626_krylov_norm_com_39.qsub)
+run_52626_krylov_norm_com_40.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_52626_krylov_norm_com: No such file or directory
+Launcher: Task 41 running job 42 on c-05-07 (bash run_52626_krylov_norm_com_41.qsub)
+run_52626_krylov_norm_com_39.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_52626_krylov_norm_com: No such file or directory
+Launcher: Task 49 running job 50 on c-05-07 (echo "Fake run")
+Fake run
+Launcher: Job 50 completed in 0 seconds.
+run_52626_krylov_norm_com_41.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_52626_krylov_norm_com: No such file or directory
+Launcher: Task 49 done. Exiting.
+Launcher: Task 32 running job 33 on c-05-07 (bash run_52626_krylov_norm_com_32.qsub)
+run_52626_krylov_norm_com_32.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_52626_krylov_norm_com: No such file or directory
+Launcher: Task 29 running job 30 on c-05-04 (bash run_52626_krylov_norm_com_29.qsub)
+run_52626_krylov_norm_com_29.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_52626_krylov_norm_com: No such file or directory
+Launcher: Task 0 running job 1 on c-05-04 (bash run_52626_krylov_norm_com_0.qsub)
+Launcher: Task 5 running job 6 on c-05-04 (bash run_52626_krylov_norm_com_5.qsub)
+Launcher: Task 22 running job 23 on c-05-04 (bash run_52626_krylov_norm_com_22.qsub)
+run_52626_krylov_norm_com_0.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_52626_krylov_norm_com: No such file or directory
+run_52626_krylov_norm_com_5.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_52626_krylov_norm_com: No such file or directory
+run_52626_krylov_norm_com_22.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_52626_krylov_norm_com: No such file or directory
+Launcher: Task 46 running job 47 on c-05-07 (bash run_52626_krylov_norm_com_46.qsub)
+Launcher: Task 63 running job 64 on c-05-07 (echo "Fake run")
+Fake run
+Launcher: Job 64 completed in 0 seconds.
+run_52626_krylov_norm_com_46.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_52626_krylov_norm_com: No such file or directory
+Launcher: Task 63 done. Exiting.
+Launcher: Task 35 running job 36 on c-05-07 (bash run_52626_krylov_norm_com_35.qsub)
+Launcher: Task 37 running job 38 on c-05-07 (bash run_52626_krylov_norm_com_37.qsub)
+Launcher: Task 53 running job 54 on c-05-07 (echo "Fake run")
+Fake run
+run_52626_krylov_norm_com_35.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_52626_krylov_norm_com: No such file or directory
+Launcher: Job 54 completed in 0 seconds.
+Launcher: Task 53 done. Exiting.
+run_52626_krylov_norm_com_37.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_52626_krylov_norm_com: No such file or directory
+Launcher: Task 8 running job 9 on c-05-04 (bash run_52626_krylov_norm_com_8.qsub)
+Launcher: Task 13 running job 14 on c-05-04 (bash run_52626_krylov_norm_com_13.qsub)
+Launcher: Task 17 running job 18 on c-05-04 (bash run_52626_krylov_norm_com_17.qsub)
+Launcher: Task 9 running job 10 on c-05-04 (bash run_52626_krylov_norm_com_9.qsub)
+Launcher: Task 15 running job 16 on c-05-04 (bash run_52626_krylov_norm_com_15.qsub)
+Launcher: Task 26 running job 27 on c-05-04 (bash run_52626_krylov_norm_com_26.qsub)
+run_52626_krylov_norm_com_8.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_52626_krylov_norm_com: No such file or directory
+Launcher: Task 1 running job 2 on c-05-04 (bash run_52626_krylov_norm_com_1.qsub)
+Removing files
+Launcher: Task 23 running job 24 on c-05-04 (bash run_52626_krylov_norm_com_23.qsub)
+Launcher: Task 18 running job 19 on c-05-04 (bash run_52626_krylov_norm_com_18.qsub)
+Launcher: Task 56 running job 57 on c-05-07 (echo "Fake run")
+Fake run
+Launcher: Task 48 running job 49 on c-05-07 (echo "Fake run")
+Fake run
+Launcher: Task 3 running job 4 on c-05-04 (bash run_52626_krylov_norm_com_3.qsub)
+Launcher: Task 60 running job 61 on c-05-07 (echo "Fake run")
+Fake run
+Launcher: Task 36 running job 37 on c-05-07 (bash run_52626_krylov_norm_com_36.qsub)
+Launcher: Job 49 completed in 0 seconds.
+Launcher: Job 57 completed in 0 seconds.
+Launcher: Job 61 completed in 0 seconds.
+Launcher: Task 60 done. Exiting.
+Launcher: Task 48 done. Exiting.
+Launcher: Task 56 done. Exiting.
+Launcher: Job 45 completed in 3 seconds.
+Launcher: Task 44 done. Exiting.
+Removing files
+run_52626_krylov_norm_com_36.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_52626_krylov_norm_com: No such file or directory
+Removing files
+Removing files
+run_52626_krylov_norm_com_13.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_52626_krylov_norm_com: No such file or directory
+run_52626_krylov_norm_com_17.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_52626_krylov_norm_com: No such file or directory
+Removing files
+Removing files
+Launcher: Job 33 completed in 2 seconds.
+Launcher: Task 32 done. Exiting.
+Launcher: Job 34 completed in 3 seconds.
+run_52626_krylov_norm_com_9.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_52626_krylov_norm_com: No such file or directory
+Launcher: Task 33 done. Exiting.
+run_52626_krylov_norm_com_15.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_52626_krylov_norm_com: No such file or directory
+Launcher: Job 41 completed in 2 seconds.
+Launcher: Job 17 completed in 3 seconds.
+Launcher: Task 16 done. Exiting.
+run_52626_krylov_norm_com_23.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_52626_krylov_norm_com: No such file or directory
+run_52626_krylov_norm_com_18.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_52626_krylov_norm_com: No such file or directory
+Launcher: Task 40 done. Exiting.
+Removing files
+run_52626_krylov_norm_com_1.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_52626_krylov_norm_com: No such file or directory
+run_52626_krylov_norm_com_26.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_52626_krylov_norm_com: No such file or directory
+run_52626_krylov_norm_com_3.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_52626_krylov_norm_com: No such file or directory
+Removing files
+Removing files
+Launcher: Job 22 completed in 4 seconds.
+Launcher: Job 42 completed in 3 seconds.
+Launcher: Task 41 done. Exiting.
+Launcher: Task 21 done. Exiting.
+Launcher: Job 21 completed in 4 seconds.
+Launcher: Job 5 completed in 3 seconds.
+Launcher: Task 4 done. Exiting.
+Launcher: Task 20 done. Exiting.
+Launcher: Task 28 running job 29 on c-05-04 (bash run_52626_krylov_norm_com_28.qsub)
+Launcher: Task 47 running job 48 on c-05-07 (bash run_52626_krylov_norm_com_47.qsub)
+run_52626_krylov_norm_com_47.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_52626_krylov_norm_com: No such file or directory
+Launcher: Task 54 running job 55 on c-05-07 (echo "Fake run")
+Fake run
+Removing files
+Launcher: Job 55 completed in 0 seconds.
+Launcher: Task 54 done. Exiting.
+run_52626_krylov_norm_com_28.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_52626_krylov_norm_com: No such file or directory
+Launcher: Job 25 completed in 3 seconds.
+Launcher: Task 24 done. Exiting.
+Removing files
+Launcher: Job 38 completed in 3 seconds.
+Launcher: Task 37 done. Exiting.
+Launcher: Task 12 running job 13 on c-05-04 (bash run_52626_krylov_norm_com_12.qsub)
+Launcher: Task 7 running job 8 on c-05-04 (bash run_52626_krylov_norm_com_7.qsub)
+Launcher: Task 25 running job 26 on c-05-04 (bash run_52626_krylov_norm_com_25.qsub)
+Launcher: Task 10 running job 11 on c-05-04 (bash run_52626_krylov_norm_com_10.qsub)
+Launcher: Task 55 running job 56 on c-05-07 (echo "Fake run")
+Fake run
+Launcher: Task 51 running job 52 on c-05-07 (echo "Fake run")
+Fake run
+Launcher: Task 43 running job 44 on c-05-07 (bash run_52626_krylov_norm_com_43.qsub)
+Launcher: Job 56 completed in 0 seconds.
+Launcher: Job 52 completed in 0 seconds.
+Launcher: Task 51 done. Exiting.
+run_52626_krylov_norm_com_12.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_52626_krylov_norm_com: No such file or directory
+Launcher: Task 55 done. Exiting.
+run_52626_krylov_norm_com_7.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_52626_krylov_norm_com: No such file or directory
+run_52626_krylov_norm_com_25.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_52626_krylov_norm_com: No such file or directory
+run_52626_krylov_norm_com_10.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_52626_krylov_norm_com: No such file or directory
+run_52626_krylov_norm_com_43.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_52626_krylov_norm_com: No such file or directory
+Launcher: Task 19 running job 20 on c-05-04 (bash run_52626_krylov_norm_com_19.qsub)
+Launcher: Task 62 running job 63 on c-05-07 (echo "Fake run")
+Fake run
+Launcher: Task 31 running job 32 on c-05-04 (bash run_52626_krylov_norm_com_31.qsub)
+Launcher: Task 45 running job 46 on c-05-07 (bash run_52626_krylov_norm_com_45.qsub)
+Launcher: Task 58 running job 59 on c-05-07 (echo "Fake run")
+Fake run
+Launcher: Task 52 running job 53 on c-05-07 (echo "Fake run")
+Fake run
+Launcher: Job 63 completed in 0 seconds.
+Launcher: Task 59 running job 60 on c-05-07 (echo "Fake run")
+Fake run
+Removing files
+Launcher: Task 62 done. Exiting.
+Launcher: Job 59 completed in 0 seconds.
+Launcher: Job 53 completed in 0 seconds.
+Launcher: Job 60 completed in 0 seconds.
+Launcher: Task 58 done. Exiting.
+run_52626_krylov_norm_com_45.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_52626_krylov_norm_com: No such file or directory
+Launcher: Task 52 done. Exiting.
+Launcher: Task 59 done. Exiting.
+run_52626_krylov_norm_com_19.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_52626_krylov_norm_com: No such file or directory
+Launcher: Job 37 completed in 3 seconds.
+Launcher: Task 36 done. Exiting.
+run_52626_krylov_norm_com_31.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_52626_krylov_norm_com: No such file or directory
+Launcher: Task 42 running job 43 on c-05-07 (bash run_52626_krylov_norm_com_42.qsub)
+Launcher: Task 61 running job 62 on c-05-07 (echo "Fake run")
+Fake run
+Launcher: Task 57 running job 58 on c-05-07 (echo "Fake run")
+Fake run
+Launcher: Job 62 completed in 0 seconds.
+Launcher: Job 58 completed in 0 seconds.
+Launcher: Task 61 done. Exiting.
+Launcher: Task 57 done. Exiting.
+run_52626_krylov_norm_com_42.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_52626_krylov_norm_com: No such file or directory
+Removing files
+Launcher: Job 1 completed in 6 seconds.
+Launcher: Task 0 done. Exiting.
+Removing files
+Launcher: Job 30 completed in 7 seconds.
+Launcher: Task 29 done. Exiting.
+Removing files
+Removing files
+Launcher: Job 6 completed in 7 seconds.
+Launcher: Task 5 done. Exiting.
+Launcher: Job 46 completed in 3 seconds.
+Launcher: Task 45 done. Exiting.
+Removing files
+Launcher: Job 2 completed in 16 seconds.
+Launcher: Task 1 done. Exiting.
+Removing files
+Launcher: Job 18 completed in 16 seconds.
+Launcher: Task 17 done. Exiting.
+Removing files
+Launcher: Job 9 completed in 17 seconds.
+Launcher: Task 8 done. Exiting.
+Removing files
+Removing files
+Launcher: Job 47 completed in 18 seconds.
+Launcher: Task 46 done. Exiting.
+Removing files
+Launcher: Job 10 completed in 17 seconds.
+Launcher: Task 9 done. Exiting.
+Launcher: Job 29 completed in 16 seconds.
+Launcher: Task 28 done. Exiting.
+Removing files
+Removing files
+Removing files
+Launcher: Job 14 completed in 18 seconds.
+Launcher: Task 13 done. Exiting.
+Launcher: Job 13 completed in 16 seconds.
+Launcher: Task 12 done. Exiting.
+Launcher: Job 26 completed in 16 seconds.
+Launcher: Task 25 done. Exiting.
+Removing files
+Launcher: Job 23 completed in 41 seconds.
+Launcher: Task 22 done. Exiting.
