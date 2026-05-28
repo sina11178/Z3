@@ -22,9 +22,9 @@
 
 echo "Starting job run_52626_autocorr_vary_gamma"
 
-module load miniconda
-source ~/.bashrc
-conda activate myenv
+#module load miniconda
+#source ~/.bashrc
+#conda activate myenv
 
 
 module load launcher
@@ -34,6 +34,8 @@ export LAUNCHER_RMI=SLURM
 export LAUNCHER_JOB_FILE=run_52626_autocorr_vary_gamma.task
 export LAUNCHER_SCHED=interleaved
 
+
 $LAUNCHER_DIR/paramrun
 
-echo "Job run_52626_autocorr_vary_gamma complete"
+
+echo "Job rrun_52626_autocorr_vary_gamma complete"
