@@ -1,0 +1,15 @@
+Starting job run_52626_autocorr_vary_gamma
+Lmod has detected the following error: The following module(s) are unknown:
+"git"
+
+Please check the spelling or version number. Also try "module spider ..."
+It is also possible your cache file is out-of-date; it may help to try:
+  $ module --ignore_cache load "git"
+
+Also make sure that all modulefiles written in TCL start with the string
+#%Module
+
+
+
+/var/spool/slurm/d/job3729593/slurm_script: line 41: parallel: command not found
+Job rrun_52626_autocorr_vary_gamma complete
