@@ -42,7 +42,7 @@ r_phi_values = grid[int(int(sys.argv[1]) / 11), int(sys.argv[1]) % 11]
 
 #print("Running")
 
-size_autocorrelator_SIMULATION_NPY(0, 30, .5, [4], r_phi_values, gamma_array[0])
+size_autocorrelator_SIMULATION_NPY(-10, 25, .5, [4], r_phi_values, gamma_array[0])
 
 
 
