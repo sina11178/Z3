@@ -18,8 +18,8 @@ import sys
 
 
 N = 11  # GRID DIMENSION
-x_vals = np.linspace(0, 1, N)  # x from 0 to 1.1
-y_vals = np.linspace(0, 1, N)  # y from 0 to 1.1
+x_vals = np.linspace(0, 0.95, N)  # x from 0 to 1.1
+y_vals = np.linspace(0, 0.95, N)  # y from 0 to 1.1
 
 # Initialize matrix: shape (11, 11, 2) → each cell holds [r, phi]
 grid = np.zeros((N, N, 2))
@@ -35,7 +35,7 @@ for i in range(N):       # row index → y-axis (bottom to top)
 
 
 #param_array=[[0.1, 0], [0.1, np.pi/6]]
-gamma_array = [0]
+gamma_array = [0.5]
 L_array = [4]
 
 r_phi_values = grid[int(int(sys.argv[1]) / 11), int(sys.argv[1]) % 11]
