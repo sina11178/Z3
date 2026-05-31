@@ -3,6 +3,21 @@ import os
 import pandas as pd
 import matplotlib.pyplot as plt
 import shutil
+from matplotlib.colors import LinearSegmentedColormap
+
+
+cmap = LinearSegmentedColormap.from_list(
+"cmap",
+[
+"#071F59", 
+"#C4CFDE", 
+"#FFFFFF", 
+"#FFFFFF", 
+"#FFFFFF",
+"#FFFFFF" 
+]
+)
+
 
 
 
@@ -65,9 +80,9 @@ for i in range(121):
 
             phase_diagram[int(i / 11), int(i % 11)] = decay_rate
             '''
-            #if i == 74:
-            #    plt.plot(time_list, data, label='Autocorrelation')
-            #    #plt.xscale('log')
+            if i == 2:
+                plt.plot(time_list, data, label='Autocorrelation')
+                plt.xscale('log')
 
         
         else:
@@ -83,7 +98,8 @@ im = ax.imshow(
     origin='lower',                  # (0,0) at bottom-left
     extent=[0, 1, 0, 1],        # x and y axes from 0 to 1.1
     aspect='auto',
-    cmap='viridis'
+    cmap=cmap,
+    vmin=0, vmax=1.5
 )
 
 cbar = plt.colorbar(im, ax=ax)
@@ -92,6 +108,7 @@ cbar.set_label('Decay Rate λ')
 ax.set_xlabel('x')
 ax.set_ylabel('y')
 ax.set_title('Phase Diagram')
-
+plt.rcParams["figure.figsize"] = (5,3.6)
+#ax.clim(0, 1.5)  # Set color limits for better contrast
 plt.tight_layout()
 plt.show()
