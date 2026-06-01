@@ -36,7 +36,7 @@ for i in range(N):       # row index → y-axis (bottom to top)
 
 param_array=[[0.1, 0], [0.1, np.pi/6]]
 #gamma_array = np.linspace(0, 1, 121)
-L_array = [6]
+L_array = [8]
 gamma_array = [0]
 #r_phi_values = grid[int(int(sys.argv[1]) / 11), int(sys.argv[1]) % 11]
 
