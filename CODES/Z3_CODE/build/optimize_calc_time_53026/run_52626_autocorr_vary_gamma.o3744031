@@ -1,0 +1,38 @@
+Starting job optimize_calc_time_53026
+WARNING (05/31/26 19:07:10): LAUNCHER_WORKDIR variable not set. Using current directory.
+Launcher: Setup complete.
+
+------------- SUMMARY ---------------
+   Number of hosts:    1
+   Working directory:  /home/sxr190099/Z3/CODES/Z3_CODE/build/optimize_calc_time_53026
+   Processes per host: 192
+   Total processes:    192
+   Total jobs:         2
+   Scheduling method:  interleaved
+
+-------------------------------------
+Launcher: Starting parallel tasks...
+using /tmp/launcher.3744031.hostlist.KvzfZG3A to get hosts
+starting job on c-05-12
+Lmod has detected the following error: The following module(s) are unknown:
+"git"
+
+Please check the spelling or version number. Also try "module spider ..."
+It is also possible your cache file is out-of-date; it may help to try:
+  $ module --ignore_cache load "git"
+
+Also make sure that all modulefiles written in TCL start with the string
+#%Module
+
+
+
+Launcher: Task 0 running job 1 on c-05-12 (bash optimize_calc_time_53026_0.qsub)
+Launcher: Task 1 running job 2 on c-05-12 (bash optimize_calc_time_53026_1.qsub)
+Removing files
+Launcher: Job 1 completed in 15 seconds.
+Launcher: Task 0 done. Exiting.
+Removing files
+Launcher: Job 2 completed in 10 seconds.
+Launcher: Task 1 done. Exiting.
+Launcher: Done. Job exited without errors
+Job roptimize_calc_time_53026 complete

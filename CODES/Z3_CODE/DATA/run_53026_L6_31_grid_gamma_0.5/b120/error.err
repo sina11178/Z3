@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/scratch/ganymede2/sxr190099/run_53026_L6_31_grid_gamma_0.5/b120/./main.py", line 45, in <module>
+    r_phi_values = grid[int(int(i / 31)), int(i) % 31]
+IndexError: index 31 is out of bounds for axis 0 with size 31
+
+real	91m44.433s
+user	94m19.203s
+sys	0m1.258s

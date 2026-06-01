@@ -1,0 +1,153 @@
+Starting job optimize_calc_time_53026
+WARNING (05/31/26 19:10:57): LAUNCHER_WORKDIR variable not set. Using current directory.
+Launcher: Setup complete.
+
+------------- SUMMARY ---------------
+   Number of hosts:    1
+   Working directory:  /home/sxr190099/Z3/CODES/Z3_CODE/build/optimize_calc_time_53026
+   Processes per host: 192
+   Total processes:    192
+   Total jobs:         121
+   Scheduling method:  interleaved
+
+-------------------------------------
+Launcher: Starting parallel tasks...
+using /tmp/launcher.3744032.hostlist.0NlTxdWI to get hosts
+starting job on c-05-12
+Lmod has detected the following error: The following module(s) are unknown:
+"git"
+
+Please check the spelling or version number. Also try "module spider ..."
+It is also possible your cache file is out-of-date; it may help to try:
+  $ module --ignore_cache load "git"
+
+Also make sure that all modulefiles written in TCL start with the string
+#%Module
+
+
+
+Launcher: Task 17 running job 18 on c-05-12 (bash optimize_calc_time_53026_17.qsub)
+Launcher: Task 48 running job 49 on c-05-12 (bash optimize_calc_time_53026_48.qsub)
+Launcher: Task 77 running job 78 on c-05-12 (bash optimize_calc_time_53026_77.qsub)
+Launcher: Task 30 running job 31 on c-05-12 (bash optimize_calc_time_53026_30.qsub)
+Launcher: Task 45 running job 46 on c-05-12 (bash optimize_calc_time_53026_45.qsub)
+Launcher: Task 69 running job 70 on c-05-12 (bash optimize_calc_time_53026_69.qsub)
+Launcher: Task 33 running job 34 on c-05-12 (bash optimize_calc_time_53026_33.qsub)
+Launcher: Task 78 running job 79 on c-05-12 (bash optimize_calc_time_53026_78.qsub)
+Launcher: Task 13 running job 14 on c-05-12 (bash optimize_calc_time_53026_13.qsub)
+Launcher: Task 50 running job 51 on c-05-12 (bash optimize_calc_time_53026_50.qsub)
+Launcher: Task 95 running job 96 on c-05-12 (bash optimize_calc_time_53026_95.qsub)
+Launcher: Task 113 running job 114 on c-05-12 (bash optimize_calc_time_53026_113.qsub)
+Launcher: Task 49 running job 50 on c-05-12 (bash optimize_calc_time_53026_49.qsub)
+Launcher: Task 67 running job 68 on c-05-12 (bash optimize_calc_time_53026_67.qsub)
+Launcher: Task 104 running job 105 on c-05-12 (bash optimize_calc_time_53026_104.qsub)
+Launcher: Task 91 running job 92 on c-05-12 (bash optimize_calc_time_53026_91.qsub)
+Launcher: Task 37 running job 38 on c-05-12 (bash optimize_calc_time_53026_37.qsub)
+Launcher: Task 75 running job 76 on c-05-12 (bash optimize_calc_time_53026_75.qsub)
+Launcher: Task 66 running job 67 on c-05-12 (bash optimize_calc_time_53026_66.qsub)
+Launcher: Task 56 running job 57 on c-05-12 (bash optimize_calc_time_53026_56.qsub)
+Launcher: Task 61 running job 62 on c-05-12 (bash optimize_calc_time_53026_61.qsub)
+Launcher: Task 96 running job 97 on c-05-12 (bash optimize_calc_time_53026_96.qsub)
+Launcher: Task 74 running job 75 on c-05-12 (bash optimize_calc_time_53026_74.qsub)
+Launcher: Task 120 running job 121 on c-05-12 (bash optimize_calc_time_53026_120.qsub)
+Launcher: Task 55 running job 56 on c-05-12 (bash optimize_calc_time_53026_55.qsub)
+Launcher: Task 71 running job 72 on c-05-12 (bash optimize_calc_time_53026_71.qsub)
+Launcher: Task 85 running job 86 on c-05-12 (bash optimize_calc_time_53026_85.qsub)
+Launcher: Task 110 running job 111 on c-05-12 (bash optimize_calc_time_53026_110.qsub)
+Launcher: Task 80 running job 81 on c-05-12 (bash optimize_calc_time_53026_80.qsub)
+Launcher: Task 94 running job 95 on c-05-12 (bash optimize_calc_time_53026_94.qsub)
+Launcher: Task 9 running job 10 on c-05-12 (bash optimize_calc_time_53026_9.qsub)
+Launcher: Task 41 running job 42 on c-05-12 (bash optimize_calc_time_53026_41.qsub)
+Launcher: Task 82 running job 83 on c-05-12 (bash optimize_calc_time_53026_82.qsub)
+Launcher: Task 111 running job 112 on c-05-12 (bash optimize_calc_time_53026_111.qsub)
+Launcher: Task 109 running job 110 on c-05-12 (bash optimize_calc_time_53026_109.qsub)
+Launcher: Task 10 running job 11 on c-05-12 (bash optimize_calc_time_53026_10.qsub)
+Launcher: Task 21 running job 22 on c-05-12 (bash optimize_calc_time_53026_21.qsub)
+Launcher: Task 47 running job 48 on c-05-12 (bash optimize_calc_time_53026_47.qsub)
+Launcher: Task 5 running job 6 on c-05-12 (bash optimize_calc_time_53026_5.qsub)
+Launcher: Task 51 running job 52 on c-05-12 (bash optimize_calc_time_53026_51.qsub)
+Launcher: Task 57 running job 58 on c-05-12 (bash optimize_calc_time_53026_57.qsub)
+Launcher: Task 70 running job 71 on c-05-12 (bash optimize_calc_time_53026_70.qsub)
+Launcher: Task 44 running job 45 on c-05-12 (bash optimize_calc_time_53026_44.qsub)
+Launcher: Task 29 running job 30 on c-05-12 (bash optimize_calc_time_53026_29.qsub)
+Launcher: Task 32 running job 33 on c-05-12 (bash optimize_calc_time_53026_32.qsub)
+Launcher: Task 26 running job 27 on c-05-12 (bash optimize_calc_time_53026_26.qsub)
+Launcher: Task 19 running job 20 on c-05-12 (bash optimize_calc_time_53026_19.qsub)
+Launcher: Task 58 running job 59 on c-05-12 (bash optimize_calc_time_53026_58.qsub)
+Launcher: Task 15 running job 16 on c-05-12 (bash optimize_calc_time_53026_15.qsub)
+Launcher: Task 76 running job 77 on c-05-12 (bash optimize_calc_time_53026_76.qsub)
+Launcher: Task 114 running job 115 on c-05-12 (bash optimize_calc_time_53026_114.qsub)
+Launcher: Task 39 running job 40 on c-05-12 (bash optimize_calc_time_53026_39.qsub)
+Launcher: Task 28 running job 29 on c-05-12 (bash optimize_calc_time_53026_28.qsub)
+Launcher: Task 46 running job 47 on c-05-12 (bash optimize_calc_time_53026_46.qsub)
+Launcher: Task 16 running job 17 on c-05-12 (bash optimize_calc_time_53026_16.qsub)
+Launcher: Task 92 running job 93 on c-05-12 (bash optimize_calc_time_53026_92.qsub)
+Launcher: Task 34 running job 35 on c-05-12 (bash optimize_calc_time_53026_34.qsub)
+Launcher: Task 107 running job 108 on c-05-12 (bash optimize_calc_time_53026_107.qsub)
+Launcher: Task 63 running job 64 on c-05-12 (bash optimize_calc_time_53026_63.qsub)
+Launcher: Task 43 running job 44 on c-05-12 (bash optimize_calc_time_53026_43.qsub)
+Launcher: Task 116 running job 117 on c-05-12 (bash optimize_calc_time_53026_116.qsub)
+Launcher: Task 23 running job 24 on c-05-12 (bash optimize_calc_time_53026_23.qsub)
+Launcher: Task 54 running job 55 on c-05-12 (bash optimize_calc_time_53026_54.qsub)
+Launcher: Task 27 running job 28 on c-05-12 (bash optimize_calc_time_53026_27.qsub)
+Launcher: Task 83 running job 84 on c-05-12 (bash optimize_calc_time_53026_83.qsub)
+Launcher: Task 62 running job 63 on c-05-12 (bash optimize_calc_time_53026_62.qsub)
+Launcher: Task 108 running job 109 on c-05-12 (bash optimize_calc_time_53026_108.qsub)
+Launcher: Task 81 running job 82 on c-05-12 (bash optimize_calc_time_53026_81.qsub)
+Launcher: Task 98 running job 99 on c-05-12 (bash optimize_calc_time_53026_98.qsub)
+Launcher: Task 65 running job 66 on c-05-12 (bash optimize_calc_time_53026_65.qsub)
+Launcher: Task 89 running job 90 on c-05-12 (bash optimize_calc_time_53026_89.qsub)
+Launcher: Task 119 running job 120 on c-05-12 (bash optimize_calc_time_53026_119.qsub)
+Launcher: Task 87 running job 88 on c-05-12 (bash optimize_calc_time_53026_87.qsub)
+Launcher: Task 105 running job 106 on c-05-12 (bash optimize_calc_time_53026_105.qsub)
+Launcher: Task 38 running job 39 on c-05-12 (bash optimize_calc_time_53026_38.qsub)
+Launcher: Task 40 running job 41 on c-05-12 (bash optimize_calc_time_53026_40.qsub)
+Launcher: Task 1 running job 2 on c-05-12 (bash optimize_calc_time_53026_1.qsub)
+Launcher: Task 106 running job 107 on c-05-12 (bash optimize_calc_time_53026_106.qsub)
+Launcher: Task 42 running job 43 on c-05-12 (bash optimize_calc_time_53026_42.qsub)
+Launcher: Task 73 running job 74 on c-05-12 (bash optimize_calc_time_53026_73.qsub)
+Launcher: Task 99 running job 100 on c-05-12 (bash optimize_calc_time_53026_99.qsub)
+Launcher: Task 112 running job 113 on c-05-12 (bash optimize_calc_time_53026_112.qsub)
+Launcher: Task 93 running job 94 on c-05-12 (bash optimize_calc_time_53026_93.qsub)
+Launcher: Task 100 running job 101 on c-05-12 (bash optimize_calc_time_53026_100.qsub)
+Launcher: Task 118 running job 119 on c-05-12 (bash optimize_calc_time_53026_118.qsub)
+Launcher: Task 72 running job 73 on c-05-12 (bash optimize_calc_time_53026_72.qsub)
+Launcher: Task 25 running job 26 on c-05-12 (bash optimize_calc_time_53026_25.qsub)
+Launcher: Task 84 running job 85 on c-05-12 (bash optimize_calc_time_53026_84.qsub)
+Launcher: Task 86 running job 87 on c-05-12 (bash optimize_calc_time_53026_86.qsub)
+Launcher: Task 12 running job 13 on c-05-12 (bash optimize_calc_time_53026_12.qsub)
+Launcher: Task 79 running job 80 on c-05-12 (bash optimize_calc_time_53026_79.qsub)
+Launcher: Task 102 running job 103 on c-05-12 (bash optimize_calc_time_53026_102.qsub)
+Launcher: Task 103 running job 104 on c-05-12 (bash optimize_calc_time_53026_103.qsub)
+Launcher: Task 53 running job 54 on c-05-12 (bash optimize_calc_time_53026_53.qsub)
+Launcher: Task 0 running job 1 on c-05-12 (bash optimize_calc_time_53026_0.qsub)
+Launcher: Task 88 running job 89 on c-05-12 (bash optimize_calc_time_53026_88.qsub)
+Launcher: Task 14 running job 15 on c-05-12 (bash optimize_calc_time_53026_14.qsub)
+Launcher: Task 20 running job 21 on c-05-12 (bash optimize_calc_time_53026_20.qsub)
+Launcher: Task 64 running job 65 on c-05-12 (bash optimize_calc_time_53026_64.qsub)
+Launcher: Task 97 running job 98 on c-05-12 (bash optimize_calc_time_53026_97.qsub)
+Launcher: Task 8 running job 9 on c-05-12 (bash optimize_calc_time_53026_8.qsub)
+Launcher: Task 117 running job 118 on c-05-12 (bash optimize_calc_time_53026_117.qsub)
+Launcher: Task 36 running job 37 on c-05-12 (bash optimize_calc_time_53026_36.qsub)
+Launcher: Task 90 running job 91 on c-05-12 (bash optimize_calc_time_53026_90.qsub)
+Launcher: Task 6 running job 7 on c-05-12 (bash optimize_calc_time_53026_6.qsub)
+Launcher: Task 24 running job 25 on c-05-12 (bash optimize_calc_time_53026_24.qsub)
+Launcher: Task 35 running job 36 on c-05-12 (bash optimize_calc_time_53026_35.qsub)
+Launcher: Task 101 running job 102 on c-05-12 (bash optimize_calc_time_53026_101.qsub)
+Launcher: Task 18 running job 19 on c-05-12 (bash optimize_calc_time_53026_18.qsub)
+Launcher: Task 4 running job 5 on c-05-12 (bash optimize_calc_time_53026_4.qsub)
+Launcher: Task 60 running job 61 on c-05-12 (bash optimize_calc_time_53026_60.qsub)
+Launcher: Task 52 running job 53 on c-05-12 (bash optimize_calc_time_53026_52.qsub)
+Launcher: Task 115 running job 116 on c-05-12 (bash optimize_calc_time_53026_115.qsub)
+Launcher: Task 7 running job 8 on c-05-12 (bash optimize_calc_time_53026_7.qsub)
+Launcher: Task 59 running job 60 on c-05-12 (bash optimize_calc_time_53026_59.qsub)
+Launcher: Task 31 running job 32 on c-05-12 (bash optimize_calc_time_53026_31.qsub)
+Launcher: Task 11 running job 12 on c-05-12 (bash optimize_calc_time_53026_11.qsub)
+Launcher: Task 22 running job 23 on c-05-12 (bash optimize_calc_time_53026_22.qsub)
+Launcher: Task 2 running job 3 on c-05-12 (bash optimize_calc_time_53026_2.qsub)
+Launcher: Task 68 running job 69 on c-05-12 (bash optimize_calc_time_53026_68.qsub)
+Launcher: Task 3 running job 4 on c-05-12 (bash optimize_calc_time_53026_3.qsub)
+Removing files
+Launcher: Job 101 completed in 21 seconds.
+Launcher: Task 100 done. Exiting.
+slurmstepd-c-05-12: error: *** JOB 3744032 ON c-05-12 CANCELLED AT 2026-05-31T19:14:14 ***
