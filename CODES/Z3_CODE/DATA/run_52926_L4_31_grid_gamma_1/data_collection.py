@@ -99,16 +99,19 @@ im = ax.imshow(
     extent=[0, 1, 0, 1],        # x and y axes from 0 to 1.1
     aspect='auto',
     cmap=cmap,
-    vmin=0, vmax=1.5
+    vmin=0, vmax=0.7
 )
 
 cbar = plt.colorbar(im, ax=ax)
 cbar.set_label('Decay Rate λ')
 
-ax.set_xlabel('x')
-ax.set_ylabel('y')
-ax.set_title('Phase Diagram')
-plt.rcParams["figure.figsize"] = (5,3.6)
+ax.set_xlabel('$f/J * cos(φ)$')
+ax.set_ylabel('$f/J * sin(φ)$')
+ax.set_title(f'Phase Diagram: L = {L_array[0]}, Γ = {gamma_array[0]}, Polar Grid (f/J, φ)')
+plt.rcParams["figure.figsize"] = (18, 7)
 #ax.clim(0, 1.5)  # Set color limits for better contrast
+plt.savefig('phase_diagram.png', dpi=600)
+plt.savefig('phase_diagram.pdf', format='pdf')
+
 plt.tight_layout()
 plt.show()
