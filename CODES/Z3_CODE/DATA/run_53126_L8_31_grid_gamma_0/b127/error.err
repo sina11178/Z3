@@ -1,0 +1,10 @@
+/scratch/ganymede2/sxr190099/run_53126_L8_31_grid_gamma_0/b127/Z3_code.py:276: RuntimeWarning: divide by zero encountered in scalar divide
+  prefactor = 1/(np.trace(time_evol_op_dag @ time_evol_op))
+/scratch/ganymede2/sxr190099/run_53126_L8_31_grid_gamma_0/b127/Z3_code.py:276: RuntimeWarning: invalid value encountered in scalar divide
+  prefactor = 1/(np.trace(time_evol_op_dag @ time_evol_op))
+/scratch/ganymede2/sxr190099/run_53126_L8_31_grid_gamma_0/b127/Z3_code.py:281: RuntimeWarning: invalid value encountered in scalar multiply
+  autocorr_SIG = prefactor * np.trace(product_SIG)
+
+real	941m37.015s
+user	928m52.198s
+sys	7m27.841s

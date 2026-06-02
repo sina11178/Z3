@@ -1,0 +1,16 @@
+Traceback (most recent call last):
+  File "/scratch/ganymede2/sxr190099/run_53126_L8_31_grid_gamma_0/b111/./main.py", line 46, in <module>
+    size_autocorrelator_SIMULATION_NPY(-10, 25, .5, [8], r_phi_values, gamma_array[0])
+  File "/scratch/ganymede2/sxr190099/run_53126_L8_31_grid_gamma_0/b111/size_comparison_autocorr_SIM.py", line 94, in size_autocorrelator_SIMULATION_NPY
+    return_list.append(np.ndarray.tolist(output_list(A_list[k], U_list[k], U_inv_list[k], in_list_exp, size_array[k], hamiltonians[k], gamma)))  # LIST W/ OUTPUTS OF DIFF PARAMS
+  File "/scratch/ganymede2/sxr190099/run_53126_L8_31_grid_gamma_0/b111/Z3_code.py", line 353, in output_list
+    out_list[i] = autocorrelator(A, U, U_inv, input_list[i], size, hamiltonian, gamma).real  #  Stores respective outputs in list
+  File "/scratch/ganymede2/sxr190099/run_53126_L8_31_grid_gamma_0/b111/Z3_code.py", line 267, in autocorrelator
+    time_evol_op = time_evol_op_at_time_t(A, U, U_inv, time, gamma, size)  # Finds time evol operator at time t
+  File "/scratch/ganymede2/sxr190099/run_53126_L8_31_grid_gamma_0/b111/Z3_code.py", line 229, in time_evol_op_at_time_t
+    evol_to_t = U @ A_matrix @ U_inv
+numpy._core._exceptions._ArrayMemoryError: Unable to allocate 657. MiB for an array with shape (6561, 6561) and data type complex128
+
+real	52m58.887s
+user	50m1.414s
+sys	1m43.228s

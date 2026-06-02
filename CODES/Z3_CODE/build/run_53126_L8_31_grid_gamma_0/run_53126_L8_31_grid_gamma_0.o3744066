@@ -1,0 +1,1016 @@
+Starting job run_53126_L8_31_grid_gamma_0
+WARNING (05/31/26 20:55:45): LAUNCHER_WORKDIR variable not set. Using current directory.
+Launcher: Setup complete.
+
+------------- SUMMARY ---------------
+   Number of hosts:    2
+   Working directory:  /home/sxr190099/Z3/CODES/Z3_CODE/build/run_53126_L8_31_grid_gamma_0
+   Processes per host: 128
+   Total processes:    256
+   Total jobs:         256
+   Scheduling method:  interleaved
+
+-------------------------------------
+Launcher: Starting parallel tasks...
+using /tmp/launcher.3744066.hostlist.kdE8tJCa to get hosts
+starting job on c-06-17
+starting job on c-06-18
+Lmod has detected the following error: The following module(s) are unknown:
+"git"
+
+Please check the spelling or version number. Also try "module spider ..."
+It is also possible your cache file is out-of-date; it may help to try:
+  $ module --ignore_cache load "git"
+
+Also make sure that all modulefiles written in TCL start with the string
+#%Module
+
+
+
+Lmod has detected the following error: The following module(s) are unknown:
+"git"
+
+Please check the spelling or version number. Also try "module spider ..."
+It is also possible your cache file is out-of-date; it may help to try:
+  $ module --ignore_cache load "git"
+
+Also make sure that all modulefiles written in TCL start with the string
+#%Module
+
+
+
+Launcher: Task 151 running job 152 on c-06-18 (bash run_53126_L8_31_grid_gamma_0_151.qsub)
+run_53126_L8_31_grid_gamma_0_151.qsub: line 4: run_53126_L8_31_grid_gamma_0: command not found
+Launcher: Task 202 running job 203 on c-06-18 (bash run_53126_L8_31_grid_gamma_0_202.qsub)
+run_53126_L8_31_grid_gamma_0_151.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/: No such file or directory
+Launcher: Task 224 running job 225 on c-06-18 (bash run_53126_L8_31_grid_gamma_0_224.qsub)
+Launcher: Task 39 running job 40 on c-06-17 (bash run_53126_L8_31_grid_gamma_0_39.qsub)
+Launcher: Task 51 running job 52 on c-06-17 (bash run_53126_L8_31_grid_gamma_0_51.qsub)
+run_53126_L8_31_grid_gamma_0_202.qsub: line 4: run_53126_L8_31_grid_gamma_0: command not found
+run_53126_L8_31_grid_gamma_0_224.qsub: line 4: run_53126_L8_31_grid_gamma_0: command not found
+run_53126_L8_31_grid_gamma_0_202.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/: No such file or directory
+run_53126_L8_31_grid_gamma_0_224.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/: No such file or directory
+run_53126_L8_31_grid_gamma_0_51.qsub: line 4: run_53126_L8_31_grid_gamma_0: command not found
+Launcher: Task 239 running job 240 on c-06-18 (bash run_53126_L8_31_grid_gamma_0_239.qsub)
+run_53126_L8_31_grid_gamma_0_51.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/: No such file or directory
+run_53126_L8_31_grid_gamma_0_39.qsub: line 4: run_53126_L8_31_grid_gamma_0: command not found
+run_53126_L8_31_grid_gamma_0_39.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/: No such file or directory
+Launcher: Task 176 running job 177 on c-06-18 (bash run_53126_L8_31_grid_gamma_0_176.qsub)
+Launcher: Task 190 running job 191 on c-06-18 (bash run_53126_L8_31_grid_gamma_0_190.qsub)
+Launcher: Task 172 running job 173 on c-06-18 (bash run_53126_L8_31_grid_gamma_0_172.qsub)
+run_53126_L8_31_grid_gamma_0_176.qsub: line 4: run_53126_L8_31_grid_gamma_0: command not found
+run_53126_L8_31_grid_gamma_0_239.qsub: line 4: run_53126_L8_31_grid_gamma_0: command not found
+Launcher: Task 50 running job 51 on c-06-17 (bash run_53126_L8_31_grid_gamma_0_50.qsub)
+run_53126_L8_31_grid_gamma_0_239.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/: No such file or directory
+run_53126_L8_31_grid_gamma_0_176.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/: No such file or directory
+run_53126_L8_31_grid_gamma_0_172.qsub: line 4: run_53126_L8_31_grid_gamma_0: command not found
+Launcher: Task 158 running job 159 on c-06-18 (bash run_53126_L8_31_grid_gamma_0_158.qsub)
+run_53126_L8_31_grid_gamma_0_172.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/: No such file or directory
+Launcher: Task 203 running job 204 on c-06-18 (bash run_53126_L8_31_grid_gamma_0_203.qsub)
+run_53126_L8_31_grid_gamma_0_190.qsub: line 4: run_53126_L8_31_grid_gamma_0: command not found
+run_53126_L8_31_grid_gamma_0_50.qsub: line 4: run_53126_L8_31_grid_gamma_0: command not found
+run_53126_L8_31_grid_gamma_0_190.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/: No such file or directory
+run_53126_L8_31_grid_gamma_0_158.qsub: line 4: run_53126_L8_31_grid_gamma_0: command not found
+run_53126_L8_31_grid_gamma_0_50.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/: No such file or directory
+run_53126_L8_31_grid_gamma_0_158.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/: No such file or directory
+run_53126_L8_31_grid_gamma_0_203.qsub: line 4: run_53126_L8_31_grid_gamma_0: command not found
+run_53126_L8_31_grid_gamma_0_203.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/: No such file or directory
+Launcher: Job 52 completed in 1 seconds.
+Launcher: Job 40 completed in 1 seconds.
+Launcher: Job 51 completed in 1 seconds.
+Launcher: Task 51 done. Exiting.
+Launcher: Task 39 done. Exiting.
+Launcher: Task 50 done. Exiting.
+Launcher: Job 203 completed in 1 seconds.
+Launcher: Job 173 completed in 1 seconds.
+Launcher: Job 191 completed in 1 seconds.
+Launcher: Task 202 done. Exiting.
+Launcher: Task 172 done. Exiting.
+Launcher: Task 190 done. Exiting.
+Launcher: Job 240 completed in 1 seconds.
+Launcher: Job 159 completed in 1 seconds.
+Launcher: Task 239 done. Exiting.
+Launcher: Task 158 done. Exiting.
+Launcher: Job 204 completed in 1 seconds.
+Launcher: Job 177 completed in 1 seconds.
+Launcher: Task 203 done. Exiting.
+Launcher: Task 176 done. Exiting.
+Launcher: Job 152 completed in 1 seconds.
+Launcher: Job 225 completed in 1 seconds.
+Launcher: Task 151 done. Exiting.
+Launcher: Task 224 done. Exiting.
+Launcher: Task 27 running job 28 on c-06-17 (bash run_53126_L8_31_grid_gamma_0_27.qsub)
+Launcher: Task 36 running job 37 on c-06-17 (bash run_53126_L8_31_grid_gamma_0_36.qsub)
+Launcher: Task 192 running job 193 on c-06-18 (bash run_53126_L8_31_grid_gamma_0_192.qsub)
+run_53126_L8_31_grid_gamma_0_27.qsub: line 4: run_53126_L8_31_grid_gamma_0: command not found
+run_53126_L8_31_grid_gamma_0_36.qsub: line 4: run_53126_L8_31_grid_gamma_0: command not found
+run_53126_L8_31_grid_gamma_0_27.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/: No such file or directory
+run_53126_L8_31_grid_gamma_0_36.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/: No such file or directory
+Launcher: Task 34 running job 35 on c-06-17 (bash run_53126_L8_31_grid_gamma_0_34.qsub)
+run_53126_L8_31_grid_gamma_0_192.qsub: line 4: run_53126_L8_31_grid_gamma_0: command not found
+run_53126_L8_31_grid_gamma_0_192.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/: No such file or directory
+Launcher: Task 35 running job 36 on c-06-17 (bash run_53126_L8_31_grid_gamma_0_35.qsub)
+Launcher: Task 146 running job 147 on c-06-18 (bash run_53126_L8_31_grid_gamma_0_146.qsub)
+Launcher: Task 95 running job 96 on c-06-17 (bash run_53126_L8_31_grid_gamma_0_95.qsub)
+run_53126_L8_31_grid_gamma_0_35.qsub: line 4: run_53126_L8_31_grid_gamma_0: command not found
+run_53126_L8_31_grid_gamma_0_34.qsub: line 4: run_53126_L8_31_grid_gamma_0: command not found
+Launcher: Task 21 running job 22 on c-06-17 (bash run_53126_L8_31_grid_gamma_0_21.qsub)
+run_53126_L8_31_grid_gamma_0_35.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/: No such file or directory
+run_53126_L8_31_grid_gamma_0_34.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/: No such file or directory
+Launcher: Task 241 running job 242 on c-06-18 (echo "Fake run")
+Fake run
+Launcher: Job 242 completed in 0 seconds.
+Launcher: Task 241 done. Exiting.
+run_53126_L8_31_grid_gamma_0_146.qsub: line 4: run_53126_L8_31_grid_gamma_0: command not found
+run_53126_L8_31_grid_gamma_0_95.qsub: line 4: run_53126_L8_31_grid_gamma_0: command not found
+run_53126_L8_31_grid_gamma_0_146.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/: No such file or directory
+run_53126_L8_31_grid_gamma_0_95.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/: No such file or directory
+run_53126_L8_31_grid_gamma_0_21.qsub: line 4: run_53126_L8_31_grid_gamma_0: command not found
+run_53126_L8_31_grid_gamma_0_21.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/: No such file or directory
+Launcher: Job 193 completed in 1 seconds.
+Launcher: Task 192 done. Exiting.
+Launcher: Job 28 completed in 1 seconds.
+Launcher: Job 37 completed in 1 seconds.
+Launcher: Task 27 done. Exiting.
+Launcher: Task 36 done. Exiting.
+Launcher: Job 36 completed in 1 seconds.
+Launcher: Task 35 done. Exiting.
+Launcher: Job 35 completed in 1 seconds.
+Launcher: Task 34 done. Exiting.
+Launcher: Job 147 completed in 1 seconds.
+Launcher: Task 146 done. Exiting.
+Launcher: Job 96 completed in 1 seconds.
+Launcher: Task 95 done. Exiting.
+Launcher: Job 22 completed in 1 seconds.
+Launcher: Task 21 done. Exiting.
+Launcher: Task 1 running job 2 on c-06-17 (bash run_53126_L8_31_grid_gamma_0_1.qsub)
+run_53126_L8_31_grid_gamma_0_1.qsub: line 4: run_53126_L8_31_grid_gamma_0: command not found
+run_53126_L8_31_grid_gamma_0_1.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/: No such file or directory
+Launcher: Task 26 running job 27 on c-06-17 (bash run_53126_L8_31_grid_gamma_0_26.qsub)
+run_53126_L8_31_grid_gamma_0_26.qsub: line 4: run_53126_L8_31_grid_gamma_0: command not found
+Launcher: Task 218 running job 219 on c-06-18 (bash run_53126_L8_31_grid_gamma_0_218.qsub)
+Launcher: Task 226 running job 227 on c-06-18 (bash run_53126_L8_31_grid_gamma_0_226.qsub)
+run_53126_L8_31_grid_gamma_0_26.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/: No such file or directory
+Launcher: Task 244 running job 245 on c-06-18 (echo "Fake run")
+Fake run
+Launcher: Job 245 completed in 0 seconds.
+Launcher: Task 106 running job 107 on c-06-17 (bash run_53126_L8_31_grid_gamma_0_106.qsub)
+Launcher: Task 11 running job 12 on c-06-17 (bash run_53126_L8_31_grid_gamma_0_11.qsub)
+Launcher: Task 244 done. Exiting.
+run_53126_L8_31_grid_gamma_0_218.qsub: line 4: run_53126_L8_31_grid_gamma_0: command not found
+run_53126_L8_31_grid_gamma_0_226.qsub: line 4: run_53126_L8_31_grid_gamma_0: command not found
+run_53126_L8_31_grid_gamma_0_218.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/: No such file or directory
+run_53126_L8_31_grid_gamma_0_226.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/: No such file or directory
+Launcher: Task 56 running job 57 on c-06-17 (bash run_53126_L8_31_grid_gamma_0_56.qsub)
+Launcher: Task 223 running job 224 on c-06-18 (bash run_53126_L8_31_grid_gamma_0_223.qsub)
+Launcher: Task 88 running job 89 on c-06-17 (bash run_53126_L8_31_grid_gamma_0_88.qsub)
+Launcher: Task 246 running job 247 on c-06-18 (echo "Fake run")
+Fake run
+run_53126_L8_31_grid_gamma_0_11.qsub: line 4: run_53126_L8_31_grid_gamma_0: command not found
+Launcher: Job 247 completed in 0 seconds.
+Launcher: Task 133 running job 134 on c-06-18 (bash run_53126_L8_31_grid_gamma_0_133.qsub)
+run_53126_L8_31_grid_gamma_0_106.qsub: line 4: run_53126_L8_31_grid_gamma_0: command not found
+Launcher: Task 246 done. Exiting.
+run_53126_L8_31_grid_gamma_0_11.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/: No such file or directory
+Launcher: Task 231 running job 232 on c-06-18 (bash run_53126_L8_31_grid_gamma_0_231.qsub)
+run_53126_L8_31_grid_gamma_0_106.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/: No such file or directory
+Launcher: Task 254 running job 255 on c-06-18 (echo "Fake run")
+Fake run
+Launcher: Job 255 completed in 0 seconds.
+Launcher: Task 165 running job 166 on c-06-18 (bash run_53126_L8_31_grid_gamma_0_165.qsub)
+Launcher: Task 254 done. Exiting.
+run_53126_L8_31_grid_gamma_0_56.qsub: line 4: run_53126_L8_31_grid_gamma_0: command not found
+run_53126_L8_31_grid_gamma_0_231.qsub: line 4: run_53126_L8_31_grid_gamma_0: command not found
+run_53126_L8_31_grid_gamma_0_56.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/: No such file or directory
+run_53126_L8_31_grid_gamma_0_231.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/: No such file or directory
+run_53126_L8_31_grid_gamma_0_223.qsub: line 4: run_53126_L8_31_grid_gamma_0: command not found
+run_53126_L8_31_grid_gamma_0_133.qsub: line 4: run_53126_L8_31_grid_gamma_0: command not found
+run_53126_L8_31_grid_gamma_0_88.qsub: line 4: run_53126_L8_31_grid_gamma_0: command not found
+Launcher: Task 6 running job 7 on c-06-17 (bash run_53126_L8_31_grid_gamma_0_6.qsub)
+run_53126_L8_31_grid_gamma_0_165.qsub: line 4: run_53126_L8_31_grid_gamma_0: command not found
+run_53126_L8_31_grid_gamma_0_223.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/: No such file or directory
+Launcher: Task 160 running job 161 on c-06-18 (bash run_53126_L8_31_grid_gamma_0_160.qsub)
+run_53126_L8_31_grid_gamma_0_133.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/: No such file or directory
+run_53126_L8_31_grid_gamma_0_88.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/: No such file or directory
+Launcher: Task 185 running job 186 on c-06-18 (bash run_53126_L8_31_grid_gamma_0_185.qsub)
+run_53126_L8_31_grid_gamma_0_165.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/: No such file or directory
+Launcher: Task 198 running job 199 on c-06-18 (bash run_53126_L8_31_grid_gamma_0_198.qsub)
+run_53126_L8_31_grid_gamma_0_6.qsub: line 4: run_53126_L8_31_grid_gamma_0: command not found
+run_53126_L8_31_grid_gamma_0_160.qsub: line 4: run_53126_L8_31_grid_gamma_0: command not found
+run_53126_L8_31_grid_gamma_0_6.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/: No such file or directory
+run_53126_L8_31_grid_gamma_0_185.qsub: line 4: run_53126_L8_31_grid_gamma_0: command not found
+run_53126_L8_31_grid_gamma_0_160.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/: No such file or directory
+run_53126_L8_31_grid_gamma_0_185.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/: No such file or directory
+run_53126_L8_31_grid_gamma_0_198.qsub: line 4: run_53126_L8_31_grid_gamma_0: command not found
+run_53126_L8_31_grid_gamma_0_198.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/: No such file or directory
+Launcher: Job 2 completed in 1 seconds.
+Launcher: Task 1 done. Exiting.
+Launcher: Job 27 completed in 1 seconds.
+Launcher: Task 26 done. Exiting.
+Launcher: Job 227 completed in 1 seconds.
+Launcher: Task 226 done. Exiting.
+Launcher: Job 219 completed in 1 seconds.
+Launcher: Task 218 done. Exiting.
+Launcher: Job 12 completed in 1 seconds.
+Launcher: Task 11 done. Exiting.
+Launcher: Job 232 completed in 1 seconds.
+Launcher: Job 107 completed in 1 seconds.
+Launcher: Task 231 done. Exiting.
+Launcher: Task 106 done. Exiting.
+Launcher: Job 57 completed in 1 seconds.
+Launcher: Task 56 done. Exiting.
+Launcher: Job 89 completed in 1 seconds.
+Launcher: Job 134 completed in 1 seconds.
+Launcher: Task 88 done. Exiting.
+Launcher: Task 133 done. Exiting.
+Launcher: Job 7 completed in 1 seconds.
+Launcher: Task 6 done. Exiting.
+Launcher: Job 224 completed in 1 seconds.
+Launcher: Task 223 done. Exiting.
+Launcher: Job 166 completed in 1 seconds.
+Launcher: Task 165 done. Exiting.
+Launcher: Job 161 completed in 1 seconds.
+Launcher: Task 160 done. Exiting.
+Launcher: Job 186 completed in 1 seconds.
+Launcher: Task 185 done. Exiting.
+Launcher: Job 199 completed in 1 seconds.
+Launcher: Task 198 done. Exiting.
+Launcher: Task 49 running job 50 on c-06-17 (bash run_53126_L8_31_grid_gamma_0_49.qsub)
+Launcher: Task 229 running job 230 on c-06-18 (bash run_53126_L8_31_grid_gamma_0_229.qsub)
+Launcher: Task 167 running job 168 on c-06-18 (bash run_53126_L8_31_grid_gamma_0_167.qsub)
+Launcher: Task 144 running job 145 on c-06-18 (bash run_53126_L8_31_grid_gamma_0_144.qsub)
+Launcher: Task 134 running job 135 on c-06-18 (bash run_53126_L8_31_grid_gamma_0_134.qsub)
+run_53126_L8_31_grid_gamma_0_49.qsub: line 4: run_53126_L8_31_grid_gamma_0: command not found
+Launcher: Task 240 running job 241 on c-06-18 (bash run_53126_L8_31_grid_gamma_0_240.qsub)
+run_53126_L8_31_grid_gamma_0_49.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/: No such file or directory
+Launcher: Task 118 running job 119 on c-06-17 (bash run_53126_L8_31_grid_gamma_0_118.qsub)
+Launcher: Task 83 running job 84 on c-06-17 (bash run_53126_L8_31_grid_gamma_0_83.qsub)
+run_53126_L8_31_grid_gamma_0_167.qsub: line 4: run_53126_L8_31_grid_gamma_0: command not found
+Launcher: Task 44 running job 45 on c-06-17 (bash run_53126_L8_31_grid_gamma_0_44.qsub)
+run_53126_L8_31_grid_gamma_0_144.qsub: line 4: run_53126_L8_31_grid_gamma_0: command not found
+run_53126_L8_31_grid_gamma_0_229.qsub: line 4: run_53126_L8_31_grid_gamma_0: command not found
+run_53126_L8_31_grid_gamma_0_167.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/: No such file or directory
+Launcher: Task 7 running job 8 on c-06-17 (bash run_53126_L8_31_grid_gamma_0_7.qsub)
+Launcher: Task 135 running job 136 on c-06-18 (bash run_53126_L8_31_grid_gamma_0_135.qsub)
+run_53126_L8_31_grid_gamma_0_144.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/: No such file or directory
+run_53126_L8_31_grid_gamma_0_229.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/: No such file or directory
+Launcher: Task 97 running job 98 on c-06-17 (bash run_53126_L8_31_grid_gamma_0_97.qsub)
+run_53126_L8_31_grid_gamma_0_118.qsub: line 4: run_53126_L8_31_grid_gamma_0: command not found
+run_53126_L8_31_grid_gamma_0_240.qsub: line 4: run_53126_L8_31_grid_gamma_0: command not found
+run_53126_L8_31_grid_gamma_0_135.qsub: line 4: run_53126_L8_31_grid_gamma_0: command not found
+run_53126_L8_31_grid_gamma_0_7.qsub: line 4: run_53126_L8_31_grid_gamma_0: command not found
+run_53126_L8_31_grid_gamma_0_118.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/: No such file or directory
+run_53126_L8_31_grid_gamma_0_240.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/: No such file or directory
+run_53126_L8_31_grid_gamma_0_134.qsub: line 4: run_53126_L8_31_grid_gamma_0: command not found
+run_53126_L8_31_grid_gamma_0_135.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/: No such file or directory
+run_53126_L8_31_grid_gamma_0_7.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/: No such file or directory
+run_53126_L8_31_grid_gamma_0_97.qsub: line 4: run_53126_L8_31_grid_gamma_0: command not found
+run_53126_L8_31_grid_gamma_0_134.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/: No such file or directory
+run_53126_L8_31_grid_gamma_0_44.qsub: line 4: run_53126_L8_31_grid_gamma_0: command not found
+run_53126_L8_31_grid_gamma_0_97.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/: No such file or directory
+run_53126_L8_31_grid_gamma_0_83.qsub: line 4: run_53126_L8_31_grid_gamma_0: command not found
+run_53126_L8_31_grid_gamma_0_44.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/: No such file or directory
+Launcher: Task 171 running job 172 on c-06-18 (bash run_53126_L8_31_grid_gamma_0_171.qsub)
+run_53126_L8_31_grid_gamma_0_83.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/: No such file or directory
+run_53126_L8_31_grid_gamma_0_171.qsub: line 4: run_53126_L8_31_grid_gamma_0: command not found
+run_53126_L8_31_grid_gamma_0_171.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/: No such file or directory
+Launcher: Job 50 completed in 1 seconds.
+Launcher: Task 49 done. Exiting.
+Launcher: Job 8 completed in 1 seconds.
+Launcher: Task 7 done. Exiting.
+Launcher: Job 230 completed in 1 seconds.
+Launcher: Job 168 completed in 1 seconds.
+Launcher: Task 229 done. Exiting.
+Launcher: Task 167 done. Exiting.
+Launcher: Job 145 completed in 1 seconds.
+Launcher: Task 144 done. Exiting.
+Launcher: Job 136 completed in 1 seconds.
+Launcher: Job 98 completed in 1 seconds.
+Launcher: Job 119 completed in 1 seconds.
+Launcher: Job 45 completed in 1 seconds.
+Launcher: Task 97 done. Exiting.
+Launcher: Task 135 done. Exiting.
+Launcher: Task 118 done. Exiting.
+Launcher: Task 44 done. Exiting.
+Launcher: Job 135 completed in 1 seconds.
+Launcher: Task 134 done. Exiting.
+Launcher: Job 84 completed in 1 seconds.
+Launcher: Task 83 done. Exiting.
+Launcher: Job 241 completed in 1 seconds.
+Launcher: Task 240 done. Exiting.
+Launcher: Job 172 completed in 1 seconds.
+Launcher: Task 171 done. Exiting.
+Launcher: Task 60 running job 61 on c-06-17 (bash run_53126_L8_31_grid_gamma_0_60.qsub)
+run_53126_L8_31_grid_gamma_0_60.qsub: line 4: run_53126_L8_31_grid_gamma_0: command not found
+Launcher: Task 237 running job 238 on c-06-18 (bash run_53126_L8_31_grid_gamma_0_237.qsub)
+run_53126_L8_31_grid_gamma_0_60.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/: No such file or directory
+run_53126_L8_31_grid_gamma_0_237.qsub: line 4: run_53126_L8_31_grid_gamma_0: command not found
+run_53126_L8_31_grid_gamma_0_237.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/: No such file or directory
+Launcher: Task 128 running job 129 on c-06-18 (bash run_53126_L8_31_grid_gamma_0_128.qsub)
+Launcher: Task 161 running job 162 on c-06-18 (bash run_53126_L8_31_grid_gamma_0_161.qsub)
+Launcher: Task 114 running job 115 on c-06-17 (bash run_53126_L8_31_grid_gamma_0_114.qsub)
+Launcher: Task 119 running job 120 on c-06-17 (bash run_53126_L8_31_grid_gamma_0_119.qsub)
+Launcher: Task 209 running job 210 on c-06-18 (bash run_53126_L8_31_grid_gamma_0_209.qsub)
+run_53126_L8_31_grid_gamma_0_161.qsub: line 4: run_53126_L8_31_grid_gamma_0: command not found
+run_53126_L8_31_grid_gamma_0_128.qsub: line 4: run_53126_L8_31_grid_gamma_0: command not found
+Launcher: Task 217 running job 218 on c-06-18 (bash run_53126_L8_31_grid_gamma_0_217.qsub)
+run_53126_L8_31_grid_gamma_0_119.qsub: line 4: run_53126_L8_31_grid_gamma_0: command not found
+run_53126_L8_31_grid_gamma_0_161.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/: No such file or directory
+Launcher: Task 42 running job 43 on c-06-17 (bash run_53126_L8_31_grid_gamma_0_42.qsub)
+Launcher: Task 216 running job 217 on c-06-18 (bash run_53126_L8_31_grid_gamma_0_216.qsub)
+run_53126_L8_31_grid_gamma_0_128.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/: No such file or directory
+run_53126_L8_31_grid_gamma_0_114.qsub: line 4: run_53126_L8_31_grid_gamma_0: command not found
+run_53126_L8_31_grid_gamma_0_119.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/: No such file or directory
+run_53126_L8_31_grid_gamma_0_217.qsub: line 4: run_53126_L8_31_grid_gamma_0: command not found
+run_53126_L8_31_grid_gamma_0_114.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/: No such file or directory
+run_53126_L8_31_grid_gamma_0_42.qsub: line 4: run_53126_L8_31_grid_gamma_0: command not found
+run_53126_L8_31_grid_gamma_0_209.qsub: line 4: run_53126_L8_31_grid_gamma_0: command not found
+run_53126_L8_31_grid_gamma_0_217.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/: No such file or directory
+Launcher: Task 232 running job 233 on c-06-18 (bash run_53126_L8_31_grid_gamma_0_232.qsub)
+run_53126_L8_31_grid_gamma_0_42.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/: No such file or directory
+run_53126_L8_31_grid_gamma_0_209.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/: No such file or directory
+run_53126_L8_31_grid_gamma_0_216.qsub: line 4: run_53126_L8_31_grid_gamma_0: command not found
+run_53126_L8_31_grid_gamma_0_216.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/: No such file or directory
+run_53126_L8_31_grid_gamma_0_232.qsub: line 4: run_53126_L8_31_grid_gamma_0: command not found
+run_53126_L8_31_grid_gamma_0_232.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/: No such file or directory
+Launcher: Job 61 completed in 1 seconds.
+Launcher: Task 60 done. Exiting.
+Launcher: Job 238 completed in 1 seconds.
+Launcher: Task 237 done. Exiting.
+Launcher: Job 120 completed in 1 seconds.
+Launcher: Job 115 completed in 1 seconds.
+Launcher: Task 119 done. Exiting.
+Launcher: Task 114 done. Exiting.
+Launcher: Job 162 completed in 1 seconds.
+Launcher: Job 129 completed in 1 seconds.
+Launcher: Job 218 completed in 1 seconds.
+Launcher: Task 161 done. Exiting.
+Launcher: Job 43 completed in 1 seconds.
+Launcher: Task 128 done. Exiting.
+Launcher: Task 42 done. Exiting.
+Launcher: Task 217 done. Exiting.
+Launcher: Job 217 completed in 1 seconds.
+Launcher: Task 216 done. Exiting.
+Launcher: Job 210 completed in 1 seconds.
+Launcher: Task 209 done. Exiting.
+Launcher: Job 233 completed in 1 seconds.
+Launcher: Task 232 done. Exiting.
+Launcher: Task 227 running job 228 on c-06-18 (bash run_53126_L8_31_grid_gamma_0_227.qsub)
+Launcher: Task 107 running job 108 on c-06-17 (bash run_53126_L8_31_grid_gamma_0_107.qsub)
+Launcher: Task 116 running job 117 on c-06-17 (bash run_53126_L8_31_grid_gamma_0_116.qsub)
+Launcher: Task 37 running job 38 on c-06-17 (bash run_53126_L8_31_grid_gamma_0_37.qsub)
+run_53126_L8_31_grid_gamma_0_227.qsub: line 4: run_53126_L8_31_grid_gamma_0: command not found
+run_53126_L8_31_grid_gamma_0_107.qsub: line 4: run_53126_L8_31_grid_gamma_0: command not found
+run_53126_L8_31_grid_gamma_0_107.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/: No such file or directory
+run_53126_L8_31_grid_gamma_0_227.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/: No such file or directory
+run_53126_L8_31_grid_gamma_0_116.qsub: line 4: run_53126_L8_31_grid_gamma_0: command not found
+run_53126_L8_31_grid_gamma_0_37.qsub: line 4: run_53126_L8_31_grid_gamma_0: command not found
+Launcher: Task 32 running job 33 on c-06-17 (bash run_53126_L8_31_grid_gamma_0_32.qsub)
+run_53126_L8_31_grid_gamma_0_116.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/: No such file or directory
+run_53126_L8_31_grid_gamma_0_37.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/: No such file or directory
+Launcher: Task 242 running job 243 on c-06-18 (echo "Fake run")
+Fake run
+Launcher: Job 243 completed in 0 seconds.
+Launcher: Task 242 done. Exiting.
+run_53126_L8_31_grid_gamma_0_32.qsub: line 4: run_53126_L8_31_grid_gamma_0: command not found
+Launcher: Task 54 running job 55 on c-06-17 (bash run_53126_L8_31_grid_gamma_0_54.qsub)
+Launcher: Task 104 running job 105 on c-06-17 (bash run_53126_L8_31_grid_gamma_0_104.qsub)
+run_53126_L8_31_grid_gamma_0_32.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/: No such file or directory
+run_53126_L8_31_grid_gamma_0_54.qsub: line 4: run_53126_L8_31_grid_gamma_0: command not found
+run_53126_L8_31_grid_gamma_0_54.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/: No such file or directory
+run_53126_L8_31_grid_gamma_0_104.qsub: line 4: run_53126_L8_31_grid_gamma_0: command not found
+run_53126_L8_31_grid_gamma_0_104.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/: No such file or directory
+Launcher: Job 228 completed in 1 seconds.
+Launcher: Job 108 completed in 1 seconds.
+Launcher: Task 227 done. Exiting.
+Launcher: Task 107 done. Exiting.
+Launcher: Job 38 completed in 1 seconds.
+Launcher: Task 37 done. Exiting.
+Launcher: Job 33 completed in 1 seconds.
+Launcher: Job 117 completed in 1 seconds.
+Launcher: Task 32 done. Exiting.
+Launcher: Task 116 done. Exiting.
+Launcher: Job 55 completed in 1 seconds.
+Launcher: Task 54 done. Exiting.
+Launcher: Job 105 completed in 1 seconds.
+Launcher: Task 104 done. Exiting.
+Launcher: Task 29 running job 30 on c-06-17 (bash run_53126_L8_31_grid_gamma_0_29.qsub)
+run_53126_L8_31_grid_gamma_0_29.qsub: line 4: run_53126_L8_31_grid_gamma_0: command not found
+run_53126_L8_31_grid_gamma_0_29.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/: No such file or directory
+Launcher: Task 45 running job 46 on c-06-17 (bash run_53126_L8_31_grid_gamma_0_45.qsub)
+Launcher: Task 24 running job 25 on c-06-17 (bash run_53126_L8_31_grid_gamma_0_24.qsub)
+Launcher: Task 251 running job 252 on c-06-18 (echo "Fake run")
+Fake run
+run_53126_L8_31_grid_gamma_0_24.qsub: line 4: run_53126_L8_31_grid_gamma_0: command not found
+Launcher: Task 67 running job 68 on c-06-17 (bash run_53126_L8_31_grid_gamma_0_67.qsub)
+Launcher: Job 252 completed in 0 seconds.
+Launcher: Task 251 done. Exiting.
+run_53126_L8_31_grid_gamma_0_24.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/: No such file or directory
+run_53126_L8_31_grid_gamma_0_45.qsub: line 4: run_53126_L8_31_grid_gamma_0: command not found
+Launcher: Task 183 running job 184 on c-06-18 (bash run_53126_L8_31_grid_gamma_0_183.qsub)
+run_53126_L8_31_grid_gamma_0_45.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/: No such file or directory
+run_53126_L8_31_grid_gamma_0_67.qsub: line 4: run_53126_L8_31_grid_gamma_0: command not found
+run_53126_L8_31_grid_gamma_0_183.qsub: line 4: run_53126_L8_31_grid_gamma_0: command not found
+run_53126_L8_31_grid_gamma_0_67.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/: No such file or directory
+Launcher: Task 213 running job 214 on c-06-18 (bash run_53126_L8_31_grid_gamma_0_213.qsub)
+run_53126_L8_31_grid_gamma_0_183.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/: No such file or directory
+Launcher: Task 108 running job 109 on c-06-17 (bash run_53126_L8_31_grid_gamma_0_108.qsub)
+run_53126_L8_31_grid_gamma_0_213.qsub: line 4: run_53126_L8_31_grid_gamma_0: command not found
+Launcher: Task 199 running job 200 on c-06-18 (bash run_53126_L8_31_grid_gamma_0_199.qsub)
+Launcher: Task 255 running job 256 on c-06-18 (echo "Fake run")
+Fake run
+run_53126_L8_31_grid_gamma_0_213.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/: No such file or directory
+Launcher: Task 164 running job 165 on c-06-18 (bash run_53126_L8_31_grid_gamma_0_164.qsub)
+Launcher: Job 256 completed in 0 seconds.
+Launcher: Task 255 done. Exiting.
+run_53126_L8_31_grid_gamma_0_199.qsub: line 4: run_53126_L8_31_grid_gamma_0: command not found
+run_53126_L8_31_grid_gamma_0_108.qsub: line 4: run_53126_L8_31_grid_gamma_0: command not found
+run_53126_L8_31_grid_gamma_0_164.qsub: line 4: run_53126_L8_31_grid_gamma_0: command not found
+run_53126_L8_31_grid_gamma_0_199.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/: No such file or directory
+run_53126_L8_31_grid_gamma_0_108.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/: No such file or directory
+run_53126_L8_31_grid_gamma_0_164.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/: No such file or directory
+Launcher: Job 30 completed in 1 seconds.
+Launcher: Task 29 done. Exiting.
+Launcher: Job 25 completed in 1 seconds.
+Launcher: Task 24 done. Exiting.
+Launcher: Job 46 completed in 1 seconds.
+Launcher: Task 45 done. Exiting.
+Launcher: Job 68 completed in 1 seconds.
+Launcher: Task 67 done. Exiting.
+Launcher: Job 184 completed in 1 seconds.
+Launcher: Job 214 completed in 1 seconds.
+Launcher: Job 200 completed in 1 seconds.
+Launcher: Job 109 completed in 1 seconds.
+Launcher: Task 183 done. Exiting.
+Launcher: Task 213 done. Exiting.
+Launcher: Task 199 done. Exiting.
+Launcher: Task 108 done. Exiting.
+Launcher: Job 165 completed in 1 seconds.
+Launcher: Task 164 done. Exiting.
+Launcher: Task 136 running job 137 on c-06-18 (bash run_53126_L8_31_grid_gamma_0_136.qsub)
+run_53126_L8_31_grid_gamma_0_136.qsub: line 4: run_53126_L8_31_grid_gamma_0: command not found
+run_53126_L8_31_grid_gamma_0_136.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/: No such file or directory
+Launcher: Task 127 running job 128 on c-06-17 (bash run_53126_L8_31_grid_gamma_0_127.qsub)
+Launcher: Task 138 running job 139 on c-06-18 (bash run_53126_L8_31_grid_gamma_0_138.qsub)
+run_53126_L8_31_grid_gamma_0_127.qsub: line 4: run_53126_L8_31_grid_gamma_0: command not found
+run_53126_L8_31_grid_gamma_0_138.qsub: line 4: run_53126_L8_31_grid_gamma_0: command not found
+Launcher: Task 100 running job 101 on c-06-17 (bash run_53126_L8_31_grid_gamma_0_100.qsub)
+run_53126_L8_31_grid_gamma_0_127.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/: No such file or directory
+run_53126_L8_31_grid_gamma_0_138.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/: No such file or directory
+Launcher: Task 154 running job 155 on c-06-18 (bash run_53126_L8_31_grid_gamma_0_154.qsub)
+Launcher: Task 93 running job 94 on c-06-17 (bash run_53126_L8_31_grid_gamma_0_93.qsub)
+run_53126_L8_31_grid_gamma_0_100.qsub: line 4: run_53126_L8_31_grid_gamma_0: command not found
+run_53126_L8_31_grid_gamma_0_100.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/: No such file or directory
+run_53126_L8_31_grid_gamma_0_154.qsub: line 4: run_53126_L8_31_grid_gamma_0: command not found
+run_53126_L8_31_grid_gamma_0_154.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/: No such file or directory
+run_53126_L8_31_grid_gamma_0_93.qsub: line 4: run_53126_L8_31_grid_gamma_0: command not found
+run_53126_L8_31_grid_gamma_0_93.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/: No such file or directory
+Launcher: Job 137 completed in 1 seconds.
+Launcher: Task 136 done. Exiting.
+Launcher: Job 139 completed in 1 seconds.
+Launcher: Job 128 completed in 1 seconds.
+Launcher: Task 138 done. Exiting.
+Launcher: Job 101 completed in 1 seconds.
+Launcher: Task 127 done. Exiting.
+Launcher: Task 100 done. Exiting.
+Launcher: Job 155 completed in 1 seconds.
+Launcher: Task 154 done. Exiting.
+Launcher: Job 94 completed in 1 seconds.
+Launcher: Task 93 done. Exiting.
+Launcher: Task 4 running job 5 on c-06-17 (bash run_53126_L8_31_grid_gamma_0_4.qsub)
+Launcher: Task 125 running job 126 on c-06-17 (bash run_53126_L8_31_grid_gamma_0_125.qsub)
+run_53126_L8_31_grid_gamma_0_4.qsub: line 4: run_53126_L8_31_grid_gamma_0: command not found
+run_53126_L8_31_grid_gamma_0_4.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/: No such file or directory
+run_53126_L8_31_grid_gamma_0_125.qsub: line 4: run_53126_L8_31_grid_gamma_0: command not found
+run_53126_L8_31_grid_gamma_0_125.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/: No such file or directory
+Launcher: Task 220 running job 221 on c-06-18 (bash run_53126_L8_31_grid_gamma_0_220.qsub)
+run_53126_L8_31_grid_gamma_0_220.qsub: line 4: run_53126_L8_31_grid_gamma_0: command not found
+run_53126_L8_31_grid_gamma_0_220.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/: No such file or directory
+Launcher: Task 235 running job 236 on c-06-18 (bash run_53126_L8_31_grid_gamma_0_235.qsub)
+Launcher: Task 23 running job 24 on c-06-17 (bash run_53126_L8_31_grid_gamma_0_23.qsub)
+Launcher: Task 94 running job 95 on c-06-17 (bash run_53126_L8_31_grid_gamma_0_94.qsub)
+Launcher: Task 234 running job 235 on c-06-18 (bash run_53126_L8_31_grid_gamma_0_234.qsub)
+Launcher: Task 57 running job 58 on c-06-17 (bash run_53126_L8_31_grid_gamma_0_57.qsub)
+run_53126_L8_31_grid_gamma_0_235.qsub: line 4: run_53126_L8_31_grid_gamma_0: command not found
+Launcher: Task 20 running job 21 on c-06-17 (bash run_53126_L8_31_grid_gamma_0_20.qsub)
+run_53126_L8_31_grid_gamma_0_234.qsub: line 4: run_53126_L8_31_grid_gamma_0: command not found
+run_53126_L8_31_grid_gamma_0_235.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/: No such file or directory
+run_53126_L8_31_grid_gamma_0_234.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/: No such file or directory
+run_53126_L8_31_grid_gamma_0_57.qsub: line 4: run_53126_L8_31_grid_gamma_0: command not found
+run_53126_L8_31_grid_gamma_0_23.qsub: line 4: run_53126_L8_31_grid_gamma_0: command not found
+run_53126_L8_31_grid_gamma_0_94.qsub: line 4: run_53126_L8_31_grid_gamma_0: command not found
+run_53126_L8_31_grid_gamma_0_57.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/: No such file or directory
+run_53126_L8_31_grid_gamma_0_23.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/: No such file or directory
+run_53126_L8_31_grid_gamma_0_94.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/: No such file or directory
+run_53126_L8_31_grid_gamma_0_20.qsub: line 4: run_53126_L8_31_grid_gamma_0: command not found
+run_53126_L8_31_grid_gamma_0_20.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/: No such file or directory
+Launcher: Job 5 completed in 1 seconds.
+Launcher: Task 4 done. Exiting.
+Launcher: Job 126 completed in 1 seconds.
+Launcher: Task 125 done. Exiting.
+Launcher: Job 221 completed in 1 seconds.
+Launcher: Task 220 done. Exiting.
+Launcher: Job 235 completed in 1 seconds.
+Launcher: Task 234 done. Exiting.
+Launcher: Job 236 completed in 1 seconds.
+Launcher: Task 235 done. Exiting.
+Launcher: Job 58 completed in 1 seconds.
+Launcher: Task 57 done. Exiting.
+Launcher: Job 24 completed in 1 seconds.
+Launcher: Task 23 done. Exiting.
+Launcher: Job 21 completed in 1 seconds.
+Launcher: Task 20 done. Exiting.
+Launcher: Job 95 completed in 1 seconds.
+Launcher: Task 94 done. Exiting.
+Launcher: Task 150 running job 151 on c-06-18 (bash run_53126_L8_31_grid_gamma_0_150.qsub)
+run_53126_L8_31_grid_gamma_0_150.qsub: line 4: run_53126_L8_31_grid_gamma_0: command not found
+run_53126_L8_31_grid_gamma_0_150.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/: No such file or directory
+Launcher: Task 102 running job 103 on c-06-17 (bash run_53126_L8_31_grid_gamma_0_102.qsub)
+Launcher: Task 230 running job 231 on c-06-18 (bash run_53126_L8_31_grid_gamma_0_230.qsub)
+run_53126_L8_31_grid_gamma_0_102.qsub: line 4: run_53126_L8_31_grid_gamma_0: command not found
+run_53126_L8_31_grid_gamma_0_102.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/: No such file or directory
+Launcher: Task 71 running job 72 on c-06-17 (bash run_53126_L8_31_grid_gamma_0_71.qsub)
+run_53126_L8_31_grid_gamma_0_230.qsub: line 4: run_53126_L8_31_grid_gamma_0: command not found
+run_53126_L8_31_grid_gamma_0_230.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/: No such file or directory
+Launcher: Task 169 running job 170 on c-06-18 (bash run_53126_L8_31_grid_gamma_0_169.qsub)
+run_53126_L8_31_grid_gamma_0_71.qsub: line 4: run_53126_L8_31_grid_gamma_0: command not found
+Launcher: Task 90 running job 91 on c-06-17 (bash run_53126_L8_31_grid_gamma_0_90.qsub)
+run_53126_L8_31_grid_gamma_0_71.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/: No such file or directory
+run_53126_L8_31_grid_gamma_0_169.qsub: line 4: run_53126_L8_31_grid_gamma_0: command not found
+run_53126_L8_31_grid_gamma_0_169.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/: No such file or directory
+run_53126_L8_31_grid_gamma_0_90.qsub: line 4: run_53126_L8_31_grid_gamma_0: command not found
+run_53126_L8_31_grid_gamma_0_90.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/: No such file or directory
+Launcher: Job 151 completed in 1 seconds.
+Launcher: Task 150 done. Exiting.
+Launcher: Job 103 completed in 1 seconds.
+Launcher: Task 102 done. Exiting.
+Launcher: Job 231 completed in 1 seconds.
+Launcher: Task 230 done. Exiting.
+Launcher: Job 72 completed in 1 seconds.
+Launcher: Task 71 done. Exiting.
+Launcher: Job 170 completed in 1 seconds.
+Launcher: Job 91 completed in 1 seconds.
+Launcher: Task 90 done. Exiting.
+Launcher: Task 169 done. Exiting.
+Launcher: Task 33 running job 34 on c-06-17 (bash run_53126_L8_31_grid_gamma_0_33.qsub)
+run_53126_L8_31_grid_gamma_0_33.qsub: line 4: run_53126_L8_31_grid_gamma_0: command not found
+run_53126_L8_31_grid_gamma_0_33.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/: No such file or directory
+Launcher: Task 243 running job 244 on c-06-18 (echo "Fake run")
+Fake run
+Launcher: Job 244 completed in 0 seconds.
+Launcher: Task 243 done. Exiting.
+Launcher: Task 70 running job 71 on c-06-17 (bash run_53126_L8_31_grid_gamma_0_70.qsub)
+run_53126_L8_31_grid_gamma_0_70.qsub: line 4: run_53126_L8_31_grid_gamma_0: command not found
+Launcher: Task 156 running job 157 on c-06-18 (bash run_53126_L8_31_grid_gamma_0_156.qsub)
+run_53126_L8_31_grid_gamma_0_70.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/: No such file or directory
+Launcher: Task 59 running job 60 on c-06-17 (bash run_53126_L8_31_grid_gamma_0_59.qsub)
+run_53126_L8_31_grid_gamma_0_156.qsub: line 4: run_53126_L8_31_grid_gamma_0: command not found
+Launcher: Task 238 running job 239 on c-06-18 (bash run_53126_L8_31_grid_gamma_0_238.qsub)
+Launcher: Task 245 running job 246 on c-06-18 (echo "Fake run")
+Fake run
+run_53126_L8_31_grid_gamma_0_156.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/: No such file or directory
+Launcher: Job 246 completed in 0 seconds.
+Launcher: Task 245 done. Exiting.
+run_53126_L8_31_grid_gamma_0_238.qsub: line 4: run_53126_L8_31_grid_gamma_0: command not found
+run_53126_L8_31_grid_gamma_0_59.qsub: line 4: run_53126_L8_31_grid_gamma_0: command not found
+run_53126_L8_31_grid_gamma_0_238.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/: No such file or directory
+run_53126_L8_31_grid_gamma_0_59.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/: No such file or directory
+Launcher: Job 34 completed in 1 seconds.
+Launcher: Task 33 done. Exiting.
+Launcher: Job 71 completed in 1 seconds.
+Launcher: Task 70 done. Exiting.
+Launcher: Job 157 completed in 1 seconds.
+Launcher: Task 156 done. Exiting.
+Launcher: Job 239 completed in 1 seconds.
+Launcher: Job 60 completed in 1 seconds.
+Launcher: Task 238 done. Exiting.
+Launcher: Task 59 done. Exiting.
+Launcher: Task 2 running job 3 on c-06-17 (bash run_53126_L8_31_grid_gamma_0_2.qsub)
+Launcher: Task 12 running job 13 on c-06-17 (bash run_53126_L8_31_grid_gamma_0_12.qsub)
+run_53126_L8_31_grid_gamma_0_2.qsub: line 4: run_53126_L8_31_grid_gamma_0: command not found
+Launcher: Task 10 running job 11 on c-06-17 (bash run_53126_L8_31_grid_gamma_0_10.qsub)
+run_53126_L8_31_grid_gamma_0_2.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/: No such file or directory
+run_53126_L8_31_grid_gamma_0_10.qsub: line 4: run_53126_L8_31_grid_gamma_0: command not found
+run_53126_L8_31_grid_gamma_0_10.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/: No such file or directory
+run_53126_L8_31_grid_gamma_0_12.qsub: line 4: run_53126_L8_31_grid_gamma_0: command not found
+Launcher: Task 157 running job 158 on c-06-18 (bash run_53126_L8_31_grid_gamma_0_157.qsub)
+run_53126_L8_31_grid_gamma_0_12.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/: No such file or directory
+run_53126_L8_31_grid_gamma_0_157.qsub: line 4: run_53126_L8_31_grid_gamma_0: command not found
+run_53126_L8_31_grid_gamma_0_157.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/: No such file or directory
+Launcher: Task 130 running job 131 on c-06-18 (bash run_53126_L8_31_grid_gamma_0_130.qsub)
+Launcher: Task 40 running job 41 on c-06-17 (bash run_53126_L8_31_grid_gamma_0_40.qsub)
+Launcher: Task 159 running job 160 on c-06-18 (bash run_53126_L8_31_grid_gamma_0_159.qsub)
+Launcher: Task 250 running job 251 on c-06-18 (echo "Fake run")
+Fake run
+Launcher: Job 251 completed in 0 seconds.
+Launcher: Task 207 running job 208 on c-06-18 (bash run_53126_L8_31_grid_gamma_0_207.qsub)
+Launcher: Task 3 running job 4 on c-06-17 (bash run_53126_L8_31_grid_gamma_0_3.qsub)
+Launcher: Task 250 done. Exiting.
+Launcher: Task 211 running job 212 on c-06-18 (bash run_53126_L8_31_grid_gamma_0_211.qsub)
+run_53126_L8_31_grid_gamma_0_130.qsub: line 4: run_53126_L8_31_grid_gamma_0: command not found
+run_53126_L8_31_grid_gamma_0_40.qsub: line 4: run_53126_L8_31_grid_gamma_0: command not found
+run_53126_L8_31_grid_gamma_0_130.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/: No such file or directory
+run_53126_L8_31_grid_gamma_0_40.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/: No such file or directory
+run_53126_L8_31_grid_gamma_0_3.qsub: line 4: run_53126_L8_31_grid_gamma_0: command not found
+run_53126_L8_31_grid_gamma_0_159.qsub: line 4: run_53126_L8_31_grid_gamma_0: command not found
+Launcher: Task 145 running job 146 on c-06-18 (bash run_53126_L8_31_grid_gamma_0_145.qsub)
+run_53126_L8_31_grid_gamma_0_3.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/: No such file or directory
+run_53126_L8_31_grid_gamma_0_159.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/: No such file or directory
+run_53126_L8_31_grid_gamma_0_211.qsub: line 4: run_53126_L8_31_grid_gamma_0: command not found
+run_53126_L8_31_grid_gamma_0_207.qsub: line 4: run_53126_L8_31_grid_gamma_0: command not found
+Launcher: Task 204 running job 205 on c-06-18 (bash run_53126_L8_31_grid_gamma_0_204.qsub)
+run_53126_L8_31_grid_gamma_0_145.qsub: line 4: run_53126_L8_31_grid_gamma_0: command not found
+run_53126_L8_31_grid_gamma_0_211.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/: No such file or directory
+run_53126_L8_31_grid_gamma_0_207.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/: No such file or directory
+run_53126_L8_31_grid_gamma_0_145.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/: No such file or directory
+run_53126_L8_31_grid_gamma_0_204.qsub: line 4: run_53126_L8_31_grid_gamma_0: command not found
+run_53126_L8_31_grid_gamma_0_204.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/: No such file or directory
+Launcher: Task 115 running job 116 on c-06-17 (bash run_53126_L8_31_grid_gamma_0_115.qsub)
+Launcher: Task 193 running job 194 on c-06-18 (bash run_53126_L8_31_grid_gamma_0_193.qsub)
+Launcher: Task 14 running job 15 on c-06-17 (bash run_53126_L8_31_grid_gamma_0_14.qsub)
+run_53126_L8_31_grid_gamma_0_193.qsub: line 4: run_53126_L8_31_grid_gamma_0: command not found
+run_53126_L8_31_grid_gamma_0_193.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/: No such file or directory
+run_53126_L8_31_grid_gamma_0_115.qsub: line 4: run_53126_L8_31_grid_gamma_0: command not found
+run_53126_L8_31_grid_gamma_0_14.qsub: line 4: run_53126_L8_31_grid_gamma_0: command not found
+run_53126_L8_31_grid_gamma_0_115.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/: No such file or directory
+run_53126_L8_31_grid_gamma_0_14.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/: No such file or directory
+Launcher: Job 3 completed in 1 seconds.
+Launcher: Job 11 completed in 1 seconds.
+Launcher: Task 2 done. Exiting.
+Launcher: Task 10 done. Exiting.
+Launcher: Job 13 completed in 1 seconds.
+Launcher: Task 12 done. Exiting.
+Launcher: Job 158 completed in 1 seconds.
+Launcher: Task 157 done. Exiting.
+Launcher: Job 131 completed in 1 seconds.
+Launcher: Task 130 done. Exiting.
+Launcher: Job 41 completed in 1 seconds.
+Launcher: Job 160 completed in 1 seconds.
+Launcher: Task 40 done. Exiting.
+Launcher: Task 159 done. Exiting.
+Launcher: Job 4 completed in 1 seconds.
+Launcher: Task 3 done. Exiting.
+Launcher: Job 212 completed in 1 seconds.
+Launcher: Task 211 done. Exiting.
+Launcher: Job 146 completed in 1 seconds.
+Launcher: Task 145 done. Exiting.
+Launcher: Job 208 completed in 1 seconds.
+Launcher: Job 205 completed in 1 seconds.
+Launcher: Task 207 done. Exiting.
+Launcher: Task 204 done. Exiting.
+Launcher: Job 194 completed in 1 seconds.
+Launcher: Task 193 done. Exiting.
+Launcher: Job 15 completed in 1 seconds.
+Launcher: Task 14 done. Exiting.
+Launcher: Job 116 completed in 1 seconds.
+Launcher: Task 115 done. Exiting.
+Launcher: Task 110 running job 111 on c-06-17 (bash run_53126_L8_31_grid_gamma_0_110.qsub)
+Launcher: Task 22 running job 23 on c-06-17 (bash run_53126_L8_31_grid_gamma_0_22.qsub)
+Launcher: Task 38 running job 39 on c-06-17 (bash run_53126_L8_31_grid_gamma_0_38.qsub)
+run_53126_L8_31_grid_gamma_0_38.qsub: line 4: run_53126_L8_31_grid_gamma_0: command not found
+run_53126_L8_31_grid_gamma_0_110.qsub: line 4: run_53126_L8_31_grid_gamma_0: command not found
+run_53126_L8_31_grid_gamma_0_38.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/: No such file or directory
+run_53126_L8_31_grid_gamma_0_110.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/: No such file or directory
+run_53126_L8_31_grid_gamma_0_22.qsub: line 4: run_53126_L8_31_grid_gamma_0: command not found
+run_53126_L8_31_grid_gamma_0_22.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/: No such file or directory
+Launcher: Task 132 running job 133 on c-06-18 (bash run_53126_L8_31_grid_gamma_0_132.qsub)
+Launcher: Task 143 running job 144 on c-06-18 (bash run_53126_L8_31_grid_gamma_0_143.qsub)
+Launcher: Task 103 running job 104 on c-06-17 (bash run_53126_L8_31_grid_gamma_0_103.qsub)
+run_53126_L8_31_grid_gamma_0_132.qsub: line 4: run_53126_L8_31_grid_gamma_0: command not found
+run_53126_L8_31_grid_gamma_0_143.qsub: line 4: run_53126_L8_31_grid_gamma_0: command not found
+run_53126_L8_31_grid_gamma_0_132.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/: No such file or directory
+run_53126_L8_31_grid_gamma_0_143.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/: No such file or directory
+Launcher: Task 178 running job 179 on c-06-18 (bash run_53126_L8_31_grid_gamma_0_178.qsub)
+Launcher: Task 105 running job 106 on c-06-17 (bash run_53126_L8_31_grid_gamma_0_105.qsub)
+run_53126_L8_31_grid_gamma_0_178.qsub: line 4: run_53126_L8_31_grid_gamma_0: command not found
+run_53126_L8_31_grid_gamma_0_103.qsub: line 4: run_53126_L8_31_grid_gamma_0: command not found
+run_53126_L8_31_grid_gamma_0_178.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/: No such file or directory
+run_53126_L8_31_grid_gamma_0_103.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/: No such file or directory
+Launcher: Task 68 running job 69 on c-06-17 (bash run_53126_L8_31_grid_gamma_0_68.qsub)
+Launcher: Task 168 running job 169 on c-06-18 (bash run_53126_L8_31_grid_gamma_0_168.qsub)
+Launcher: Task 253 running job 254 on c-06-18 (echo "Fake run")
+Fake run
+run_53126_L8_31_grid_gamma_0_105.qsub: line 4: run_53126_L8_31_grid_gamma_0: command not found
+Launcher: Task 233 running job 234 on c-06-18 (bash run_53126_L8_31_grid_gamma_0_233.qsub)
+Launcher: Job 254 completed in 0 seconds.
+Launcher: Task 253 done. Exiting.
+run_53126_L8_31_grid_gamma_0_105.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/: No such file or directory
+run_53126_L8_31_grid_gamma_0_168.qsub: line 4: run_53126_L8_31_grid_gamma_0: command not found
+run_53126_L8_31_grid_gamma_0_233.qsub: line 4: run_53126_L8_31_grid_gamma_0: command not found
+run_53126_L8_31_grid_gamma_0_168.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/: No such file or directory
+run_53126_L8_31_grid_gamma_0_233.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/: No such file or directory
+run_53126_L8_31_grid_gamma_0_68.qsub: line 4: run_53126_L8_31_grid_gamma_0: command not found
+run_53126_L8_31_grid_gamma_0_68.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/: No such file or directory
+Launcher: Job 111 completed in 1 seconds.
+Launcher: Task 110 done. Exiting.
+Launcher: Job 39 completed in 1 seconds.
+Launcher: Task 38 done. Exiting.
+Launcher: Job 23 completed in 1 seconds.
+Launcher: Task 22 done. Exiting.
+Launcher: Job 133 completed in 1 seconds.
+Launcher: Job 144 completed in 1 seconds.
+Launcher: Task 132 done. Exiting.
+Launcher: Task 143 done. Exiting.
+Launcher: Job 179 completed in 1 seconds.
+Launcher: Task 178 done. Exiting.
+Launcher: Job 104 completed in 1 seconds.
+Launcher: Task 103 done. Exiting.
+Launcher: Job 106 completed in 1 seconds.
+Launcher: Job 234 completed in 1 seconds.
+Launcher: Task 105 done. Exiting.
+Launcher: Task 233 done. Exiting.
+Launcher: Job 169 completed in 1 seconds.
+Launcher: Task 168 done. Exiting.
+Launcher: Job 69 completed in 1 seconds.
+Launcher: Task 68 done. Exiting.
+Launcher: Task 61 running job 62 on c-06-17 (bash run_53126_L8_31_grid_gamma_0_61.qsub)
+run_53126_L8_31_grid_gamma_0_61.qsub: line 4: run_53126_L8_31_grid_gamma_0: command not found
+Launcher: Task 179 running job 180 on c-06-18 (bash run_53126_L8_31_grid_gamma_0_179.qsub)
+run_53126_L8_31_grid_gamma_0_61.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/: No such file or directory
+Launcher: Task 200 running job 201 on c-06-18 (bash run_53126_L8_31_grid_gamma_0_200.qsub)
+Launcher: Task 187 running job 188 on c-06-18 (bash run_53126_L8_31_grid_gamma_0_187.qsub)
+run_53126_L8_31_grid_gamma_0_179.qsub: line 4: run_53126_L8_31_grid_gamma_0: command not found
+run_53126_L8_31_grid_gamma_0_187.qsub: line 4: run_53126_L8_31_grid_gamma_0: command not found
+run_53126_L8_31_grid_gamma_0_179.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/: No such file or directory
+run_53126_L8_31_grid_gamma_0_187.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/: No such file or directory
+Launcher: Task 30 running job 31 on c-06-17 (bash run_53126_L8_31_grid_gamma_0_30.qsub)
+run_53126_L8_31_grid_gamma_0_200.qsub: line 4: run_53126_L8_31_grid_gamma_0: command not found
+run_53126_L8_31_grid_gamma_0_200.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/: No such file or directory
+Launcher: Task 17 running job 18 on c-06-17 (bash run_53126_L8_31_grid_gamma_0_17.qsub)
+run_53126_L8_31_grid_gamma_0_30.qsub: line 4: run_53126_L8_31_grid_gamma_0: command not found
+run_53126_L8_31_grid_gamma_0_30.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/: No such file or directory
+Launcher: Task 219 running job 220 on c-06-18 (bash run_53126_L8_31_grid_gamma_0_219.qsub)
+run_53126_L8_31_grid_gamma_0_17.qsub: line 4: run_53126_L8_31_grid_gamma_0: command not found
+run_53126_L8_31_grid_gamma_0_17.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/: No such file or directory
+Launcher: Task 126 running job 127 on c-06-17 (bash run_53126_L8_31_grid_gamma_0_126.qsub)
+run_53126_L8_31_grid_gamma_0_219.qsub: line 4: run_53126_L8_31_grid_gamma_0: command not found
+Launcher: Task 191 running job 192 on c-06-18 (bash run_53126_L8_31_grid_gamma_0_191.qsub)
+run_53126_L8_31_grid_gamma_0_219.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/: No such file or directory
+run_53126_L8_31_grid_gamma_0_191.qsub: line 4: run_53126_L8_31_grid_gamma_0: command not found
+run_53126_L8_31_grid_gamma_0_126.qsub: line 4: run_53126_L8_31_grid_gamma_0: command not found
+run_53126_L8_31_grid_gamma_0_191.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/: No such file or directory
+run_53126_L8_31_grid_gamma_0_126.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/: No such file or directory
+Launcher: Job 62 completed in 1 seconds.
+Launcher: Task 61 done. Exiting.
+Launcher: Job 201 completed in 1 seconds.
+Launcher: Job 180 completed in 1 seconds.
+Launcher: Task 200 done. Exiting.
+Launcher: Task 179 done. Exiting.
+Launcher: Job 188 completed in 1 seconds.
+Launcher: Task 187 done. Exiting.
+Launcher: Job 220 completed in 1 seconds.
+Launcher: Job 31 completed in 1 seconds.
+Launcher: Task 219 done. Exiting.
+Launcher: Task 30 done. Exiting.
+Launcher: Job 18 completed in 1 seconds.
+Launcher: Task 17 done. Exiting.
+Launcher: Job 192 completed in 1 seconds.
+Launcher: Task 191 done. Exiting.
+Launcher: Job 127 completed in 1 seconds.
+Launcher: Task 126 done. Exiting.
+Launcher: Task 194 running job 195 on c-06-18 (bash run_53126_L8_31_grid_gamma_0_194.qsub)
+run_53126_L8_31_grid_gamma_0_194.qsub: line 4: run_53126_L8_31_grid_gamma_0: command not found
+run_53126_L8_31_grid_gamma_0_194.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/: No such file or directory
+Launcher: Task 123 running job 124 on c-06-17 (bash run_53126_L8_31_grid_gamma_0_123.qsub)
+run_53126_L8_31_grid_gamma_0_123.qsub: line 4: run_53126_L8_31_grid_gamma_0: command not found
+run_53126_L8_31_grid_gamma_0_123.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/: No such file or directory
+Launcher: Task 139 running job 140 on c-06-18 (bash run_53126_L8_31_grid_gamma_0_139.qsub)
+Launcher: Task 228 running job 229 on c-06-18 (bash run_53126_L8_31_grid_gamma_0_228.qsub)
+run_53126_L8_31_grid_gamma_0_139.qsub: line 4: run_53126_L8_31_grid_gamma_0: command not found
+run_53126_L8_31_grid_gamma_0_139.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/: No such file or directory
+run_53126_L8_31_grid_gamma_0_228.qsub: line 4: run_53126_L8_31_grid_gamma_0: command not found
+run_53126_L8_31_grid_gamma_0_228.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/: No such file or directory
+Launcher: Job 195 completed in 1 seconds.
+Launcher: Task 194 done. Exiting.
+Launcher: Job 124 completed in 1 seconds.
+Launcher: Task 123 done. Exiting.
+Launcher: Job 140 completed in 1 seconds.
+Launcher: Task 139 done. Exiting.
+Launcher: Job 229 completed in 1 seconds.
+Launcher: Task 228 done. Exiting.
+Launcher: Task 98 running job 99 on c-06-17 (bash run_53126_L8_31_grid_gamma_0_98.qsub)
+run_53126_L8_31_grid_gamma_0_98.qsub: line 4: run_53126_L8_31_grid_gamma_0: command not found
+Launcher: Task 48 running job 49 on c-06-17 (bash run_53126_L8_31_grid_gamma_0_48.qsub)
+run_53126_L8_31_grid_gamma_0_98.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/: No such file or directory
+Launcher: Task 18 running job 19 on c-06-17 (bash run_53126_L8_31_grid_gamma_0_18.qsub)
+Launcher: Task 140 running job 141 on c-06-18 (bash run_53126_L8_31_grid_gamma_0_140.qsub)
+Launcher: Task 210 running job 211 on c-06-18 (bash run_53126_L8_31_grid_gamma_0_210.qsub)
+Launcher: Task 76 running job 77 on c-06-17 (bash run_53126_L8_31_grid_gamma_0_76.qsub)
+run_53126_L8_31_grid_gamma_0_48.qsub: line 4: run_53126_L8_31_grid_gamma_0: command not found
+run_53126_L8_31_grid_gamma_0_18.qsub: line 4: run_53126_L8_31_grid_gamma_0: command not found
+Launcher: Task 148 running job 149 on c-06-18 (bash run_53126_L8_31_grid_gamma_0_148.qsub)
+run_53126_L8_31_grid_gamma_0_48.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/: No such file or directory
+run_53126_L8_31_grid_gamma_0_18.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/: No such file or directory
+Launcher: Task 189 running job 190 on c-06-18 (bash run_53126_L8_31_grid_gamma_0_189.qsub)
+run_53126_L8_31_grid_gamma_0_76.qsub: line 4: run_53126_L8_31_grid_gamma_0: command not found
+run_53126_L8_31_grid_gamma_0_210.qsub: line 4: run_53126_L8_31_grid_gamma_0: command not found
+run_53126_L8_31_grid_gamma_0_148.qsub: line 4: run_53126_L8_31_grid_gamma_0: command not found
+Launcher: Task 82 running job 83 on c-06-17 (bash run_53126_L8_31_grid_gamma_0_82.qsub)
+run_53126_L8_31_grid_gamma_0_76.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/: No such file or directory
+run_53126_L8_31_grid_gamma_0_210.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/: No such file or directory
+run_53126_L8_31_grid_gamma_0_140.qsub: line 4: run_53126_L8_31_grid_gamma_0: command not found
+Launcher: Task 195 running job 196 on c-06-18 (bash run_53126_L8_31_grid_gamma_0_195.qsub)
+Launcher: Task 252 running job 253 on c-06-18 (echo "Fake run")
+Fake run
+run_53126_L8_31_grid_gamma_0_148.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/: No such file or directory
+Launcher: Job 253 completed in 0 seconds.
+run_53126_L8_31_grid_gamma_0_140.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/: No such file or directory
+Launcher: Task 252 done. Exiting.
+run_53126_L8_31_grid_gamma_0_82.qsub: line 4: run_53126_L8_31_grid_gamma_0: command not found
+Launcher: Task 163 running job 164 on c-06-18 (bash run_53126_L8_31_grid_gamma_0_163.qsub)
+Launcher: Task 182 running job 183 on c-06-18 (bash run_53126_L8_31_grid_gamma_0_182.qsub)
+run_53126_L8_31_grid_gamma_0_82.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/: No such file or directory
+run_53126_L8_31_grid_gamma_0_195.qsub: line 4: run_53126_L8_31_grid_gamma_0: command not found
+run_53126_L8_31_grid_gamma_0_189.qsub: line 4: run_53126_L8_31_grid_gamma_0: command not found
+run_53126_L8_31_grid_gamma_0_195.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/: No such file or directory
+run_53126_L8_31_grid_gamma_0_189.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/: No such file or directory
+run_53126_L8_31_grid_gamma_0_182.qsub: line 4: run_53126_L8_31_grid_gamma_0: command not found
+run_53126_L8_31_grid_gamma_0_182.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/: No such file or directory
+run_53126_L8_31_grid_gamma_0_163.qsub: line 4: run_53126_L8_31_grid_gamma_0: command not found
+run_53126_L8_31_grid_gamma_0_163.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/: No such file or directory
+Launcher: Job 99 completed in 1 seconds.
+Launcher: Task 98 done. Exiting.
+Launcher: Job 49 completed in 1 seconds.
+Launcher: Task 48 done. Exiting.
+Launcher: Job 77 completed in 1 seconds.
+Launcher: Task 76 done. Exiting.
+Launcher: Job 19 completed in 1 seconds.
+Launcher: Task 18 done. Exiting.
+Launcher: Job 211 completed in 1 seconds.
+Launcher: Task 210 done. Exiting.
+Launcher: Job 141 completed in 1 seconds.
+Launcher: Task 140 done. Exiting.
+Launcher: Job 83 completed in 1 seconds.
+Launcher: Task 82 done. Exiting.
+Launcher: Job 149 completed in 1 seconds.
+Launcher: Job 196 completed in 1 seconds.
+Launcher: Task 148 done. Exiting.
+Launcher: Task 195 done. Exiting.
+Launcher: Job 190 completed in 1 seconds.
+Launcher: Job 183 completed in 1 seconds.
+Launcher: Task 189 done. Exiting.
+Launcher: Task 182 done. Exiting.
+Launcher: Job 164 completed in 1 seconds.
+Launcher: Task 163 done. Exiting.
+Launcher: Task 66 running job 67 on c-06-17 (bash run_53126_L8_31_grid_gamma_0_66.qsub)
+run_53126_L8_31_grid_gamma_0_66.qsub: line 4: run_53126_L8_31_grid_gamma_0: command not found
+run_53126_L8_31_grid_gamma_0_66.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/: No such file or directory
+Launcher: Task 249 running job 250 on c-06-18 (echo "Fake run")
+Fake run
+Launcher: Task 13 running job 14 on c-06-17 (bash run_53126_L8_31_grid_gamma_0_13.qsub)
+Launcher: Task 215 running job 216 on c-06-18 (bash run_53126_L8_31_grid_gamma_0_215.qsub)
+Launcher: Job 250 completed in 0 seconds.
+Launcher: Task 249 done. Exiting.
+Launcher: Task 55 running job 56 on c-06-17 (bash run_53126_L8_31_grid_gamma_0_55.qsub)
+run_53126_L8_31_grid_gamma_0_13.qsub: line 4: run_53126_L8_31_grid_gamma_0: command not found
+run_53126_L8_31_grid_gamma_0_13.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/: No such file or directory
+Launcher: Task 53 running job 54 on c-06-17 (bash run_53126_L8_31_grid_gamma_0_53.qsub)
+run_53126_L8_31_grid_gamma_0_55.qsub: line 4: run_53126_L8_31_grid_gamma_0: command not found
+run_53126_L8_31_grid_gamma_0_215.qsub: line 4: run_53126_L8_31_grid_gamma_0: command not found
+Launcher: Task 73 running job 74 on c-06-17 (bash run_53126_L8_31_grid_gamma_0_73.qsub)
+Launcher: Task 117 running job 118 on c-06-17 (bash run_53126_L8_31_grid_gamma_0_117.qsub)
+run_53126_L8_31_grid_gamma_0_55.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/: No such file or directory
+run_53126_L8_31_grid_gamma_0_215.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/: No such file or directory
+run_53126_L8_31_grid_gamma_0_53.qsub: line 4: run_53126_L8_31_grid_gamma_0: command not found
+Launcher: Task 69 running job 70 on c-06-17 (bash run_53126_L8_31_grid_gamma_0_69.qsub)
+run_53126_L8_31_grid_gamma_0_53.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/: No such file or directory
+Launcher: Task 149 running job 150 on c-06-18 (bash run_53126_L8_31_grid_gamma_0_149.qsub)
+Launcher: Task 206 running job 207 on c-06-18 (bash run_53126_L8_31_grid_gamma_0_206.qsub)
+run_53126_L8_31_grid_gamma_0_73.qsub: line 4: run_53126_L8_31_grid_gamma_0: command not found
+run_53126_L8_31_grid_gamma_0_69.qsub: line 4: run_53126_L8_31_grid_gamma_0: command not found
+Launcher: Task 85 running job 86 on c-06-17 (bash run_53126_L8_31_grid_gamma_0_85.qsub)
+Launcher: Task 75 running job 76 on c-06-17 (bash run_53126_L8_31_grid_gamma_0_75.qsub)
+run_53126_L8_31_grid_gamma_0_117.qsub: line 4: run_53126_L8_31_grid_gamma_0: command not found
+run_53126_L8_31_grid_gamma_0_149.qsub: line 4: run_53126_L8_31_grid_gamma_0: command not found
+run_53126_L8_31_grid_gamma_0_206.qsub: line 4: run_53126_L8_31_grid_gamma_0: command not found
+run_53126_L8_31_grid_gamma_0_73.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/: No such file or directory
+run_53126_L8_31_grid_gamma_0_69.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/: No such file or directory
+run_53126_L8_31_grid_gamma_0_117.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/: No such file or directory
+run_53126_L8_31_grid_gamma_0_149.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/: No such file or directory
+run_53126_L8_31_grid_gamma_0_206.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/: No such file or directory
+run_53126_L8_31_grid_gamma_0_85.qsub: line 4: run_53126_L8_31_grid_gamma_0: command not found
+run_53126_L8_31_grid_gamma_0_85.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/: No such file or directory
+run_53126_L8_31_grid_gamma_0_75.qsub: line 4: run_53126_L8_31_grid_gamma_0: command not found
+run_53126_L8_31_grid_gamma_0_75.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/: No such file or directory
+Launcher: Job 67 completed in 1 seconds.
+Launcher: Task 66 done. Exiting.
+Launcher: Job 216 completed in 1 seconds.
+Launcher: Task 215 done. Exiting.
+Launcher: Job 14 completed in 1 seconds.
+Launcher: Task 13 done. Exiting.
+Launcher: Job 150 completed in 1 seconds.
+Launcher: Job 56 completed in 1 seconds.
+Launcher: Job 207 completed in 1 seconds.
+Launcher: Job 54 completed in 1 seconds.
+Launcher: Task 149 done. Exiting.
+Launcher: Task 55 done. Exiting.
+Launcher: Task 206 done. Exiting.
+Launcher: Task 53 done. Exiting.
+Launcher: Job 74 completed in 1 seconds.
+Launcher: Task 73 done. Exiting.
+Launcher: Job 118 completed in 1 seconds.
+Launcher: Task 117 done. Exiting.
+Launcher: Job 86 completed in 1 seconds.
+Launcher: Task 85 done. Exiting.
+Launcher: Job 70 completed in 1 seconds.
+Launcher: Task 69 done. Exiting.
+Launcher: Job 76 completed in 1 seconds.
+Launcher: Task 75 done. Exiting.
+Launcher: Task 25 running job 26 on c-06-17 (bash run_53126_L8_31_grid_gamma_0_25.qsub)
+Launcher: Task 129 running job 130 on c-06-18 (bash run_53126_L8_31_grid_gamma_0_129.qsub)
+Launcher: Task 111 running job 112 on c-06-17 (bash run_53126_L8_31_grid_gamma_0_111.qsub)
+run_53126_L8_31_grid_gamma_0_129.qsub: line 4: run_53126_L8_31_grid_gamma_0: command not found
+run_53126_L8_31_grid_gamma_0_129.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/: No such file or directory
+run_53126_L8_31_grid_gamma_0_111.qsub: line 4: run_53126_L8_31_grid_gamma_0: command not found
+run_53126_L8_31_grid_gamma_0_25.qsub: line 4: run_53126_L8_31_grid_gamma_0: command not found
+run_53126_L8_31_grid_gamma_0_111.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/: No such file or directory
+run_53126_L8_31_grid_gamma_0_25.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/: No such file or directory
+Launcher: Task 248 running job 249 on c-06-18 (echo "Fake run")
+Fake run
+Launcher: Job 249 completed in 0 seconds.
+Launcher: Task 248 done. Exiting.
+Launcher: Task 64 running job 65 on c-06-17 (bash run_53126_L8_31_grid_gamma_0_64.qsub)
+Launcher: Task 80 running job 81 on c-06-17 (bash run_53126_L8_31_grid_gamma_0_80.qsub)
+Launcher: Task 15 running job 16 on c-06-17 (bash run_53126_L8_31_grid_gamma_0_15.qsub)
+Launcher: Task 63 running job 64 on c-06-17 (bash run_53126_L8_31_grid_gamma_0_63.qsub)
+run_53126_L8_31_grid_gamma_0_64.qsub: line 4: run_53126_L8_31_grid_gamma_0: command not found
+Launcher: Task 92 running job 93 on c-06-17 (bash run_53126_L8_31_grid_gamma_0_92.qsub)
+run_53126_L8_31_grid_gamma_0_64.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/: No such file or directory
+run_53126_L8_31_grid_gamma_0_80.qsub: line 4: run_53126_L8_31_grid_gamma_0: command not found
+run_53126_L8_31_grid_gamma_0_15.qsub: line 4: run_53126_L8_31_grid_gamma_0: command not found
+run_53126_L8_31_grid_gamma_0_63.qsub: line 4: run_53126_L8_31_grid_gamma_0: command not found
+Launcher: Task 225 running job 226 on c-06-18 (bash run_53126_L8_31_grid_gamma_0_225.qsub)
+run_53126_L8_31_grid_gamma_0_80.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/: No such file or directory
+run_53126_L8_31_grid_gamma_0_15.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/: No such file or directory
+run_53126_L8_31_grid_gamma_0_63.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/: No such file or directory
+run_53126_L8_31_grid_gamma_0_225.qsub: line 4: run_53126_L8_31_grid_gamma_0: command not found
+run_53126_L8_31_grid_gamma_0_92.qsub: line 4: run_53126_L8_31_grid_gamma_0: command not found
+run_53126_L8_31_grid_gamma_0_92.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/: No such file or directory
+run_53126_L8_31_grid_gamma_0_225.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/: No such file or directory
+Launcher: Job 130 completed in 1 seconds.
+Launcher: Task 129 done. Exiting.
+Launcher: Job 112 completed in 1 seconds.
+Launcher: Task 111 done. Exiting.
+Launcher: Job 26 completed in 1 seconds.
+Launcher: Task 25 done. Exiting.
+Launcher: Job 65 completed in 1 seconds.
+Launcher: Task 64 done. Exiting.
+Launcher: Job 16 completed in 1 seconds.
+Launcher: Task 15 done. Exiting.
+Launcher: Job 81 completed in 1 seconds.
+Launcher: Job 226 completed in 1 seconds.
+Launcher: Task 80 done. Exiting.
+Launcher: Job 93 completed in 1 seconds.
+Launcher: Task 225 done. Exiting.
+Launcher: Job 64 completed in 1 seconds.
+Launcher: Task 92 done. Exiting.
+Launcher: Task 63 done. Exiting.
+Launcher: Task 9 running job 10 on c-06-17 (bash run_53126_L8_31_grid_gamma_0_9.qsub)
+Launcher: Task 86 running job 87 on c-06-17 (bash run_53126_L8_31_grid_gamma_0_86.qsub)
+Launcher: Task 31 running job 32 on c-06-17 (bash run_53126_L8_31_grid_gamma_0_31.qsub)
+run_53126_L8_31_grid_gamma_0_9.qsub: line 4: run_53126_L8_31_grid_gamma_0: command not found
+Launcher: Task 87 running job 88 on c-06-17 (bash run_53126_L8_31_grid_gamma_0_87.qsub)
+run_53126_L8_31_grid_gamma_0_9.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/: No such file or directory
+Launcher: Task 41 running job 42 on c-06-17 (bash run_53126_L8_31_grid_gamma_0_41.qsub)
+run_53126_L8_31_grid_gamma_0_31.qsub: line 4: run_53126_L8_31_grid_gamma_0: command not found
+Launcher: Task 122 running job 123 on c-06-17 (bash run_53126_L8_31_grid_gamma_0_122.qsub)
+run_53126_L8_31_grid_gamma_0_31.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/: No such file or directory
+Launcher: Task 62 running job 63 on c-06-17 (bash run_53126_L8_31_grid_gamma_0_62.qsub)
+run_53126_L8_31_grid_gamma_0_41.qsub: line 4: run_53126_L8_31_grid_gamma_0: command not found
+run_53126_L8_31_grid_gamma_0_87.qsub: line 4: run_53126_L8_31_grid_gamma_0: command not found
+run_53126_L8_31_grid_gamma_0_86.qsub: line 4: run_53126_L8_31_grid_gamma_0: command not found
+Launcher: Task 137 running job 138 on c-06-18 (bash run_53126_L8_31_grid_gamma_0_137.qsub)
+run_53126_L8_31_grid_gamma_0_122.qsub: line 4: run_53126_L8_31_grid_gamma_0: command not found
+run_53126_L8_31_grid_gamma_0_87.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/: No such file or directory
+run_53126_L8_31_grid_gamma_0_41.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/: No such file or directory
+run_53126_L8_31_grid_gamma_0_86.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/: No such file or directory
+Launcher: Task 175 running job 176 on c-06-18 (bash run_53126_L8_31_grid_gamma_0_175.qsub)
+run_53126_L8_31_grid_gamma_0_122.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/: No such file or directory
+Launcher: Task 147 running job 148 on c-06-18 (bash run_53126_L8_31_grid_gamma_0_147.qsub)
+run_53126_L8_31_grid_gamma_0_62.qsub: line 4: run_53126_L8_31_grid_gamma_0: command not found
+run_53126_L8_31_grid_gamma_0_175.qsub: line 4: run_53126_L8_31_grid_gamma_0: command not found
+run_53126_L8_31_grid_gamma_0_147.qsub: line 4: run_53126_L8_31_grid_gamma_0: command not found
+run_53126_L8_31_grid_gamma_0_62.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/: No such file or directory
+Launcher: Task 155 running job 156 on c-06-18 (bash run_53126_L8_31_grid_gamma_0_155.qsub)
+run_53126_L8_31_grid_gamma_0_175.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/: No such file or directory
+run_53126_L8_31_grid_gamma_0_137.qsub: line 4: run_53126_L8_31_grid_gamma_0: command not found
+Launcher: Task 181 running job 182 on c-06-18 (bash run_53126_L8_31_grid_gamma_0_181.qsub)
+run_53126_L8_31_grid_gamma_0_147.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/: No such file or directory
+Launcher: Task 188 running job 189 on c-06-18 (bash run_53126_L8_31_grid_gamma_0_188.qsub)
+Launcher: Task 236 running job 237 on c-06-18 (bash run_53126_L8_31_grid_gamma_0_236.qsub)
+run_53126_L8_31_grid_gamma_0_137.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/: No such file or directory
+Launcher: Task 214 running job 215 on c-06-18 (bash run_53126_L8_31_grid_gamma_0_214.qsub)
+run_53126_L8_31_grid_gamma_0_155.qsub: line 4: run_53126_L8_31_grid_gamma_0: command not found
+Launcher: Task 5 running job 6 on c-06-17 (bash run_53126_L8_31_grid_gamma_0_5.qsub)
+run_53126_L8_31_grid_gamma_0_155.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/: No such file or directory
+run_53126_L8_31_grid_gamma_0_188.qsub: line 4: run_53126_L8_31_grid_gamma_0: command not found
+run_53126_L8_31_grid_gamma_0_181.qsub: line 4: run_53126_L8_31_grid_gamma_0: command not found
+run_53126_L8_31_grid_gamma_0_236.qsub: line 4: run_53126_L8_31_grid_gamma_0: command not found
+run_53126_L8_31_grid_gamma_0_214.qsub: line 4: run_53126_L8_31_grid_gamma_0: command not found
+run_53126_L8_31_grid_gamma_0_181.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/: No such file or directory
+run_53126_L8_31_grid_gamma_0_188.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/: No such file or directory
+run_53126_L8_31_grid_gamma_0_236.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/: No such file or directory
+run_53126_L8_31_grid_gamma_0_214.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/: No such file or directory
+run_53126_L8_31_grid_gamma_0_5.qsub: line 4: run_53126_L8_31_grid_gamma_0: command not found
+run_53126_L8_31_grid_gamma_0_5.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/: No such file or directory
+slurmstepd-c-06-17: error: *** JOB 3744066 ON c-06-17 CANCELLED AT 2026-05-31T20:56:08 ***

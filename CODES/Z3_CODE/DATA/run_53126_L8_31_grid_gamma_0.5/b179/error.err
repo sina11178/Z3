@@ -1,0 +1,22 @@
+Traceback (most recent call last):
+  File "/scratch/ganymede2/sxr190099/run_53126_L8_31_grid_gamma_0.5/b179/./main.py", line 46, in <module>
+    size_autocorrelator_SIMULATION_NPY(-10, 25, .5, [8], r_phi_values, gamma_array[0])
+  File "/scratch/ganymede2/sxr190099/run_53126_L8_31_grid_gamma_0.5/b179/size_comparison_autocorr_SIM.py", line 94, in size_autocorrelator_SIMULATION_NPY
+    return_list.append(np.ndarray.tolist(output_list(A_list[k], U_list[k], U_inv_list[k], in_list_exp, size_array[k], hamiltonians[k], gamma)))  # LIST W/ OUTPUTS OF DIFF PARAMS
+  File "/scratch/ganymede2/sxr190099/run_53126_L8_31_grid_gamma_0.5/b179/Z3_code.py", line 353, in output_list
+    out_list[i] = autocorrelator(A, U, U_inv, input_list[i], size, hamiltonian, gamma).real  #  Stores respective outputs in list
+  File "/scratch/ganymede2/sxr190099/run_53126_L8_31_grid_gamma_0.5/b179/Z3_code.py", line 278, in autocorrelator
+    product_SIG = (time_evolved_sig) @ non_time_evold_op_sig
+  File "/home/sxr190099/.local/lib/python3.9/site-packages/scipy/sparse/_base.py", line 701, in __rmatmul__
+    return self._rmatmul_dispatch(other)
+  File "/home/sxr190099/.local/lib/python3.9/site-packages/scipy/sparse/_base.py", line 682, in _rmatmul_dispatch
+    ret = self.transpose()._matmul_dispatch(tr)
+  File "/home/sxr190099/.local/lib/python3.9/site-packages/scipy/sparse/_base.py", line 595, in _matmul_dispatch
+    return self._matmul_multivector(other)
+  File "/home/sxr190099/.local/lib/python3.9/site-packages/scipy/sparse/_coo.py", line 575, in _matmul_multivector
+    result = np.zeros(result_shape, dtype=result_dtype)
+numpy._core._exceptions._ArrayMemoryError: Unable to allocate 657. MiB for an array with shape (6561, 6561) and data type complex128
+
+real	49m57.569s
+user	48m0.388s
+sys	0m55.870s

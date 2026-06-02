@@ -1,0 +1,5 @@
+run_53126_L8_31_grid_gamma_0.5_104.qsub: line 43: 105705 Killed                  python ./$EXEC 104
+
+real	53m12.643s
+user	50m40.720s
+sys	1m20.989s

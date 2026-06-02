@@ -1,3 +1,15 @@
+commit f895ee53a16e799de7beb4352458adf3338c8575
+Author: Sina Rezvani <sxr190099@g2-l-01.localdomain>
+Date:   Mon Jun 1 08:54:34 2026 -0500
+
+    Commit before run optimize_calc_time_53026
+
+commit ad855b7c50926577221be6be27b9be88ceebc376
+Author: Sina Rezvani <sxr190099@g2-l-02.localdomain>
+Date:   Sun May 31 20:07:14 2026 -0500
+
+    L=6 data for the phase diagrams
+
 commit 9f1125078e5f3927b30637d93de2e23ffe2a993f
 Author: sina11178 <frsinarez4@gmail.com>
 Date:   Sat May 30 22:34:44 2026 -0500
