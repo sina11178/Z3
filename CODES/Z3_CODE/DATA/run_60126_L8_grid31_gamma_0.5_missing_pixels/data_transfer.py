@@ -1,0 +1,41 @@
+import numpy as np
+import os
+import pandas as pd
+import shutil
+
+
+missing_pixels = np.load("missing_pixels_L8_gamma_0.5.npy")
+
+#param_array=[[0.1, 0], [0.1, np.pi/6]]
+gamma_array = [0.5]
+L_array = [8]
+#total_points = N * N  # Total number of (r, phi) pairs
+
+#param_array=[[0.1, 0], [0.1, np.pi/6]]
+#gamma_array = [0, .1, .5, .6, .9, 1]
+#L_array = [4, 5, 6, 7, 8]
+
+
+for i in range(222):
+     index = i
+     start = index*2
+     end = index*2 + 2
+     for j in range(start, end):
+      params = missing_pixels[j]
+      if os.path.isfile('./b'+str(index)+'/autocorr_gamma_' + str( gamma_array[0]) + '_L' + str(L_array[0]) + '_f_' + str(round(params[0],3)) + '_phi_' + str(round(params[1],3)) + '_NPY.npy') == True:
+
+         #p = np.load('./b'+str(i)+'/size_autocorr_comparison_gamma_' + str(gamma_list[int(i/4)]) + '_NPY.npy')
+         #data_list.append(p[1, :])
+         f = params[0]
+         phi = round(params[1], 3)
+
+         destination = '../PHASE_DIAGRAM_DATA/L'+str(L_array[0])+'/gamma_'+str(gamma_array[0])+'/'
+         f_n = './b'+str(index)+'/autocorr_gamma_' + str(gamma_array[0]) + '_L' + str(L_array[0]) + '_f_' + str(round(params[0],3)) + '_phi_' + str(round(params[1],3)) + '_NPY.npy'
+         os.makedirs(destination, exist_ok=True)  # <-- add this
+         shutil.copy(f_n, destination)
+         #print("copied")
+      else:
+         print(f"File not found: {index}")
+
+
+print("successful")
