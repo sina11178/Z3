@@ -1,0 +1,5 @@
+run_60126_L8_grid31_gamma_0.5_missing_pixels_131.qsub: line 49: 1824315 Killed                  python ./$EXEC 131
+
+real	27m42.490s
+user	43m49.548s
+sys	0m18.516s

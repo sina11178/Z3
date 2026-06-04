@@ -1,0 +1,12 @@
+Traceback (most recent call last):
+  File "/scratch/ganymede2/sxr190099/run_60126_L8_grid31_gamma_0.5_missing_pixels/b177/./main.py", line 49, in <module>
+    size_autocorrelator_SIMULATION_NPY(-10, 25, .5, [8], r_phi_values, gamma_array[0])
+  File "/scratch/ganymede2/sxr190099/run_60126_L8_grid31_gamma_0.5_missing_pixels/b177/size_comparison_autocorr_SIM.py", line 86, in size_autocorrelator_SIMULATION_NPY
+    U_inv = np.linalg.inv(U)
+  File "/home/sxr190099/.local/lib/python3.9/site-packages/numpy/linalg/_linalg.py", line 608, in inv
+    ainv = _umath_linalg.inv(a, signature=signature)
+numpy._core._exceptions._ArrayMemoryError: Unable to allocate 657. MiB for an array with shape (6561, 6561) and data type complex128
+
+real	25m50.619s
+user	39m52.511s
+sys	0m14.318s
