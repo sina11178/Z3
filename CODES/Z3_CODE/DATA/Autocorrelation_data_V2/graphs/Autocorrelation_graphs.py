@@ -1,3 +1,4 @@
+import matplotlib.ticker as ticker
 import numpy as np
 import matplotlib.pyplot as plt
 from torch import lt
@@ -46,9 +47,11 @@ for i, param in enumerate(parameters):
             data = np.load(f'../f_{param[0]}_phi_{param[1]}/size_autocorr_comparison_gamma_{gam}_size_{L}_NPY.npy')
             ax.plot(np.exp(input), data[1], label=f'L = {L}')
             ax.set_xscale('log')
-
+            ax.tick_params(axis='both', labelsize=13)
+            #ax.yaxis.set_major_locator(ticker.MultipleLocator(0.2))
+            #ax.set_yticks([-.4, 0, .4, .8, 1])
        if i == 0 and j == 0:
-            ax.legend()
+            ax.legend(fontsize=13, framealpha=0.3)
        #if j != 0:
        #     ax.set_yticks([])
        #if i != 1:
@@ -70,6 +73,7 @@ for i, param in enumerate(parameters):
 #          va='center', ha='left', fontsize=14)
 # fig.text(0.05, .9, '(a)', fontsize=18)
 # fig.text(0.05, 0.45, '(b)', fontsize=18)
-
+#plt.xticks(fontsize=16)
+#plt.yticks(fontsize=16)
 plt.savefig("my_figure.pdf", format="pdf")
 plt.savefig("my_figure.png", dpi = 600, bbox_inches='tight')
