@@ -1,0 +1,5 @@
+Starting job run_60426_L8_missing_pix_V2.sbatch
+WARNING (06/04/26 16:54:32): LAUNCHER_WORKDIR variable not set. Using current directory.
+ERROR (06/04/26 16:54:32): LAUNCHER_JOB_FILE (run_60426_L8_missing_pix_V2.sbatch.task) not found.
+Launcher exited without completing.
+Job rrun_60426_L8_missing_pix_V2.sbatch complete
