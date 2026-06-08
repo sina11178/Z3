@@ -41,17 +41,33 @@ fig, axes = plt.subplots(
 )
 
 for i, param in enumerate(parameters):
-    for j, gam in enumerate(gamma):
-       ax = axes[i, j]
-       for k, L in enumerate(size):
-            data = np.load(f'../f_{param[0]}_phi_{param[1]}/size_autocorr_comparison_gamma_{gam}_size_{L}_NPY.npy')
-            ax.plot(np.exp(input), data[1], label=f'L = {L}')
-            ax.set_xscale('log')
-            ax.tick_params(axis='both', labelsize=13)
+     for j, gam in enumerate(gamma):
+          ax = axes[i, j]
+          for k, L in enumerate(size):
+               data = np.load(f'../f_{param[0]}_phi_{param[1]}/size_autocorr_comparison_gamma_{gam}_size_{L}_NPY.npy')
+               ax.plot(np.exp(input), data[1], label=f'L = {L}')
+               ax.tick_params(axis='both', labelsize=13)
+               plt.locator_params(axis='y', nbins=4)
+               #plt.locator_params(axis='x', nbins=4)
+               plt.setp(ax.spines.values(), linewidth=1.3)
+               ax.set_xscale('log')
+               ax.xaxis.set_major_locator(ticker.LogLocator(base=10, numticks=4))
+               #ax.yaxis.set_major_locator(ticker.Locator(base=10, numticks=4))
+
+               ax.xaxis.set_minor_locator(ticker.AutoMinorLocator())
+               ax.yaxis.set_minor_locator(ticker.AutoMinorLocator())
+               ax.tick_params(axis="x",direction="in", which= 'both')
+               ax.tick_params(axis="y",direction="in", which= 'both')
+               ax.tick_params(axis="x", which= 'major', length = 5.0, width = 1.4)
+               ax.tick_params(axis="x", which= 'minor', length = 3.0, width = 1.4)
+               ax.tick_params(axis="y", which= 'major', length = 5.0, width = 1.4)
+               ax.tick_params(axis="y", which= 'minor', length = 3.0, width = 1.4)
+               plt.xticks(fontsize=16)
+               plt.yticks(fontsize=16)
             #ax.yaxis.set_major_locator(ticker.MultipleLocator(0.2))
             #ax.set_yticks([-.4, 0, .4, .8, 1])
-       if i == 0 and j == 0:
-            ax.legend(fontsize=13, framealpha=0.3)
+          if i == 0 and j == 0:
+               ax.legend(fontsize=13, framealpha=0.3)
        #if j != 0:
        #     ax.set_yticks([])
        #if i != 1:
@@ -64,7 +80,8 @@ for i, param in enumerate(parameters):
        #     ax.set_title(f'$Γ={gam}$')
        #ax.spines['top'].set_visible(False)
        #ax.spines['right'].set_visible(False)
-
+plt.xticks(fontsize=16)
+plt.yticks(fontsize=16)
 
 # fig.text(0.03, 0.75, rotation =90, s=f"(f = {parameters[0][0]}, $φ$ = {parameters[0][1]})", 
 #          va='center', ha='left', fontsize=14)
