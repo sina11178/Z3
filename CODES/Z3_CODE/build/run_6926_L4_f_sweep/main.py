@@ -1,0 +1,33 @@
+'''
+
+WE WILL CALL TO RUN RESPECTIVE SIMULATION HERE
+
+'''
+
+from f_phi_autocorr_SIM import f_phi_autocorrelator_SIMULATION_EXCEL, f_phi_autocorrelator_SIMULATION_NPY
+from size_comparison_autocorr_SIM import size_autocorrelator_SIMULATION_EXCEL, size_autocorrelator_SIMULATION_NPY
+from laczos_coeff_sim import LACZOS_COEF_vary_gam_SIM
+import numpy as np
+import cmath as cm
+import matplotlib.pyplot as plt
+import pandas as pd
+import sys
+
+
+
+
+f_array = np.linspace(0, 0.5, 11)
+phi_array = [0, np.pi/6]
+
+param_array=[[0.1, 0], [0.1, np.pi/6]]
+gamma_array = [0, 0.5, 1]
+L_array = [4, 5, 6, 7, 8]
+
+print("Running")
+
+index = sys.argv[1]
+for i in range(len(L_array)):
+    size_autocorrelator_SIMULATION_NPY(-10, 25, .5, [L_array[i]], [f_array[int(index)%11], phi_array[int(int(index)/11)%2]], gamma_array[int(int(index)/22)])
+
+
+

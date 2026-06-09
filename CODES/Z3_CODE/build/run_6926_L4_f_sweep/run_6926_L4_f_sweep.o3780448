@@ -1,0 +1,284 @@
+Starting job run_6926_L4_f_sweep
+WARNING (06/09/26 13:32:24): LAUNCHER_WORKDIR variable not set. Using current directory.
+Launcher: Setup complete.
+
+------------- SUMMARY ---------------
+   Number of hosts:    2
+   Working directory:  /home/sxr190099/Z3/CODES/Z3_CODE/build/run_6926_L4_f_sweep
+   Processes per host: 44
+   Total processes:    88
+   Total jobs:         128
+   Scheduling method:  interleaved
+
+-------------------------------------
+Launcher: Starting parallel tasks...
+using /tmp/launcher.3780448.hostlist.4I9xJiH3 to get hosts
+starting job on c-06-20
+starting job on g-06-03
+Lmod has detected the following error: The following module(s) are unknown:
+"git"
+
+Please check the spelling or version number. Also try "module spider ..."
+It is also possible your cache file is out-of-date; it may help to try:
+  $ module --ignore_cache load "git"
+
+Also make sure that all modulefiles written in TCL start with the string
+#%Module
+
+
+
+Lmod has detected the following error: The following module(s) are unknown:
+"git"
+
+Please check the spelling or version number. Also try "module spider ..."
+It is also possible your cache file is out-of-date; it may help to try:
+  $ module --ignore_cache load "git"
+
+Also make sure that all modulefiles written in TCL start with the string
+#%Module
+
+
+
+Launcher: Task 39 running job 40 on c-06-20 (bash run_6926_L4_f_sweep_39.qsub)
+run_6926_L4_f_sweep_39.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_6926_L4_f_sweep: No such file or directory
+Launcher: Task 48 running job 49 on g-06-03 (bash run_6926_L4_f_sweep_48.qsub)
+Launcher: Task 79 running job 80 on g-06-03 (bash run_6926_L4_f_sweep_79.qsub)
+Launcher: Task 73 running job 74 on g-06-03 (bash run_6926_L4_f_sweep_73.qsub)
+run_6926_L4_f_sweep_48.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_6926_L4_f_sweep: No such file or directory
+run_6926_L4_f_sweep_79.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_6926_L4_f_sweep: No such file or directory
+run_6926_L4_f_sweep_73.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_6926_L4_f_sweep: No such file or directory
+Launcher: Task 26 running job 27 on c-06-20 (bash run_6926_L4_f_sweep_26.qsub)
+run_6926_L4_f_sweep_26.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_6926_L4_f_sweep: No such file or directory
+Launcher: Task 35 running job 36 on c-06-20 (bash run_6926_L4_f_sweep_35.qsub)
+Launcher: Task 31 running job 32 on c-06-20 (bash run_6926_L4_f_sweep_31.qsub)
+run_6926_L4_f_sweep_31.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_6926_L4_f_sweep: No such file or directory
+run_6926_L4_f_sweep_35.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_6926_L4_f_sweep: No such file or directory
+Launcher: Task 34 running job 35 on c-06-20 (bash run_6926_L4_f_sweep_34.qsub)
+Launcher: Task 21 running job 22 on c-06-20 (bash run_6926_L4_f_sweep_21.qsub)
+Launcher: Task 29 running job 30 on c-06-20 (bash run_6926_L4_f_sweep_29.qsub)
+run_6926_L4_f_sweep_34.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_6926_L4_f_sweep: No such file or directory
+run_6926_L4_f_sweep_21.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_6926_L4_f_sweep: No such file or directory
+run_6926_L4_f_sweep_29.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_6926_L4_f_sweep: No such file or directory
+Launcher: Task 27 running job 28 on c-06-20 (bash run_6926_L4_f_sweep_27.qsub)
+run_6926_L4_f_sweep_27.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_6926_L4_f_sweep: No such file or directory
+Launcher: Task 68 running job 69 on g-06-03 (bash run_6926_L4_f_sweep_68.qsub)
+run_6926_L4_f_sweep_68.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_6926_L4_f_sweep: No such file or directory
+Launcher: Task 3 running job 4 on c-06-20 (bash run_6926_L4_f_sweep_3.qsub)
+Launcher: Task 4 running job 5 on c-06-20 (bash run_6926_L4_f_sweep_4.qsub)
+run_6926_L4_f_sweep_3.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_6926_L4_f_sweep: No such file or directory
+run_6926_L4_f_sweep_4.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_6926_L4_f_sweep: No such file or directory
+Launcher: Task 59 running job 60 on g-06-03 (bash run_6926_L4_f_sweep_59.qsub)
+Launcher: Task 71 running job 72 on g-06-03 (bash run_6926_L4_f_sweep_71.qsub)
+run_6926_L4_f_sweep_71.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_6926_L4_f_sweep: No such file or directory
+run_6926_L4_f_sweep_59.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_6926_L4_f_sweep: No such file or directory
+Launcher: Task 17 running job 18 on c-06-20 (bash run_6926_L4_f_sweep_17.qsub)
+Launcher: Task 22 running job 23 on c-06-20 (bash run_6926_L4_f_sweep_22.qsub)
+run_6926_L4_f_sweep_17.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_6926_L4_f_sweep: No such file or directory
+run_6926_L4_f_sweep_22.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_6926_L4_f_sweep: No such file or directory
+Removing files
+Launcher: Job 74 completed in 6 seconds.
+Removing files
+Launcher: Task 73 done. Exiting.
+Launcher: Task 44 running job 45 on g-06-03 (bash run_6926_L4_f_sweep_44.qsub)
+Launcher: Job 80 completed in 6 seconds.
+Launcher: Task 79 done. Exiting.
+run_6926_L4_f_sweep_44.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_6926_L4_f_sweep: No such file or directory
+Launcher: Task 12 running job 13 on c-06-20 (bash run_6926_L4_f_sweep_12.qsub)
+run_6926_L4_f_sweep_12.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_6926_L4_f_sweep: No such file or directory
+Launcher: Task 5 running job 6 on c-06-20 (bash run_6926_L4_f_sweep_5.qsub)
+Launcher: Task 24 running job 25 on c-06-20 (bash run_6926_L4_f_sweep_24.qsub)
+run_6926_L4_f_sweep_5.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_6926_L4_f_sweep: No such file or directory
+run_6926_L4_f_sweep_24.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_6926_L4_f_sweep: No such file or directory
+Removing files
+Launcher: Job 69 completed in 4 seconds.
+Launcher: Task 68 done. Exiting.
+Launcher: Task 9 running job 10 on c-06-20 (bash run_6926_L4_f_sweep_9.qsub)
+Launcher: Task 37 running job 38 on c-06-20 (bash run_6926_L4_f_sweep_37.qsub)
+run_6926_L4_f_sweep_9.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_6926_L4_f_sweep: No such file or directory
+run_6926_L4_f_sweep_37.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_6926_L4_f_sweep: No such file or directory
+Launcher: Task 61 running job 62 on g-06-03 (bash run_6926_L4_f_sweep_61.qsub)
+Launcher: Task 50 running job 51 on g-06-03 (bash run_6926_L4_f_sweep_50.qsub)
+run_6926_L4_f_sweep_61.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_6926_L4_f_sweep: No such file or directory
+run_6926_L4_f_sweep_50.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_6926_L4_f_sweep: No such file or directory
+Removing files
+Launcher: Job 72 completed in 4 seconds.
+Launcher: Task 71 done. Exiting.
+Launcher: Task 28 running job 29 on c-06-20 (bash run_6926_L4_f_sweep_28.qsub)
+Launcher: Task 19 running job 20 on c-06-20 (bash run_6926_L4_f_sweep_19.qsub)
+run_6926_L4_f_sweep_28.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_6926_L4_f_sweep: No such file or directory
+run_6926_L4_f_sweep_19.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_6926_L4_f_sweep: No such file or directory
+Launcher: Task 58 running job 59 on g-06-03 (bash run_6926_L4_f_sweep_58.qsub)
+Launcher: Task 81 running job 82 on g-06-03 (bash run_6926_L4_f_sweep_81.qsub)
+run_6926_L4_f_sweep_58.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_6926_L4_f_sweep: No such file or directory
+Launcher: Task 62 running job 63 on g-06-03 (bash run_6926_L4_f_sweep_62.qsub)
+run_6926_L4_f_sweep_81.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_6926_L4_f_sweep: No such file or directory
+run_6926_L4_f_sweep_62.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_6926_L4_f_sweep: No such file or directory
+Launcher: Task 41 running job 42 on c-06-20 (bash run_6926_L4_f_sweep_41.qsub)
+Launcher: Task 23 running job 24 on c-06-20 (bash run_6926_L4_f_sweep_23.qsub)
+Launcher: Task 30 running job 31 on c-06-20 (bash run_6926_L4_f_sweep_30.qsub)
+run_6926_L4_f_sweep_41.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_6926_L4_f_sweep: No such file or directory
+run_6926_L4_f_sweep_23.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_6926_L4_f_sweep: No such file or directory
+run_6926_L4_f_sweep_30.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_6926_L4_f_sweep: No such file or directory
+Launcher: Task 47 running job 48 on g-06-03 (bash run_6926_L4_f_sweep_47.qsub)
+Launcher: Task 72 running job 73 on g-06-03 (bash run_6926_L4_f_sweep_72.qsub)
+run_6926_L4_f_sweep_47.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_6926_L4_f_sweep: No such file or directory
+run_6926_L4_f_sweep_72.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_6926_L4_f_sweep: No such file or directory
+Launcher: Task 40 running job 41 on c-06-20 (bash run_6926_L4_f_sweep_40.qsub)
+Launcher: Task 18 running job 19 on c-06-20 (bash run_6926_L4_f_sweep_18.qsub)
+run_6926_L4_f_sweep_40.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_6926_L4_f_sweep: No such file or directory
+run_6926_L4_f_sweep_18.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_6926_L4_f_sweep: No such file or directory
+Launcher: Task 80 running job 81 on g-06-03 (bash run_6926_L4_f_sweep_80.qsub)
+Launcher: Task 74 running job 75 on g-06-03 (bash run_6926_L4_f_sweep_74.qsub)
+run_6926_L4_f_sweep_74.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_6926_L4_f_sweep: No such file or directory
+run_6926_L4_f_sweep_80.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_6926_L4_f_sweep: No such file or directory
+Removing files
+Launcher: Job 82 completed in 4 seconds.
+Launcher: Task 81 done. Exiting.
+Launcher: Task 10 running job 11 on c-06-20 (bash run_6926_L4_f_sweep_10.qsub)
+Launcher: Task 11 running job 12 on c-06-20 (bash run_6926_L4_f_sweep_11.qsub)
+Launcher: Task 6 running job 7 on c-06-20 (bash run_6926_L4_f_sweep_6.qsub)
+run_6926_L4_f_sweep_10.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_6926_L4_f_sweep: No such file or directory
+run_6926_L4_f_sweep_11.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_6926_L4_f_sweep: No such file or directory
+run_6926_L4_f_sweep_6.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_6926_L4_f_sweep: No such file or directory
+Launcher: Task 33 running job 34 on c-06-20 (bash run_6926_L4_f_sweep_33.qsub)
+Launcher: Task 7 running job 8 on c-06-20 (bash run_6926_L4_f_sweep_7.qsub)
+Launcher: Task 8 running job 9 on c-06-20 (bash run_6926_L4_f_sweep_8.qsub)
+run_6926_L4_f_sweep_33.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_6926_L4_f_sweep: No such file or directory
+run_6926_L4_f_sweep_7.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_6926_L4_f_sweep: No such file or directory
+run_6926_L4_f_sweep_8.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_6926_L4_f_sweep: No such file or directory
+Launcher: Task 46 running job 47 on g-06-03 (bash run_6926_L4_f_sweep_46.qsub)
+Launcher: Task 86 running job 87 on g-06-03 (bash run_6926_L4_f_sweep_86.qsub)
+run_6926_L4_f_sweep_46.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_6926_L4_f_sweep: No such file or directory
+run_6926_L4_f_sweep_86.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_6926_L4_f_sweep: No such file or directory
+Removing files
+Launcher: Job 73 completed in 4 seconds.
+Launcher: Task 72 done. Exiting.
+Launcher: Task 65 running job 66 on g-06-03 (bash run_6926_L4_f_sweep_65.qsub)
+run_6926_L4_f_sweep_65.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_6926_L4_f_sweep: No such file or directory
+Removing files
+Launcher: Job 81 completed in 4 seconds.
+Launcher: Task 80 done. Exiting.
+Removing files
+Launcher: Job 75 completed in 4 seconds.
+Launcher: Task 74 done. Exiting.
+Launcher: Task 43 running job 44 on c-06-20 (bash run_6926_L4_f_sweep_43.qsub)
+Launcher: Task 38 running job 39 on c-06-20 (bash run_6926_L4_f_sweep_38.qsub)
+run_6926_L4_f_sweep_43.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_6926_L4_f_sweep: No such file or directory
+run_6926_L4_f_sweep_38.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_6926_L4_f_sweep: No such file or directory
+Launcher: Task 67 running job 68 on g-06-03 (bash run_6926_L4_f_sweep_67.qsub)
+run_6926_L4_f_sweep_67.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_6926_L4_f_sweep: No such file or directory
+Launcher: Task 13 running job 14 on c-06-20 (bash run_6926_L4_f_sweep_13.qsub)
+run_6926_L4_f_sweep_13.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_6926_L4_f_sweep: No such file or directory
+Launcher: Task 64 running job 65 on g-06-03 (bash run_6926_L4_f_sweep_64.qsub)
+Launcher: Task 85 running job 86 on g-06-03 (bash run_6926_L4_f_sweep_85.qsub)
+Launcher: Task 87 running job 88 on g-06-03 (bash run_6926_L4_f_sweep_87.qsub)
+run_6926_L4_f_sweep_64.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_6926_L4_f_sweep: No such file or directory
+run_6926_L4_f_sweep_85.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_6926_L4_f_sweep: No such file or directory
+run_6926_L4_f_sweep_87.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_6926_L4_f_sweep: No such file or directory
+Removing files
+Launcher: Job 87 completed in 4 seconds.
+Launcher: Task 86 done. Exiting.
+Launcher: Task 69 running job 70 on g-06-03 (bash run_6926_L4_f_sweep_69.qsub)
+Launcher: Task 76 running job 77 on g-06-03 (bash run_6926_L4_f_sweep_76.qsub)
+Launcher: Task 66 running job 67 on g-06-03 (bash run_6926_L4_f_sweep_66.qsub)
+Launcher: Task 53 running job 54 on g-06-03 (bash run_6926_L4_f_sweep_53.qsub)
+Launcher: Task 75 running job 76 on g-06-03 (bash run_6926_L4_f_sweep_75.qsub)
+Launcher: Task 78 running job 79 on g-06-03 (bash run_6926_L4_f_sweep_78.qsub)
+run_6926_L4_f_sweep_66.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_6926_L4_f_sweep: No such file or directory
+run_6926_L4_f_sweep_76.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_6926_L4_f_sweep: No such file or directory
+run_6926_L4_f_sweep_69.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_6926_L4_f_sweep: No such file or directory
+Launcher: Task 63 running job 64 on g-06-03 (bash run_6926_L4_f_sweep_63.qsub)
+Launcher: Task 57 running job 58 on g-06-03 (bash run_6926_L4_f_sweep_57.qsub)
+run_6926_L4_f_sweep_53.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_6926_L4_f_sweep: No such file or directory
+run_6926_L4_f_sweep_75.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_6926_L4_f_sweep: No such file or directory
+run_6926_L4_f_sweep_78.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_6926_L4_f_sweep: No such file or directory
+run_6926_L4_f_sweep_63.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_6926_L4_f_sweep: No such file or directory
+run_6926_L4_f_sweep_57.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_6926_L4_f_sweep: No such file or directory
+Launcher: Task 20 running job 21 on c-06-20 (bash run_6926_L4_f_sweep_20.qsub)
+run_6926_L4_f_sweep_20.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_6926_L4_f_sweep: No such file or directory
+Launcher: Task 56 running job 57 on g-06-03 (bash run_6926_L4_f_sweep_56.qsub)
+run_6926_L4_f_sweep_56.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_6926_L4_f_sweep: No such file or directory
+Removing files
+Launcher: Job 68 completed in 4 seconds.
+Launcher: Task 67 done. Exiting.
+Launcher: Task 0 running job 1 on c-06-20 (bash run_6926_L4_f_sweep_0.qsub)
+Launcher: Task 2 running job 3 on c-06-20 (bash run_6926_L4_f_sweep_2.qsub)
+run_6926_L4_f_sweep_0.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_6926_L4_f_sweep: No such file or directory
+Launcher: Task 25 running job 26 on c-06-20 (bash run_6926_L4_f_sweep_25.qsub)
+Launcher: Task 14 running job 15 on c-06-20 (bash run_6926_L4_f_sweep_14.qsub)
+run_6926_L4_f_sweep_2.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_6926_L4_f_sweep: No such file or directory
+run_6926_L4_f_sweep_25.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_6926_L4_f_sweep: No such file or directory
+run_6926_L4_f_sweep_14.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_6926_L4_f_sweep: No such file or directory
+Launcher: Task 70 running job 71 on g-06-03 (bash run_6926_L4_f_sweep_70.qsub)
+run_6926_L4_f_sweep_70.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_6926_L4_f_sweep: No such file or directory
+Removing files
+Launcher: Job 86 completed in 4 seconds.
+Launcher: Task 85 done. Exiting.
+Removing files
+Launcher: Job 88 completed in 4 seconds.
+Launcher: Task 87 done. Exiting.
+Launcher: Task 32 running job 33 on c-06-20 (bash run_6926_L4_f_sweep_32.qsub)
+Launcher: Task 1 running job 2 on c-06-20 (bash run_6926_L4_f_sweep_1.qsub)
+run_6926_L4_f_sweep_32.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_6926_L4_f_sweep: No such file or directory
+Launcher: Task 16 running job 17 on c-06-20 (bash run_6926_L4_f_sweep_16.qsub)
+run_6926_L4_f_sweep_1.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_6926_L4_f_sweep: No such file or directory
+run_6926_L4_f_sweep_16.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_6926_L4_f_sweep: No such file or directory
+Launcher: Task 77 running job 78 on g-06-03 (bash run_6926_L4_f_sweep_77.qsub)
+run_6926_L4_f_sweep_77.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_6926_L4_f_sweep: No such file or directory
+Launcher: Task 60 running job 61 on g-06-03 (bash run_6926_L4_f_sweep_60.qsub)
+Launcher: Task 51 running job 52 on g-06-03 (bash run_6926_L4_f_sweep_51.qsub)
+Launcher: Task 84 running job 85 on g-06-03 (bash run_6926_L4_f_sweep_84.qsub)
+run_6926_L4_f_sweep_60.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_6926_L4_f_sweep: No such file or directory
+run_6926_L4_f_sweep_51.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_6926_L4_f_sweep: No such file or directory
+run_6926_L4_f_sweep_84.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_6926_L4_f_sweep: No such file or directory
+Removing files
+Removing files
+Launcher: Job 77 completed in 4 seconds.
+Launcher: Task 76 done. Exiting.
+Removing files
+Launcher: Job 67 completed in 4 seconds.
+Removing files
+Launcher: Job 79 completed in 4 seconds.
+Launcher: Task 66 done. Exiting.
+Launcher: Task 78 done. Exiting.
+Launcher: Job 76 completed in 4 seconds.
+Launcher: Task 75 done. Exiting.
+Removing files
+Launcher: Job 70 completed in 4 seconds.
+Launcher: Task 69 done. Exiting.
+Launcher: Task 36 running job 37 on c-06-20 (bash run_6926_L4_f_sweep_36.qsub)
+run_6926_L4_f_sweep_36.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_6926_L4_f_sweep: No such file or directory
+Launcher: Task 55 running job 56 on g-06-03 (bash run_6926_L4_f_sweep_55.qsub)
+run_6926_L4_f_sweep_55.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_6926_L4_f_sweep: No such file or directory
+Launcher: Task 83 running job 84 on g-06-03 (bash run_6926_L4_f_sweep_83.qsub)
+Launcher: Task 49 running job 50 on g-06-03 (bash run_6926_L4_f_sweep_49.qsub)
+run_6926_L4_f_sweep_83.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_6926_L4_f_sweep: No such file or directory
+run_6926_L4_f_sweep_49.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_6926_L4_f_sweep: No such file or directory
+Launcher: Task 15 running job 16 on c-06-20 (bash run_6926_L4_f_sweep_15.qsub)
+Launcher: Task 42 running job 43 on c-06-20 (bash run_6926_L4_f_sweep_42.qsub)
+run_6926_L4_f_sweep_15.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_6926_L4_f_sweep: No such file or directory
+run_6926_L4_f_sweep_42.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_6926_L4_f_sweep: No such file or directory
+Launcher: Task 82 running job 83 on g-06-03 (bash run_6926_L4_f_sweep_82.qsub)
+Launcher: Task 52 running job 53 on g-06-03 (bash run_6926_L4_f_sweep_52.qsub)
+Launcher: Task 54 running job 55 on g-06-03 (bash run_6926_L4_f_sweep_54.qsub)
+Launcher: Task 45 running job 46 on g-06-03 (bash run_6926_L4_f_sweep_45.qsub)
+run_6926_L4_f_sweep_82.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_6926_L4_f_sweep: No such file or directory
+run_6926_L4_f_sweep_52.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_6926_L4_f_sweep: No such file or directory
+run_6926_L4_f_sweep_54.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_6926_L4_f_sweep: No such file or directory
+run_6926_L4_f_sweep_45.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_6926_L4_f_sweep: No such file or directory
+Removing files
+Launcher: Job 71 completed in 4 seconds.
+Launcher: Task 70 done. Exiting.
+Removing files
+Launcher: Job 85 completed in 4 seconds.
+Launcher: Task 84 done. Exiting.
+Removing files
+Launcher: Job 78 completed in 4 seconds.
+Launcher: Task 77 done. Exiting.
+Removing files
+Launcher: Job 84 completed in 4 seconds.
+Launcher: Task 83 done. Exiting.
+Removing files
+Launcher: Job 83 completed in 4 seconds.
+Launcher: Task 82 done. Exiting.
+slurmstepd-c-06-20: error: *** JOB 3780448 ON c-06-20 CANCELLED AT 2026-06-09T13:33:21 ***
