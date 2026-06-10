@@ -1,3 +1,21 @@
+commit d0b331422312f9f9dbaaf788e98b7c80ec99f36c
+Author: Sina Rezvani <sxr190099@g2-l-01.localdomain>
+Date:   Wed Jun 10 10:00:59 2026 -0500
+
+    Commit before run run_6926_L4_f_sweep
+
+commit 1806e34c6da27e8c50d480f236d179995afe2889
+Author: Sina Rezvani <sxr190099@g2-l-01.localdomain>
+Date:   Tue Jun 9 17:28:54 2026 -0500
+
+    Data added for f sweep for sizes L = 4,5,6,7,8 and all gammas. Done at phi = 0, pi/6
+
+commit a87d1e080e4e99416c37a17628fdc9817a3556da
+Author: sina11178 <frsinarez4@gmail.com>
+Date:   Mon Jun 8 17:33:08 2026 -0500
+
+    All data for Gamma = 0.5, L = 8, recorded
+
 commit 809c1b55d4ad1919fd587758fd32a42751f3d0a2
 Author: Sina Rezvani <sxr190099@g2-l-01.localdomain>
 Date:   Mon Jun 8 17:19:06 2026 -0500

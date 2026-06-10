@@ -6,7 +6,8 @@
 #SBATCH --partition=cmt
 #
 # Processors:
-#SBATCH --ntasks=88
+# Processors:
+#SBATCH --ntasks=126
 #SBATCH --nodes=2
 #SBATCH --cpus-per-task=2
 #
