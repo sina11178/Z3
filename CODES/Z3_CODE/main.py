@@ -24,16 +24,16 @@ gamma_array = [0, .2, .4, .6, .8, 1, 1.2, 1.4]
 L_array = [5, 6, 7, 8]
 
 # FOR KRYLOV SIMULATION
-gamma_array = [0, 0.05, 1]
-size_array = [4, 5, 6, 7, 8, 9]
+gamma_array = [1]
+size_array = [4]
 N_array = [50, 50, 60, 60, 90, 90]
 f_array = [.1, .25, .4, .5]
-phi_array = [0, np.pi/6, np.pi/4, np.pi/3]
+phi_array = [0, np.pi/3, -np.pi/3]
 
 #size_autocorrelator_SIMULATION_NPY(0, 30, .5, L_array[int(int(sys.argv[1]) % 4)], array, gamma_array[int(int(sys.argv[1])/4)])
 
 
-#f_phi_autocorrelator_SIMULATION_NPY(0, 30, .5, 5, [[0.1, np.pi/6]], .5)
+f_phi_autocorrelator_SIMULATION_NPY(-10, 25, .5, 5, [[0.1, -np.pi], [0.1, np.pi]], 1)
 
 
 #size_autocorrelator_SIMULATION_NPY(0, 30, .5, L_array, array_parameters[int(sys.argv[1])], 1)
@@ -41,7 +41,7 @@ phi_array = [0, np.pi/6, np.pi/4, np.pi/3]
 #size_autocorrelator_SIMULATION_NPY(0, 1, .5, [9], [.1, 0*np.pi/6], 0)
 #size_correlator_SIM_NPY(0, 20, .1, [2, 3, 4, 5, 6], [0, 1*np.pi/6], 1)
 
-LACZOS_COEF_vary_gam_SIM(31, 4, 1, [0.1, np.pi/6])
+#LACZOS_COEF_vary_gam_SIM(31, 4, 1, [0.1, np.pi/6])
 #gamma_array = np.arange(0, 1, 0.1)
 
 #decay_rates(0, 15, 1, 5, [.15, 1*np.pi/6], gamma_array)
