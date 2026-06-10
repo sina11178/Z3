@@ -16,7 +16,7 @@ import sys
 
 
 
-f_array = np.linspace(0, 0.5, 11)
+f_array = np.linspace(0, 1, 21)
 phi_array = [0, np.pi/6]
 
 param_array=[[0.1, 0], [0.1, np.pi/6]]
@@ -27,7 +27,7 @@ print("Running")
 
 index = sys.argv[1]
 for i in range(len(L_array)):
-    size_autocorrelator_SIMULATION_NPY(-10, 25, .5, [L_array[i]], [f_array[int(index)%11], phi_array[int(int(index)/11)%2]], gamma_array[int(int(index)/22)])
+    size_autocorrelator_SIMULATION_NPY(-9, 27, .5, [L_array[i]], [f_array[int(index)%21], phi_array[int(int(index)/21)%2]], gamma_array[int(int(index)/42)])
 
 
 
