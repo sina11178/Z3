@@ -28,20 +28,42 @@ for l in L_array:
             #    phase_diagram[int(j / 31), int(j % 31)] = None
             #    continue
             #target = data[0] / np.e
-            target = data[0]/np.e
 
-            # Find index just after crossing
-            idx = np.argmax(data < target)
+            if int(index/11)%2 == 1 and index%11 >= 3:
+                data_new = data[23:]
+                time_list_new = time_list[23:]
 
-            # Two points straddling the threshold
-            t0, t1 = time_list[idx-1], time_list[idx]
-            d0, d1 = data[idx-1], data[idx]
 
-            # Linear interpolation to find exact crossing time
-            if d1 == d0:
-                tau = t0
+                target = data_new[0]/np.e
+
+                # Find index just after crossing
+                idx = np.argmax(data_new < target)
+
+                # Two points straddling the threshold
+                t0, t1 = time_list_new[idx-1], time_list_new[idx]
+                d0, d1 = data_new[idx-1], data_new[idx]
+
+                # Linear interpolation to find exact crossing time
+                if d1 == d0:
+                    tau = t0
+                else:
+                    tau = (t0) + (target - d0) * (t1 - t0) / (d1 - d0)
+
             else:
-                tau = t0 + (target - d0) * (t1 - t0) / (d1 - d0)
+                target = data[0]/np.e
+
+                # Find index just after crossing
+                idx = np.argmax(data < target)
+
+                # Two points straddling the threshold
+                t0, t1 = time_list[idx-1], time_list[idx]
+                d0, d1 = data[idx-1], data[idx]
+
+                # Linear interpolation to find exact crossing time
+                if d1 == d0:
+                    tau = t0
+                else:
+                    tau = t0 + (target - d0) * (t1 - t0) / (d1 - d0)
 
 
             if int(index/11)%2 == 0:
