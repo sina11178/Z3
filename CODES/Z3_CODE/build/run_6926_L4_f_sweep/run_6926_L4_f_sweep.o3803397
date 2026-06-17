@@ -1,0 +1,43 @@
+Starting job run_6926_L4_f_sweep
+WARNING (06/16/26 15:15:38): LAUNCHER_WORKDIR variable not set. Using current directory.
+Launcher: Setup complete.
+
+------------- SUMMARY ---------------
+   Number of hosts:    1
+   Working directory:  /home/sxr190099/Z3/CODES/Z3_CODE/build/run_6926_L4_f_sweep
+   Processes per host: 21
+   Total processes:    21
+   Total jobs:         128
+   Scheduling method:  interleaved
+
+-------------------------------------
+Launcher: Starting parallel tasks...
+using /tmp/launcher.3803397.hostlist.yhjITuyx to get hosts
+starting job on g-06-03
+Lmod has detected the following error: The following module(s) are unknown:
+"git"
+
+Please check the spelling or version number. Also try "module spider ..."
+It is also possible your cache file is out-of-date; it may help to try:
+  $ module --ignore_cache load "git"
+
+Also make sure that all modulefiles written in TCL start with the string
+#%Module
+
+
+
+Launcher: Task 9 running job 10 on g-06-03 (bash run_6926_L4_f_sweep_9.qsub)
+run_6926_L4_f_sweep_9.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_6926_L4_f_sweep: No such file or directory
+Launcher: Task 2 running job 3 on g-06-03 (bash run_6926_L4_f_sweep_2.qsub)
+Launcher: Task 8 running job 9 on g-06-03 (bash run_6926_L4_f_sweep_8.qsub)
+run_6926_L4_f_sweep_2.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_6926_L4_f_sweep: No such file or directory
+run_6926_L4_f_sweep_8.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_6926_L4_f_sweep: No such file or directory
+Launcher: Task 0 running job 1 on g-06-03 (bash run_6926_L4_f_sweep_0.qsub)
+Launcher: Task 6 running job 7 on g-06-03 (bash run_6926_L4_f_sweep_6.qsub)
+Launcher: Task 17 running job 18 on g-06-03 (bash run_6926_L4_f_sweep_17.qsub)
+Launcher: Task 1 running job 2 on g-06-03 (bash run_6926_L4_f_sweep_1.qsub)
+run_6926_L4_f_sweep_0.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_6926_L4_f_sweep: No such file or directory
+run_6926_L4_f_sweep_17.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_6926_L4_f_sweep: No such file or directory
+run_6926_L4_f_sweep_1.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_6926_L4_f_sweep: No such file or directory
+run_6926_L4_f_sweep_6.qsub: line 18: cd: /home/sxr190099/Z3_CODE/build/run_6926_L4_f_sweep: No such file or directory
+slurmstepd-g-06-03: error: *** JOB 3803397 ON g-06-03 CANCELLED AT 2026-06-16T15:15:47 ***

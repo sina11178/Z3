@@ -1,8 +1,48 @@
+commit e61331cd7d9fd2b95251828e354de0ffb6a2381c
+Author: Sina Rezvani <sxr190099@g2-l-01.localdomain>
+Date:   Mon Jun 15 12:41:54 2026 -0500
+
+    Commit before run run_6926_L4_f_sweep
+
+commit a645e17db38634d10bf9ed15b822f84e965b7cf2
+Author: Sina Rezvani <sxr190099@g2-l-02.localdomain>
+Date:   Wed Jun 10 14:21:41 2026 -0500
+
+    Pushing V2 f_sweep (more data points)
+
+commit 3e22e794594da7a25cb660f01515011b89f33631
+Merge: d0b33142 27e09f2d
+Author: Sina Rezvani <sxr190099@g2-l-02.localdomain>
+Date:   Wed Jun 10 14:19:18 2026 -0500
+
+    Merge branch 'main' of https://github.com/sina11178/Z3
+    
+    Pulled from my main computer
+
+commit 27e09f2d6882fe4c91d5b19d6b3a11c1b6207f05
+Author: sina11178 <frsinarez4@gmail.com>
+Date:   Wed Jun 10 14:14:23 2026 -0500
+
+    Ran some figure simulations
+
 commit d0b331422312f9f9dbaaf788e98b7c80ec99f36c
 Author: Sina Rezvani <sxr190099@g2-l-01.localdomain>
 Date:   Wed Jun 10 10:00:59 2026 -0500
 
     Commit before run run_6926_L4_f_sweep
+
+commit 044d2630d553fd68b6f44070cf997be5a7a66c5f
+Merge: f93346b8 1806e34c
+Author: sina11178 <frsinarez4@gmail.com>
+Date:   Tue Jun 9 17:29:42 2026 -0500
+
+    Merge branch 'main' of https://github.com/sina11178/Z3
+
+commit f93346b8ac95863c4a31ca72af5a776025b17cae
+Author: sina11178 <frsinarez4@gmail.com>
+Date:   Tue Jun 9 17:29:37 2026 -0500
+
+    Some basic tests
 
 commit 1806e34c6da27e8c50d480f236d179995afe2889
 Author: Sina Rezvani <sxr190099@g2-l-01.localdomain>
