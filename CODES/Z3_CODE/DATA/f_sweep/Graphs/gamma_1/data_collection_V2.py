@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 import shutil
 from matplotlib.colors import LinearSegmentedColormap
 
-f_point = 9
+f_point = 10
 
 
 f_array = np.linspace(0, 0.5, 11)
@@ -31,7 +31,7 @@ for l in L_array:
 log_time_list = np.arange(-10, 25, 0.5)
 
 for i, l in enumerate(L_array):
-    plt.plot(time_list, data_sets[i], label = f"L = {l}")
+    plt.plot(time_list, data_sets[i], marker='o', label = f"L = {l}")
 
 plt.xscale('log')
 plt.xlabel('ln(t)')
