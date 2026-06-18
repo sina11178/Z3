@@ -1,3 +1,15 @@
+commit 9f658804bcb7d264fadf3e13bf7b3fa68a16e7be
+Author: Sina Rezvani <sxr190099@g2-l-02.localdomain>
+Date:   Wed Jun 17 13:18:37 2026 -0500
+
+    Commit before run run_6926_L4_f_sweep
+
+commit f3643e73de00d4d6f960781ff8919a391fe22033
+Author: Sina Rezvani <sxr190099@g2-l-01.localdomain>
+Date:   Wed Jun 17 13:03:00 2026 -0500
+
+    all data for L=6, gamma = 1 (other than f = 0.3)
+
 commit e61331cd7d9fd2b95251828e354de0ffb6a2381c
 Author: Sina Rezvani <sxr190099@g2-l-01.localdomain>
 Date:   Mon Jun 15 12:41:54 2026 -0500
