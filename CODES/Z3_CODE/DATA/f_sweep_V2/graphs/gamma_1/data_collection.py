@@ -11,7 +11,7 @@ f_array = np.linspace(0, 1, 21)
 phi_array = [0, np.pi/6]
 
 gamma_array = [1]
-L_array = [4, 5, 6, 7, 8]
+L_array = [6, 7, 8, 9]
 
 time_list = np.exp(np.arange(-9, 27, 0.5))
 
@@ -44,8 +44,8 @@ for l in L_array:
         # Fit on log-scale time for numerical stability
                 popt, _ = curve_fit(
                     exp_model_new,
-                    time_list,
-                    data,
+                    time_list[16:],
+                    data[16:],
                     #p0= [data[-1], 0, 1, (1-data[-1]), 1 / time_list[len(time_list)//2]],#[data_current[-1], data_current[0] - data_current[-1], 1 / time_list_new[len(time_list_new)//2]],
                     bounds = ([0, 0, 0, 0, 0], [.5, 1, 10, 1, 10]),
                     maxfev=10000
@@ -54,7 +54,7 @@ for l in L_array:
                 c, a_1, g_1, a_2, g_2,  = popt
             except RuntimeError:
                 print(f"Fit did not converge for L={l}")
-
+            '''
             print(g_1)
             print(g_2)
             print(a_1)
@@ -74,13 +74,14 @@ for l in L_array:
                     tau = 1/g_2
                 else:
                     tau = 1/g_1
+            '''
             
             #tau = (a_1/g_1) + (a_2/g_2)
             #tau = tau / (a_1+a_2)
             f_1 = a_1/(a_1+a_2)
             f_2 = a_2/(a_1+a_2)
             thresh = 0.1
-
+            
             if f_1< thresh:
                 tau = 1/g_2
             elif f_2 < thresh:
@@ -133,9 +134,9 @@ for l in L_array:
 
 
             if int(index/21)%2 == 0:
-                scaled_lifetime_phi_0.append(np.log(tau)/np.sqrt(l))
+                scaled_lifetime_phi_0.append(np.log(tau)/np.power(l, 1))
             elif int(index/21)%2 == 1:
-                scaled_lifetime_phi_pi_6.append(np.log(tau)/np.sqrt(l))
+                scaled_lifetime_phi_pi_6.append(np.log(tau)/np.power(l, 1))
             else:
                 raise ValueError("Houston, we have a problem")
 
@@ -143,21 +144,27 @@ for l in L_array:
         else:
             print(f"File not found for pixel {j}")
 
-
-    scaled_lifetime_phi_0[0] = 27
-    scaled_lifetime_phi_pi_6[0] = 27
-    axes[0].plot(f_array[1:], scaled_lifetime_phi_0[1:], label=f"L={l}")
-    axes[1].plot(f_array[1:], scaled_lifetime_phi_pi_6[1:], label=f"L={l}")
+    
+    if l == 9:
+        scaled_lifetime_phi_pi_6[0] = 27
+        #f_array = np.delete(f_array, 6)
+        #axes[0].plot(f_array[1:].pop(6), scaled_lifetime_phi_0[1:], label=f"L={l}")
+        axes[1].plot(f_array[1:], scaled_lifetime_phi_pi_6[1:], label=f"L={l}")
+    else:
+        scaled_lifetime_phi_0[0] = 27
+        scaled_lifetime_phi_pi_6[0] = 27
+        axes[0].plot(f_array[1:], scaled_lifetime_phi_0[1:], label=f"L={l}")
+        axes[1].plot(f_array[1:], scaled_lifetime_phi_pi_6[1:], label=f"L={l}")
 
 
 axes[0].set_xlabel("f")
-axes[0].set_ylabel("ln(tau)/√L")
+axes[0].set_ylabel("ln(tau)/L")
 axes[0].set_title(f"φ = {phi_array[0]}")
 axes[0].legend()
 
 
 axes[1].set_xlabel("f")
-axes[1].set_ylabel("ln(tau)/√L")
+axes[1].set_ylabel("ln(tau)/L")
 axes[1].set_title(f"φ = {phi_array[1]}")
 axes[1].legend()
 

@@ -6,13 +6,13 @@ import shutil
 from matplotlib.colors import LinearSegmentedColormap
 from scipy.optimize import curve_fit
 
-f_point = 6
+f_point = 4
 
 
 f_array = np.linspace(0, 1, 21)
 phi_array = [0, np.pi/6]
 gamma_array = [1]
-L_array = [4]
+L_array = [6, 7, 8, 9]
 #L_array = [7]
 time_list = np.exp(np.arange(-9, 27, 0.5))
 
@@ -93,14 +93,14 @@ def detect_plateau_end(time_list_new, data_current, flatness_threshold=.1):
     #        return max(0, j-1)  # return index just before the drop
     #return 0  # no plateau found
 
-cutoff_index = 0
+cutoff_index = 16
 time_list_new = time_list[cutoff_index:]
 
 for i, l in enumerate(L_array):
     data_current = data_sets[i]
     data_current = data_current[cutoff_index:]
     color = plt.gca()._get_lines.get_next_color()
-    plt.plot(time_list, data_sets[i], label = f"L = {l}")
+    plt.plot(time_list, data_sets[i], color = color, label = f"L = {l}")
 
     '''
     try:
