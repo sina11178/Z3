@@ -6,9 +6,9 @@
 #SBATCH --partition=cmt
 #
 # Processors:
-#SBATCH --ntasks=1
-#SBATCH --nodes=1
-#SBATCH --cpus-per-task=128
+#SBATCH --ntasks=24
+#SBATCH --nodes=2
+#SBATCH --cpus-per-task=10
 #
 # Wall clock limit:
 #SBATCH --time=3-00:00:00
@@ -23,9 +23,9 @@
 
 echo "Starting job run_6926_L4_f_sweep"
 
-export OMP_NUM_THREADS=128
-export MKL_NUM_THREADS=128
-export OPENBLAS_NUM_THREADS=128
+export OMP_NUM_THREADS=10
+export MKL_NUM_THREADS=10
+export OPENBLAS_NUM_THREADS=10
 #export NUMEXPR_NUM_THREADS=1
 
 #module load miniconda

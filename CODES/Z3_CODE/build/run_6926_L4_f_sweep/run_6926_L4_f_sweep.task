@@ -1,27 +1,27 @@
 bash run_6926_L4_f_sweep_0.qsub
-echo "Fake run"
-echo "Fake run"
-echo "Fake run"
-echo "Fake run"
-echo "Fake run"
-echo "Fake run"
-echo "Fake run"
-echo "Fake run"
-echo "Fake run"
-echo "Fake run"
-echo "Fake run"
-echo "Fake run"
-echo "Fake run"
-echo "Fake run"
-echo "Fake run"
-echo "Fake run"
-echo "Fake run"
-echo "Fake run"
-echo "Fake run"
-echo "Fake run"
-echo "Fake run"
-echo "Fake run"
-echo "Fake run"
+bash run_6926_L4_f_sweep_1.qsub
+bash run_6926_L4_f_sweep_2.qsub
+bash run_6926_L4_f_sweep_3.qsub
+bash run_6926_L4_f_sweep_4.qsub
+bash run_6926_L4_f_sweep_5.qsub
+bash run_6926_L4_f_sweep_6.qsub
+bash run_6926_L4_f_sweep_7.qsub
+bash run_6926_L4_f_sweep_8.qsub
+bash run_6926_L4_f_sweep_9.qsub
+bash run_6926_L4_f_sweep_10.qsub
+bash run_6926_L4_f_sweep_11.qsub
+bash run_6926_L4_f_sweep_12.qsub
+bash run_6926_L4_f_sweep_13.qsub
+bash run_6926_L4_f_sweep_14.qsub
+bash run_6926_L4_f_sweep_15.qsub
+bash run_6926_L4_f_sweep_16.qsub
+bash run_6926_L4_f_sweep_17.qsub
+bash run_6926_L4_f_sweep_18.qsub
+bash run_6926_L4_f_sweep_19.qsub
+bash run_6926_L4_f_sweep_20.qsub
+bash run_6926_L4_f_sweep_21.qsub
+bash run_6926_L4_f_sweep_22.qsub
+bash run_6926_L4_f_sweep_23.qsub
 echo "Fake run"
 echo "Fake run"
 echo "Fake run"
