@@ -1,8 +1,41 @@
+commit 9327284213700b0233fba1468be66eb1916404d9
+Author: Sina Rezvani <sxr190099@g2-l-01.localdomain>
+Date:   Mon Jun 29 00:08:13 2026 -0500
+
+    Commit before run run_6926_L4_f_sweep
+
+commit 19963e36b0dd7698f5353851bef1342c46e8ab58
+Author: sina11178 <frsinarez4@gmail.com>
+Date:   Mon Jun 22 11:05:38 2026 -0500
+
+    Main_v3 added
+
+commit 9e03b943ad6c35c165507342a90a1a8cb78e4fe6
+Author: Sina Rezvani <sxr190099@g2-l-02.localdomain>
+Date:   Thu Jun 18 12:24:43 2026 -0500
+
+    adding missing data point for L = 9
+
+commit bfc1362451c9cf8c60df647760bf34a0322c0eb2
+Merge: 9f658804 796d9145
+Author: Sina Rezvani <sxr190099@g2-l-02.localdomain>
+Date:   Thu Jun 18 12:22:30 2026 -0500
+
+    Merge branch 'main' of https://github.com/sina11178/Z3
+    
+    Pulling from my computer onto G2
+
 commit 9f658804bcb7d264fadf3e13bf7b3fa68a16e7be
 Author: Sina Rezvani <sxr190099@g2-l-02.localdomain>
 Date:   Wed Jun 17 13:18:37 2026 -0500
 
     Commit before run run_6926_L4_f_sweep
+
+commit 796d914578b8cf2203952c6b48f86cdc57faed41
+Author: sina11178 <frsinarez4@gmail.com>
+Date:   Wed Jun 17 13:04:25 2026 -0500
+
+    Tests ran
 
 commit f3643e73de00d4d6f960781ff8919a391fe22033
 Author: Sina Rezvani <sxr190099@g2-l-01.localdomain>

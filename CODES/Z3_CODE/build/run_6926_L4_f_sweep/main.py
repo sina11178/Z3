@@ -31,7 +31,7 @@ print("Running")
 index = int(sys.argv[1])
 f_index = index % 4
 phi_index = int(index/4) % 2
-gamma_index = index % 8
+gamma_index = int(index / 8)
 for i in range(len(L_array)):
     #size_autocorrelator_SIMULATION_NPY(-9, 27, .5, [L_array[i]], [f_array[int(index)%21], phi_array[int(int(index)/21)%2]], gamma_array[int(int(index)/42)])
     size_autocorrelator_SIMULATION_NPY(-9, 27, .5, [L_array[i]], [f_array[f_index], phi_array[phi_index]], gamma_array[gamma_index])
