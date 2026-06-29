@@ -12,7 +12,7 @@ f_point = 4
 f_array = np.linspace(0, 1, 21)
 phi_array = [0, np.pi/6]
 gamma_array = [1]
-L_array = [6, 7, 8, 9]
+L_array = [4, 5, 6, 7, 8, 9]
 #L_array = [7]
 time_list = np.exp(np.arange(-9, 27, 0.5))
 
@@ -142,8 +142,8 @@ for i, l in enumerate(L_array):
         )
         fit_curve = exp_model_new(time_list, *popt)
         c, a_1, g_1, a_2, g_2,  = popt
-        plt.plot(time_list, fit_curve, color=color, linestyle='--',
-                    label=f"L={l} fit (a_1={a_1:.2f}, γ_1 ={g_1:.2f}, a_2 = {a_2:.2f}, γ_2={g_2:.2e}, c = {c: .2f})")
+        #plt.plot(time_list, fit_curve, color=color, linestyle='--',
+        #            label=f"L={l} fit (a_1={a_1:.2f}, γ_1 ={g_1:.2f}, a_2 = {a_2:.2f}, γ_2={g_2:.2e}, c = {c: .2f})")
     except RuntimeError:
         print(f"Fit did not converge for L={l}")
     

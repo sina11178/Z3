@@ -22,6 +22,10 @@ def exp_model_new(t, c, a_1, g_1, a_2, g_2):
 
     return c + term_1 + term_2
 
+def exp_model(t, A, B, gamma):
+    return B + A*np.exp(-t*gamma)
+
+
 
 
 fig, axes = plt.subplots(1, 2, figsize=(8, 6))
@@ -44,8 +48,8 @@ for l in L_array:
         # Fit on log-scale time for numerical stability
                 popt, _ = curve_fit(
                     exp_model_new,
-                    time_list[16:],
-                    data[16:],
+                    time_list[0:],
+                    data[0:],
                     #p0= [data[-1], 0, 1, (1-data[-1]), 1 / time_list[len(time_list)//2]],#[data_current[-1], data_current[0] - data_current[-1], 1 / time_list_new[len(time_list_new)//2]],
                     bounds = ([0, 0, 0, 0, 0], [.5, 1, 10, 1, 10]),
                     maxfev=10000
@@ -134,9 +138,9 @@ for l in L_array:
 
 
             if int(index/21)%2 == 0:
-                scaled_lifetime_phi_0.append(np.log(tau)/np.power(l, 1))
+                scaled_lifetime_phi_0.append(np.log(tau)/np.power(l, 1/2))
             elif int(index/21)%2 == 1:
-                scaled_lifetime_phi_pi_6.append(np.log(tau)/np.power(l, 1))
+                scaled_lifetime_phi_pi_6.append(np.log(tau)/np.power(l, 1/2))
             else:
                 raise ValueError("Houston, we have a problem")
 
