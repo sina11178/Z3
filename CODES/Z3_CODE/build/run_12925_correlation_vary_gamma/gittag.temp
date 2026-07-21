@@ -1,3 +1,450 @@
+commit 934ac20aa60858448af96f3c3746a94152f41994
+Author: Sina Rezvani <sxr190099@g2-l-01.localdomain>
+Date:   Mon Jul 20 11:33:45 2026 -0500
+
+    Commit before run run_12925_correlation_vary_gamma
+
+commit e26edb41c83d1a4acd1b0fc920ccc6c6fc9ab236
+Author: Sina Rezvani <sxr190099@g2-l-02.localdomain>
+Date:   Fri Jul 17 15:20:23 2026 -0500
+
+    Commit before run run_71726_polar_g1_L7
+
+commit 909226f0c2e45c56d29c630c01e9da33bffda5da
+Merge: c70dcb1a f68916b9
+Author: sina11178 <frsinarez4@gmail.com>
+Date:   Mon Jun 29 09:18:51 2026 -0500
+
+    Merge branch 'main' of https://github.com/sina11178/Z3
+
+commit c70dcb1a875a6c0cc9263cf15fab7b66ff37690b
+Author: sina11178 <frsinarez4@gmail.com>
+Date:   Mon Jun 29 09:18:46 2026 -0500
+
+    Pushing any new updates to sweep analysis code
+
+commit f68916b92a3b7e058af99dcbdf6469c12fcef901
+Author: Sina Rezvani <sxr190099@g2-l-02.localdomain>
+Date:   Mon Jun 29 09:17:32 2026 -0500
+
+    Added data to sweep V2 for f>1 for all Gamma and L=4-8
+
+commit 9327284213700b0233fba1468be66eb1916404d9
+Author: Sina Rezvani <sxr190099@g2-l-01.localdomain>
+Date:   Mon Jun 29 00:08:13 2026 -0500
+
+    Commit before run run_6926_L4_f_sweep
+
+commit 19963e36b0dd7698f5353851bef1342c46e8ab58
+Author: sina11178 <frsinarez4@gmail.com>
+Date:   Mon Jun 22 11:05:38 2026 -0500
+
+    Main_v3 added
+
+commit 9e03b943ad6c35c165507342a90a1a8cb78e4fe6
+Author: Sina Rezvani <sxr190099@g2-l-02.localdomain>
+Date:   Thu Jun 18 12:24:43 2026 -0500
+
+    adding missing data point for L = 9
+
+commit bfc1362451c9cf8c60df647760bf34a0322c0eb2
+Merge: 9f658804 796d9145
+Author: Sina Rezvani <sxr190099@g2-l-02.localdomain>
+Date:   Thu Jun 18 12:22:30 2026 -0500
+
+    Merge branch 'main' of https://github.com/sina11178/Z3
+    
+    Pulling from my computer onto G2
+
+commit 9f658804bcb7d264fadf3e13bf7b3fa68a16e7be
+Author: Sina Rezvani <sxr190099@g2-l-02.localdomain>
+Date:   Wed Jun 17 13:18:37 2026 -0500
+
+    Commit before run run_6926_L4_f_sweep
+
+commit 796d914578b8cf2203952c6b48f86cdc57faed41
+Author: sina11178 <frsinarez4@gmail.com>
+Date:   Wed Jun 17 13:04:25 2026 -0500
+
+    Tests ran
+
+commit f3643e73de00d4d6f960781ff8919a391fe22033
+Author: Sina Rezvani <sxr190099@g2-l-01.localdomain>
+Date:   Wed Jun 17 13:03:00 2026 -0500
+
+    all data for L=6, gamma = 1 (other than f = 0.3)
+
+commit e61331cd7d9fd2b95251828e354de0ffb6a2381c
+Author: Sina Rezvani <sxr190099@g2-l-01.localdomain>
+Date:   Mon Jun 15 12:41:54 2026 -0500
+
+    Commit before run run_6926_L4_f_sweep
+
+commit a645e17db38634d10bf9ed15b822f84e965b7cf2
+Author: Sina Rezvani <sxr190099@g2-l-02.localdomain>
+Date:   Wed Jun 10 14:21:41 2026 -0500
+
+    Pushing V2 f_sweep (more data points)
+
+commit 3e22e794594da7a25cb660f01515011b89f33631
+Merge: d0b33142 27e09f2d
+Author: Sina Rezvani <sxr190099@g2-l-02.localdomain>
+Date:   Wed Jun 10 14:19:18 2026 -0500
+
+    Merge branch 'main' of https://github.com/sina11178/Z3
+    
+    Pulled from my main computer
+
+commit 27e09f2d6882fe4c91d5b19d6b3a11c1b6207f05
+Author: sina11178 <frsinarez4@gmail.com>
+Date:   Wed Jun 10 14:14:23 2026 -0500
+
+    Ran some figure simulations
+
+commit d0b331422312f9f9dbaaf788e98b7c80ec99f36c
+Author: Sina Rezvani <sxr190099@g2-l-01.localdomain>
+Date:   Wed Jun 10 10:00:59 2026 -0500
+
+    Commit before run run_6926_L4_f_sweep
+
+commit 044d2630d553fd68b6f44070cf997be5a7a66c5f
+Merge: f93346b8 1806e34c
+Author: sina11178 <frsinarez4@gmail.com>
+Date:   Tue Jun 9 17:29:42 2026 -0500
+
+    Merge branch 'main' of https://github.com/sina11178/Z3
+
+commit f93346b8ac95863c4a31ca72af5a776025b17cae
+Author: sina11178 <frsinarez4@gmail.com>
+Date:   Tue Jun 9 17:29:37 2026 -0500
+
+    Some basic tests
+
+commit 1806e34c6da27e8c50d480f236d179995afe2889
+Author: Sina Rezvani <sxr190099@g2-l-01.localdomain>
+Date:   Tue Jun 9 17:28:54 2026 -0500
+
+    Data added for f sweep for sizes L = 4,5,6,7,8 and all gammas. Done at phi = 0, pi/6
+
+commit a87d1e080e4e99416c37a17628fdc9817a3556da
+Author: sina11178 <frsinarez4@gmail.com>
+Date:   Mon Jun 8 17:33:08 2026 -0500
+
+    All data for Gamma = 0.5, L = 8, recorded
+
+commit 809c1b55d4ad1919fd587758fd32a42751f3d0a2
+Author: Sina Rezvani <sxr190099@g2-l-01.localdomain>
+Date:   Mon Jun 8 17:19:06 2026 -0500
+
+    L8 gamma = 0.5 missing pixels V2 added
+
+commit 30881df30f342df96dd65a885bed5ca3d2953b50
+Author: sina11178 <frsinarez4@gmail.com>
+Date:   Mon Jun 8 16:02:44 2026 -0500
+
+    New data and new main file created
+
+commit 566fcd026a6bb5af47d3d3da62c8f7c22b3c7c11
+Author: sina11178 <frsinarez4@gmail.com>
+Date:   Thu Jun 4 16:30:12 2026 -0500
+
+    Adding all new data
+
+commit 25ee51cc2fd16cced5c212903e82991568f79c2d
+Author: Sina Rezvani <sxr190099@g2-l-02.localdomain>
+Date:   Thu Jun 4 15:21:14 2026 -0500
+
+    L=4,6,8 data added for 31x31 pixel phase diagram
+
+commit c776053cc2407a7b75cf0a1fd346044827bea559
+Merge: b9d8f2b5 b9359546
+Author: Sina Rezvani <sxr190099@g2-l-02.localdomain>
+Date:   Thu Jun 4 15:11:36 2026 -0500
+
+    Merge branch 'main' of https://github.com/sina11178/Z3
+    
+    L4, L6, L8 31x31 pixels added
+
+commit b93595468ebf197ea2a83127dbd1253e90754c03
+Author: sina11178 <frsinarez4@gmail.com>
+Date:   Thu Jun 4 15:10:57 2026 -0500
+
+    Updating from my laptop
+
+commit b9d8f2b5b88602da99dfc8aa62dba449f388d1a7
+Author: Sina Rezvani <sxr190099@g2-l-01.localdomain>
+Date:   Wed Jun 3 10:29:01 2026 -0500
+
+    Commit before run run_60326_grid31_gamma_1_missing_pixels
+
+commit 81e45e1e545a1e321112d365e2c8f444f26d8ffd
+Author: Sina Rezvani <sxr190099@g2-l-01.localdomain>
+Date:   Tue Jun 2 14:09:40 2026 -0500
+
+    Commit before run run_60126_L8_grid31_gamma_0_missing_pixels
+
+commit 8cc28cdb88ea3d73a678b16edf7b6a400d781f82
+Author: sina11178 <frsinarez4@gmail.com>
+Date:   Tue Jun 2 12:36:44 2026 -0500
+
+    Missing pixel data added
+
+commit 0e5a29b8cb587648700a92928dbe4695a512785c
+Author: sina11178 <frsinarez4@gmail.com>
+Date:   Tue Jun 2 11:31:07 2026 -0500
+
+    New data/graphs added
+
+commit e5443682bc6fca96d663b3b5a7bdc2527d12355b
+Merge: c04fd2a0 88a979b2
+Author: Sina Rezvani <sxr190099@g2-l-01.localdomain>
+Date:   Tue Jun 2 11:28:28 2026 -0500
+
+    Merge branch 'main' of https://github.com/sina11178/Z3
+    
+    L=8 phase diagram pixels added for gamma=0, 0.5. NOTE: Not all pixels were generated. We still have to get the rest
+
+commit c04fd2a01807d98090c3c563eb94640a2cd54c4b
+Author: Sina Rezvani <sxr190099@g2-l-01.localdomain>
+Date:   Tue Jun 2 11:27:29 2026 -0500
+
+    L8 phase diagram for gamma = 0, 0.5 added. NOTE: Not all pixels were able to be generated. Therefore, we must generate the rest
+
+commit 88a979b28a8f113330bca533d128af79b004de0e
+Author: sina11178 <frsinarez4@gmail.com>
+Date:   Mon Jun 1 10:24:01 2026 -0500
+
+    Data for autocorrelation, 2p correlation, and krylov has been stored in V2 folders
+
+commit f895ee53a16e799de7beb4352458adf3338c8575
+Author: Sina Rezvani <sxr190099@g2-l-01.localdomain>
+Date:   Mon Jun 1 08:54:34 2026 -0500
+
+    Commit before run optimize_calc_time_53026
+
+commit ad855b7c50926577221be6be27b9be88ceebc376
+Author: Sina Rezvani <sxr190099@g2-l-02.localdomain>
+Date:   Sun May 31 20:07:14 2026 -0500
+
+    L=6 data for the phase diagrams
+
+commit 9f1125078e5f3927b30637d93de2e23ffe2a993f
+Author: sina11178 <frsinarez4@gmail.com>
+Date:   Sat May 30 22:34:44 2026 -0500
+
+    Data collection for L4 31x31 graph for gamma = 1
+
+commit b763a625578b036780e8b3b15f64510779ae0451
+Author: sina11178 <frsinarez4@gmail.com>
+Date:   Fri May 29 16:12:25 2026 -0500
+
+    New data collection graphs
+
+commit dc75749ec68b8d2d01c3f16a967337ec0dbe105d
+Author: Sina Rezvani <sxr190099@g2-l-02.localdomain>
+Date:   Fri May 29 15:50:36 2026 -0500
+
+    31x31 data
+
+commit f76493ebff05b0db3a7ceba4d8c5322da6c1c795
+Author: Sina Rezvani <sxr190099@g2-l-02.localdomain>
+Date:   Fri May 29 14:21:12 2026 -0500
+
+    t starting closer to t for gamma = 1
+
+commit 9bc67589d24715c955bcd5b3f6cd1e35d156d81e
+Author: Sina Rezvani <sxr190099@g2-l-02.localdomain>
+Date:   Fri May 29 13:07:22 2026 -0500
+
+    Gamma = 1 phase diagram
+
+commit db6774a059683b5b789bacac3b4f2926f8ba059e
+Author: Sina Rezvani <sxr190099@g2-l-02.localdomain>
+Date:   Fri May 29 12:55:33 2026 -0500
+
+    0.5 gamma phase diagram data added
+
+commit e9f4716f8c23f9fe8fbb2990f56406447dd3c19a
+Author: sina11178 <frsinarez4@gmail.com>
+Date:   Fri May 29 12:44:18 2026 -0500
+
+    data collection 5/28
+
+commit ab754b5e4e7a9dab4270f778ac35b5a9768b00b2
+Author: Sina Rezvani <sxr190099@g2-l-02.localdomain>
+Date:   Fri May 29 12:43:13 2026 -0500
+
+    grid from 0 to one on x-axis --> run_52926_L4_21_grid_gamma_0
+
+commit fd58557f6068c1b41fd62b9d89b65ed4df5600f3
+Author: Sina Rezvani <sxr190099@g2-l-02.localdomain>
+Date:   Thu May 28 16:39:32 2026 -0500
+
+    Data for L = 4 for a 21x21 grid (phi in [0, pi/2], r in [0, 1.1])
+
+commit ced764e60a794b9a5189def2b3e7d74678ef2369
+Author: Sina Rezvani <sxr190099@g2-l-02.localdomain>
+Date:   Thu May 28 15:58:56 2026 -0500
+
+    Commit before run run_52826_L4_21_grid_gamma_0
+
+commit b4b3e57efddb2c1bbc301ce5bcb324434fb8b15b
+Author: Sina Rezvani <sxr190099@g2-l-02.localdomain>
+Date:   Wed May 27 17:30:14 2026 -0500
+
+    Commit before run run_52626_autocorr_vary_gamma
+
+commit 7308c5a63cf64249e8f94e93a8f80601ba7a0645
+Author: Sina Rezvani <sxr190099@g2-l-02.localdomain>
+Date:   Wed May 27 17:26:12 2026 -0500
+
+    Commit before run run_52626_autocorr_vary_gamma
+
+commit be8ba581c6a4bcd74b4c1c005b89c042118e7237
+Author: Sina Rezvani <sxr190099@g2-l-01.localdomain>
+Date:   Wed May 27 15:59:05 2026 -0500
+
+    Commit before run run_52626_autocorr_vary_gamma
+
+commit 77c45f9f49cc25dc1da75c2e2c5fcd542ba41f5b
+Author: Sina Rezvani <sxr190099@g2-l-01.localdomain>
+Date:   Wed May 27 15:58:35 2026 -0500
+
+    Commit before run run_52626_autocorr_vary_gamma
+
+commit 4cc5fa4d59c71e225e5d8a0db9b3e9e8388f6331
+Author: Sina Rezvani <sxr190099@g2-l-01.localdomain>
+Date:   Wed May 27 15:46:16 2026 -0500
+
+    Commit before run run_52626_autocorr_vary_gamma
+
+commit 5a7596aca953d7fbb7489022ca0fd47f4cafd97f
+Author: Sina Rezvani <sxr190099@g2-l-01.localdomain>
+Date:   Wed May 27 15:41:09 2026 -0500
+
+    Commit before run run_52626_autocorr_vary_gamma
+
+commit 52defb24a29887ab2c279d78827cadcb18e0b755
+Author: Sina Rezvani <sxr190099@g2-l-01.localdomain>
+Date:   Wed May 27 15:35:36 2026 -0500
+
+    Commit before run run_52626_autocorr_vary_gamma
+
+commit 856be9e7db5a406cde90fb66b992b7860a5a6dd6
+Author: Sina Rezvani <sxr190099@g2-l-01.localdomain>
+Date:   Wed May 27 15:31:08 2026 -0500
+
+    Commit before run run_52626_autocorr_vary_gamma
+
+commit c0197c1b5deaf7ca668bf2a384204343ea5cc6cf
+Author: Sina Rezvani <sxr190099@g2-l-01.localdomain>
+Date:   Wed May 27 15:11:35 2026 -0500
+
+    Commit before run run_52626_autocorr_vary_gamma
+
+commit 26908211b526542a155c3d6e4ec11528876854d6
+Author: Sina Rezvani <sxr190099@g2-l-01.localdomain>
+Date:   Wed May 27 15:05:00 2026 -0500
+
+    Commit before run run_52626_autocorr_vary_gamma
+
+commit 400076e98eada4e6b906776e1be5100ea6c5ef60
+Author: Sina Rezvani <sxr190099@g2-l-01.localdomain>
+Date:   Wed May 27 14:55:35 2026 -0500
+
+    Commit before run run_52626_autocorr_vary_gamma
+
+commit a4cb7e5561ef924d94da9d8b5eaf7f49ed2295d2
+Author: Sina Rezvani <sxr190099@g2-l-01.localdomain>
+Date:   Wed May 27 14:31:20 2026 -0500
+
+    Added virtual environment so that autocorrelation sims can run on G2
+
+commit 24780177b0d5af53907c3941e868e3f1594988b0
+Author: Sina Rezvani <sxr190099@g2-l-01.localdomain>
+Date:   Wed May 27 14:29:41 2026 -0500
+
+    Commit before run run_52626_autocorr_vary_gamma
+
+commit 68badcb51db667a66e36abe77162df3bbda2d71c
+Author: Sina Rezvani <sxr190099@juno-l-01.localdomain>
+Date:   Wed May 27 12:26:41 2026 -0500
+
+    Data obtained for: 2p correlation, Krylov matrices for L=4, 6, 8 on JUNO
+
+commit c80c20d0fc327f3f82a42b4d5515492d4cb7e204
+Author: Sina Rezvani <sxr190099@juno-l-01.localdomain>
+Date:   Wed May 27 10:39:48 2026 -0500
+
+    Commit before run run_52726_krylov_L8_norm
+
+commit 26f7e8ed0729b25beeb9e46cfac9e4cb1ebf399f
+Author: Sina Rezvani <sxr190099@juno-l-01.localdomain>
+Date:   Tue May 26 20:22:38 2026 -0500
+
+    Created simulation folder for new krylov results
+
+commit 283fcbd108d139b11ed977f48a3b89fda7f3d3d2
+Author: Sina Rezvani <sxr190099@g2-l-01.localdomain>
+Date:   Tue May 26 20:00:07 2026 -0500
+
+    added AUTOCORRELATION code stuff... This is meant for G2; however, G2 is not working for some reason
+
+commit 1bd0ec83ad2c7b83b6fbbac396c851c385c3d014
+Author: Sina Rezvani <sxr190099@juno-l-01.localdomain>
+Date:   Tue May 26 19:57:20 2026 -0500
+
+    pushing after starting sim
+
+commit c6ac512128fd05d49a6833b0b48424402b8068a1
+Author: Sina Rezvani <sxr190099@juno-l-01.localdomain>
+Date:   Tue May 26 19:07:45 2026 -0500
+
+    CORRELATION CODE ADAPTED TO JUNO
+
+commit bbb3208b1b545a24b77ea8f7841ae46ddf7df6d4
+Author: Sina Rezvani <sxr190099@juno-l-01.localdomain>
+Date:   Tue May 26 19:06:52 2026 -0500
+
+    Commit before run run_12925_correlation_vary_gamma
+
+commit a4317a9e19873576e2475c50c575761cb33e025a
+Author: Sina Rezvani <sxr190099@juno-l-01.localdomain>
+Date:   Tue May 26 18:59:10 2026 -0500
+
+    Commit before run run_12925_correlation_vary_gamma
+
+commit c0e0b1b8954fc6a96c7c142fe7f48e027e102e86
+Merge: ae79f142 67d2142e
+Author: Sina Rezvani <sxr190099@g2-l-01.localdomain>
+Date:   Tue May 26 18:55:50 2026 -0500
+
+    Merge branch 'main' of https://github.com/sina11178/Z3
+    
+    FIXING CODE FOR CORRELATION
+
+commit 67d2142ea6539e12f870e2b0ebd5590e430151d4
+Merge: afc863b2 3aeebc2e
+Author: Sina Rezvani <sxr190099@juno-l-01.localdomain>
+Date:   Tue May 26 18:51:26 2026 -0500
+
+    .log files
+
+commit ae79f142377ac4a222a99db73c2dd8ce11391929
+Merge: 858bbed7 3aeebc2e
+Author: Sina Rezvani <sxr190099@g2-l-01.localdomain>
+Date:   Tue May 26 18:48:16 2026 -0500
+
+    Merge branch 'main' of https://github.com/sina11178/Z3
+    
+    fixing sbatch code in ganymede 2
+
+commit 858bbed7eb5d7ffd227015eb09b1a190af4a0381
+Author: Sina Rezvani <sxr190099@g2-l-01.localdomain>
+Date:   Tue May 26 18:47:14 2026 -0500
+
+    fixing sbatch code in ganymede 2
+
 commit 7b229e81f8dfa341d5c327a752f9373e179d066a
 Author: Sina Rezvani <sxr190099@g2-l-01.localdomain>
 Date:   Tue May 26 17:51:05 2026 -0500
@@ -22,6 +469,12 @@ Date:   Tue May 26 17:20:12 2026 -0500
 
     Commit before run run_12925_correlation_vary_gamma
 
+commit 3aeebc2ea3d7f9e63ec38b0f9bf92372d381a060
+Author: sina11178 <frsinarez4@gmail.com>
+Date:   Tue May 26 16:20:36 2026 -0500
+
+    Rename file to indicate that correlation data is between site 1 and 2 (NOT site 1 and site L/2)
+
 commit 4931a503d1e8038f48c0e25535b9dd029867fbb1
 Author: sina11178 <frsinarez4@gmail.com>
 Date:   Tue May 26 16:17:01 2026 -0500
@@ -29,7 +482,7 @@ Date:   Tue May 26 16:17:01 2026 -0500
     New pdf
 
 commit d13d42e9099ea68db5cdb4c8af7a3b19455f2373
-Merge: e7c06a4 3d68ab8
+Merge: e7c06a4a 3d68ab8a
 Author: sina11178 <frsinarez4@gmail.com>
 Date:   Wed Feb 25 13:52:20 2026 -0600
 
@@ -46,6 +499,36 @@ Author: Sina Rezvani <sxr190099@g2-l-01.localdomain>
 Date:   Wed Feb 25 13:49:08 2026 -0600
 
     Adding whatever is left from G2
+
+commit afc863b20757de45a787bb233bdeffef4f139179
+Author: Sina Rezvani <sxr190099@juno-l-01.localdomain>
+Date:   Sun Dec 14 22:51:17 2025 -0600
+
+    Commit before run run_121125_L8_only_twisted
+
+commit 9ac4f525b76f8f95972601fcb1ef5b3996338699
+Author: Sina Rezvani <sxr190099@juno-l-01.localdomain>
+Date:   Sun Dec 14 22:50:33 2025 -0600
+
+    Commit before run run_121125_L8_only_normal
+
+commit fbbcc4856d405b4e322d97c45db05ea00a39cdf4
+Author: Sina Rezvani <sxr190099@juno-l-01.localdomain>
+Date:   Sun Dec 14 22:49:41 2025 -0600
+
+    Commit before run run_12125_krylov_L4_to_L10_normal_comm
+
+commit ebbb9dcb0c3b7786ab2acf8fa16902e3b3ae3d40
+Author: Sina Rezvani <sxr190099@juno-l-01.localdomain>
+Date:   Sun Dec 14 22:48:15 2025 -0600
+
+    Commit before run run_121025_krylov_L8_twisted
+
+commit f088467c2cd4a0a81b08f2ae28163c0443143279
+Author: Sina Rezvani <sxr190099@juno-l-01.localdomain>
+Date:   Sun Dec 14 22:45:33 2025 -0600
+
+    Commit before run run_121025_krylov_L8_twisted
 
 commit bba8ee6df123ce011b48c813657501ad2a73a51f
 Author: Sina Rezvani <sxr190099@g2-l-01.localdomain>
@@ -90,7 +573,7 @@ Date:   Sun Dec 14 12:37:17 2025 -0600
     Ran some test code
 
 commit 237a1e59f44cf390ea82a9d14ed5533261942ea1
-Merge: 1d12077 b6c72f9
+Merge: 1d120776 b6c72f98
 Author: Sina Rezvani <sxr190099@g2-l-01.localdomain>
 Date:   Sun Dec 14 01:38:16 2025 -0600
 
@@ -122,7 +605,7 @@ Date:   Sat Dec 13 18:31:41 2025 -0600
     corrected data for the normal commutator
 
 commit d60930dc2648a31d325dc63ff8321618240c0c31
-Merge: 6635637 5e5c090
+Merge: 6635637f 5e5c0904
 Author: Sina Rezvani <sxr190099@g2-l-01.localdomain>
 Date:   Sat Dec 13 18:12:58 2025 -0600
 
@@ -209,7 +692,7 @@ Date:   Sat Dec 13 12:44:44 2025 -0600
     Commit before run run_121325_L8_gam0.4_phi_0.524
 
 commit 499e47a9cb62e8dad9e97eefe5fd349e0834afc5
-Merge: 15d3d2b b6e4c2a
+Merge: 15d3d2b4 b6e4c2ab
 Author: Sina Rezvani <sxr190099@g2-l-01.localdomain>
 Date:   Fri Dec 12 18:44:46 2025 -0600
 
@@ -235,7 +718,7 @@ Date:   Fri Dec 12 17:19:45 2025 -0600
     Commit before run run_121125_L8_only_normal
 
 commit 0523338c01caf52cd801dbe71211dfcbafc20d14
-Merge: d10b5bd 41ee234
+Merge: d10b5bd0 41ee234d
 Author: sina11178 <frsinarez4@gmail.com>
 Date:   Fri Dec 12 16:17:37 2025 -0600
 
@@ -332,7 +815,7 @@ Date:   Thu Dec 11 14:16:29 2025 -0600
     Adding twisted commutator data to the github
 
 commit 2d26b92dc7fc08bb83d2e50641bf71bef0ba88f1
-Merge: f9df91e ff21c6c
+Merge: f9df91e1 ff21c6cd
 Author: Sina Rezvani <sxr190099@juno-l-01.localdomain>
 Date:   Thu Dec 11 14:14:50 2025 -0600
 
@@ -341,7 +824,7 @@ Date:   Thu Dec 11 14:14:50 2025 -0600
     Necessary to upload data for twisted commutator to github`
 
 commit ff21c6cd46894c4af8a044eb17c6010fd1c3b59c
-Merge: 13fcce8 3f038cd
+Merge: 13fcce88 3f038cd5
 Author: sina11178 <frsinarez4@gmail.com>
 Date:   Wed Dec 10 20:05:49 2025 -0600
 
@@ -384,7 +867,7 @@ Date:   Wed Dec 10 00:08:02 2025 -0600
     Commit before run run_121025_krylov_L8_twisted
 
 commit 3f038cd5fe8426a7f924427a1754b67558ff83f2
-Merge: 7deafed 9fb4142
+Merge: 7deafed2 9fb41421
 Author: Sina Rezvani <sxr190099@g2-l-01.localdomain>
 Date:   Tue Dec 9 23:57:04 2025 -0600
 
@@ -416,7 +899,7 @@ Date:   Thu Dec 4 13:43:36 2025 -0600
     Renamed all the long pi/6 names to 0.524
 
 commit e4311004cbf53f5787bdb6a55cad88b289a2e2be
-Merge: 6903d39 149ed3d
+Merge: 6903d39d 149ed3de
 Author: sina11178 <frsinarez4@gmail.com>
 Date:   Thu Dec 4 13:03:11 2025 -0600
 
@@ -453,7 +936,7 @@ Date:   Thu Dec 4 12:17:03 2025 -0600
     Collected data and created graphs
 
 commit 483b28852ab2d22517383df46786a2952eb25996
-Merge: f896c97 4ac06d4
+Merge: f896c972 4ac06d45
 Author: sina11178 <frsinarez4@gmail.com>
 Date:   Tue Nov 25 13:24:17 2025 -0600
 
@@ -472,7 +955,7 @@ Date:   Tue Nov 25 13:22:13 2025 -0600
     Moved all sim data to Autocorrelation_data folder in DATA
 
 commit f81d59715a92ea4212b123cd3d9a5bbec26feffb
-Merge: fb5dce1 56093db
+Merge: fb5dce13 56093dbf
 Author: sina11178 <frsinarez4@gmail.com>
 Date:   Tue Nov 25 08:05:37 2025 -0600
 
@@ -578,7 +1061,7 @@ Date:   Mon Jul 7 08:04:04 2025 -0500
     Nothing
 
 commit 0e66922d6f0127de4889265872316fe8e1ef17ac
-Merge: f1d7b89 0ed6889
+Merge: f1d7b89c 0ed6889f
 Author: Sina Rezvani <sxr190099@g2-l-01.localdomain>
 Date:   Mon Jul 7 08:02:26 2025 -0500
 
@@ -599,7 +1082,7 @@ Date:   Fri Jul 4 14:41:05 2025 -0500
     Commit before run run_063025_krylov_matrices_zero_modes
 
 commit 6283c0889cd922f546930286add507dc226065bb
-Merge: c0b046e 0755edd
+Merge: c0b046e4 0755edd1
 Author: sina11178 <frsinarez4@gmail.com>
 Date:   Fri Jul 4 13:29:15 2025 -0500
 
@@ -612,7 +1095,7 @@ Date:   Fri Jul 4 13:29:09 2025 -0500
     Fixed some code
 
 commit 0755edd1d7f54c266651c28b2ff7319895ff9c11
-Merge: 75fae34 b27aafd
+Merge: 75fae34b b27aafd6
 Author: Sina Rezvani <sxr190099@g2-l-02.localdomain>
 Date:   Fri Jul 4 13:27:30 2025 -0500
 
@@ -633,7 +1116,7 @@ Date:   Fri Jul 4 00:25:49 2025 -0500
     Commit before run run_063025_krylov_matrices_zero_modes
 
 commit b27aafd6f7f4fae0e68ba647452a176c1e1ccc09
-Merge: fc9bd85 a08ad0c
+Merge: fc9bd851 a08ad0c0
 Author: sina11178 <frsinarez4@gmail.com>
 Date:   Fri Jul 4 00:22:40 2025 -0500
 
@@ -646,7 +1129,7 @@ Date:   Fri Jul 4 00:22:33 2025 -0500
     .
 
 commit a08ad0c057034470c04589f0de3c8bae3cedfbce
-Merge: 3c8c220 697245f
+Merge: 3c8c2202 697245f2
 Author: Sina Rezvani <sxr190099@g2-l-01.localdomain>
 Date:   Fri Jul 4 00:19:52 2025 -0500
 
@@ -679,7 +1162,7 @@ Date:   Thu Jul 3 22:19:02 2025 -0500
     Commit before run run_063025_krylov_matrices_zero_modes
 
 commit ccbad1c573366f1c67ad1cf04eb292c69aa40fb0
-Merge: f22bf33 240806e
+Merge: f22bf330 240806ed
 Author: sina11178 <frsinarez4@gmail.com>
 Date:   Thu Jul 3 22:05:46 2025 -0500
 
@@ -748,7 +1231,7 @@ Date:   Thu Jun 26 11:26:03 2025 -0500
     Ran another test for smaller N size
 
 commit 0c5e6a14e86cc62715d71517e82fab90de349fd1
-Merge: 8042252 26d2487
+Merge: 80422521 26d24877
 Author: sina11178 <frsinarez4@gmail.com>
 Date:   Thu Jun 26 11:22:30 2025 -0500
 
@@ -761,7 +1244,7 @@ Date:   Thu Jun 26 11:22:24 2025 -0500
     Made my matrix truncate when fully non-hermitian (gamma = 0); Also, added some data on krylov matrices for different gamma values
 
 commit 26d24877ac21beccc4a2928618cb6ec207b4fe3b
-Merge: 7f66c9a 3fc7ebe
+Merge: 7f66c9a3 3fc7ebee
 Author: Sina Rezvani <sxr190099@juno-l-01.localdomain>
 Date:   Mon Jun 23 17:08:51 2025 -0500
 
@@ -822,7 +1305,7 @@ Date:   Wed May 21 15:49:29 2025 -0500
     Commit date - 5/21/25
 
 commit 6bcf2fe89114c75dab3788c9b6d9a6c4063d51a4
-Merge: d893bcb 0c515f6
+Merge: d893bcb3 0c515f6c
 Author: Sina Rezvani <sxr190099@juno-l-01.localdomain>
 Date:   Fri May 9 15:59:39 2025 -0500
 
@@ -851,7 +1334,7 @@ Date:   Fri May 9 15:48:27 2025 -0500
     Commit before run run_042525_autocorr_vary_gamma
 
 commit c581688e3b3e300fa8ce08cb6b7210d0d1b6f510
-Merge: ee2c93d 1f0d39d
+Merge: ee2c93d5 1f0d39d0
 Author: sina11178 <frsinarez4@gmail.com>
 Date:   Wed May 7 16:27:12 2025 -0500
 
@@ -894,7 +1377,7 @@ Date:   Wed Apr 30 15:54:01 2025 -0500
     EDITED PLOT.PY FILE
 
 commit aa9865e480b11965410a82fe50ea5be99bd6645f
-Merge: 07f33f2 197e63c
+Merge: 07f33f2c 197e63c8
 Author: sina11178 <frsinarez4@gmail.com>
 Date:   Wed Apr 30 12:30:51 2025 -0500
 
@@ -927,7 +1410,7 @@ Date:   Fri Apr 18 13:31:38 2025 -0500
     Changes added for Krylov - Method implementation
 
 commit bae827242bd75e6420888b343387febf3380b46b
-Merge: 9aa8c0f e518425
+Merge: 9aa8c0f2 e518425d
 Author: sina11178 <frsinarez4@gmail.com>
 Date:   Mon Apr 14 11:12:10 2025 -0500
 
@@ -980,7 +1463,7 @@ Date:   Tue Apr 8 14:05:08 2025 -0500
     Preparing params
 
 commit 718dea6773115b5d637d646ff0fbcff964b5cc9b
-Merge: 425676e 7081e49
+Merge: 425676ef 7081e49e
 Author: sina11178 <frsinarez4@gmail.com>
 Date:   Tue Apr 8 12:10:49 2025 -0500
 
@@ -1087,7 +1570,7 @@ Date:   Mon Mar 31 13:43:31 2025 -0500
     Simulation code added - Prints data into excel file
 
 commit 2204aec5ca1f1373b3239dd613b917cb4b0402ad
-Merge: 87d6375 5992071
+Merge: 87d63756 59920712
 Author: sina11178 <frsinarez4@gmail.com>
 Date:   Mon Mar 31 11:49:15 2025 -0500
 

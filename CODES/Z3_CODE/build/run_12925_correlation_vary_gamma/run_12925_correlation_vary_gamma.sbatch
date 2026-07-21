@@ -3,11 +3,12 @@
 #SBATCH --job-name=run_12925_correlation_vary_gamma
 #
 # Partition:
-#SBATCH --partition=normal
+#SBATCH --partition=cmt
 #
 # Processors:
-#SBATCH --ntasks=64
+#SBATCH --ntasks=60
 #SBATCH --nodes=2
+#SBATCH --cpus-per-task=4
 #
 # Wall clock limit:
 #SBATCH --time=2-00:00:00
@@ -21,6 +22,12 @@
 #------------------------------------------------------
 
 echo "Starting job run_12925_correlation_vary_gamma"
+
+
+export OMP_NUM_THREADS=4
+export MKL_NUM_THREADS=4
+export OPENBLAS_NUM_THREADS=4
+#export NUMEXPR_NUM_THREADS=1
 
 module load launcher
 
