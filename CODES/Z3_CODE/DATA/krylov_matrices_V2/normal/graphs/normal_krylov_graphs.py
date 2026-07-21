@@ -61,7 +61,7 @@ for i, param in enumerate(parameters):
             ax.set_ylim(0, .3)
             ax.set_box_aspect(1)
         
-       ax_matrix.imshow(np.abs(data), cmap='viridis', aspect='equal')
+       ax_matrix.imshow(np.abs(data), cmap='coolwarm', aspect='equal')
        im = ax_matrix.images[0]  # grab the imshow object from the last column
        cbar = fig.colorbar(im, ax=ax_matrix, fraction=0.046, pad=0.04)
        cbar.ax.yaxis.set_major_formatter(FormatStrFormatter('%.0f'))
