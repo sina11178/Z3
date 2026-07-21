@@ -6,7 +6,7 @@ import shutil
 from matplotlib.colors import LinearSegmentedColormap
 from scipy.optimize import curve_fit
 
-f_point = 4
+f_point = 6
 
 
 f_array = np.linspace(0, 1, 21)
