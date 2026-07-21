@@ -8,6 +8,7 @@ from scipy.optimize import curve_fit
 
 
 f_array = np.linspace(0, 1, 21)
+f_array = np.append(f_array, [1.05, 1.1, 1.15, 1.2])
 phi_array = [0, np.pi/6]
 
 gamma_array = [0]
@@ -34,9 +35,9 @@ fig, axes = plt.subplots(1, 2, figsize=(8, 6))
 for l in L_array:
     scaled_lifetime_phi_0 = []
     scaled_lifetime_phi_pi_6 = []
-    for j in range(42):
+    for j in range(50):
         index = j
-        params = [f_array[index%21], phi_array[int(index/21)%2]]
+        params = [f_array[index%25], phi_array[int(index/25)%2]]
         if os.path.isfile(f'../../data/gamma_{gamma_array[0]}/autocorr_gamma_{gamma_array[0]}_L{l}_f_{round(params[0],3)}_phi_{round(params[1],3)}_NPY.npy') == True:
             data = np.load(f'../../data/gamma_{gamma_array[0]}/autocorr_gamma_{gamma_array[0]}_L{l}_f_{round(params[0],3)}_phi_{round(params[1],3)}_NPY.npy')[1]
             #if data[0] <0.01:
@@ -137,9 +138,9 @@ for l in L_array:
             '''
 
 
-            if int(index/21)%2 == 0:
+            if int(index/25)%2 == 0:
                 scaled_lifetime_phi_0.append(np.log(tau)/np.power(l, 1/2))
-            elif int(index/21)%2 == 1:
+            elif int(index/25)%2 == 1:
                 scaled_lifetime_phi_pi_6.append(np.log(tau)/np.power(l, 1/2))
             else:
                 raise ValueError("Houston, we have a problem")
