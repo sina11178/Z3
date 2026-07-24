@@ -2,6 +2,29 @@ import numpy as np
 import matplotlib.pyplot as plt
 from pathlib import Path
 from matplotlib.ticker import FormatStrFormatter
+import matplotlib.colors as mcolors
+
+'''
+base = plt.cm.RdBu
+cmap = mcolors.LinearSegmentedColormap.from_list(
+    "custom",
+    base(np.linspace(0.5, 1, 256))   # start at white
+)
+'''
+
+cmap = mcolors.LinearSegmentedColormap.from_list(
+"cmap",
+[
+"#FFFFFF", 
+"#186DE5", 
+"#186DE5", 
+"#186DE5", 
+"#0D56E9", 
+"#08348B", 
+"#042368",
+"#000C18" 
+]
+)
 
 
 parameters = [[0.1, 0], [0.1, 0.524]]
@@ -61,7 +84,7 @@ for i, param in enumerate(parameters):
             ax.set_ylim(0, .3)
             ax.set_box_aspect(1)
         
-       ax_matrix.imshow(np.abs(data), cmap='coolwarm', aspect='equal')
+       ax_matrix.imshow(np.abs(data), cmap='bwr', aspect='equal')
        im = ax_matrix.images[0]  # grab the imshow object from the last column
        cbar = fig.colorbar(im, ax=ax_matrix, fraction=0.046, pad=0.04)
        cbar.ax.yaxis.set_major_formatter(FormatStrFormatter('%.0f'))
