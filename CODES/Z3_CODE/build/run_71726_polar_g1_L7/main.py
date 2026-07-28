@@ -29,7 +29,7 @@ phi_vals = np.linspace(0, 2*np.pi/3, N_phi)
 
 #param_array=[[0.1, 0], [0.1, np.pi/6]]
 gamma_array = [0]
-L_array = [7]
+L_array = [6]
 
 index = int(sys.argv[1])
 ncores = 128
