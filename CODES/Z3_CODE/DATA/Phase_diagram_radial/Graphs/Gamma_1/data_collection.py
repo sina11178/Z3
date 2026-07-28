@@ -37,7 +37,7 @@ def func(r, phi, time_list, l):
 
 
 gamma_array = [1]
-L_array = [7, 8]
+L_array = [6, 7, 8]
 
 Nr = 40
 N_phi = 40

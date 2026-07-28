@@ -6,7 +6,7 @@ from skimage import measure
 from scipy.ndimage import gaussian_filter, map_coordinates
  
 # ── 1. Grid — must match the heatmap script exactly ──────────────────────────
-L7, L8 = 7, 8
+L6, L7, L8 = 6, 7, 8
 Nr = 40
 N_phi = 40
 r_vals = np.linspace(0, 1, Nr)
@@ -14,28 +14,45 @@ phi_vals = np.linspace(0, 2 * np.pi / 3, N_phi)
 R, Phi = np.meshgrid(r_vals, phi_vals, indexing='ij')
  
 # ── 2. Load data — both r-major, shape (Nr, N_phi) ────────────────────────────
+tau_6 = 1 / np.load('lifetimes_L6_gamma_NPY.npy')
 tau_7 = 1 / np.load('lifetimes_L7_gamma_NPY.npy')   # shape (Nr, N_phi)
 tau_8 = 1 / np.load('lifetimes_L8_gamma_NPY.npy')   # shape (Nr, N_phi)
- 
+
+'''
+tau_6[0][0] = np.exp(L6)
+tau_7[0][0] = np.exp(L7)
+tau_8[0][0] = np.exp(L8)
+'''
+
+assert tau_6.shape == (Nr, N_phi), f"tau_7 shape {tau_6.shape} != ({Nr},{N_phi})"
 assert tau_7.shape == (Nr, N_phi), f"tau_7 shape {tau_7.shape} != ({Nr},{N_phi})"
 assert tau_8.shape == (Nr, N_phi), f"tau_8 shape {tau_8.shape} != ({Nr},{N_phi})"
  
 # ── 3. Scale: f_L = ln(tau) / sqrt(L) ─────────────────────────────────────────
 floor = 1e-14
-f7 = np.log(np.clip(tau_7, floor, None)) / np.sqrt(L7)
-f8 = np.log(np.clip(tau_8, floor, None)) / np.sqrt(L8)
+pow = 0.5
+f6 = np.log(np.clip(tau_6, floor, None)) / np.power(L6, pow)
+f7 = np.log(np.clip(tau_7, floor, None)) / np.power(L7, pow)
+f8 = np.log(np.clip(tau_8, floor, None)) / np.power(L8, pow)
+
+f6[0][0] = np.log(25)/L6
+f7[0][0] = np.log(25)/L7
+f8[0][0] = np.log(25)/L8
  
 # ── 4. Signed difference field: > 0 where L8 scaling exceeds L7, < 0 where it
 #      falls below. The phase border is the zero-crossing of this field.
-Delta = f8 - f7   # shape (Nr, N_phi)
-Delta = gaussian_filter(Delta, sigma=0.8)
+#Delta_1 = f8 - f7   # shape (Nr, N_phi)
+#Delta_2 = f7 - f6
+#Delta = Delta_2 - Delta_1
+Delta = f8 - f7
+Delta = gaussian_filter(Delta, sigma=1.5)
 plt.imshow(f8[::-1, :], cmap='RdBu')
 plt.colorbar()
 plt.show()
 minimum_delta = np.min(np.abs(Delta), axis=0)
 
-# plt.plot(minimum_delta)
-# plt.show()
+plt.plot(minimum_delta)
+plt.show()
 
 # ---------------------------------------------
 # Plot
@@ -63,6 +80,9 @@ boundary = ax.contour(
     linewidths=3
 )
 
+phi_line = 0.75  # radians
+ax.plot([phi_line, phi_line], [0, 1], linestyle='--', color='green', linewidth=2, label=r'$\phi=0.85$ rad')
+ax.legend(loc='upper right')
 plt.colorbar(c, pad=0.1, label=r'$\Delta = \ln(\tau)/\sqrt{L}|_{L=8}-\ln(\tau)/\sqrt{L}|_{L=7}$')
 
 ax.set_title("Estimated Phase Boundary")
