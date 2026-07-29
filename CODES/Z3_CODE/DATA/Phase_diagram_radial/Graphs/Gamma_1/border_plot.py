@@ -46,7 +46,7 @@ f8 = np.log(np.clip(tau_8, floor, None)) / np.power(L8, pow)
 #Delta_2 = f7 - f6
 #Delta = Delta_2 - Delta_1
 Delta = f8 - f7
-Delta = gaussian_filter(Delta, sigma=0.55)
+Delta = gaussian_filter(Delta, sigma=0.5)
 plt.imshow(f8[::-1, :], cmap='RdBu')
 plt.colorbar()
 plt.show()
@@ -65,7 +65,7 @@ ax = plt.subplot(projection='polar')
 vmax = np.nanpercentile(np.abs(Delta), 98)
 norm = TwoSlopeNorm(vcenter=0, vmin=-vmax, vmax=vmax)
 
-r_cut = 0
+r_cut = 1
 R_plot = R[r_cut:, :]
 Phi_plot = Phi[r_cut:, :]
 Delta_plot = Delta[r_cut:, :]
@@ -93,15 +93,15 @@ boundary = ax.contour(
 )
 
 phi_line_1 = np.pi/4  # radians
-phi_line_2 = 0.9*np.pi/4  # radians
+#phi_line_2 = 0.9*np.pi/4  # radians
 phi_line_3 = np.pi/6  # radians
 phi_line_4 = np.pi/3  # radians
 
-
+print(phi_line_4)
 
 #print(phi_line)
 ax.plot([phi_line_1, phi_line_1], [0, 1], linestyle='--', color='green', linewidth=2, label=r'$\phi=pi/4$ rad')
-ax.plot([phi_line_2, phi_line_2], [0, 1], linestyle='--', color='red', linewidth=2, label=r'$\phi=0.9*pi/4$ rad')
+#ax.plot([phi_line_2, phi_line_2], [0, 1], linestyle='--', color='red', linewidth=2, label=r'$\phi=0.9*pi/4$ rad')
 ax.plot([phi_line_3, phi_line_3], [0, 1], linestyle='--', color='blue', linewidth=2, label=r'$\phi=pi/6$ rad')
 ax.plot([phi_line_4, phi_line_4], [0, 1], linestyle='--', color='black', linewidth=2, label=r'$\phi=pi/3$ rad')
 ax.legend(loc='upper right')

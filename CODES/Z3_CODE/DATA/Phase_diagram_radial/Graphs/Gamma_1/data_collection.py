@@ -37,11 +37,11 @@ def func(r, phi, time_list, l, cutoff):
         try:
     # Fit on log-scale time for numerical stability
             time_list_new = time_list[cutoff:]
-            if l == 7 or l == 8:
-                data_2 = np.load(f'../../extra_time_points/L{l}/gamma_{gamma_array[0]}/autocorr_gamma_{gamma_array[0]}_L{l}_f_{round(r,3)}_phi_{round(phi,3)}_NPY.npy')[1]
-                data = np.concatenate((data, data_2))
-                added_time = np.exp(np.arange(25, 30, 0.5))
-                time_list_new = np.concatenate((time_list_new, added_time))
+            
+            data_2 = np.load(f'../../extra_time_points/L{l}/gamma_{gamma_array[0]}/autocorr_gamma_{gamma_array[0]}_L{l}_f_{round(r,3)}_phi_{round(phi,3)}_NPY.npy')[1]
+            data = np.concatenate((data, data_2))
+            added_time = np.exp(np.arange(25, 30, 0.5))
+            time_list_new = np.concatenate((time_list_new, added_time))
             y = data[cutoff_index:]
             p0 = make_p0(time_list_new, y)
             popt, _ = curve_fit(
