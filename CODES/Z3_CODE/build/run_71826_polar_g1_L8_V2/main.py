@@ -28,7 +28,7 @@ phi_vals = np.linspace(0, 2*np.pi/3, N_phi)
 
 
 #param_array=[[0.1, 0], [0.1, np.pi/6]]
-gamma_array = [0.5]
+gamma_array = [1]
 L_array = [8]
 
 index = int(sys.argv[1])
@@ -47,7 +47,7 @@ for k in range(start, end):
 
     r_phi_values = [r_vals[i], phi_vals[j]]
     
-    size_autocorrelator_SIMULATION_NPY(25, 30, .5, [L_array[0]], r_phi_values, gamma_array[0])
+    size_autocorrelator_SIMULATION_NPY(30, 40, .5, [L_array[0]], r_phi_values, gamma_array[0])
 
 
 
