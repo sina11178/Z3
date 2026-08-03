@@ -12,18 +12,8 @@ cmap = mcolors.LinearSegmentedColormap.from_list(
 )
 '''
 
-cmap = mcolors.LinearSegmentedColormap.from_list(
-"cmap",
-[
-"#FFFFFF", 
-"#186DE5", 
-"#186DE5", 
-"#186DE5", 
-"#0D56E9", 
-"#08348B", 
-"#042368",
-"#000C18" 
-]
+color_kryl = mcolors.LinearSegmentedColormap.from_list(
+'custom',["#FFFFFF","#0353A3","#C00000"]
 )
 
 
@@ -31,7 +21,8 @@ parameters = [[0.1, 0], [0.1, 0.524]]
 size = [4, 6, 8]
 gamma = [0, 0.1, 0.5, 0.9, 1]
 
-n_max = 31
+n_max = 25
+#n_max = 31
 plt.figure()
 BASE = Path(__file__).resolve().parent
 path = (
@@ -39,19 +30,21 @@ path = (
     / ".."
     / f"f_{0.1}_phi_{0}"
     / "seed_squared"
-    / f"krylov_matrix_L{8}_gamma_{0}_f_{0.1}_phi_{0}_squared.npy"
+    / f"krylov_matrix_L{8}_gamma_{1}_f_{0.1}_phi_{0}_squared.npy"
 ).resolve()
 data = np.load(path)
 print(data.shape)
-
-plt.imshow(np.abs(data[:6, :6]), cmap='seismic', aspect='auto')
+data_abs = np.abs(data)
+bn_max = data_abs.max()
+plt.imshow(np.abs(data[:25, :25]), cmap=color_kryl, aspect='equal', vmin = 0, vmax = bn_max/3)
 plt.colorbar(label='|Matrix|')  # adds color scale
 plt.title("Heatmap of Matrix Magnitude")
 plt.xlabel("Column")
 plt.ylabel("Row")
 plt.show()
 
-
+colors_line = ["#F00A0A","#10AC4C",
+"#5419C9"]
 
 fig, axes = plt.subplots(
     nrows=4, ncols=5, 
@@ -63,7 +56,7 @@ for i, param in enumerate(parameters):
     for j, gam in enumerate(gamma):
        ax = axes[2*i, j]
        ax_matrix = axes[2*i+1, j]
-       for L in size:
+       for k, L in enumerate(size):
             BASE = Path(__file__).resolve().parent
             path = (
                 BASE
@@ -79,12 +72,21 @@ for i, param in enumerate(parameters):
             index = np.argmin(np.abs(A))
             eigval_min = A[index]
             EIG_STATE_SQUARED = np.abs(U[:, index])
-            ax.plot(np.arange(n_max), EIG_STATE_SQUARED, label=f'L = {L}, $|λ_{L}|$={np.abs(eigval_min):.3e}')
+            ax.plot(np.arange(n_max), EIG_STATE_SQUARED, c=colors_line[k], label=f'L = {L}, $|λ_{L}|$={np.abs(eigval_min):.3e}', linewidth= 4)
             ax.legend()
-            ax.set_ylim(0, .3)
+            ax.set_ylim(0, 0.9)
             ax.set_box_aspect(1)
-        
-       ax_matrix.imshow(np.abs(data), cmap='bwr', aspect='equal')
+
+       data_abs = np.abs(data)
+       bn_max = data_abs.max()
+       #print(bn_max/3)
+       if j == 0 or j == 4:
+            print(np.round(data_abs[:6, :6], 3))
+            
+       #ax_matrix.imshow(data_abs, cmap=color_kryl, aspect='equal', vmin = 0, vmax = 5)
+       #ax_matrix.imshow(data_abs)
+       ax_matrix.imshow(data_abs[:2, :2])
+       
        im = ax_matrix.images[0]  # grab the imshow object from the last column
        cbar = fig.colorbar(im, ax=ax_matrix, fraction=0.046, pad=0.04)
        cbar.ax.yaxis.set_major_formatter(FormatStrFormatter('%.0f'))
@@ -93,7 +95,7 @@ for i, param in enumerate(parameters):
        #if i == 1:
        ax.set_xlabel('n', labelpad=15, fontsize=19) # ITERATION INDEX
        if j == 0:
-            ax.set_ylabel(r'$|ψ^{(n)}|$', labelpad=15, fontsize=22)
+            ax.set_ylabel(r'$|ψ^{(n)}|^{2}$', labelpad=15, fontsize=22)
        if i == 0:
             ax.set_title(f'$Γ={gam}$', pad=15, fontsize=22)
        #if j == 4:

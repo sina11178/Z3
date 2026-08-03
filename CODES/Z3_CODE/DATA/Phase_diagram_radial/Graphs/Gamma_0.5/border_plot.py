@@ -45,7 +45,7 @@ f8 = np.log(np.clip(tau_8, floor, None)) / np.power(L8, pow)
 #Delta_2 = f7 - f6
 #Delta = Delta_2 - Delta_1
 Delta = f8 - f7
-Delta = gaussian_filter(Delta, sigma=0.85)
+Delta = gaussian_filter(Delta, sigma=0.75)
 plt.imshow(f8[::-1, :], cmap='RdBu')
 plt.colorbar()
 plt.show()
@@ -104,7 +104,7 @@ ax.plot([phi_line_1, phi_line_1], [0, 1], linestyle='--', color='green', linewid
 ax.plot([phi_line_3, phi_line_3], [0, 1], linestyle='--', color='blue', linewidth=2, label=r'$\phi=pi/6$ rad')
 ax.plot([phi_line_4, phi_line_4], [0, 1], linestyle='--', color='black', linewidth=2, label=r'$\phi=pi/3$ rad')
 ax.legend(loc='upper right')
-ax.set_rlim(0, 0.8)
+ax.set_rlim(0, 0.78)
 plt.colorbar(c, pad=0.1, label=r'$\Delta = \ln(\tau)/\sqrt{L}|_{L=8}-\ln(\tau)/\sqrt{L}|_{L=7}$')
 
 ax.set_title("Estimated Phase Boundary")

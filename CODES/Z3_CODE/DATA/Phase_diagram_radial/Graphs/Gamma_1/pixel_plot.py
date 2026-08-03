@@ -7,7 +7,7 @@ from matplotlib.colors import LinearSegmentedColormap
 from scipy.optimize import curve_fit
 
 f_point = 1
-phi_point = 30
+phi_point = 22
 
 
 def make_p0(t, y):
@@ -35,8 +35,13 @@ def func(r, phi, time_list, cutoff_index, l):
             time_list_new = time_list[cutoff_index:]
             
             data_2 = np.load(f'../../extra_time_points/L{l}/gamma_{gamma_array[0]}/autocorr_gamma_{gamma_array[0]}_L{l}_f_{round(r,3)}_phi_{round(phi,3)}_NPY.npy')[1]
+            data_3 = np.load(f'../../extra_time_points_V2/L{l}/gamma_{gamma_array[0]}/autocorr_gamma_{gamma_array[0]}_L{l}_f_{round(r,3)}_phi_{round(phi,3)}_NPY.npy')[1]
+            
             data = np.concatenate((data, data_2))
-            added_time = np.exp(np.arange(25, 30, 0.5))
+            data = np.concatenate((data, data_3))
+
+            added_time = np.exp(np.arange(25, 40, 0.5))
+            #added_time = np.exp(np.arange(25, 30, 0.5))
             time_list_new = np.concatenate((time_list_new, added_time))
 
             y = data[cutoff_index:]
@@ -75,7 +80,10 @@ for l in L_array:
         data = np.load(f'../../L{l}/gamma_{gamma_array[0]}/autocorr_gamma_{gamma_array[0]}_L{l}_f_{round(params[0],3)}_phi_{round(params[1],3)}_NPY.npy')[1]
 
         data_2 = np.load(f'../../extra_time_points/L{l}/gamma_{gamma_array[0]}/autocorr_gamma_{gamma_array[0]}_L{l}_f_{round(params[0],3)}_phi_{round(params[1],3)}_NPY.npy')[1]
+        data_3 = np.load(f'../../extra_time_points_V2/L{l}/gamma_{gamma_array[0]}/autocorr_gamma_{gamma_array[0]}_L{l}_f_{round(params[0],3)}_phi_{round(params[1],3)}_NPY.npy')[1]
+        
         data = np.concatenate((data, data_2))
+        data = np.concatenate((data, data_3))
         data_sets.append(data)
         data_set_curve.append(func(params[0], params[1], time_list, cutoff, l))
 
@@ -86,7 +94,7 @@ for l in L_array:
 log_time_list = np.arange(-10, 25, 0.5)
 
 for i, l in enumerate(L_array):
-    added_time_exp = np.exp(np.arange(25, 30, 0.5))
+    added_time_exp = np.exp(np.arange(25, 40, 0.5))
     time_list_78 = np.concatenate((time_list, added_time_exp))
     plt.plot(time_list_78, data_sets[i], marker= 'o', label = f"L = {l}")
     plt.plot(time_list_78, data_set_curve[i], linestyle='--', label = f"L = {l}, approximate curve")

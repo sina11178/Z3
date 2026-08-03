@@ -41,11 +41,24 @@ def func(r, phi, time_list, l, cutoff):
 
 
             data_2 = np.load(f'../../extra_time_points/L{l}/gamma_{gamma_array[0]}/autocorr_gamma_{gamma_array[0]}_L{l}_f_{round(r,3)}_phi_{round(phi,3)}_NPY.npy')[1]
+            data_3 = np.load(f'../../extra_time_points_V2/L{l}/gamma_{gamma_array[0]}/autocorr_gamma_{gamma_array[0]}_L{l}_f_{round(r,3)}_phi_{round(phi,3)}_NPY.npy')[1]
+
+
             data = np.concatenate((data, data_2))
-            added_time = np.exp(np.arange(25, 30, 0.5))
+            data = np.concatenate((data, data_3))
+
+            added_time = np.exp(np.arange(25, 40, 0.5))
+            # added_time = np.exp(np.arange(25, 30, 0.5))
+
             time_list_new = np.concatenate((time_list_new, added_time))
             
             y = data[cutoff_index:]
+
+            # This is to take out points that don't give real values
+            mask = np.isfinite(time_list_new) & np.isfinite(y)
+            time_list_new = time_list_new[mask]
+            y = y[mask]
+
             p0 = make_p0(time_list_new, y)
             popt, _ = curve_fit(
                 exp_model,

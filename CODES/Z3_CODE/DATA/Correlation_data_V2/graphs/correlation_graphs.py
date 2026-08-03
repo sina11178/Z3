@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 
 
 parameters = [[0.1, 0], [0.1, 0.524]]
-size = [4, 6, 8]
+size = [4,5,  6, 7, 8]
 gamma = [0, 0.1, 0.5, 0.9, 1]
 
 input = np.arange(0, 30, .5)
