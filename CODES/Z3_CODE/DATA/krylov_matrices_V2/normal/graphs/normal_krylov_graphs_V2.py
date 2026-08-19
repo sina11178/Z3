@@ -17,7 +17,7 @@ cmap = mcolors.LinearSegmentedColormap.from_list(
 '''
 
 color_kryl = mcolors.LinearSegmentedColormap.from_list(
-'custom',["#FFFFFF","#0353A3","#C00000"]
+'custom',["#FFFFFF","#0D74DB","#F01B1B"]
 )
 
 
@@ -48,8 +48,7 @@ plt.xlabel("Column")
 plt.ylabel("Row")
 plt.show()
 
-colors_line = ["#F00A0A","#10AC4C",
-"#5419C9"]
+colors_line = ["#2C0DDA", "#09C96C", "#B81B07",]
 
 fig, axes = plt.subplots(
     nrows=4, ncols=5, 
@@ -83,10 +82,19 @@ for i, param in enumerate(parameters):
             index = np.argmin(np.abs(A))
             eigval_min = A[index]
             EIG_STATE_SQUARED = np.abs(U[:, index])
-            ax.plot(np.arange(n_max), EIG_STATE_SQUARED, c=colors_line[k], label=f'L = {L}, $|λ_{L}|$={np.abs(eigval_min):.3e}', linewidth= 4)
+            if L == 4:
+                ax.plot(np.arange(n_max)[:20], EIG_STATE_SQUARED[:20], c=colors_line[k], label=f'L = {L}', linewidth= 4, alpha=1)
+            if L == 6:
+                ax.plot(np.arange(n_max)[:20], EIG_STATE_SQUARED[:20], c=colors_line[k], label=f'L = {L}', linewidth= 9.5, alpha=0.7)
+            if L == 8:
+                ax.plot(np.arange(n_max)[:20], EIG_STATE_SQUARED[:20], c=colors_line[k], label=f'L = {L}', linestyle='-', linewidth= 3, alpha=1)
             ax.legend()
-            ax.set_ylim(0, 0.9)
+            if  i == 0:
+                ax.set_ylim(0,0.2)# EIG_STATE_SQUARED[:20].max()*.9)
+            if  i == 1:
+                ax.set_ylim(0,0.2)# EIG_STATE_SQUARED[:20].max()*.9)
             ax.set_box_aspect(1)
+            # ax.set_yscale('log')
        ax.yaxis.set_major_locator(ticker.MaxNLocator(nbins=3))
        ax.xaxis.set_major_locator(ticker.MaxNLocator(nbins=3))
        plt.setp(ax.spines.values(), linewidth=2)
@@ -99,8 +107,10 @@ for i, param in enumerate(parameters):
        ax.tick_params(axis="y", which= 'major', length = 5.0, width = 1.2)
        ax.tick_params(axis="y", which= 'minor', length = 3.0, width = 1.2)
         #ax.tick_params(axis='y', labelrotation=90)
-       ax.tick_params(axis="x", labelsize=16)
-       ax.tick_params(axis="y", labelsize=16)
+       ax.tick_params(axis="x", labelsize=24)
+       ax.tick_params(axis="y", labelsize=24)
+       
+       
        data_abs = np.abs(data)
        bn_max = data_abs.max()
        #print(bn_max/3)
@@ -108,18 +118,22 @@ for i, param in enumerate(parameters):
             print(np.round(data_abs[:6, :6], 3))
 
        if j == 0:
-            ax_matrix.imshow(data_abs, cmap=color_kryl, aspect='equal', vmin = 0, vmax = bn_max/1.5)
+            ax_matrix.imshow(data_abs[:20, :20], cmap=color_kryl, aspect='equal', vmin = 0, vmax = bn_max/1.5)
        else:
-            ax_matrix.imshow(data_abs, cmap=color_kryl, aspect='equal', vmin = 0, vmax = bn_max/10)
+            ax_matrix.imshow(data_abs[:20, :20], cmap=color_kryl, aspect='equal', vmin = 0, vmax = bn_max/10)
+       if j != 0:
+           ax.set_yticks([])
        
        #ax_matrix.imshow(data_abs)
        #ax_matrix.imshow(data_abs[:2, :2])
        
        im = ax_matrix.images[0]  # grab the imshow object from the last column
-       cbar = fig.colorbar(im, ax=ax_matrix, fraction=0.046, pad=0.04)
-       cbar.ax.yaxis.set_major_formatter(FormatStrFormatter('%.0f'))
-       cbar.set_ticklabels(['0'])
-       cbar.ax.tick_params(size=0)
+       ax_matrix.set_xticks([])
+       ax_matrix.set_yticks([])
+       #cbar = fig.colorbar(im, ax=ax_matrix, fraction=0.046, pad=0.04)
+       #cbar.ax.yaxis.set_major_formatter(FormatStrFormatter('%.0f'))
+       #cbar.set_ticklabels(['0'])
+       #cbar.ax.tick_params(size=0)
     #    if i == 0 and j == 0:
     #         ax.legend()
        #if i == 1:
@@ -145,3 +159,4 @@ for i, param in enumerate(parameters):
 
 plt.savefig("my_figure.pdf", format="pdf", transparent=True)
 plt.savefig("my_figure.png", transparent=True)
+plt.savefig("my_figure.svg", format="svg", transparent=True)

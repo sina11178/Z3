@@ -125,9 +125,9 @@ r_3 = r_vals[f_point_3]
 phi_3 = phi_vals[phi_point_3]
 
 ax.set_rlim(0, 0.4)
-ax.scatter(phi_1, r_1, color="#14D714", s=50,zorder=10)
-ax.scatter(phi_2, r_2, color='blue', s=50,zorder=10)
-ax.scatter(phi_3, r_3, color='purple', s=50,zorder=10)
+ax.scatter(phi_1, r_1, color="#14D714", s=30,zorder=10)
+ax.scatter(phi_2, r_2, color='blue', s=30,zorder=10)
+ax.scatter(phi_3, r_3, color='purple', s=30,zorder=10)
 
 ax.yaxis.set_major_locator(ticker.MaxNLocator(nbins=4))
 cbar = plt.colorbar(c, pad=0.1)
@@ -138,7 +138,7 @@ ax.set_thetagrids(angles_deg, labels=[
     r'$\pi$', r'$7\pi/6$', r'$4\pi/3$', r'$3\pi/2$', r'$5\pi/3$', r'$11\pi/6$'
 ])
 
-ax.set_title("Estimated Phase Boundary")
+#ax.set_title("Estimated Phase Boundary")
 
 plt.savefig('phase_boundary_estimation.png', dpi=600, transparent=True)
 plt.savefig('phase_boundary_estimation.pdf', transparent=True)

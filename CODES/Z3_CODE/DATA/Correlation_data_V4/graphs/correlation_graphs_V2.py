@@ -2,6 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.ticker as ticker
 import matplotlib.gridspec as gridspec
+from matplotlib import colormaps
 
 parameters = [[0.1, 0], [0.1, 0.524]]
 size = [4, 5, 6, 7, 8]
@@ -13,6 +14,9 @@ input = np.arange(0, 30, .5)
 colors = ["#EE5A24", "#009432", "#0652DD", "#9980FA", "#833471"]  # colorblind-friendly
 
 colors = ["#12CBC4", "#009432", "#0652DD", "#FFC312", "#EA2027"]  # colorblind-friendly
+
+colors = colormaps['plasma'].resampled(len(size)+1).colors
+
 labels = ['a.)', 'b.)', 'c.)', 'd.)', 'e.)']
 row_labels = [
     r'$f = 0.1, \phi = 0$',
@@ -104,5 +108,6 @@ for i, param in enumerate(parameters):
 #fig.text(0.05, 0.45, '(b)', fontsize=18)
 
 plt.savefig("my_figure_V2.pdf", format="pdf", transparent=True)
+plt.savefig("my_figure_V2.svg", format="svg", transparent=True)
 plt.savefig("my_figure_V2.png", dpi=600, transparent=True)
 #plt.show()

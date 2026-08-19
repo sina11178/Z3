@@ -84,8 +84,8 @@ for i, param in enumerate(parameters):
             print(np.round(data_abs[:6, :6], 3))
             
        #ax_matrix.imshow(data_abs, cmap=color_kryl, aspect='equal', vmin = 0, vmax = 5)
-       #ax_matrix.imshow(data_abs)
-       ax_matrix.imshow(data_abs[:2, :2])
+       ax_matrix.imshow(data_abs)
+       #ax_matrix.imshow(data_abs[:2, :2])
        
        im = ax_matrix.images[0]  # grab the imshow object from the last column
        cbar = fig.colorbar(im, ax=ax_matrix, fraction=0.046, pad=0.04)
@@ -114,3 +114,4 @@ fig.text(0.05, 0.49, '(c)', fontsize=22)
 fig.text(0.05, 0.29, '(d)', fontsize=22)
 
 plt.savefig("my_figure.pdf", format="pdf")
+plt.savefig("my_figure.svg", format="svg", transparent=True)

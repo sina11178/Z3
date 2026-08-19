@@ -1,3 +1,4 @@
+import matplotlib.ticker as ticker
 from matplotlib.colors import TwoSlopeNorm
 import numpy as np
 import matplotlib.pyplot as plt
@@ -98,15 +99,49 @@ phi_line_4 = np.pi/3  # radians
 
 print(phi_line_4)
 
+f_point_1 = 4
+phi_point_1 = 10
+
+f_point_2 = 18
+phi_point_2 = 19
+
+f_point_3 = 29
+phi_point_3 = 25
+
+r_1 = r_vals[f_point_1]
+phi_1 = phi_vals[phi_point_1]
+
+r_2 = r_vals[f_point_2]
+phi_2 = phi_vals[phi_point_2]
+
+r_3 = r_vals[f_point_3]
+phi_3 = phi_vals[phi_point_3]
+
+ax.set_rlim(0, 0.4)
+ax.scatter(phi_1, r_1, color="#14D714", s=50,zorder=10)
+ax.scatter(phi_2, r_2, color='blue', s=50,zorder=10)
+ax.scatter(phi_3, r_3, color='purple', s=50,zorder=10)
+
+print(phi_line_4)
+
 #print(phi_line)
-ax.plot([phi_line_1, phi_line_1], [0, 1], linestyle='--', color='green', linewidth=2, label=r'$\phi=pi/4$ rad')
+#ax.plot([phi_line_1, phi_line_1], [0, 1], linestyle='--', color='green', linewidth=2, label=r'$\phi=pi/4$ rad')
 #ax.plot([phi_line_2, phi_line_2], [0, 1], linestyle='--', color='red', linewidth=2, label=r'$\phi=0.9*pi/4$ rad')
-ax.plot([phi_line_3, phi_line_3], [0, 1], linestyle='--', color='blue', linewidth=2, label=r'$\phi=pi/6$ rad')
-ax.plot([phi_line_4, phi_line_4], [0, 1], linestyle='--', color='black', linewidth=2, label=r'$\phi=pi/3$ rad')
-ax.legend(loc='upper right')
-ax.set_rlim(0, 0.8)
-plt.colorbar(c, pad=0.1, label=r'$\Delta = \ln(\tau)/\sqrt{L}|_{L=8}-\ln(\tau)/\sqrt{L}|_{L=7}$')
+#ax.plot([phi_line_3, phi_line_3], [0, 1], linestyle='--', color='blue', linewidth=2, label=r'$\phi=pi/6$ rad')
+#ax.plot([phi_line_4, phi_line_4], [0, 1], linestyle='--', color='black', linewidth=2, label=r'$\phi=pi/3$ rad')
+#ax.legend(loc='upper right')
+ax.yaxis.set_major_locator(ticker.MaxNLocator(nbins=4))
+ax.set_rlim(0, 0.78)
+cbar  = plt.colorbar(c, pad=0.1)
+cbar.ax.yaxis.set_major_formatter(ticker.FormatStrFormatter('%.2f'))
+angles_deg = np.arange(0, 360, 30)  # your current tick spacing
+ax.set_thetagrids(angles_deg, labels=[
+    '0', r'$\pi/6$', r'$\pi/3$', r'$\pi/2$', r'$2\pi/3$', r'$5\pi/6$',
+    r'$\pi$', r'$7\pi/6$', r'$4\pi/3$', r'$3\pi/2$', r'$5\pi/3$', r'$11\pi/6$'
+])
 
-ax.set_title("Estimated Phase Boundary")
+#ax.set_title("Estimated Phase Boundary")
 
-plt.show()
+
+plt.savefig('phase_boundary_estimation.png', dpi=600, transparent=True)
+plt.savefig('phase_boundary_estimation.pdf', transparent=True)
