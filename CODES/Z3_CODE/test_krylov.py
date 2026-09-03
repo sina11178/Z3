@@ -13,7 +13,7 @@ from scipy.sparse import csr_matrix
 J = 1
 phi = 0 * np.pi/6  # PHASE FACTOR
 f = .1
-L = 6 # SYSTEM SIZE
+L = 4 # SYSTEM SIZE
 #gamma = 1  # DETERMINES HERMICITY
 
 w = np.exp((2 * np.pi * 1.j)/3)  # For defining Sigma operator
@@ -533,123 +533,157 @@ def Experiment(n, H, size):
     return matrix_final
 
 
-GAMM = 0
-H_SIGMA = term_one_SIGMA(length=L, Jay=J, PHI=0 * np.pi/6) + term_two_SIGMA(F=f, length=L)
-H_SIGMA = H_SIGMA + GAMM * (H_SIGMA.conjugate().T)  # Make Hermitian
-#print('Difference between SIG^2 and SIG^t:')
-#print(np.max(np.abs((np_SIG @ np_SIG) - np.conjugate(np_SIG).T)))
-#print(np.max(((0.5*(np_SIG @ np_SIG + np.conjugate(np_SIG).T)) - np.conjugate(np_SIG).T)))
-A_H, U_H = np.linalg.eig(H_SIGMA.toarray())  # A is vector of eigenvalues; U is matrix of eigenvectors
+
+def main_1():
+    GAMM = 0.0
+    H_SIGMA = term_one_SIGMA(length=L, Jay=J, PHI=1 * np.pi/6) + term_two_SIGMA(F=f, length=L)
+    H_SIGMA = H_SIGMA + GAMM * (H_SIGMA.conjugate().T)  # Make Hermitian
+    #print('Difference between SIG^2 and SIG^t:')
+    #print(np.max(np.abs((np_SIG @ np_SIG) - np.conjugate(np_SIG).T)))
+    #print(np.max(((0.5*(np_SIG @ np_SIG + np.conjugate(np_SIG).T)) - np.conjugate(np_SIG).T)))
+    A_H, U_H = np.linalg.eig(H_SIGMA.toarray())  # A is vector of eigenvalues; U is matrix of eigenvectors
 
 
 
-plt.figure()
-plt.plot(A_H.real, A_H.imag, marker=".", linestyle="None", color="r", label="Eigenvalues of H")
-plt.title("Eigenvalues of H")
-plt.xlabel("Real Part")
-plt.ylabel("Imaginary Part")
-plt.legend()
-plt.grid()
-plt.show()
+    plt.figure()
+    plt.plot(A_H.real, A_H.imag, marker=".", linestyle="None", color="r", label="Eigenvalues of H")
+    plt.title("Eigenvalues of H")
+    plt.xlabel("Real Part")
+    plt.ylabel("Imaginary Part")
+    plt.legend()
+    plt.grid()
+    plt.show()
 
 
-p = 50 # NUMBER OF ITERATIONS
-#matrix_final_a = GS_NEWER(p, H_SIGMA, L)
-matrix_final_a = Experiment(p, H_SIGMA, L)  # SEED OPERATOR IS ALPHA_1
-#matrix_final_a = grahm_schmidt(p, H_SIGMA, L)  # SEED OPERATOR IS ALPHA_1
-matrix_final_a_squared = Experiment(p, H_SIGMA, L)  # SEED OPERATOR IS (ALPHA_1)^2
-#matrix_final_a_squared = grahm_schmidt_squared(p, H_SIGMA, L)  # SEED Operator IS (ALPHA_1)^2
+    p = 10 # NUMBER OF ITERATIONS
+    #matrix_final_a = GS_NEWER(p, H_SIGMA, L)
+    matrix_final_a = Experiment(p, H_SIGMA, L)  # SEED OPERATOR IS ALPHA_1
+    #matrix_final_a = grahm_schmidt(p, H_SIGMA, L)  # SEED OPERATOR IS ALPHA_1
+    matrix_final_a_squared = Experiment(p, H_SIGMA, L)  # SEED OPERATOR IS (ALPHA_1)^2
+    #matrix_final_a_squared = grahm_schmidt_squared(p, H_SIGMA, L)  # SEED Operator IS (ALPHA_1)^2
 
-#print(type(matrix_final_a[1,1]))
-if GAMM == 1:
-    A, U = np.linalg.eigh(matrix_final_a)
-    A_sqr, U_sqr = np.linalg.eigh(matrix_final_a_squared)
-else:
-    A, U = np.linalg.eig(matrix_final_a)  # Get eigenvalues and eigenvectors
-    A_sqr, U_sqr = np.linalg.eig(matrix_final_a_squared)
+    #print(type(matrix_final_a[1,1]))
+    if GAMM == 1:
+        A, U = np.linalg.eigh(matrix_final_a)
+        A_sqr, U_sqr = np.linalg.eigh(matrix_final_a_squared)
+    else:
+        A, U = np.linalg.eig(matrix_final_a)  # Get eigenvalues and eigenvectors
+        A_sqr, U_sqr = np.linalg.eig(matrix_final_a_squared)
 
-#EIG_SQR = U_sqr[:, np.argmin(np.abs(A_sqr))]  # Smallest eigenvalue eigenvector of squared operator
-#EIG_SINGLE = U[:, np.argmin(np.abs(A))]  # Smallest eigenvalue eigenvector of single operator
-EIG_SQR = U_sqr[:, np.argmax(np.imag(A_sqr))]  # Smallest eigenvalue eigenvector of squared operator
-EIG_SINGLE = U[:, np.argmax(np.imag(A))]  # Smallest eigenvalue eigenvector of single operator
-in_list = np.arange(0, p+1, 1)
-plt.figure()
-plt.plot(in_list, np.abs(EIG_SQR))
-
-
-plt.figure()
-plt.plot(np.real(A_sqr), np.imag(A_sqr), marker = ".", linestyle = 'None', color = 'r', label = 'Eigenvalues of (alpha_1)^2')
-plt.legend()
-plt.show()
-
-F_2 = np.abs(matrix_final_a)
-F_1 = np.abs(matrix_final_a_squared)
-plt.subplot(1, 2, 1)
-plt.imshow(F_1, cmap='seismic', aspect='auto')
-plt.colorbar(label='Value')
-#plt.clim(0, 3.2)
-plt.title('alpha_1_squared (abs value of matrix)')
-plt.xlabel('Column Index')
-plt.ylabel('Row Index')
-
-plt.subplot(1, 2, 2)
-plt.imshow(F_2, cmap='seismic', aspect='auto')
-plt.colorbar(label='Value')
-#plt.clim(0, 1.8)
-plt.title('alpha_1 (abs value of matrix)')
-plt.xlabel('Column Index')
-plt.ylabel('Row Index')
-
-#plt.clim(-.1, .1)
-plt.tight_layout()
-plt.savefig('Krylov_Matrices.pdf')
-plt.show()
-
-#A, U = np.linalg.eig((matrix_final_a))  # Get eigenvalues and eigenvectors
-#A_sqr, U_sqr = np.linalg.eig(matrix_final_a_squared)
-#print(np.imag(A))
-in_list = np.arange(0, p+1, 1)
-EIG_STATES = []
-# EIG_STATE = np.abs(U[:, np.argmin(np.abs(A))])
-sorted = np.sort(np.abs(A))
-sort_sqr = np.sort(np.abs(A_sqr))
-
-for i in range(len(A)):
-    #EIG_STATE = (U[:, np.abs(A).argsort()[i]])
-    EIG_STATE = U[:, np.abs(A).argsort()[i]]
-    EIG_STATE = (1/np.linalg.norm(EIG_STATE)) * EIG_STATE
-    #EIG_STATE = np.abs(EIG_STATE)
-    EIG_STATE = np.abs(EIG_STATE)
-    #print(np.linalg.norm(EIG_STATE))
-    EIG_STATES.append(EIG_STATE)
-
-# #plt.plot(in_list, EIG_STATES[0], marker = ".", linestyle = '-', color = 'r', label = 'a_1 E = ' + str(A[np.abs(A).argsort()[0]]))
-# #plt.plot(in_list, np.abs(EIG_SQR), marker = ".", linestyle = '-', color = 'g', label = '(a_1)^dagger E = ' + str(A_sqr[np.abs(A_sqr).argsort()[0]]))
-# plt.plot(in_list, EIG_SQR, marker = ".", linestyle = '-', color = 'g', label = str(np.max(np.imag(A_sqr))))
-# plt.plot(in_list, EIG_SINGLE, marker = ".", linestyle = '-', color = 'g')
-# plt.legend()
-# plt.ylim(0, 1)
-# #plt.savefig('Krylov_Eigenvector_0.pdf')
-# plt.show()
-#plt.figure()
-#plt.plot(in_list, EIG_STATES[49], marker = ".", linestyle = '-', color = 'r', label = 'a_1 E = ' + str(A[np.abs(A).argsort()[0]]))
-
-ncols = 4  # columns per row
-nrows = int(np.ceil(len(EIG_STATES) / ncols))
-fig, axes = plt.subplots(nrows=nrows, ncols=ncols, figsize=(4*ncols, 3*nrows))
-axes = axes.flatten()
-plt.suptitle('Hello')
-for i in range(int(len(EIG_STATES))):
-        ax = axes[i]
-        ax.plot(in_list, EIG_STATES[i], marker = ".", linestyle = '-', label = "E = {:.2e} ({})".format(A[np.abs(A).argsort()[i]], i))
-        #title = str(params[0]) + ", " + str(params[1]) + "  " + "(f, PHI)" + " gam = " + str(gamma) + " Eigenvector graph (L = " + str(size) + ")"
-        ax.ticklabel_format(style='sci', axis='x', scilimits=(0, 0))
-        ax.set_xlabel("n")
-        ax.set_ylabel("Eigenvector Components")
-
-        ax.set_ylim(0, 1)
-        ax.legend()
-
-plt.show()
+    #EIG_SQR = U_sqr[:, np.argmin(np.abs(A_sqr))]  # Smallest eigenvalue eigenvector of squared operator
+    #EIG_SINGLE = U[:, np.argmin(np.abs(A))]  # Smallest eigenvalue eigenvector of single operator
+    EIG_SQR = U_sqr[:, np.argmin(np.abs(np.real(A_sqr)))]  # Smallest eigenvalue eigenvector of squared operator
+    EIG_SINGLE = U[:, np.argmin(np.abs(np.real(A)))]  # Smallest eigenvalue eigenvector of single operator
+    in_list = np.arange(0, p+1, 1)
+    plt.figure()
+    plt.plot(in_list, np.abs(EIG_SQR))
+    plt.ylim(0, 1)
+    plt.title(f"min = {np.real(A_sqr[np.argmin(np.abs(np.real(A_sqr)))])}")
 
 
+    plt.figure()
+    plt.plot(np.real(A_sqr), np.imag(A_sqr), marker = ".", linestyle = 'None', color = 'r', label = 'Eigenvalues of (alpha_1)^2')
+    plt.legend()
+    plt.show()
+
+    F_2 = np.abs(matrix_final_a)
+    F_1 = np.abs(matrix_final_a_squared)
+    plt.subplot(1, 2, 1)
+    plt.imshow(F_1, cmap='seismic', aspect='auto')
+    plt.colorbar(label='Value')
+    #plt.clim(0, 3.2)
+    plt.title('alpha_1_squared (abs value of matrix)')
+    plt.xlabel('Column Index')
+    plt.ylabel('Row Index')
+
+    plt.subplot(1, 2, 2)
+    plt.imshow(F_2, cmap='seismic', aspect='auto')
+    plt.colorbar(label='Value')
+    #plt.clim(0, 1.8)
+    plt.title('alpha_1 (abs value of matrix)')
+    plt.xlabel('Column Index')
+    plt.ylabel('Row Index')
+
+    #plt.clim(-.1, .1)
+    plt.tight_layout()
+    plt.savefig('Krylov_Matrices.pdf')
+    plt.show()
+
+    #A, U = np.linalg.eig((matrix_final_a))  # Get eigenvalues and eigenvectors
+    #A_sqr, U_sqr = np.linalg.eig(matrix_final_a_squared)
+    #print(np.imag(A))
+    in_list = np.arange(0, p+1, 1)
+    EIG_STATES = []
+    # EIG_STATE = np.abs(U[:, np.argmin(np.abs(A))])
+    sorted = np.sort(np.abs(A))
+    sort_sqr = np.sort(np.abs(A_sqr))
+
+    for i in range(len(A)):
+        #EIG_STATE = (U[:, np.abs(A).argsort()[i]])
+        EIG_STATE = U[:, np.abs(A).argsort()[i]]
+        EIG_STATE = (1/np.linalg.norm(EIG_STATE)) * EIG_STATE
+        #EIG_STATE = np.abs(EIG_STATE)
+        EIG_STATE = np.abs(EIG_STATE)
+        #print(np.linalg.norm(EIG_STATE))
+        EIG_STATES.append(EIG_STATE)
+
+    # #plt.plot(in_list, EIG_STATES[0], marker = ".", linestyle = '-', color = 'r', label = 'a_1 E = ' + str(A[np.abs(A).argsort()[0]]))
+    # #plt.plot(in_list, np.abs(EIG_SQR), marker = ".", linestyle = '-', color = 'g', label = '(a_1)^dagger E = ' + str(A_sqr[np.abs(A_sqr).argsort()[0]]))
+    # plt.plot(in_list, EIG_SQR, marker = ".", linestyle = '-', color = 'g', label = str(np.max(np.imag(A_sqr))))
+    # plt.plot(in_list, EIG_SINGLE, marker = ".", linestyle = '-', color = 'g')
+    # plt.legend()
+    # plt.ylim(0, 1)
+    # #plt.savefig('Krylov_Eigenvector_0.pdf')
+    # plt.show()
+    #plt.figure()
+    #plt.plot(in_list, EIG_STATES[49], marker = ".", linestyle = '-', color = 'r', label = 'a_1 E = ' + str(A[np.abs(A).argsort()[0]]))
+
+    ncols = 4  # columns per row
+    nrows = int(np.ceil(len(EIG_STATES) / ncols))
+    fig, axes = plt.subplots(nrows=nrows, ncols=ncols, figsize=(4*ncols, 3*nrows))
+    axes = axes.flatten()
+    plt.suptitle('Hello')
+    for i in range(int(len(EIG_STATES))):
+            ax = axes[i]
+            ax.plot(in_list, EIG_STATES[i], marker = ".", linestyle = '-', label = "E = {:.2e} ({})".format(A[np.abs(A).argsort()[i]], i))
+            #title = str(params[0]) + ", " + str(params[1]) + "  " + "(f, PHI)" + " gam = " + str(gamma) + " Eigenvector graph (L = " + str(size) + ")"
+            ax.ticklabel_format(style='sci', axis='x', scilimits=(0, 0))
+            ax.set_xlabel("n")
+            ax.set_ylabel("Eigenvector Components")
+
+            ax.set_ylim(0, 1)
+            ax.legend()
+
+    plt.show()
+
+
+def main_2():
+
+    plt.figure()
+    for l in [4, 5, 6]:
+        p = 22 # NUMBER OF ITERATIONS
+        #matrix_final_a = GS_NEWER(p, H_SIGMA, L)
+        #matrix_final_a = grahm_schmidt(p, H_SIGMA, L)  # SEED OPERATOR IS ALPHA_1
+        GAMM = 0.0
+        H_SIGMA = term_one_SIGMA(length=l, Jay=J, PHI=0 * np.pi/6) + term_two_SIGMA(F=f, length=l)
+        H_SIGMA = H_SIGMA + GAMM * (H_SIGMA.conjugate().T)  # Make Hermitian
+        matrix_final_a_squared = Experiment(p, H_SIGMA, l)  # SEED OPERATOR IS (ALPHA_1)^2
+        #matrix_final_a_squared = grahm_schmidt_squared(p, H_SIGMA, L)  # SEED Operator IS (ALPHA_1)^2
+        #print(type(matrix_final_a[1,1]))
+        if GAMM == 1:
+            A_sqr, U_sqr = np.linalg.eigh(matrix_final_a_squared)
+        else:
+            A_sqr, U_sqr = np.linalg.eig(matrix_final_a_squared)
+
+        #EIG_SQR = U_sqr[:, np.argmin(np.abs(A_sqr))]  # Smallest eigenvalue eigenvector of squared operator
+        #EIG_SINGLE = U[:, np.argmin(np.abs(A))]  # Smallest eigenvalue eigenvector of single operator
+        EIG_SQR = U_sqr[:, np.argmax((np.imag(A_sqr)))]  # Smallest eigenvalue eigenvector of squared operator
+        in_list = np.arange(0, p+1, 1)
+        plt.plot(in_list, np.abs(EIG_SQR), label = f"l = {l}, E = {(A_sqr[np.argmax((np.imag(A_sqr)))])}")
+        plt.ylim(0, 1)
+
+    plt.legend()
+    plt.show()
+
+
+main_1()
