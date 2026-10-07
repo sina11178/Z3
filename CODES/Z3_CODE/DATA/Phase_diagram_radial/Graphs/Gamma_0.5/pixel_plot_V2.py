@@ -25,7 +25,8 @@ time_list = np.exp(np.arange(-10, 25, 0.5))
 
 time_list_45 = np.exp(np.arange(-10, 45, 0.5))
 
-plt.figure()
+#plt.figure()
+plt.figure(figsize=(4, 3))
 data_sets = []
 data_set_curve = []
 cutoff = 0
@@ -56,10 +57,10 @@ for i, l in enumerate(L_array):
     if l != 4 or l != 5:
         added_time_exp = np.exp(np.arange(25, 40, 0.5))
         time_list_78 = np.concatenate((time_list, added_time_exp))
-        plt.plot(time_list_78, data_sets[i], color = colors[i], label = f"L = {l}", linewidth=2)
+        plt.plot(time_list_78, data_sets[i], color = colors[i], label = f"L = {l}", linewidth=2.5)
         #plt.plot(time_list_78, data_set_curve[i], linestyle='--', label = f"L = {l}, approximate curve")
     else:
-        plt.plot(time_list_45, data_sets[i], color = colors[i], label = f"L = {l}", linewidth=2)
+        plt.plot(time_list_45, data_sets[i], color = colors[i], label = f"L = {l}", linewidth=2.5)
         #plt.plot(time_list, data_set_curve[i], linestyle='--', label = f"L = {l}, approximate curve")
 
 
@@ -67,25 +68,26 @@ for i, l in enumerate(L_array):
 
 plt.gca().yaxis.set_major_locator(ticker.MaxNLocator(nbins=3))
 plt.gca().xaxis.set_major_locator(ticker.MaxNLocator(nbins=3))
-plt.setp(plt.gca().spines.values(), linewidth=1.6)
+plt.setp(plt.gca().spines.values(), linewidth=2.5)
 plt.gca().xaxis.set_minor_locator(ticker.AutoMinorLocator())
 plt.gca().yaxis.set_minor_locator(ticker.AutoMinorLocator())
 
 plt.tick_params(axis="x", direction="in", which='both')
 plt.tick_params(axis="y", direction="in", which='both')
-plt.tick_params(axis="x", which='major', length=5.0, width=1.2)
-plt.tick_params(axis="x", which='minor', length=3.0, width=1.2)
-plt.tick_params(axis="y", which='major', length=5.0, width=1.2)
-plt.tick_params(axis="y", which='minor', length=3.0, width=1.2)
+plt.tick_params(axis="x", which='major', length=8.0, width=2)
+plt.tick_params(axis="x", which='minor', length=5.0, width=2)
+plt.tick_params(axis="y", which='major', length=8.0, width=2)
+plt.tick_params(axis="y", which='minor', length=5.0, width=2)
 
-plt.tick_params(axis="x", labelsize=12)
-plt.tick_params(axis="y", labelsize=12)
+plt.tick_params(axis="x", labelsize=18)
+plt.tick_params(axis="y", labelsize=18)
 
 plt.ylim(-0.5, 1.05)
 plt.yticks([-0.5, 0, 0.5, 1])
 
 plt.xscale('log')
-plt.xticks([1e-3, 1e3, 1e9, 1e15], labels=[r'$10^{-3}$', r'$10^{3}$', r'$10^{8}$', r'$10^{12}$'])
+plt.xticks([1e-3, 1e3, 1e9, 1e15])#, labels=['', '', '', ''])
+plt.yticks([-0.5, 0, 0.5, 1], labels= ['', '0', '0.5', '1'])
 #plt.xlabel('ln(t)')
 #plt.ylabel("Autocorr")
 plt.legend()

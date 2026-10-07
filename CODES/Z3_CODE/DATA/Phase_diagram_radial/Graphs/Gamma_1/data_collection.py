@@ -80,7 +80,7 @@ R, PHI = np.meshgrid(r_vals, phi_vals, indexing='ij')
 time_list = np.exp(np.arange(-10, 25, 0.5))
 #time_list = np.exp(np.arange(-10, 30, 0.5))
 
-cutoff_index = 0
+cutoff_index = 0 #20
 
 for l in L_array:
     Z = np.zeros((Nr, N_phi))

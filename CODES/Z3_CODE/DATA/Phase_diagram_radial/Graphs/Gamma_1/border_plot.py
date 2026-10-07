@@ -142,6 +142,7 @@ ax.set_thetagrids(angles_deg, labels=[
 
 plt.savefig('phase_boundary_estimation.png', dpi=600, transparent=True)
 plt.savefig('phase_boundary_estimation.pdf', transparent=True)
+plt.savefig('phase_boundary_estimation.svg', transparent=True)
 
 plt.show()
 # import numpy as np

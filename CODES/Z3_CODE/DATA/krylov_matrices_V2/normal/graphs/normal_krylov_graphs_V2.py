@@ -27,6 +27,7 @@ size = [4, 6, 8]
 gamma = [1, 0.9, 0.5, 0.1, 0]
 
 n_max = 25
+n_data_shown = n_max
 #n_max = 31
 plt.figure()
 BASE = Path(__file__).resolve().parent
@@ -81,13 +82,13 @@ for i, param in enumerate(parameters):
             A, U = np.linalg.eig(data)
             index = np.argmin(np.abs(A))
             eigval_min = A[index]
-            EIG_STATE_SQUARED = np.abs(U[:, index])
+            EIG_STATE_SQUARED = np.abs(U[:, index])**2
             if L == 4:
-                ax.plot(np.arange(n_max)[:20], EIG_STATE_SQUARED[:20], c=colors_line[k], label=f'L = {L}', linewidth= 4, alpha=1)
+                ax.plot(np.arange(n_max)[:n_data_shown], EIG_STATE_SQUARED[:n_data_shown], c=colors_line[k], label=f'L = {L}', linewidth= 4, alpha=1)
             if L == 6:
-                ax.plot(np.arange(n_max)[:20], EIG_STATE_SQUARED[:20], c=colors_line[k], label=f'L = {L}', linewidth= 9.5, alpha=0.7)
+                ax.plot(np.arange(n_max)[:n_data_shown], EIG_STATE_SQUARED[:n_data_shown], c=colors_line[k], label=f'L = {L}', linewidth= 9.5, alpha=0.7)
             if L == 8:
-                ax.plot(np.arange(n_max)[:20], EIG_STATE_SQUARED[:20], c=colors_line[k], label=f'L = {L}', linestyle='-', linewidth= 3, alpha=1)
+                ax.plot(np.arange(n_max)[:n_data_shown], EIG_STATE_SQUARED[:n_data_shown], c=colors_line[k], label=f'L = {L}', linestyle='-', linewidth= 3, alpha=1)
             ax.legend()
             if  i == 0:
                 ax.set_ylim(0,0.2)# EIG_STATE_SQUARED[:20].max()*.9)
@@ -118,9 +119,9 @@ for i, param in enumerate(parameters):
             print(np.round(data_abs[:6, :6], 3))
 
        if j == 0:
-            ax_matrix.imshow(data_abs[:20, :20], cmap=color_kryl, aspect='equal', vmin = 0, vmax = bn_max/1.5)
+            ax_matrix.imshow(data_abs[:n_data_shown, :n_data_shown], cmap=color_kryl, aspect='equal', vmin = 0, vmax = bn_max/1.5)
        else:
-            ax_matrix.imshow(data_abs[:20, :20], cmap=color_kryl, aspect='equal', vmin = 0, vmax = bn_max/10)
+            ax_matrix.imshow(data_abs[:n_data_shown, :n_data_shown], cmap=color_kryl, aspect='equal', vmin = 0, vmax = bn_max/10)
        if j != 0:
            ax.set_yticks([])
        

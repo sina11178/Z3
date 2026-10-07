@@ -180,6 +180,24 @@ def liouvillian_linop_twisted(Hamiltonian, size):
         return C.ravel(order='F')
     return LinearOperator((d*d, d*d), matvec=mv, dtype=np.complex128)
 
+def liouvillian_linop(Hamiltonian, size):
+    H = sci.csr_matrix(Hamiltonian)
+    #H = Hamiltonian.toarray()
+    d = H.shape[0]
+    def mv(x):
+        # ensure x is a 1-D numpy array
+        #x = np.asarray(x, dtype=np.complex128).ravel()
+        # reshape to (d,d) using the same order you use when flattening elsewhere
+        M = x.reshape((d, d), order='F')   # use 'F' if you ravel(..., order='F')
+        # ensure M is dense ndarray (needed to do M @ H where H is sparse)
+        if issparse(M):
+            M = M.toarray()
+        # compute commutator; H is sparse so H.dot(M) returns dense ndarray
+        left = H @ M     # shape (d,d) dense
+        right = M @ H       # shape (d,d) dense
+        C = left - right
+        return C.ravel(order='F')
+    return LinearOperator((d*d, d*d), matvec=mv, dtype=np.complex128)
 
 def grahm_schmidt(n, H, size):
     Lio = liouvillian_linop_twisted(H, size) 
@@ -217,6 +235,7 @@ def grahm_schmidt(n, H, size):
     #Q = [seeding/np.linalg.norm(seeding)] + Q
     #Q_squared = [seeding_squared/np.linalg.norm(seeding_squared)] + Q_squared
     l = len(Q)
+    Lio = liouvillian_linop(H, size)
     matrix_final = np.zeros((l,l), dtype=complex)  # FOR ALPHA OPERATOR
     matrix_final_squared = np.zeros((l,l), dtype=complex)  # FOR ALPHA^2 OPERATOR
     for j in range(l):
@@ -229,25 +248,46 @@ def grahm_schmidt(n, H, size):
 
 
 def main_1():
-    fig, ax = plt.subplots(2, 2)
-    for i, l in enumerate([3, 5]):
+    fig, ax = plt.subplots(2, 3, figsize=(16, 8))
+    n = 24
+    for i, l in enumerate([4, 6]):
         H = term_one_SIGMA(l, Jay=1, PHI = 0*np.pi/6) + term_two_SIGMA(0.1, l)
-        Gamm = 0
+        Gamm = .2
         H = H + Gamm * H.conjugate().T
-        n = 26
         matrix_final, matrix_final_squared = grahm_schmidt(n, H, l)
-        ax[1][i].imshow(np.real(matrix_final_squared), cmap='viridis', interpolation='nearest')
+        ax[1][i].imshow(np.abs(matrix_final_squared), cmap='viridis', interpolation='nearest')
 
-        if Gamm != 0:
-            A, U = np.linalg.eig(matrix_final_squared)
+        if Gamm != 1:
+            A, U = np.linalg.eig(np.abs(matrix_final_squared))
         else:
-            A, U = np.linalg.eigh(matrix_final_squared)
-
+            A, U = np.linalg.eigh(np.abs(matrix_final_squared))
+        print(A)
         eig_vector = U[:, np.argmin(np.abs(A))]
-        ax[0][0].plot(np.abs(eig_vector), label=f'L={l}, E = {A[np.argmin(np.abs(A))]:.4f}')
+        ax[0][0].plot(np.abs(eig_vector)/np.linalg.norm(eig_vector), marker='.', linestyle='-', label=f'L={l}, E = {np.abs(A[np.argmin(np.abs(A))]):.4f}') #, E = {A[np.argmax(np.imag(A))]:.4f}')
+    for a in ax[0, 1:]:
+        a.axis('off')
     ax[0][0].legend()
 
     plt.tight_layout()
+    plt.show()
+
+    
+    ncols = 4  # columns per row
+    nrows = int(np.ceil(n / ncols))
+    fig, axes = plt.subplots(nrows=nrows, ncols=ncols, figsize=(4*ncols, 3*nrows))
+    axes = axes.flatten()
+    plt.suptitle('Hello')
+    for i in range(n):
+            ax = axes[i]
+            ax.plot(np.abs(U[:, i]), marker = ".", linestyle = '-', label = f"E = {A[i]:.4f}")
+            #title = str(params[0]) + ", " + str(params[1]) + "  " + "(f, PHI)" + " gam = " + str(gamma) + " Eigenvector graph (L = " + str(size) + ")"
+            ax.ticklabel_format(style='sci', axis='x', scilimits=(0, 0))
+            ax.set_xlabel("n")
+            ax.set_ylabel("Eigenvector Components")
+
+            ax.set_ylim(0, 1)
+            ax.legend()
+
     plt.show()
 
 main_1()
