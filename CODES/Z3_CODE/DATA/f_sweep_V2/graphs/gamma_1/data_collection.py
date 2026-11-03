@@ -30,7 +30,7 @@ def exp_model(t, A, B, gamma):
 
 fig, axes = plt.subplots(1, 2, figsize=(8, 6))
 
-power = 0.9
+power = 2
 cutoff_index = 16
 time_list_new = time_list[cutoff_index:]
 
